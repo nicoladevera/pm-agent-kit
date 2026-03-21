@@ -58,11 +58,22 @@ pm-agent-kit/
 
 ---
 
-## Current State
+## Build Phases
 
-**Phase 2 — Generators + Bidirectionality.** Three Tier 1 skills are built: `doc-review` (Analyzer), `prd-draft` (Generator), and `generate-tasks` (Generator). The knowledge layer works bidirectionally — `prd-quality-criteria.md` is what `doc-review` evaluates against AND what `prd-draft` generates toward. `acceptance-criteria.md` is what `doc-review` checks AND what `generate-tasks` produces. A new knowledge file (`story-structure.md`) covers story scoping and structure for task decomposition.
+Phases are defined by quality gates, not dates. Each phase proves something specific.
 
-Phase 2 proved the format generalizes to Generator skills without breaking changes. Each skill has its own eval case with sample input and scoring rubric.
+| Phase | Name | What it proves | Status |
+|-------|------|----------------|--------|
+| 1 | Prove the Format | Skill file body structure works. Layer 1 shapes output quality. | ✓ Complete |
+| 2 | Prove It Generalizes | Generator skills use the same format. Knowledge layer is bidirectional. | → In progress |
+| 3 | Prove Context Matters | Company context measurably improves output. Dual-mode skills work. | Upcoming |
+| 4 | Prove Team-Readiness | Agent output passes the "would someone know this was agent-drafted?" test. | Upcoming |
+| 5 | Tier 2 Skills | System handles weekly-cadence, multi-skill workflows. | Upcoming |
+| 6 | Tier 3 Skills | Skills depending on external data and deep company context work. | Upcoming |
+| 7 | Tier 4 Skills | Thinking stack integrates into high-judgment strategic artifacts. | Upcoming |
+| 8 | Operators | Generator/Operator separation works. End-to-end workflow touches external systems. | Upcoming |
+
+**Currently in Phase 2.** `prd-draft` and `generate-tasks` prove the format generalizes to Generator skills without breaking changes. The knowledge layer works bidirectionally — `prd-quality-criteria.md` is what `doc-review` evaluates against and what `prd-draft` generates toward; `acceptance-criteria.md` is what `doc-review` checks and what `generate-tasks` produces. Phase 3 adds the company context layer and `status-update`, the first dual-mode skill.
 
 ---
 
@@ -102,20 +113,22 @@ Clone the repo, populate `company/`, and the agent produces useful output in con
 
 ## Skill Taxonomy
 
-Skills are categorized by type and build tier. Type describes what a skill does technically. Tier defines the build sequence.
+Skills have two dimensions: **type** (what they do technically) and **tier** (when they're built and what they require).
 
-| Type | What it does |
-|------|-------------|
-| **Generator** | Produces an artifact from inputs (drafts a PRD, generates tasks, creates a launch checklist) |
-| **Analyzer** | Evaluates, critiques, or extracts signal (reviews a document, synthesizes feedback, interprets a metric) |
-| **Operator** | Takes action in an external system (posts to Jira, queries a database) — always company-specific |
+| Type | What it does | Current Skills |
+|------|-------------|----------------|
+| **Generator** | Produces an artifact from inputs (drafts a PRD, generates tasks, creates a launch checklist) | `prd-draft`, `generate-tasks` |
+| **Analyzer** | Evaluates, critiques, or extracts signal (reviews a document, synthesizes feedback, interprets a metric) | `doc-review` |
+| **Operator** | Takes action in an external system (posts to Jira, queries a database) — always company-specific | — (Phase 8) |
 
-| Tier | Focus | Skills |
-|------|-------|--------|
-| **1 — Operate** | High structure, tight feedback loop | `doc-review`, `prd-draft`, `generate-tasks` |
-| **2 — Communicate** | Weekly-cadence, team-visible output | `status-update`, `sprint-plan`, `retro-synthesis`, `meeting-brief`, `decision-log` |
-| **3 — Orient** | External data, deep company context | `user-feedback`, `competitive-intel`, `data-analysis`, `launch-checklist` |
-| **4 — Strategize** | High-judgment, composable reasoning | `business-case`, `presentation-deck` |
+Some Tier 2 skills are **dual-mode** (Generator + Analyzer) — they assess a situation and produce an artifact from the assessment. `status-update` and `sprint-plan` both work this way.
+
+| Tier | Focus | Skills | Type |
+|------|-------|--------|------|
+| **1 — Operate** | High structure, tight feedback loop | `doc-review`, `prd-draft`, `generate-tasks` | Analyzer, Generator, Generator |
+| **2 — Communicate** | Weekly-cadence, team-visible output | `status-update`, `sprint-plan`, `retro-synthesis`, `meeting-brief`, `decision-log` | Generator + Analyzer, Generator + Analyzer, Analyzer, Generator, Generator |
+| **3 — Orient** | External data, deep company context | `user-feedback`, `competitive-intel`, `data-analysis`, `launch-checklist` | Analyzer, Analyzer, Analyzer, Generator |
+| **4 — Strategize** | High-judgment, composable reasoning | `business-case`, `presentation-deck` | Generator, Generator |
 
 All three Tier 1 skills are built. Tier 2+ skills are added as the format continues to prove out.
 
