@@ -149,16 +149,18 @@ Skills have two dimensions: **type** (what they do technically) and **tier** (wh
 |------|-------------|----------------|
 | **Generator** | Produces an artifact from inputs (drafts a PRD, generates tasks, creates a launch checklist) | `prd-draft`, `generate-tasks` |
 | **Analyzer** | Evaluates, critiques, or extracts signal (reviews a document, synthesizes feedback, interprets a metric) | `doc-review` |
-| **Operator** | Takes action in an external system (posts to Jira, queries a database) — always company-specific | — (Phase 8) |
+| **Connector** | Connects to an external system to pull data or push output (queries Snowflake, posts to Jira, writes to Confluence) | Not included, always company-specific |
+
+Generators and Analyzers work on inputs the PM provides — pasted text, exported files, local documents. Until Phase 8, the PM is the data pipeline: she exports from Amplitude, pastes support tickets, copies the draft to Google Docs. Connector skills (Phase 8) automate those handoffs by connecting directly to live systems. They are never portable — each one is built for a specific company's tooling.
 
 Some Tier 2 skills are **dual-mode** (Generator + Analyzer) — they assess a situation and produce an artifact from the assessment. `status-update` and `sprint-plan` both work this way.
 
-| Tier | Focus | Skills | Type |
-|------|-------|--------|------|
-| **1 — Operate** | High structure, tight feedback loop | `doc-review`, `prd-draft`, `generate-tasks` | Analyzer, Generator, Generator |
-| **2 — Communicate** | Weekly-cadence, team-visible output | `status-update`, `sprint-plan`, `retro-synthesis`, `meeting-brief`, `decision-log` | Generator + Analyzer, Generator + Analyzer, Analyzer, Generator, Generator |
-| **3 — Orient** | External data, deep company context | `user-feedback`, `competitive-intel`, `data-analysis`, `launch-checklist` | Analyzer, Analyzer, Analyzer, Generator |
-| **4 — Strategize** | High-judgment, composable reasoning | `business-case`, `presentation-deck` | Generator, Generator |
+| Tier | Focus | Skills |
+|-------|-------|--------|
+| **1 — Operate** | High structure, tight feedback loop | `doc-review` (Analyzer), `prd-draft` (Generator), `generate-tasks` (Generator) |
+| **2 — Communicate** | Weekly-cadence, team-visible output | `status-update` (Generator + Analyzer), `sprint-plan` (Generator + Analyzer), `retro-synthesis` (Analyzer), `meeting-brief` (Generator), `decision-log` (Generator) |
+| **3 — Orient** | External data, deep company context | `user-feedback` (Analyzer), `competitive-intel` (Analyzer), `data-analysis` (Analyzer), `launch-checklist` (Generator) |
+| **4 — Strategize** | High-judgment, composable reasoning | `business-case` (Generator), `presentation-deck` (Generator) |
 
 All three Tier 1 skills are built. Tier 2+ skills are added as the format continues to prove out.
 
