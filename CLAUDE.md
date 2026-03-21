@@ -124,14 +124,14 @@ When no degradation rule is specified, default to `proceed-with-caveat`.
 
 ```
 skills/              Invocable capabilities. Each skill is a folder with a SKILL.md inside.
-  doc-review/
+  <skill-name>/
     SKILL.md         Skill definition (frontmatter + body)
     [references]     Skill-specific reference files, if any
 knowledge/           PM judgment patterns. Shared across skills, not invoked directly.
 company/             Company-specific context. Rebuilt at each new company.
   facts/             Product areas, team structure, glossary
   norms/             Sprint process, decision-making, communication patterns
-  interfaces/        Tool configs — Jira, Slack, Confluence, data sources
+  interfaces/        Tool configs — Jira, Slack, Google Workspace, Confluence, data sources
 eval/                Evaluation cases per skill. Sample inputs, expected outputs, scoring rubrics.
 ```
 

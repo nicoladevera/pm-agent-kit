@@ -27,31 +27,42 @@ What makes generic output specific and credible. Product areas, team structure, 
 pm-agent-kit/
 ├── CLAUDE.md                         Identity + operating principles
 ├── skills/                           Invocable capabilities
-│   └── doc-review/
-│       └── SKILL.md                  PRD review skill (Analyzer, Tier 1)
+│   ├── doc-review/
+│   │   └── SKILL.md                  PRD review skill (Analyzer, Tier 1)
+│   ├── prd-draft/
+│   │   └── SKILL.md                  PRD drafting skill (Generator, Tier 1)
+│   └── generate-tasks/
+│       └── SKILL.md                  Story decomposition skill (Generator, Tier 1)
 ├── knowledge/                        Shared PM judgment patterns
 │   ├── pm-philosophy.md              Core principles with rationale and behavioral depth
 │   ├── prd-quality-criteria.md       What makes a good PRD (evaluative rubric)
 │   ├── pm-smell-test.md              Red flags across all PM artifact types
-│   └── acceptance-criteria.md        AC standards optimized for agent implementation
+│   ├── acceptance-criteria.md        AC standards optimized for agent implementation
+│   └── story-structure.md            Story scoping, splitting, and structure standards
 ├── company/                          Company-specific context (rebuilt per role)
 │   ├── onboarding.md                 Setup checklist for a new company
 │   ├── facts/                        Product areas, team structure, glossary
 │   ├── norms/                        Sprint process, decision-making, comms patterns
 │   └── interfaces/                   Tool configs (Jira, Slack, data sources)
 └── eval/                             Evaluation cases per skill
-    └── doc-review/
-        ├── sample-prd-01.md          Deliberately flawed PRD for testing
-        └── rubric.md                 Scoring criteria for doc-review output
+    ├── doc-review/
+    │   ├── sample-prd-01.md          Deliberately flawed PRD for testing
+    │   └── rubric.md                 Scoring criteria for doc-review output
+    ├── prd-draft/
+    │   ├── sample-input-01.md        Rough problem statement for drafting test
+    │   └── rubric.md                 Quality criteria + bidirectionality test
+    └── generate-tasks/
+        ├── sample-input-01.md        Clean PRD for story decomposition test
+        └── rubric.md                 Story quality + AC standards check
 ```
 
 ---
 
 ## Current State
 
-**Phase 1 — Prove the Format.** The scaffold is built. `doc-review` is the first complete skill, scoped to PRD review. The knowledge files encode PM judgment patterns that skills reference for quality criteria. The eval case provides a way to test whether `doc-review` catches what a strong PM would catch.
+**Phase 2 — Generators + Bidirectionality.** Three Tier 1 skills are built: `doc-review` (Analyzer), `prd-draft` (Generator), and `generate-tasks` (Generator). The knowledge layer works bidirectionally — `prd-quality-criteria.md` is what `doc-review` evaluates against AND what `prd-draft` generates toward. `acceptance-criteria.md` is what `doc-review` checks AND what `generate-tasks` produces. A new knowledge file (`story-structure.md`) covers story scoping and structure for task decomposition.
 
-Phase 1 is done when `doc-review` produces output the PM would put her name on without editing.
+Phase 2 proved the format generalizes to Generator skills without breaking changes. Each skill has its own eval case with sample input and scoring rubric.
 
 ---
 
@@ -106,7 +117,7 @@ Skills are categorized by type and build tier. Type describes what a skill does 
 | **3 — Orient** | External data, deep company context | `user-feedback`, `competitive-intel`, `data-analysis`, `launch-checklist` |
 | **4 — Strategize** | High-judgment, composable reasoning | `business-case`, `presentation-deck` |
 
-Only Tier 1 skills are built in Phase 1. Others are added as the format is proven.
+All three Tier 1 skills are built. Tier 2+ skills are added as the format continues to prove out.
 
 ---
 
@@ -123,9 +134,10 @@ Knowledge files live in `knowledge/` and are referenced by multiple skills. They
 | File | What it encodes | Referenced by |
 |------|----------------|---------------|
 | `pm-philosophy.md` | Ten core PM heuristics with rationale and behavioral examples | All skills |
-| `prd-quality-criteria.md` | Eight evaluative criteria for PRDs | `doc-review`, future `prd-draft` |
+| `prd-quality-criteria.md` | Eight evaluative criteria for PRDs | `doc-review`, `prd-draft` |
 | `pm-smell-test.md` | Red flags across all PM artifact types (specs, comms, decisions) | All reviewing/analyzing skills |
-| `acceptance-criteria.md` | AC standards optimized for agent implementation | `doc-review`, future `generate-tasks` |
+| `acceptance-criteria.md` | AC standards optimized for agent implementation | `doc-review`, `prd-draft`, `generate-tasks` |
+| `story-structure.md` | Story scoping, splitting, structure, and data story separation | `generate-tasks` |
 
 ---
 
