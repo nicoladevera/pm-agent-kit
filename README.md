@@ -197,12 +197,33 @@ Generators and Analyzers work on inputs the PM provides — pasted text, exporte
 
 Some Tier 2 skills are **dual-mode** (Generator + Analyzer) — they assess a situation and produce an artifact from the assessment. `status-update` and `sprint-plan` both work this way.
 
+### Skill Reference
+
+| Skill | Type | What It Does |
+|-------|------|--------------|
+| `doc-review` | Analyzer | Evaluate any structured proposal — PRD, ticket, A/B test design — against quality criteria appropriate to its type |
+| `prd-draft` | Generator | Draft a PRD from a problem statement, user context, and constraints |
+| `generate-tasks` | Generator | Generate stories/tasks with acceptance criteria from any source artifact: PRD, EDD, meeting notes, rough notes |
+| `status-update` | Generator + Analyzer | Assess delivery state across workstreams and/or produce status comms calibrated to a specific audience |
+| `sprint-plan` | Generator + Analyzer | Draft sprint goals from priorities and capacity; flag backlog issues: missing AC, unclear scope, dependency risks |
+| `retro-synthesis` | Analyzer | Synthesize retro notes into patterns; track action items across retros and flag which ones were never addressed |
+| `meeting-brief` | Generator | Pre-meeting prep: relevant context, open questions, decision points, and attendee stakes |
+| `decision-log` | Generator | Capture a decision or structure a problem for resolution — what was decided, by whom, why, options considered |
+| `user-feedback`* | Analyzer | Cluster and summarize customer feedback into themes with frequency, severity, and representative quotes |
+| `competitive-intel`* | Analyzer | Monitor the competitive landscape or deep-dive on a specific decision |
+| `data-analysis`* | Analyzer | Answer a data question in product context — metric interpretation, funnel analysis, anomaly investigation |
+| `launch-checklist`* | Generator | Generate a go-to-market checklist tailored to how this company does launches |
+| `business-case`* | Generator | Build the argument for or against an initiative: problem, impact sizing, cost, risks, alternatives considered |
+| `presentation-deck`* | Generator | Draft a structured narrative for a specific audience — exec review, QBR, board update, new stakeholder onboarding |
+
+*Not yet built.
+
 | Tier | Focus | Skills |
 |-------|-------|--------|
-| **1 — Operate** | High structure, tight feedback loop | `doc-review` (Analyzer), `prd-draft` (Generator), `generate-tasks` (Generator) |
-| **2 — Communicate** | Weekly-cadence, team-visible output | `status-update` (Generator + Analyzer), `sprint-plan` (Generator + Analyzer), `retro-synthesis` (Analyzer), `meeting-brief` (Generator), `decision-log` (Generator) |
-| **3 — Orient** | External data, deep company context | `user-feedback` (Analyzer), `competitive-intel` (Analyzer), `data-analysis` (Analyzer), `launch-checklist` (Generator) |
-| **4 — Strategize** | High-judgment, composable reasoning | `business-case` (Generator), `presentation-deck` (Generator) |
+| **1 — Operate** | High structure, tight feedback loop | `doc-review`, `prd-draft`, `generate-tasks` |
+| **2 — Communicate** | Weekly-cadence, team-visible output | `status-update`, `sprint-plan`, `retro-synthesis`, `meeting-brief`, `decision-log` |
+| **3 — Orient** | External data, deep company context | `user-feedback`, `competitive-intel`, `data-analysis`, `launch-checklist` |
+| **4 — Strategize** | High-judgment, composable reasoning | `business-case`, `presentation-deck` |
 
 All Tier 1 and Tier 2 skills are built. Tier 3+ skills are added as company context proves out.
 
