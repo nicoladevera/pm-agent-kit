@@ -1,6 +1,6 @@
 # PM Agent Kit
 
-A portable AI agent system that encodes senior PM judgment into invocable skills. Built for Claude Code.
+A portable AI agent system that encodes senior product manager judgment into invocable skills. Built for Claude Code.
 
 The agent doesn't replace PM thinking — it removes friction from expressing it. The agent synthesizes, drafts, and structures. The PM evaluates and decides.
 
@@ -82,17 +82,47 @@ Phases are defined by quality gates, not dates. Each phase proves something spec
 ### Prerequisites
 
 - [Claude Code](https://docs.anthropic.com/en/docs/claude-code) installed
-- Open a terminal session in this repo's root directory
+
+### Setup
+
+```bash
+git clone https://github.com/nicoladevera/pm-agent-kit.git
+cd pm-agent-kit
+
+# Install all skills as slash commands
+./install.sh
+
+# Or install a specific skill
+./install.sh doc-review
+```
+
+Skills are copied to `~/.claude/commands/` and available immediately — no restart required.
+
+> **Note:** Skills reference knowledge files in the repo (e.g. `knowledge/prd-quality-criteria.md`). Open Claude Code from the repo root so these paths resolve correctly.
 
 ### Running a Skill
 
-Open Claude Code in the repo root. Skills are invoked by name:
+From the repo root, open Claude Code:
+
+```bash
+claude
+```
+
+Invoke a skill using its slash command:
+
+```
+/doc-review [paste PRD or point to file]
+/prd-draft [paste problem statement or brief]
+/generate-tasks [paste PRD]
+```
+
+Or invoke by name in natural language:
 
 ```
 Run doc-review on this PRD: [paste or point to file]
 ```
 
-The agent reads the skill's `SKILL.md`, loads the referenced knowledge files, and produces structured output.
+Both invocation methods work. Slash commands are more reliable when CLAUDE.md auto-loading is inconsistent.
 
 ### Setting Up Company Context
 
