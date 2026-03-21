@@ -17,7 +17,7 @@ install_skill() {
   fi
 }
 
-KNOWN_SKILLS=("doc-review" "prd-draft" "generate-tasks")
+KNOWN_SKILLS=("doc-review" "prd-draft" "generate-tasks" "decision-log" "meeting-brief" "status-update" "sprint-plan" "retro-synthesis")
 
 if [ -z "$1" ]; then
   for name in "${KNOWN_SKILLS[@]}"; do

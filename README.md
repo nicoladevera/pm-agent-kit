@@ -28,22 +28,43 @@ pm-agent-kit/
 ├── CLAUDE.md                         Identity + operating principles
 ├── skills/                           Invocable capabilities
 │   ├── doc-review/
-│   │   └── SKILL.md                  PRD review skill (Analyzer, Tier 1)
+│   │   └── SKILL.md                  PRD review (Analyzer, Tier 1)
 │   ├── prd-draft/
-│   │   └── SKILL.md                  PRD drafting skill (Generator, Tier 1)
-│   └── generate-tasks/
-│       └── SKILL.md                  Story decomposition skill (Generator, Tier 1)
+│   │   └── SKILL.md                  PRD drafting (Generator, Tier 1)
+│   ├── generate-tasks/
+│   │   └── SKILL.md                  Story decomposition (Generator, Tier 1)
+│   ├── decision-log/
+│   │   └── SKILL.md                  Decision capture + framing (Generator, Tier 2)
+│   ├── meeting-brief/
+│   │   └── SKILL.md                  Pre-meeting prep (Generator, Tier 2)
+│   ├── status-update/
+│   │   └── SKILL.md                  Delivery assessment + status comms (Gen + Ana, Tier 2)
+│   ├── sprint-plan/
+│   │   └── SKILL.md                  Sprint planning + backlog health (Gen + Ana, Tier 2)
+│   └── retro-synthesis/
+│       └── SKILL.md                  Retro pattern synthesis (Analyzer, Tier 2)
 ├── knowledge/                        Shared PM judgment patterns
 │   ├── pm-philosophy.md              Core principles with rationale and behavioral depth
 │   ├── prd-quality-criteria.md       What makes a good PRD (evaluative rubric)
 │   ├── pm-smell-test.md              Red flags across all PM artifact types
 │   ├── acceptance-criteria.md        AC standards optimized for agent implementation
-│   └── story-structure.md            Story scoping, splitting, and structure standards
+│   ├── story-structure.md            Story scoping, splitting, and structure standards
+│   ├── communication-quality.md      Quality criteria for PM communications
+│   ├── sprint-planning.md            Sprint goals, capacity, backlog health standards
+│   └── decision-frameworks.md        Decision anatomy, options quality, reversibility
 ├── company/                          Company-specific context (rebuilt per role)
 │   ├── onboarding.md                 Setup checklist for a new company
 │   ├── facts/                        Product areas, team structure, glossary
+│   │   ├── product.md                Product context (stub — populate per company)
+│   │   ├── team.md                   Team structure (stub)
+│   │   └── glossary.md               Company glossary (stub)
 │   ├── norms/                        Sprint process, decision-making, comms patterns
+│   │   ├── process.md                Team process (stub)
+│   │   ├── decisions.md              Decision-making norms (stub)
+│   │   └── communication.md          Communication norms (stub)
 │   └── interfaces/                   Tool configs (Jira, Slack, data sources)
+│       ├── tools.md                  Tool configuration (stub)
+│       └── templates.md              Company templates (stub)
 └── eval/                             Evaluation cases per skill
     ├── doc-review/
     │   ├── sample-prd-01.md          Deliberately flawed PRD for testing
@@ -51,9 +72,24 @@ pm-agent-kit/
     ├── prd-draft/
     │   ├── sample-input-01.md        Rough problem statement for drafting test
     │   └── rubric.md                 Quality criteria + bidirectionality test
-    └── generate-tasks/
-        ├── sample-input-01.md        Clean PRD for story decomposition test
-        └── rubric.md                 Story quality + AC standards check
+    ├── generate-tasks/
+    │   ├── sample-input-01.md        Clean PRD for story decomposition test
+    │   └── rubric.md                 Story quality + AC standards check
+    ├── decision-log/
+    │   ├── sample-input-01.md        Slack thread with implicit decision debate
+    │   └── rubric.md                 Structure extraction + options quality
+    ├── meeting-brief/
+    │   ├── sample-input-01.md        Overloaded meeting with vague agenda
+    │   └── rubric.md                 Decision surfacing + attendee stakes
+    ├── status-update/
+    │   ├── sample-input-01.md        Sprint board dump with hidden risks
+    │   └── rubric.md                 Risk inference + audience calibration
+    ├── sprint-plan/
+    │   ├── sample-input-01.md        Mixed-readiness backlog with capacity info
+    │   └── rubric.md                 Backlog health + realistic capacity math
+    └── retro-synthesis/
+        ├── sample-input-01.md        3 retros with recurring + improving patterns
+        └── rubric.md                 Cross-retro synthesis + action item tracking
 ```
 
 ---
@@ -65,15 +101,15 @@ Phases are defined by quality gates, not dates. Each phase proves something spec
 | Phase | Name | What it proves | Status |
 |-------|------|----------------|--------|
 | 1 | Prove the Format | Skill file body structure works. Layer 1 shapes output quality. | ✓ Complete |
-| 2 | Prove It Generalizes | Generator skills use the same format. Knowledge layer is bidirectional. | → In progress |
-| 3 | Prove Context Matters | Company context measurably improves output. Dual-mode skills work. | Upcoming |
+| 2 | Prove It Generalizes | Generator skills use the same format. Knowledge layer is bidirectional. | ✓ Complete |
+| 3 | Prove Context Matters | Company context measurably improves output. Dual-mode skills work. | → In progress |
 | 4 | Prove Team-Readiness | Agent output passes the "would someone know this was agent-drafted?" test. | Upcoming |
-| 5 | Tier 2 Skills | System handles weekly-cadence, multi-skill workflows. | Upcoming |
+| 5 | Tier 2 Skills | System handles weekly-cadence, multi-skill workflows. | → In progress |
 | 6 | Tier 3 Skills | Skills depending on external data and deep company context work. | Upcoming |
 | 7 | Tier 4 Skills | Thinking stack integrates into high-judgment strategic artifacts. | Upcoming |
 | 8 | Operators | Generator/Operator separation works. End-to-end workflow touches external systems. | Upcoming |
 
-**Currently in Phase 2.** `prd-draft` and `generate-tasks` prove the format generalizes to Generator skills without breaking changes. The knowledge layer works bidirectionally — `prd-quality-criteria.md` is what `doc-review` evaluates against and what `prd-draft` generates toward; `acceptance-criteria.md` is what `doc-review` checks and what `generate-tasks` produces. Phase 3 adds the company context layer and `status-update`, the first dual-mode skill.
+**Currently in Phases 3 + 5.** Phase 2 proved the format generalizes — `prd-draft` and `generate-tasks` use the same file structure without breaking changes, and the knowledge layer works bidirectionally. Phase 5 added all five Tier 2 skills: `decision-log`, `meeting-brief`, `status-update`, `sprint-plan`, and `retro-synthesis`. This introduced dual-mode skills (Generator + Analyzer) and three new knowledge files for communication, planning, and decision-making. Company context stubs are in place and ready for population. Phase 3 (proving context measurably improves output) runs in parallel as company context gets populated.
 
 ---
 
@@ -114,6 +150,11 @@ Invoke a skill using its slash command:
 /doc-review [paste PRD or point to file]
 /prd-draft [paste problem statement or brief]
 /generate-tasks [paste PRD]
+/decision-log [paste decision context or Slack thread]
+/meeting-brief [paste agenda or calendar invite]
+/status-update [paste sprint data + specify audience]
+/sprint-plan [paste backlog + capacity]
+/retro-synthesis [paste retro notes]
 ```
 
 Or invoke by name in natural language:
@@ -147,11 +188,12 @@ Skills have two dimensions: **type** (what they do technically) and **tier** (wh
 
 | Type | What it does | Current Skills |
 |------|-------------|----------------|
-| **Generator** | Produces an artifact from inputs (drafts a PRD, generates tasks, creates a launch checklist) | `prd-draft`, `generate-tasks` |
-| **Analyzer** | Evaluates, critiques, or extracts signal (reviews a document, synthesizes feedback, interprets a metric) | `doc-review` |
+| **Generator** | Produces an artifact from inputs (drafts a PRD, generates tasks, creates a launch checklist) | `prd-draft`, `generate-tasks`, `decision-log`, `meeting-brief` |
+| **Analyzer** | Evaluates, critiques, or extracts signal (reviews a document, synthesizes feedback, interprets a metric) | `doc-review`, `retro-synthesis` |
+| **Generator + Analyzer** | Assesses a situation and produces an artifact from the assessment (dual-mode) | `status-update`, `sprint-plan` |
 | **Connector** | Connects to an external system to pull data or push output (queries Snowflake, posts to Jira, writes to Confluence) | Not included, always company-specific |
 
-Generators and Analyzers work on inputs the PM provides — pasted text, exported files, local documents. Until Phase 8, the PM is the data pipeline: she exports from Amplitude, pastes support tickets, copies the draft to Google Docs. Connector skills (Phase 8) automate those handoffs by connecting directly to live systems. They are never portable — each one is built for a specific company's tooling.
+Generators and Analyzers work on inputs the PM provides — pasted text, exported files, local documents. Until Phase 8, the PM is the data pipeline: she exports from Amplitude, pastes support tickets, copies the draft to Google Docs. Connector skills automate those handoffs by connecting directly to live systems. They are never portable — each one is built for a specific company's tooling.
 
 Some Tier 2 skills are **dual-mode** (Generator + Analyzer) — they assess a situation and produce an artifact from the assessment. `status-update` and `sprint-plan` both work this way.
 
@@ -162,7 +204,7 @@ Some Tier 2 skills are **dual-mode** (Generator + Analyzer) — they assess a si
 | **3 — Orient** | External data, deep company context | `user-feedback` (Analyzer), `competitive-intel` (Analyzer), `data-analysis` (Analyzer), `launch-checklist` (Generator) |
 | **4 — Strategize** | High-judgment, composable reasoning | `business-case` (Generator), `presentation-deck` (Generator) |
 
-All three Tier 1 skills are built. Tier 2+ skills are added as the format continues to prove out.
+All Tier 1 and Tier 2 skills are built. Tier 3+ skills are added as company context proves out.
 
 ---
 
@@ -181,8 +223,11 @@ Knowledge files live in `knowledge/` and are referenced by multiple skills. They
 | `pm-philosophy.md` | Ten core PM heuristics with rationale and behavioral examples | All skills |
 | `prd-quality-criteria.md` | Eight evaluative criteria for PRDs | `doc-review`, `prd-draft` |
 | `pm-smell-test.md` | Red flags across all PM artifact types (specs, comms, decisions) | All reviewing/analyzing skills |
-| `acceptance-criteria.md` | AC standards optimized for agent implementation | `doc-review`, `prd-draft`, `generate-tasks` |
-| `story-structure.md` | Story scoping, splitting, structure, and data story separation | `generate-tasks` |
+| `acceptance-criteria.md` | AC standards optimized for agent implementation | `doc-review`, `prd-draft`, `generate-tasks`, `sprint-plan` |
+| `story-structure.md` | Story scoping, splitting, structure, and data story separation | `generate-tasks`, `sprint-plan` |
+| `communication-quality.md` | Quality criteria for PM communications (status updates, briefs, stakeholder comms) | `status-update`, `meeting-brief`, `decision-log`, `retro-synthesis` |
+| `sprint-planning.md` | Sprint goals, capacity, backlog health, carryover standards | `sprint-plan`, `status-update` |
+| `decision-frameworks.md` | Decision anatomy, options quality, reversibility, escalation signals | `decision-log`, `meeting-brief` |
 
 ---
 
