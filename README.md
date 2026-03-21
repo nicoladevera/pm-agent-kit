@@ -125,16 +125,16 @@ Phases are defined by quality gates, not dates. Each phase proves something spec
 git clone https://github.com/nicoladevera/pm-agent-kit.git
 cd pm-agent-kit
 
-# Install all skills as slash commands
+# Register all skills as slash commands for this repo checkout
 ./install.sh
 
-# Or install a specific skill
+# Or register a specific skill
 ./install.sh doc-review
 ```
 
-Skills are copied to `~/.claude/commands/` and available immediately — no restart required.
+`install.sh` copies command files to `~/.claude/commands/`, but those commands still depend on the `knowledge/` and `company/` files in this repo. It sets up slash commands to use this repo, rather than installing a self-contained portable package.
 
-> **Note:** Skills reference knowledge files in the repo (e.g. `knowledge/prd-quality-criteria.md`). Open Claude Code from the repo root so these paths resolve correctly.
+> **Important:** Open Claude Code from this repo root. The registered commands depend on repo-relative paths such as `knowledge/prd-quality-criteria.md` and `company/...`; if you run them outside this checkout, context resolution will break.
 
 ### Running a Skill
 
@@ -163,7 +163,7 @@ Or invoke by name in natural language:
 Run doc-review on this PRD: [paste or point to file]
 ```
 
-Both invocation methods work. Slash commands are more reliable when CLAUDE.md auto-loading is inconsistent.
+Both invocation methods work within this repo checkout. Slash commands are more reliable when CLAUDE.md auto-loading is inconsistent.
 
 ### Setting Up Company Context
 

@@ -53,13 +53,15 @@ Read these files:
 
 ### 4. Load company context (if available)
 
-If `company/norms/decisions.md` exists, read it for how decisions are made and documented at this company — authority levels, escalation paths, RFC/ADR conventions.
+If `company/norms/decisions.md` exists and is substantive, read it for how decisions are made and documented at this company — authority levels, escalation paths, RFC/ADR conventions.
 
-If `company/facts/team.md` exists, read it for who the key decision-makers and stakeholders are.
+If `company/facts/team.md` exists and is substantive, read it for who the key decision-makers and stakeholders are.
 
-If `company/facts/product.md` exists, read it for product context that informs the decision.
+If `company/facts/product.md` exists and is substantive, read it for product context that informs the decision.
 
-If these don't exist, proceed — note the absence in the output.
+If any of these files exist but are still stub templates, treat them as unavailable and say so in the output.
+
+If no substantive company context is available, proceed — note the absence in the output.
 
 ### 5. For capture mode: extract the decision structure
 
@@ -144,7 +146,7 @@ List anything unresolved: downstream decisions this creates, information that's 
 
 - [Anything still unresolved — follow-up decisions, missing information, stakeholders to inform]
 
-> **Context note:** [Whether company context was loaded. What the log might miss without it.]
+> **Context note:** [State which substantive company files were loaded, which files were absent, and which files existed but were stub templates and therefore skipped. Note what the log might miss without that context.]
 ```
 
 ---

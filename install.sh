@@ -1,7 +1,9 @@
 #!/bin/bash
 # Usage: ./install.sh [skill-name]
-# With no args: installs all skills
-# With a name: installs just that skill (e.g. ./install.sh doc-review)
+# With no args: registers all skills for this repo checkout
+# With a name: registers just that skill (e.g. ./install.sh doc-review)
+# These commands are not self-contained installs; they still depend on this repo's
+# knowledge/ and company/ files resolving from the current checkout.
 
 COMMANDS_DIR="$HOME/.claude/commands"
 mkdir -p "$COMMANDS_DIR"
@@ -11,7 +13,7 @@ install_skill() {
   local src="skills/$name/SKILL.md"
   if [ -f "$src" ]; then
     cp "$src" "$COMMANDS_DIR/$name.md"
-    echo "Installed /$name → $COMMANDS_DIR/$name.md"
+    echo "Registered /$name → $COMMANDS_DIR/$name.md"
   else
     echo "Skill not found: $name"
   fi

@@ -44,11 +44,13 @@ Read these files — they define the standards for stories and AC:
 
 ### 3. Load company context (if available)
 
-If `company/facts/product.md` exists, read it for product context that affects how stories should be scoped (e.g., which services exist, what teams own what).
+If `company/facts/product.md` exists and is substantive, read it for product context that affects how stories should be scoped (e.g., which services exist, what teams own what).
 
-If `company/norms/process.md` exists, read it for how stories are typically structured at this company (sprint cadence, ticket conventions, definition of done).
+If `company/norms/process.md` exists and is substantive, read it for how stories are typically structured at this company (sprint cadence, ticket conventions, definition of done).
 
-If neither exists, proceed — note the absence in the output.
+If either file exists but is still a stub template, treat it as unavailable and say so in the output.
+
+If neither substantive file is available, proceed — note the absence in the output.
 
 ### 4. Decompose into stories
 
@@ -179,7 +181,7 @@ If any stories have ambiguity that the PM should resolve before engineering pick
 
 - [Stories or decisions that need PM input before engineering starts]
 
-> **Context note:** [Whether company context was loaded. What the decomposition might miss without it.]
+> **Context note:** [State which substantive company files were loaded, which files were absent, and which files existed but were stub templates and therefore skipped. Note what the decomposition might miss without that context.]
 ```
 
 ---

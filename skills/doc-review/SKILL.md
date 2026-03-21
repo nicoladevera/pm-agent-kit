@@ -33,11 +33,13 @@ Read these files in full. They are your evaluation rubric:
 
 ### 3. Load company context (if available)
 
-If `company/norms/process.md` exists, read it for context on how PRDs are expected to work at this company (sprint process, document standards, review expectations).
+If `company/norms/process.md` exists and is substantive, read it for context on how PRDs are expected to work at this company (sprint process, document standards, review expectations).
 
-If `company/facts/product.md` exists, read it for context on the product landscape, user segments, and existing functionality.
+If `company/facts/product.md` exists and is substantive, read it for context on the product landscape, user segments, and existing functionality.
 
-If neither exists, proceed — note the absence in the Context Note section of your output.
+If either file exists but is still a stub template, treat it as unavailable and say so in the Context Note section of your output.
+
+If neither substantive file is available, proceed — note the absence in the Context Note section of your output.
 
 ### 4. Evaluate against quality criteria
 
@@ -99,7 +101,7 @@ List questions you'd ask the PM before this PRD moves forward. These should be q
 ### Open Questions
 - [Questions this PRD raises but doesn't answer]
 
-> **Context note:** [State whether company context was loaded. If not, note what the review might miss as a result.]
+> **Context note:** [State which substantive company files were loaded, which files were absent, and which files existed but were stub templates and therefore skipped. Note what the review might miss as a result.]
 ```
 
 ---

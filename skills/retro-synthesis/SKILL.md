@@ -45,11 +45,13 @@ Read these files:
 
 ### 3. Load company context (if available)
 
-If `company/norms/process.md` exists, read it for retro cadence, sprint rhythm, and team process context. This helps assess whether issues are process-related or situational.
+If `company/norms/process.md` exists and is substantive, read it for retro cadence, sprint rhythm, and team process context. This helps assess whether issues are process-related or situational.
 
-If `company/facts/team.md` exists, read it for team structure context — who owns what, team dynamics references.
+If `company/facts/team.md` exists and is substantive, read it for team structure context — who owns what, team dynamics references.
 
-If these don't exist, proceed — note the absence in the output.
+If either file exists but is still a stub template, treat it as unavailable and say so in the output.
+
+If neither substantive file is available, proceed — note the absence in the output.
 
 ### 4. Categorize items
 
@@ -173,7 +175,7 @@ Based on the synthesis, recommend 1-2 areas for the team to focus on. Prioritize
 1. **[Top priority]** — Why: [Most impactful / most recurring / most worsening]. Suggested action: [Specific, actionable recommendation.]
 2. **[Second priority]** — Why: [...]. Suggested action: [...]
 
-> **Context note:** [Whether company context was loaded. Number of retros analyzed. Whether a previous synthesis was available for longitudinal tracking.]
+> **Context note:** [State which substantive company files were loaded, which files were absent, and which files existed but were stub templates and therefore skipped. Also note the number of retros analyzed and whether a previous synthesis was available for longitudinal tracking.]
 ```
 
 ---

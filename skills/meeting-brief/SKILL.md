@@ -46,13 +46,15 @@ Read these files:
 
 ### 3. Load company context (if available)
 
-If `company/facts/team.md` exists, read it for attendee roles, their stakes, and team structure context.
+If `company/facts/team.md` exists and is substantive, read it for attendee roles, their stakes, and team structure context.
 
-If `company/norms/communication.md` exists, read it for meeting culture, expected formats, and how different stakeholders prefer to engage.
+If `company/norms/communication.md` exists and is substantive, read it for meeting culture, expected formats, and how different stakeholders prefer to engage.
 
-If `company/facts/product.md` exists, read it for product context relevant to the meeting topics.
+If `company/facts/product.md` exists and is substantive, read it for product context relevant to the meeting topics.
 
-If these don't exist, proceed — note the absence in the output. The brief will be less specific about attendee stakes and company-specific context.
+If any of these files exist but are still stub templates, treat them as unavailable and say so in the output.
+
+If no substantive company context is available, proceed — note the absence in the output. The brief will be less specific about attendee stakes and company-specific context.
 
 ### 4. Define the meeting objective
 
@@ -163,7 +165,7 @@ If duration isn't known, skip this section.
 | [Topic 1] | [X] | [Decision required / Quick update / Needs discussion] |
 | [Topic 2] | [X] | [...] |
 
-> **Context note:** [Whether company context was loaded. Whether attendee list was available. What the brief might miss without fuller context.]
+> **Context note:** [State which substantive company files were loaded, which files were absent, and which files existed but were stub templates and therefore skipped. Also note whether the attendee list was available and what the brief might miss without fuller context.]
 ```
 
 ---

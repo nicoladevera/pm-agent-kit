@@ -45,11 +45,13 @@ Read these files — they define what the output must satisfy:
 
 ### 3. Load company context (if available)
 
-If `company/facts/product.md` exists, read it for product landscape, existing functionality, and user segments. This helps the PRD reference adjacent systems and avoid re-specifying what already exists.
+If `company/facts/product.md` exists and is substantive, read it for product landscape, existing functionality, and user segments. This helps the PRD reference adjacent systems and avoid re-specifying what already exists.
 
-If `company/norms/process.md` exists, read it for how PRDs are expected to work at this company — what sections are standard, what level of detail engineering expects.
+If `company/norms/process.md` exists and is substantive, read it for how PRDs are expected to work at this company — what sections are standard, what level of detail engineering expects.
 
-If neither exists, proceed — note the absence in the output.
+If either file exists but is still a stub template, treat it as unavailable and say so in the output.
+
+If neither substantive file is available, proceed — note the absence in the output.
 
 ### 4. Assess what's missing from the input
 
@@ -204,7 +206,7 @@ The PM should be able to scan the Assumptions section and quickly confirm or cor
 - [Assumption 1 — what was inferred and why]
 - [Assumption 2]
 
-> **Context note:** [Whether company context was loaded. What the draft might miss without it.]
+> **Context note:** [State which substantive company files were loaded, which files were absent, and which files existed but were stub templates and therefore skipped. Note what the draft might miss without that context.]
 ```
 
 ---

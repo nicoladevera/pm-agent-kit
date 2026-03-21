@@ -27,7 +27,7 @@ Any form of planning input:
 - A previous sprint plan for continuity
 - A combination of the above
 
-The input does not need to be complete. Missing capacity or priorities can be flagged rather than assumed.
+Analyze mode can work with incomplete input and flag what's missing. Draft mode cannot produce a sprint plan without substantive capacity information and substantive sprint priorities.
 
 ---
 
@@ -46,6 +46,8 @@ Assess backlog health. Flag stories that aren't sprint-ready: missing AC, unclea
 Analyze the backlog first (same process as Analyze mode), then produce a sprint plan with goals, selected stories, capacity allocation, and dependency notes. The analysis informs story selection; unready stories are deferred with reasons.
 
 **Triggered by:** "plan the next sprint," "draft sprint goals," "what should we commit to," or any request that asks for a sprint plan or sprint goals.
+
+**Required for Draft mode:** substantive capacity information and substantive sprint priorities. If either is missing, stop and say why rather than drafting a plan from partial inputs.
 
 **Default:** If the mode is ambiguous, ask: "Do you want a backlog health check, or a sprint plan for the next sprint?"
 
@@ -69,13 +71,15 @@ Read these files:
 
 #### 3. Load company context (if available)
 
-If `company/norms/process.md` exists, read it for sprint cadence, planning process, definition of done, and how the team works.
+If `company/norms/process.md` exists and is substantive, read it for sprint cadence, planning process, definition of done, and how the team works.
 
-If `company/facts/team.md` exists, read it for team composition, velocity history, and who owns what.
+If `company/facts/team.md` exists and is substantive, read it for team composition, velocity history, and who owns what.
 
-If `company/facts/product.md` exists, read it for product context that informs priority decisions.
+If `company/facts/product.md` exists and is substantive, read it for product context that informs priority decisions.
 
-If these don't exist, proceed — note the absence in the output.
+If any of these files exist but are still stub templates, treat them as unavailable and say so in the output.
+
+If no substantive company context is available, proceed — note the absence in the output.
 
 #### 4. Assess each story for readiness
 
@@ -120,7 +124,21 @@ Output the assessment using the Analyze Mode format below.
 
 ### Additional Steps for Draft Mode
 
-#### 8. Set sprint goals
+#### 8. Validate required Draft mode inputs
+
+Before drafting a sprint plan, confirm the input contains both:
+- **Substantive capacity information** — enough detail to do real capacity math, such as availability by team member, PTO, on-call load, ramp-up cost, or other constraints.
+- **Substantive sprint priorities** — enough direction to choose work intentionally, such as prioritized candidate stories, sprint goals, leadership priorities, or clearly ranked objectives.
+
+If either is missing, thin, or only implied:
+- Do not produce the Sprint Plan output format below
+- Stop and say why in 2-4 bullets
+- Name the missing inputs explicitly
+- Give concrete examples of acceptable input, such as "capacity by team member" or "prioritized candidate stories / sprint goals"
+
+Do not silently downgrade Draft mode into Analyze mode. If the PM asked for a sprint plan, either draft it with adequate inputs or stop clearly.
+
+#### 9. Set sprint goals
 
 State 1-3 sprint goals. Each goal:
 - Is an outcome, not a story list: "Reduce first-payment miss rate to under 10%" not "Complete PMT-101 through PMT-108"
@@ -130,7 +148,7 @@ State 1-3 sprint goals. Each goal:
 
 If the input doesn't provide enough context for meaningful goals, state the best goals you can and flag what's assumed.
 
-#### 9. Select stories for the sprint
+#### 10. Select stories for the sprint
 
 Choose stories that serve the sprint goals, respecting capacity:
 
@@ -138,7 +156,7 @@ Choose stories that serve the sprint goals, respecting capacity:
 - **Priority** — Stories that directly serve sprint goals first. Then dependencies that unblock future work. Then maintenance/tech debt if capacity allows.
 - **Readiness** — Only select stories that passed the readiness assessment. Stories that need refinement go in the "Not Ready" section with action items.
 
-#### 10. Suggest implementation sequence
+#### 11. Suggest implementation sequence
 
 Order stories within the sprint:
 - Foundation stories first (other stories depend on them)
@@ -146,7 +164,7 @@ Order stories within the sprint:
 - Data stories sequenced appropriately (can often parallel feature work)
 - Dependencies respected (don't start what's blocked)
 
-#### 11. Run the smell test on the plan
+#### 12. Run the smell test on the plan
 
 Check:
 - **Smell 1 (Missing the "Why")** — Do sprint goals state why they matter?
@@ -214,10 +232,21 @@ Check:
 
 - [Feature stories without corresponding analytics/instrumentation stories]
 
-> **Context note:** [Whether company context was loaded. What the assessment might miss without it.]
+> **Context note:** [State which substantive company files were loaded, which files were absent, and which files existed but were stub templates and therefore skipped. Note what the assessment might miss without that context.]
 ```
 
 ### Draft Mode
+
+If Draft mode stops because required inputs are missing, use this format instead of the Sprint Plan template:
+
+```markdown
+## Sprint Plan: Cannot Draft Yet
+
+- Missing: [specific required input]
+- Missing: [specific required input, if applicable]
+- Provide: [concrete example of acceptable capacity or priority input]
+- Provide: [concrete example of acceptable capacity or priority input]
+```
 
 ```markdown
 ## Sprint Plan: [Sprint Name/Number]
@@ -279,7 +308,7 @@ Check:
 
 - [How to know mid-sprint if we're on track. What to watch. When to be concerned.]
 
-> **Context note:** [Whether company context was loaded. What the plan might miss without it.]
+> **Context note:** [State which substantive company files were loaded, which files were absent, and which files existed but were stub templates and therefore skipped. Note what the plan might miss without that context.]
 ```
 
 ---

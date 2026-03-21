@@ -69,15 +69,17 @@ Read these files:
 
 #### 3. Load company context (if available)
 
-If `company/norms/communication.md` exists, read it for status update conventions — who receives updates, how often, what format, what's expected.
+If `company/norms/communication.md` exists and is substantive, read it for status update conventions — who receives updates, how often, what format, what's expected.
 
-If `company/norms/process.md` exists, read it for sprint cadence and process context.
+If `company/norms/process.md` exists and is substantive, read it for sprint cadence and process context.
 
-If `company/facts/team.md` exists, read it for team structure, stakeholders, and who cares about what.
+If `company/facts/team.md` exists and is substantive, read it for team structure, stakeholders, and who cares about what.
 
-If `company/facts/product.md` exists, read it for product landscape context.
+If `company/facts/product.md` exists and is substantive, read it for product landscape context.
 
-If these don't exist, proceed — note the absence in the output.
+If any of these files exist but are still stub templates, treat them as unavailable and say so in the output.
+
+If no substantive company context is available, proceed — note the absence in the output.
 
 #### 4. Assess delivery state
 
@@ -186,7 +188,7 @@ Identify the audience from the invocation. Calibrate:
 - [What the PM should do next based on this assessment]
 - [Conversations to have, escalations to make, scope decisions to consider]
 
-> **Context note:** [Whether company context was loaded. What the assessment might miss without it.]
+> **Context note:** [State which substantive company files were loaded, which files were absent, and which files existed but were stub templates and therefore skipped. Note what the assessment might miss without that context.]
 ```
 
 ### Draft Mode
@@ -230,7 +232,7 @@ Identify the audience from the invocation. Calibrate:
 
 - [What to expect in the next update cycle]
 
-> **Context note:** [Whether company context was loaded. Audience calibration based on stated audience or inferred.]
+> **Context note:** [State which substantive company files were loaded, which files were absent, and which files existed but were stub templates and therefore skipped. Note that audience calibration was based on the stated or inferred audience.]
 ```
 
 ---

@@ -78,7 +78,20 @@ All skills start at draft-confirm. Graduation happens through demonstrated quali
 
 ## Missing Context Handling
 
-Each skill declares its own degradation rule in its frontmatter. When a file listed in `context-required` is missing or empty, the agent checks the skill's degradation rule:
+Each skill declares its own degradation rule in its frontmatter. The same principle applies to critical invocation inputs a skill explicitly names as required for a mode or output.
+
+### Context Readiness
+
+Not every file that exists is usable context. Distinguish between:
+
+- **`stub`**: The file exists, but contains only template text, headings, comments, or other non-usable placeholder content.
+- **`substantive`**: The file contains concrete company-specific information the skill can actually rely on.
+
+Only substantive context counts as "loaded." If a file exists but is still a stub, treat it as unavailable, skip it, and say so explicitly in the output's context note.
+
+### Degradation Rules
+
+When a file listed in `context-required` is missing or stub-level, or when a skill's required invocation inputs are absent, the agent checks the skill's degradation rule:
 
 - **`proceed-with-caveat`**: Produce output, but clearly flag what context was missing and how it may have affected quality. Surface this in a visible callout, not buried in the text.
 - **`stop-and-say-why`**: Do not produce output. State what's missing and what the PM needs to provide before the skill can run meaningfully.
@@ -143,8 +156,8 @@ Skills are invoked by name in conversation (e.g., "run doc-review on this PRD").
 
 When a skill is invoked, the agent:
 1. Reads the skill's `SKILL.md` from `/skills/<skill-name>/`
-2. Loads any files listed in `context-required` — if missing, applies the skill's degradation rule
-3. Loads any files listed in `context-optional` that exist — skips silently if absent
+2. Loads any files listed in `context-required` that are substantive — if missing or stub-level, applies the skill's degradation rule
+3. Loads any files listed in `context-optional` that are substantive — if absent or stub-level, skips them and notes that in the context note when relevant
 4. Loads referenced knowledge files as specified in the skill's instructions
 5. Executes the skill's instructions against the provided input
 6. Produces output in the format specified by the skill
