@@ -68,7 +68,7 @@ pm-agent-kit/
 └── eval/                             Evaluation cases per skill
     ├── doc-review/
     │   ├── sample-prd-01.md          Deliberately flawed PRD for testing
-    │   └── rubric.md                 Scoring criteria for doc-review output
+    │   └── rubric-prd.md                 Scoring criteria for doc-review output
     ├── prd-draft/
     │   ├── sample-input-01.md        Rough problem statement for drafting test
     │   └── rubric.md                 Quality criteria + bidirectionality test

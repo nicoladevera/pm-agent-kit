@@ -1,4 +1,4 @@
-# Evaluation Rubric — doc-review
+# Evaluation Rubric — doc-review (PRD)
 
 **Target input:** `eval/doc-review/sample-prd-01.md`
 **Skill under test:** `skills/doc-review/SKILL.md`
