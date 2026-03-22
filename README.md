@@ -43,7 +43,7 @@ pm-agent-kit/
 │   │   └── SKILL.md                  Sprint planning + backlog health (Gen + Ana, Tier 2)
 │   └── retro-synthesis/
 │       └── SKILL.md                  Retro pattern synthesis (Analyzer, Tier 2)
-├── knowledge/                        Shared PM judgment patterns
+├── references/                       Shared PM judgment patterns
 │   ├── pm-philosophy.md              Core principles with rationale and behavioral depth
 │   ├── prd-quality-criteria.md       What makes a good PRD (evaluative rubric)
 │   ├── pm-smell-test.md              Red flags across all PM artifact types
@@ -52,6 +52,15 @@ pm-agent-kit/
 │   ├── communication-quality.md      Quality criteria for PM communications
 │   ├── sprint-planning.md            Sprint goals, capacity, backlog health standards
 │   └── decision-frameworks.md        Decision anatomy, options quality, reversibility
+├── knowledge/                        Accumulated PM work product (artifacts produced by skills)
+│   ├── README.md                     Folder purpose, conventions, naming guide
+│   ├── prds/                         PRDs produced by prd-draft
+│   ├── tasks/                        Story sets produced by generate-tasks
+│   ├── decisions/                    Decision records produced by decision-log
+│   ├── meeting-briefs/               Pre-meeting briefs produced by meeting-brief
+│   ├── status-updates/               Status communications produced by status-update (Draft mode)
+│   ├── sprint-plans/                 Sprint plans produced by sprint-plan (Draft mode)
+│   └── retros/                       Retro syntheses produced by retro-synthesis
 ├── company/                          Company-specific context (rebuilt per role)
 │   ├── onboarding.md                 Setup checklist for a new company
 │   ├── facts/                        Product areas, team structure, glossary
@@ -109,7 +118,7 @@ Phases are defined by quality gates, not dates. Each phase proves something spec
 | 7 | Tier 4 Skills | Thinking stack integrates into high-judgment strategic artifacts. | Upcoming |
 | 8 | Operators | Generator/Operator separation works. End-to-end workflow touches external systems. | Upcoming |
 
-**Currently in Phases 3 + 5.** Phase 2 proved the format generalizes — `prd-draft` and `generate-tasks` use the same file structure without breaking changes, and the knowledge layer works bidirectionally. Phase 5 added all five Tier 2 skills: `decision-log`, `meeting-brief`, `status-update`, `sprint-plan`, and `retro-synthesis`. This introduced dual-mode skills (Generator + Analyzer) and three new knowledge files for communication, planning, and decision-making. Company context stubs are in place and ready for population. Phase 3 (proving context measurably improves output) runs in parallel as company context gets populated.
+**Currently in Phases 3 + 5.** Phase 2 proved the format generalizes — `prd-draft` and `generate-tasks` use the same file structure without breaking changes, and the references layer works bidirectionally. Phase 5 added all five Tier 2 skills: `decision-log`, `meeting-brief`, `status-update`, `sprint-plan`, and `retro-synthesis`. This introduced dual-mode skills (Generator + Analyzer) and three new reference files for communication, planning, and decision-making. Company context stubs are in place and ready for population. Phase 3 (proving context measurably improves output) runs in parallel as company context gets populated.
 
 ---
 
@@ -132,9 +141,9 @@ cd pm-agent-kit
 ./install.sh doc-review
 ```
 
-`install.sh` copies command files to `~/.claude/commands/`, but those commands still depend on the `knowledge/` and `company/` files in this repo. It sets up slash commands to use this repo, rather than installing a self-contained portable package.
+`install.sh` copies command files to `~/.claude/commands/`, but those commands still depend on the `references/` and `company/` files in this repo. It sets up slash commands to use this repo, rather than installing a self-contained portable package.
 
-> **Important:** Open Claude Code from this repo root. The registered commands depend on repo-relative paths such as `knowledge/prd-quality-criteria.md` and `company/...`; if you run them outside this checkout, context resolution will break.
+> **Important:** Open Claude Code from this repo root. The registered commands depend on repo-relative paths such as `references/prd-quality-criteria.md` and `company/...`; if you run them outside this checkout, context resolution will break.
 
 ### Running a Skill
 
@@ -175,7 +184,7 @@ When starting at a new company, follow the checklist in `company/onboarding.md`.
 
 The system is designed to travel across companies:
 
-- **Portable:** `CLAUDE.md`, `skills/`, `knowledge/`, `eval/` — these encode PM identity and judgment, not company-specific knowledge.
+- **Portable:** `CLAUDE.md`, `skills/`, `references/`, `eval/` — these encode PM identity and judgment, not company-specific knowledge.
 - **Rebuilt per company:** `company/` — product context, team norms, and tool configs change with every role. The onboarding checklist defines what to populate.
 
 Clone the repo, populate `company/`, and the agent produces useful output in context.
@@ -235,9 +244,9 @@ All skills start at **draft-confirm** — the agent drafts, the PM reviews befor
 
 ---
 
-## Knowledge Files
+## Reference Files
 
-Knowledge files live in `knowledge/` and are referenced by multiple skills. They encode PM judgment patterns — what "good" looks like, what red flags to watch for, what standards to apply.
+Reference files live in `references/` and are consulted by multiple skills. They encode PM judgment patterns — what "good" looks like, what red flags to watch for, what standards to apply.
 
 | File | What it encodes | Referenced by |
 |------|----------------|---------------|
@@ -259,5 +268,5 @@ Knowledge files live in `knowledge/` and are referenced by multiple skills. They
 - **Portable over company-specific.** PM identity travels. Company context is layered on and stripped away.
 - **One skill end-to-end before parallelizing.** Build `doc-review` completely, validate the format, then build the next skill with what you learned.
 - **Per-skill degradation rules.** A document review with missing company context can still be useful. A sprint plan without team capacity cannot. Each skill declares its own behavior when context is missing.
-- **Knowledge files are shared, skill references are local.** If multiple skills need the same quality criteria, it lives in `knowledge/`. If only one skill needs a reference file, it lives in the skill's folder.
+- **Reference files are shared, skill references are local.** If multiple skills need the same quality criteria, it lives in `references/`. If only one skill needs a reference file, it lives in the skill's folder.
 - **Eval before graduation.** No skill advances without at least one eval case: sample input, expected output, scoring rubric.

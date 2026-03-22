@@ -37,11 +37,11 @@ The input does not need to be organized. This skill produces the organization.
 
 Understand the problem, the user context, the constraints, and any solution hints the PM has provided. Don't start structuring until you've absorbed the full input. Note what's present and what's missing.
 
-### 2. Load knowledge files
+### 2. Load reference files
 
 Read these files — they define what the output must satisfy:
-- `knowledge/prd-quality-criteria.md` — Generate toward all 8 criteria
-- `knowledge/acceptance-criteria.md` — AC must meet these standards (Given/When/Then, agent-implementable)
+- `references/prd-quality-criteria.md` — Generate toward all 8 criteria
+- `references/acceptance-criteria.md` — AC must meet these standards (Given/When/Then, agent-implementable)
 
 ### 3. Load company context (if available)
 
@@ -68,7 +68,7 @@ When asking questions, be specific: "Who is the primary user segment — all act
 
 ### 5. Generate the PRD
 
-Produce a complete draft satisfying all 8 criteria from `knowledge/prd-quality-criteria.md`. Every section should contain real content, not placeholders. Where the input doesn't provide enough to write a strong section, write the best version you can and flag what's thin.
+Produce a complete draft satisfying all 8 criteria from `references/prd-quality-criteria.md`. Every section should contain real content, not placeholders. Where the input doesn't provide enough to write a strong section, write the best version you can and flag what's thin.
 
 Structure the output with every section the quality criteria require:
 - Problem Statement
@@ -94,7 +94,7 @@ If the PM's input started with a solution ("we should build X"), translate it ba
 
 ### 7. Write acceptance criteria in Given/When/Then format
 
-Every AC must meet the standards in `knowledge/acceptance-criteria.md`:
+Every AC must meet the standards in `references/acceptance-criteria.md`:
 - Given/When/Then structure
 - Specific enough for an agent to implement without follow-up questions
 - Boundary conditions declared

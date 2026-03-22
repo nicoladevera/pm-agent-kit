@@ -61,13 +61,13 @@ Analyze the backlog first (same process as Analyze mode), then produce a sprint 
 
 Understand the full picture: what stories exist, what state they're in, what the priorities are, what capacity looks like, and what carried over from last sprint. Don't start assessing individual stories until you've absorbed the context.
 
-#### 2. Load knowledge files
+#### 2. Load reference files
 
 Read these files:
-- `knowledge/sprint-planning.md` — Sprint goals, capacity, backlog health, carryover standards
-- `knowledge/story-structure.md` — Story scoping, splitting, sizing standards
-- `knowledge/acceptance-criteria.md` — AC standards for assessing story readiness
-- `knowledge/pm-smell-test.md` — Check for smells 1 (missing the "why") and 2 (no way to measure success)
+- `references/sprint-planning.md` — Sprint goals, capacity, backlog health, carryover standards
+- `references/story-structure.md` — Story scoping, splitting, sizing standards
+- `references/acceptance-criteria.md` — AC standards for assessing story readiness
+- `references/pm-smell-test.md` — Check for smells 1 (missing the "why") and 2 (no way to measure success)
 
 #### 3. Load company context (if available)
 

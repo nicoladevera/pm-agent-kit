@@ -38,7 +38,7 @@ The exact decomposition may vary, but it should roughly cover these areas:
 
 ## Acceptance Criteria Quality
 
-Apply `knowledge/acceptance-criteria.md` standards to every AC in every story.
+Apply `references/acceptance-criteria.md` standards to every AC in every story.
 
 | Check | What to verify |
 |-------|---------------|
@@ -56,7 +56,7 @@ Apply `knowledge/acceptance-criteria.md` standards to every AC in every story.
 
 ## Data Stories
 
-Per `knowledge/story-structure.md`, analytics and instrumentation should be their own stories.
+Per `references/story-structure.md`, analytics and instrumentation should be their own stories.
 
 - **Separated?** Are data stories distinct from feature stories?
 - **Complete?** Do data stories cover all 5 events from the PRD?

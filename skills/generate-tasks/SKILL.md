@@ -36,11 +36,11 @@ The input does not need to be polished. The skill extracts the work to be done a
 
 Understand the full scope before decomposing. Note: the problem being solved, the proposed solution, scope boundaries, edge cases, dependencies, and any data requirements. If these aren't explicit in the source, infer what you can and flag gaps.
 
-### 2. Load knowledge files
+### 2. Load reference files
 
 Read these files — they define the standards for stories and AC:
-- `knowledge/acceptance-criteria.md` — Every AC must meet these standards
-- `knowledge/story-structure.md` — Story scoping, splitting, and structure standards
+- `references/acceptance-criteria.md` — Every AC must meet these standards
+- `references/story-structure.md` — Story scoping, splitting, and structure standards
 
 ### 3. Load company context (if available)
 
@@ -54,7 +54,7 @@ If neither substantive file is available, proceed — note the absence in the ou
 
 ### 4. Decompose into stories
 
-Break the source artifact into discrete, shippable units of work. Apply the scoping standards from `knowledge/story-structure.md`:
+Break the source artifact into discrete, shippable units of work. Apply the scoping standards from `references/story-structure.md`:
 
 - Each story should be **one deployable unit** — buildable, testable, and shippable independently
 - If a piece of work touches multiple services or layers (frontend + backend), split it into separate stories linked by dependencies
@@ -69,7 +69,7 @@ For each story, produce:
 
 **Description:** 2-3 sentences covering what this story does, why it exists, and where it fits in the product. Not a repeat of the AC — it's the context an implementer needs. For agent implementers, include explicit pointers: which service, which screen, which API.
 
-**Acceptance Criteria:** Given/When/Then format meeting all standards in `knowledge/acceptance-criteria.md`:
+**Acceptance Criteria:** Given/When/Then format meeting all standards in `references/acceptance-criteria.md`:
 - Specific enough for an agent to implement without questions
 - Input/output explicit
 - Boundary conditions declared

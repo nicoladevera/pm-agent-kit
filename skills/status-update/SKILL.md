@@ -60,12 +60,12 @@ Analyze first (same process as Analyze mode), then produce a status communicatio
 
 Absorb all delivery data before assessing. Understand what was planned, what happened, what changed, and what's coming. If a previous status update is included, note what was flagged then so you can track whether it's resolved.
 
-#### 2. Load knowledge files
+#### 2. Load reference files
 
 Read these files:
-- `knowledge/communication-quality.md` — Quality criteria for the output (both modes produce communication)
-- `knowledge/sprint-planning.md` — Sprint health indicators and what they signal
-- `knowledge/pm-smell-test.md` — Check for smells 4 (audience mismatch), 6 (activity reported as progress), and 12 (risk buried or absent)
+- `references/communication-quality.md` — Quality criteria for the output (both modes produce communication)
+- `references/sprint-planning.md` — Sprint health indicators and what they signal
+- `references/pm-smell-test.md` — Check for smells 4 (audience mismatch), 6 (activity reported as progress), and 12 (risk buried or absent)
 
 #### 3. Load company context (if available)
 

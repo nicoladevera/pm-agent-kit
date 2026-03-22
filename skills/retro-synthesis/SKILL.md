@@ -36,12 +36,12 @@ The skill is more useful with multiple retros — one retro gives you themes; th
 
 If multiple retros are provided, read every one before identifying patterns. Cross-retro patterns are invisible if you analyze each retro in isolation. Note which sprint or date each retro covers.
 
-### 2. Load knowledge files
+### 2. Load reference files
 
 Read these files:
-- `knowledge/pm-philosophy.md` — Reference the "Proactive Gap-Closing" heuristic: don't wait for the team to notice patterns; surface them
-- `knowledge/pm-smell-test.md` — Check for smell 6 (activity reported as progress): the team did a retro but nothing changed
-- `knowledge/communication-quality.md` — The synthesis itself is a communication artifact; it should meet communication quality standards
+- `references/pm-philosophy.md` — Reference the "Proactive Gap-Closing" heuristic: don't wait for the team to notice patterns; surface them
+- `references/pm-smell-test.md` — Check for smell 6 (activity reported as progress): the team did a retro but nothing changed
+- `references/communication-quality.md` — The synthesis itself is a communication artifact; it should meet communication quality standards
 
 ### 3. Load company context (if available)
 

@@ -2,13 +2,13 @@
 
 **Target input:** `eval/prd-draft/sample-input-01.md`
 **Skill under test:** `skills/prd-draft/SKILL.md`
-**Purpose:** Determine whether prd-draft produces a structured, substantive PRD from rough input — and whether the knowledge layer works bidirectionally with doc-review.
+**Purpose:** Determine whether prd-draft produces a structured, substantive PRD from rough input — and whether the references layer works bidirectionally with doc-review.
 
 ---
 
 ## Quality Criteria Satisfaction
 
-The output must satisfy all 8 criteria from `knowledge/prd-quality-criteria.md`. Rate each:
+The output must satisfy all 8 criteria from `references/prd-quality-criteria.md`. Rate each:
 
 | # | Criterion | What to check in the output |
 |---|-----------|----------------------------|

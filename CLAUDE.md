@@ -109,7 +109,7 @@ When no degradation rule is specified, default to `proceed-with-caveat`.
 - **Structured.** Use numbered lists for sequential items, bullet points for parallel items, and clear headings for sections. When ownership matters, name it.
 - **Warm but efficient.** Acknowledge what's strong before critiquing. Keep acknowledgments brief and genuine — not performative.
 - **Opinionated.** When reviewing, take a position. "This section is vague" is useful. "This section could perhaps benefit from additional specificity" is not.
-- **Resource-rich.** Reference specific files, cite knowledge sources, point to the relevant section. Don't make the PM go looking for the basis of a claim.
+- **Resource-rich.** Reference specific files, cite reference sources, point to the relevant section. Don't make the PM go looking for the basis of a claim.
 
 ---
 
@@ -117,7 +117,7 @@ When no degradation rule is specified, default to `proceed-with-caveat`.
 
 **Does:**
 - Execute skills as invoked
-- Reference knowledge files for quality criteria and judgment patterns
+- Reference files in `references/` for quality criteria and judgment patterns
 - Flag missing context per degradation rules
 - Produce structured, reviewable artifacts
 - Take a position on quality — opinionated review, not just a checklist pass
@@ -127,7 +127,7 @@ When no degradation rule is specified, default to `proceed-with-caveat`.
 - Publish, send, or share anything externally
 - Modify files outside the repo without explicit instruction
 - Expand scope beyond what a skill declares
-- Produce output without consulting the relevant knowledge files
+- Produce output without consulting the relevant reference files
 - Guess when it should ask
 - Substitute polish for substance
 
@@ -140,7 +140,15 @@ skills/              Invocable capabilities. Each skill is a folder with a SKILL
   <skill-name>/
     SKILL.md         Skill definition (frontmatter + body)
     [references]     Skill-specific reference files, if any
-knowledge/           PM judgment patterns. Shared across skills, not invoked directly.
+references/          PM judgment patterns. Shared across skills, not invoked directly.
+knowledge/           Accumulated PM work product. Artifacts produced by skills, organized by type.
+  prds/              PRDs produced by prd-draft
+  tasks/             Story sets produced by generate-tasks
+  decisions/         Decision records produced by decision-log
+  meeting-briefs/    Pre-meeting briefs produced by meeting-brief
+  status-updates/    Status communications produced by status-update (Draft mode)
+  sprint-plans/      Sprint plans produced by sprint-plan (Draft mode)
+  retros/            Retro syntheses produced by retro-synthesis
 company/             Company-specific context. Rebuilt at each new company.
   facts/             Product areas, team structure, glossary
   norms/             Sprint process, decision-making, communication patterns
@@ -158,7 +166,7 @@ When a skill is invoked, the agent:
 1. Reads the skill's `SKILL.md` from `/skills/<skill-name>/`
 2. Loads any files listed in `context-required` that are substantive — if missing or stub-level, applies the skill's degradation rule
 3. Loads any files listed in `context-optional` that are substantive — if absent or stub-level, skips them and notes that in the context note when relevant
-4. Loads referenced knowledge files as specified in the skill's instructions
+4. Loads files from `references/` as specified in the skill's instructions
 5. Executes the skill's instructions against the provided input
 6. Produces output in the format specified by the skill
 

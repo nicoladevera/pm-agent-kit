@@ -38,11 +38,11 @@ The input does not need to be complete. If the agenda is vague ("Sprint review +
 
 Identify from the input: meeting purpose, attendees (if listed), topics or agenda items, any prior context referenced, meeting duration (if known), and any Slack messages or notes providing additional context.
 
-### 2. Load knowledge files
+### 2. Load reference files
 
 Read these files:
-- `knowledge/communication-quality.md` — Quality criteria for the brief itself (audience calibration, structured naturally, lead with the point)
-- `knowledge/decision-frameworks.md` — For identifying and framing decisions on the table
+- `references/communication-quality.md` — Quality criteria for the brief itself (audience calibration, structured naturally, lead with the point)
+- `references/decision-frameworks.md` — For identifying and framing decisions on the table
 
 ### 3. Load company context (if available)
 

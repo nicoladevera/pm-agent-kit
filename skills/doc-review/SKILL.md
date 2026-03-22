@@ -37,18 +37,18 @@ Scan the document for structural signals to identify its type. State the detecte
 
 If the document has signals from more than one type, use the dominant structure. State your assumption and proceed — do not stop and ask. If the document is genuinely unclassifiable, say so explicitly before attempting a review.
 
-### 3. Load knowledge files for the detected type
+### 3. Load reference files for the detected type
 
-Load `knowledge/pm-smell-test.md` for all document types — it applies universally.
+Load `references/pm-smell-test.md` for all document types — it applies universally.
 
 Then load the type-specific criteria file:
 
 | Document Type | Load These Files |
 |--------------|-----------------|
-| PRD | `knowledge/prd-quality-criteria.md`, `knowledge/acceptance-criteria.md` |
-| Ticket | `knowledge/ticket-quality-criteria.md`, `knowledge/acceptance-criteria.md`, `knowledge/story-structure.md` |
-| Project Brief | `knowledge/project-brief-quality-criteria.md` |
-| Tech Spec | `knowledge/tech-spec-quality-criteria.md` |
+| PRD | `references/prd-quality-criteria.md`, `references/acceptance-criteria.md` |
+| Ticket | `references/ticket-quality-criteria.md`, `references/acceptance-criteria.md`, `references/story-structure.md` |
+| Project Brief | `references/project-brief-quality-criteria.md` |
+| Tech Spec | `references/tech-spec-quality-criteria.md` |
 
 ### 4. Load company context (if available)
 
@@ -60,7 +60,7 @@ If either file exists but is still a stub template, treat it as unavailable and 
 
 ### 5. Evaluate against quality criteria
 
-For each criterion in the type-specific knowledge file, determine:
+For each criterion in the type-specific reference file, determine:
 - **Strong** — The criterion is clearly satisfied
 - **Needs work** — Partially addressed but has gaps
 - **Missing** — Not addressed at all
@@ -71,7 +71,7 @@ For project briefs: calibrate to the document's maturity level before evaluating
 
 ### 6. Run the smell test
 
-Scan for red flags in `knowledge/pm-smell-test.md`. If a smell is present:
+Scan for red flags in `references/pm-smell-test.md`. If a smell is present:
 - Name it
 - Point to the exact section where it appears
 - Explain the risk it creates

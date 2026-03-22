@@ -45,11 +45,11 @@ The mode depends on the input, not on a flag:
 
 If the input is ambiguous — it's unclear whether a decision was reached — ask: "Was this decided, or is this still pending?"
 
-### 3. Load knowledge files
+### 3. Load reference files
 
 Read these files:
-- `knowledge/decision-frameworks.md` — Decision anatomy, options quality, reversibility assessment, escalation signals
-- `knowledge/pm-smell-test.md` — Check for Decision and Strategy Smells 14 (options not considered) and 15 (recency bias)
+- `references/decision-frameworks.md` — Decision anatomy, options quality, reversibility assessment, escalation signals
+- `references/pm-smell-test.md` — Check for Decision and Strategy Smells 14 (options not considered) and 15 (recency bias)
 
 ### 4. Load company context (if available)
 

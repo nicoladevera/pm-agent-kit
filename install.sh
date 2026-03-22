@@ -3,7 +3,7 @@
 # With no args: registers all skills for this repo checkout
 # With a name: registers just that skill (e.g. ./install.sh doc-review)
 # These commands are not self-contained installs; they still depend on this repo's
-# knowledge/ and company/ files resolving from the current checkout.
+# references/ and company/ files resolving from the current checkout.
 
 COMMANDS_DIR="$HOME/.claude/commands"
 mkdir -p "$COMMANDS_DIR"
