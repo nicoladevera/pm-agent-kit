@@ -41,8 +41,16 @@ pm-agent-kit/
 │   │   └── SKILL.md                  Delivery assessment + status comms (Gen + Ana, Tier 2)
 │   ├── sprint-plan/
 │   │   └── SKILL.md                  Sprint planning + backlog health (Gen + Ana, Tier 2)
-│   └── retro-synthesis/
-│       └── SKILL.md                  Retro pattern synthesis (Analyzer, Tier 2)
+│   ├── retro-synthesis/
+│   │   └── SKILL.md                  Retro pattern synthesis (Analyzer, Tier 2)
+│   ├── launch-checklist/
+│   │   └── SKILL.md                  Feature launch checklists (Generator, Tier 3)
+│   ├── user-feedback/
+│   │   └── SKILL.md                  Customer feedback synthesis (Analyzer, Tier 3)
+│   ├── data-analysis/
+│   │   └── SKILL.md                  Product data interpretation (Analyzer, Tier 3)
+│   └── competitive-intel/
+│       └── SKILL.md                  Competitive monitoring + deep dives (Analyzer, Tier 3)
 ├── references/                       Shared PM judgment patterns
 │   ├── pm-philosophy.md              Core principles with rationale and behavioral depth
 │   ├── prd-quality-criteria.md       What makes a good PRD (evaluative rubric)
@@ -51,7 +59,11 @@ pm-agent-kit/
 │   ├── story-structure.md            Story scoping, splitting, and structure standards
 │   ├── communication-quality.md      Quality criteria for PM communications
 │   ├── sprint-planning.md            Sprint goals, capacity, backlog health standards
-│   └── decision-frameworks.md        Decision anatomy, options quality, reversibility
+│   ├── decision-frameworks.md        Decision anatomy, options quality, reversibility
+│   ├── launch-readiness.md           Launch readiness dimensions and standards by type
+│   ├── feedback-analysis.md          Feedback clustering, severity, signal vs. noise
+│   ├── data-interpretation.md        Metric interpretation, funnel analysis, anomaly investigation
+│   └── competitive-analysis.md       Signal classification, monitoring, deep dive structure
 ├── knowledge/                        Accumulated PM work product (artifacts produced by skills)
 │   ├── README.md                     Folder purpose, conventions, naming guide
 │   ├── prds/                         PRDs produced by prd-draft
@@ -60,20 +72,27 @@ pm-agent-kit/
 │   ├── meeting-briefs/               Pre-meeting briefs produced by meeting-brief
 │   ├── status-updates/               Status communications produced by status-update (Draft mode)
 │   ├── sprint-plans/                 Sprint plans produced by sprint-plan (Draft mode)
-│   └── retros/                       Retro syntheses produced by retro-synthesis
+│   ├── retros/                       Retro syntheses produced by retro-synthesis
+│   ├── launch-checklists/            Launch checklists produced by launch-checklist
+│   ├── feedback/                     Feedback syntheses produced by user-feedback
+│   ├── data-analyses/                Data analysis reports produced by data-analysis
+│   └── competitive/                  Competitive snapshots and deep dives produced by competitive-intel
 ├── company/                          Company-specific context (rebuilt per role)
 │   ├── onboarding.md                 Setup checklist for a new company
 │   ├── facts/                        Product areas, team structure, glossary
 │   │   ├── product.md                Product context (stub — populate per company)
 │   │   ├── team.md                   Team structure (stub)
-│   │   └── glossary.md               Company glossary (stub)
+│   │   ├── glossary.md               Company glossary (stub)
+│   │   └── competitors.md            Competitive landscape (stub)
 │   ├── norms/                        Sprint process, decision-making, comms patterns
 │   │   ├── process.md                Team process (stub)
 │   │   ├── decisions.md              Decision-making norms (stub)
-│   │   └── communication.md          Communication norms (stub)
+│   │   ├── communication.md          Communication norms (stub)
+│   │   └── launch-process.md         Launch process by type (stub)
 │   └── interfaces/                   Tool configs (Jira, Slack, data sources)
 │       ├── tools.md                  Tool configuration (stub)
-│       └── templates.md              Company templates (stub)
+│       ├── templates.md              Company templates (stub)
+│       └── data-sources.md           Data and feedback sources (stub)
 └── evals/                            Evaluation cases per skill
     ├── doc-review/
     │   ├── sample-prd-01.md          Deliberately flawed PRD for testing
@@ -96,9 +115,21 @@ pm-agent-kit/
     ├── sprint-plan/
     │   ├── sample-input-01.md        Mixed-readiness backlog with capacity info
     │   └── rubric.md                 Backlog health + realistic capacity math
-    └── retro-synthesis/
-        ├── sample-input-01.md        3 retros with recurring + improving patterns
-        └── rubric.md                 Cross-retro synthesis + action item tracking
+    ├── retro-synthesis/
+    │   ├── sample-input-01.md        3 retros with recurring + improving patterns
+    │   └── rubric.md                 Cross-retro synthesis + action item tracking
+    ├── launch-checklist/
+    │   ├── sample-input-01.md        Beta launch with missing rollback + monitoring
+    │   └── rubric.md                 Dimension coverage + gap detection + owner assignment
+    ├── user-feedback/
+    │   ├── sample-input-01.md        Multi-channel feedback with noise + high-severity signal
+    │   └── rubric.md                 Clustering quality + severity accuracy + signal vs. noise
+    ├── data-analysis/
+    │   ├── sample-input-01.md        Activation drop with funnel data + red herring
+    │   └── rubric.md                 Root cause identification + hypothesis ranking
+    └── competitive-intel/
+        ├── sample-input-01.md        5 signals: noise, signals, and strategic shift
+        └── rubric.md                 Signal classification + landscape assessment
 ```
 
 ---
@@ -114,11 +145,11 @@ Phases are defined by quality gates, not dates. Each phase proves something spec
 | 3 | Prove Context Matters | Company context measurably improves output. Dual-mode skills work. | → In progress |
 | 4 | Prove Team-Readiness | Agent output passes the "would someone know this was agent-drafted?" test. | Upcoming |
 | 5 | Tier 2 Skills | System handles weekly-cadence, multi-skill workflows. | → In progress |
-| 6 | Tier 3 Skills | Skills depending on external data and deep company context work. | Upcoming |
+| 6 | Tier 3 Skills | Skills depending on external data and deep company context work. | → In progress |
 | 7 | Tier 4 Skills | Thinking stack integrates into high-judgment strategic artifacts. | Upcoming |
 | 8 | Operators | Generator/Operator separation works. End-to-end workflow touches external systems. | Upcoming |
 
-**Currently in Phases 3 + 5.** Phase 2 proved the format generalizes — `prd-draft` and `generate-tasks` use the same file structure without breaking changes, and the references layer works bidirectionally. Phase 5 added all five Tier 2 skills: `decision-log`, `meeting-brief`, `status-update`, `sprint-plan`, and `retro-synthesis`. This introduced dual-mode skills (Generator + Analyzer) and three new reference files for communication, planning, and decision-making. Company context stubs are in place and ready for population. Phase 3 (proving context measurably improves output) runs in parallel as company context gets populated.
+**Currently in Phases 3 + 6.** Phase 5 added all five Tier 2 skills. Phase 6 added all four Tier 3 skills: `launch-checklist`, `user-feedback`, `data-analysis`, and `competitive-intel`. This introduced skills that depend on external data and deep company context, four new reference files for launch readiness, feedback analysis, data interpretation, and competitive analysis, and three new company context stubs for launch process, competitors, and data sources. Phase 3 (proving context measurably improves output) runs in parallel as company context gets populated.
 
 ---
 
@@ -164,6 +195,10 @@ Invoke a skill using its slash command:
 /status-update [paste sprint data + specify audience]
 /sprint-plan [paste backlog + capacity]
 /retro-synthesis [paste retro notes]
+/launch-checklist [paste feature description or PRD + launch type]
+/user-feedback [paste customer feedback from any channel]
+/data-analysis [paste data question + data]
+/competitive-intel [paste competitive signals or ask about a competitor]
 ```
 
 Or invoke by name in natural language:
@@ -197,8 +232,8 @@ Skills have two dimensions: **type** (what they do technically) and **tier** (wh
 
 | Type | What it does | Current Skills |
 |------|-------------|----------------|
-| **Generator** | Produces an artifact from inputs (drafts a PRD, generates tasks, creates a launch checklist) | `prd-draft`, `generate-tasks`, `decision-log`, `meeting-brief` |
-| **Analyzer** | Evaluates, critiques, or extracts signal (reviews a document, synthesizes feedback, interprets a metric) | `doc-review`, `retro-synthesis` |
+| **Generator** | Produces an artifact from inputs (drafts a PRD, generates tasks, creates a launch checklist) | `prd-draft`, `generate-tasks`, `decision-log`, `meeting-brief`, `launch-checklist` |
+| **Analyzer** | Evaluates, critiques, or extracts signal (reviews a document, synthesizes feedback, interprets a metric) | `doc-review`, `retro-synthesis`, `user-feedback`, `competitive-intel`, `data-analysis` |
 | **Generator + Analyzer** | Assesses a situation and produces an artifact from the assessment (dual-mode) | `status-update`, `sprint-plan` |
 | **Connector** | Connects to an external system to pull data or push output (queries Snowflake, posts to Jira, writes to Confluence) | Not included, always company-specific |
 
@@ -218,10 +253,10 @@ Some Tier 2 skills are **dual-mode** (Generator + Analyzer) — they assess a si
 | `retro-synthesis` | Analyzer | Synthesize retro notes into patterns; track action items across retros and flag which ones were never addressed |
 | `meeting-brief` | Generator | Pre-meeting prep: relevant context, open questions, decision points, and attendee stakes |
 | `decision-log` | Generator | Capture a decision or structure a problem for resolution — what was decided, by whom, why, options considered |
-| `user-feedback`* | Analyzer | Cluster and summarize customer feedback into themes with frequency, severity, and representative quotes |
-| `competitive-intel`* | Analyzer | Monitor the competitive landscape or deep-dive on a specific decision |
-| `data-analysis`* | Analyzer | Answer a data question in product context — metric interpretation, funnel analysis, anomaly investigation |
-| `launch-checklist`* | Generator | Generate a go-to-market checklist tailored to how this company does launches |
+| `launch-checklist` | Generator | Generate a launch checklist calibrated to launch type (internal/alpha/beta/GA), covering all readiness dimensions |
+| `user-feedback` | Analyzer | Cluster and summarize customer feedback into themes with frequency, severity, and representative quotes |
+| `competitive-intel` | Analyzer | Monitor the competitive landscape or deep-dive on a specific competitor's approach to a specific problem |
+| `data-analysis` | Analyzer | Answer a data question in product context — metric interpretation, funnel analysis, anomaly investigation |
 | `business-case`* | Generator | Build the argument for or against an initiative: problem, impact sizing, cost, risks, alternatives considered |
 | `presentation-deck`* | Generator | Draft a structured narrative for a specific audience — exec review, QBR, board update, new stakeholder onboarding |
 
@@ -234,7 +269,7 @@ Some Tier 2 skills are **dual-mode** (Generator + Analyzer) — they assess a si
 | **3 — Orient** | External data, deep company context | `user-feedback`, `competitive-intel`, `data-analysis`, `launch-checklist` |
 | **4 — Strategize** | High-judgment, composable reasoning | `business-case`, `presentation-deck` |
 
-All Tier 1 and Tier 2 skills are built. Tier 3+ skills are added as company context proves out.
+All Tier 1, Tier 2, and Tier 3 skills are built. Tier 4 skills are added as the thinking stack integrates.
 
 ---
 
@@ -261,6 +296,11 @@ Reference files live in `references/` and are consulted by multiple skills. They
 | `sprint-planning.md` | Sprint goals, capacity, backlog health, carryover standards | `sprint-plan`, `status-update` |
 | `decision-frameworks.md` | Decision anatomy, options quality, reversibility, escalation signals | `decision-log`, `meeting-brief` |
 | `communication-quality.md` | Quality criteria for PM communications (status updates, briefs, stakeholder comms) | `status-update`, `meeting-brief`, `decision-log`, `retro-synthesis` |
+| `launch-readiness.md` | Launch readiness dimensions and standards by launch type (internal/alpha/beta/GA) | `launch-checklist` |
+| `feedback-analysis.md` | Feedback clustering, severity assessment, signal vs. noise, source channel weighting | `user-feedback` |
+| `data-interpretation.md` | Metric interpretation, funnel analysis, anomaly investigation, confidence calibration | `data-analysis` |
+| `competitive-analysis.md` | Signal classification, monitoring framework, deep dive structure, reactivity checks | `competitive-intel` |
+
 ---
 
 ## Design Principles

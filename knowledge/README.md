@@ -19,6 +19,10 @@ Artifacts produced by skills when they run in Generator or Draft mode. Only subs
 | `status-updates/` | `status-update` (Draft mode) | Status communications |
 | `sprint-plans/` | `sprint-plan` (Draft mode) | Sprint plans |
 | `retros/` | `retro-synthesis` | Retro synthesis reports |
+| `launch-checklists/` | `launch-checklist` | Feature launch checklists |
+| `feedback/` | `user-feedback` | Feedback synthesis reports |
+| `data-analyses/` | `data-analysis` | Data analysis reports |
+| `competitive/` | `competitive-intel` | Competitive monitoring snapshots and deep dives |
 
 ---
 

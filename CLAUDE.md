@@ -149,6 +149,10 @@ knowledge/           Accumulated PM work product. Artifacts produced by skills, 
   status-updates/    Status communications produced by status-update (Draft mode)
   sprint-plans/      Sprint plans produced by sprint-plan (Draft mode)
   retros/            Retro syntheses produced by retro-synthesis
+  launch-checklists/ Launch checklists produced by launch-checklist
+  feedback/          Feedback syntheses produced by user-feedback
+  data-analyses/     Data analysis reports produced by data-analysis
+  competitive/       Competitive snapshots and deep dives produced by competitive-intel
 company/             Company-specific context. Rebuilt at each new company.
   facts/             Product areas, team structure, glossary
   norms/             Sprint process, decision-making, communication patterns
