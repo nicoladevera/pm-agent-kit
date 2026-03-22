@@ -84,24 +84,24 @@ Every presentation uses a mix of these slide types. Each has a specific layout p
 
 ## Applying Branding to Generated Slides
 
-### python-pptx Implementation Standards
+### Slides Mode Implementation Guidance
 
-When generating `.pptx` files, apply branding consistently:
+When generating `.pptx` files with `python-pptx`, apply branding consistently:
 
 #### Fonts
-- Set the slide master's font theme to the brand fonts from `company/interfaces/branding.md`.
+- Use the heading and body fonts from `company/interfaces/branding.md`.
 - If the brand font isn't available on the system, fall back to the closest universally available font and note the substitution.
 - Apply font sizes consistently: title slides largest, content slides standard, captions smallest.
 
 #### Colors
-- Map brand colors to the PowerPoint theme colors so charts and SmartArt inherit them automatically.
-- Apply primary color to headlines, secondary to accents, neutral to body text.
-- Use the accent color sparingly — for emphasis, callouts, or key data points.
+- Apply primary color to backgrounds or headlines, secondary to accents or section dividers, neutral to body text, and accent color sparingly for emphasis.
+- If `company/interfaces/branding.md` is absent or stub-level, use the documented defaults from this file and note that fallback in the context note.
 
 #### Layouts
 - Create or use slide layouts that match the slide types above.
 - Maintain consistent margins across all slides.
 - Align content to a grid — left-align text, consistent vertical spacing.
+- If a requested visual cannot be rendered cleanly with `python-pptx`, use a simpler text or table treatment and note the limitation rather than inventing custom template fidelity.
 
 #### Logo Placement
 - If a logo file path is provided in `company/interfaces/branding.md`, place it consistently (typically top-right or bottom-right of every slide except the title slide).

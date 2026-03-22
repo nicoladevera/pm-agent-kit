@@ -74,7 +74,7 @@ The document describes what happens when everything goes right but not what happ
 
 AC that can't be verified without reading the PM's mind. Subjective language, undefined terms, compound requirements.
 
-**What to look for:** AC containing "appropriate," "relevant," "user-friendly," "fast," or "seamless" without definitions. See `knowledge/acceptance-criteria.md` for the full standard.
+**What to look for:** AC containing "appropriate," "relevant," "user-friendly," "fast," or "seamless" without definitions. See `references/acceptance-criteria.md` for the full standard.
 
 ### 11. No Data Plan
 

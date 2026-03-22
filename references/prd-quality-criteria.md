@@ -34,7 +34,7 @@ The document anticipates what happens when things go wrong or when users are in 
 
 Each AC describes one verifiable behavior. An engineer can implement and test against it without follow-up questions.
 
-**Evaluate:** Apply the standards in `knowledge/acceptance-criteria.md`. Check for subjective language, compound criteria, and business outcomes disguised as AC.
+**Evaluate:** Apply the standards in `references/acceptance-criteria.md`. Check for subjective language, compound criteria, and business outcomes disguised as AC.
 
 ### 6. Data Requirements Are Scoped
 
@@ -60,7 +60,7 @@ Things the PM hasn't resolved yet are stated explicitly, not buried or omitted. 
 
 **For review (`doc-review`):** Evaluate the document against each criterion. For each, determine: strong, needs work, or missing. Prioritize feedback by impact — a weak problem statement is more fundamental than a missing edge case.
 
-**For generation (future `prd-draft`):** Generate toward these criteria. A first draft should satisfy all eight, even if some sections are thinner than others. It's better to have a placeholder open questions section than to silently omit it.
+**For generation (`prd-draft`):** Generate toward these criteria. A first draft should satisfy all eight, even if some sections are thinner than others. It's better to have a placeholder open questions section than to silently omit it.
 
 **Rating scale:**
 - **Strong** — The criterion is clearly satisfied. The section is specific, complete, and doesn't require follow-up.

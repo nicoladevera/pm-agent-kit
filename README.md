@@ -102,7 +102,7 @@ pm-agent-kit/
 │       ├── tools.md                  Tool configuration (stub)
 │       ├── templates.md              Company templates (stub)
 │       ├── data-sources.md           Data and feedback sources (stub)
-│       └── branding.md              Company brand colors, fonts, logo, slide defaults (stub)
+│       └── branding.md               Company brand colors, fonts, logo, slide defaults (stub)
 └── evals/                            Evaluation cases per skill
     ├── doc-review/
     │   ├── sample-prd-01.md          Deliberately flawed PRD for testing
@@ -165,7 +165,7 @@ Phases are defined by quality gates, not dates. Each phase proves something spec
 | 7 | Tier 4 Skills | Structured stress-testing integrates into high-judgment strategic artifacts. | → In progress |
 | 8 | Operators | Generator/Operator separation works. End-to-end workflow touches external systems. | Upcoming |
 
-**Currently in Phases 3 + 7.** Phase 5 added all five Tier 2 skills. Phase 6 added all four Tier 3 skills: `launch-checklist`, `user-feedback`, `data-analysis`, and `competitive-intel`. Phase 7 adds both Tier 4 skills: `business-case` and `presentation-deck`. These are the first skills to integrate structured stress-testing steps (premortem analysis, blindspot checks, conviction assessment) directly into their instruction flow, and `presentation-deck` introduces dual-mode output — markdown narrative and `.pptx` slide generation via python-pptx. Three new reference files were added for business case standards, narrative structure, and branding guidelines, plus a company context stub for brand values. Phase 3 (proving context measurably improves output) runs in parallel as company context gets populated.
+**Currently in Phases 3 + 7.** Phase 5 added all five Tier 2 skills. Phase 6 added all four Tier 3 skills: `launch-checklist`, `user-feedback`, `data-analysis`, and `competitive-intel`. Phase 7 adds both Tier 4 skills: `business-case` and `presentation-deck`. These are the first skills to integrate structured stress-testing steps (premortem analysis, blindspot checks, conviction assessment) directly into their instruction flow, and `presentation-deck` introduces dual-mode output — markdown narrative and `.pptx` slide generation via `python-pptx`. Three new reference files were added for business case standards, narrative structure, and branding guidelines, plus a company context stub for brand values. Phase 3 (proving context measurably improves output) runs in parallel as company context gets populated.
 
 ---
 
@@ -228,9 +228,30 @@ Run doc-review on this document: [paste or point to file]
 
 Both invocation methods work within this repo checkout. Slash commands are more reliable when CLAUDE.md auto-loading is inconsistent.
 
+### Slides Mode
+
+Slides mode is a runtime workflow, not a shipped renderer. When invoked to generate slides, the skill uses `python-pptx` plus `references/branding-guidelines.md` and `company/interfaces/branding.md` (when substantive) to produce a `.pptx` saved to `knowledge/presentations/`.
+
+Install the dependency if needed:
+
+```bash
+python3 -m pip install python-pptx
+```
+
+If company branding is missing or still stub-level, the skill should fall back to the clean defaults documented in `references/branding-guidelines.md` and note that in the context note.
+
 ### Setting Up Company Context
 
-When starting at a new company, follow the checklist in `company/onboarding.md`. Populate the files in `company/facts/`, `company/norms/`, and `company/interfaces/` during your first two weeks. Skills improve as context is added.
+When starting at a new company, follow the checklist in `company/onboarding.md`. Not every file in `company/` is consumed by shipped skills today.
+
+| File | Status | Current consumers | Missing impact today |
+|------|--------|-------------------|----------------------|
+| `company/facts/product.md` | Active runtime input | Most shipped skills | Broad quality loss across most skills |
+| `company/facts/team.md` | Active runtime input | Planning, status, meeting, decision, launch, business-case, and deck skills | Weaker ownership, stakeholder, and capacity reasoning |
+| `company/norms/process.md` | Active runtime input | Planning, status, drafting, decomposition, and retro skills | Weaker planning and process calibration |
+| `company/norms/communication.md` | Active runtime input | Status, meeting, competitive, launch, and deck skills | Weaker audience calibration |
+| `company/norms/decisions.md`, `company/facts/competitors.md`, `company/norms/launch-process.md`, `company/interfaces/data-sources.md`, `company/interfaces/branding.md` | Conditional runtime input | Only specific skills or Slides mode | Localized quality loss in those paths |
+| `company/facts/glossary.md`, `company/interfaces/tools.md`, `company/interfaces/templates.md` | Future-facing / not currently consumed | None | No runtime effect today |
 
 ---
 
@@ -277,7 +298,7 @@ Some Tier 2 skills are **dual-mode** (Generator + Analyzer) — they assess a si
 | `competitive-intel` | Analyzer | Monitor the competitive landscape or deep-dive on a specific competitor's approach to a specific problem |
 | `data-analysis` | Analyzer | Answer a data question in product context — metric interpretation, funnel analysis, anomaly investigation |
 | `business-case` | Generator | Build the argument for or against an initiative: problem, impact sizing, cost, risks, alternatives considered. Includes structured stress test: premortem, blindspot check, conviction assessment. |
-| `presentation-deck` | Generator | Draft a structured narrative or generate a branded .pptx for a specific audience — exec review, QBR, board update, new stakeholder onboarding |
+| `presentation-deck` | Generator | Draft a structured narrative or generate a branded `.pptx` for a specific audience — exec review, QBR, board update, new stakeholder onboarding |
 
 | Tier | Focus | Skills |
 |-------|-------|--------|
@@ -319,7 +340,7 @@ Reference files live in `references/` and are consulted by multiple skills. They
 | `competitive-analysis.md` | Signal classification, monitoring framework, deep dive structure, reactivity checks | `competitive-intel` |
 | `business-case-standards.md` | Impact sizing frameworks, cost model standards, risk assessment, alternatives quality | `business-case` |
 | `narrative-structure.md` | Narrative arc (SCR), deck types, slide-level thinking, audience calibration, visual guidance | `presentation-deck` |
-| `branding-guidelines.md` | Presentation branding standards, slide layouts, visual consistency, python-pptx implementation | `presentation-deck` (Slides mode) |
+| `branding-guidelines.md` | Presentation branding standards, slide layouts, visual consistency, and Slides-mode implementation guidance | `presentation-deck` (Slides mode) |
 
 ---
 
@@ -329,4 +350,4 @@ Reference files live in `references/` and are consulted by multiple skills. They
 - **One skill end-to-end before parallelizing.** Build `doc-review` completely, validate the format, then build the next skill with what you learned.
 - **Per-skill degradation rules.** A document review with missing company context can still be useful. A sprint plan without team capacity cannot. Each skill declares its own behavior when context is missing.
 - **Reference files are shared, skill references are local.** If multiple skills need the same quality criteria, it lives in `references/`. If only one skill needs a reference file, it lives in the skill's folder.
-- **Eval before graduation.** No skill advances without at least one eval case: sample input, expected output, scoring rubric.
+- **Eval before graduation.** No skill advances without at least one eval case: sample input plus a scoring rubric.

@@ -1,53 +1,51 @@
 # Company Onboarding Checklist
 
-Populate these files during your first two weeks at a new company. Skills improve as context is added — the checklist notes which skill tiers benefit from each file.
+Populate these files in the order they affect current runtime behavior. Not every file in `company/` is consumed by shipped skills today.
 
 ---
 
-## facts/
+## Status Legend
 
-Company-specific knowledge that changes quarterly.
+- **Active runtime input** — Read by shipped skills regularly. Missing content degrades output quality today.
+- **Conditional runtime input** — Read only by specific skills or modes. Missing content affects those paths, not the whole system.
+- **Future-facing / not currently consumed** — Useful context to keep, but not read by shipped skills today.
 
-- [ ] **product.md** — Product areas, what each does, user segments, key metrics, how products relate to each other
-  - *Unlocks:* More specific doc-review feedback; future skills can reference product context
-- [ ] **team.md** — Team structure, who owns what, reporting lines relevant to PM work, key engineering leads
-  - *Unlocks:* Tier 2 skills (status-update, sprint-plan) that reference team ownership
-- [ ] **glossary.md** — Company-specific terms, acronyms, internal jargon that appear in documents and conversations
-  - *Unlocks:* Accurate use of company language in generated artifacts
+## Company Context Matrix
 
-## norms/
-
-How work gets done. Changes with reorgs or process shifts.
-
-- [ ] **process.md** — Sprint cadence, planning process, how tickets move through the board, definition of done, release process
-  - *Unlocks:* Tier 2 skills (sprint-plan, retro-synthesis) that need to understand the team's rhythm
-- [ ] **decisions.md** — How decisions get made, who approves what, escalation paths, RFC/ADR process if one exists
-  - *Unlocks:* decision-log skill; doc-review can check whether the PRD follows company decision norms
-- [ ] **communication.md** — Where conversations happen (Slack channels, meetings, async docs), status update expectations, stakeholder communication patterns
-  - *Unlocks:* status-update and meeting-brief skills that need to match company communication style
-
-## interfaces/
-
-Tool configurations. Changes with tooling migrations.
-
-- [ ] **tools.md** — Jira project keys, Confluence spaces, Slack channel names, data sources (Amplitude, Looker, Snowflake), dashboarding tools
-  - *Unlocks:* Tier 3 skills and future Operator skills that interact with external systems
-- [ ] **templates.md** — Links to company PRD template, ticket template, status update template, or other document templates if they exist
-  - *Unlocks:* Generated artifacts can follow company document conventions
-- [ ] **branding.md** — Company color palette (hex values), typography (heading/body fonts), logo files, slide layout defaults
-  - *Unlocks:* presentation-deck Slides mode generates on-brand .pptx files
+| File | Status | Current consumers | Missing impact today |
+|------|--------|-------------------|----------------------|
+| `facts/product.md` | Active runtime input | `doc-review`, `prd-draft`, `generate-tasks`, `status-update`, `sprint-plan`, `meeting-brief`, `decision-log`, `data-analysis`, `user-feedback`, `competitive-intel`, `launch-checklist`, `business-case`, `presentation-deck` | Broad quality loss across most skills |
+| `facts/team.md` | Active runtime input | `status-update`, `sprint-plan`, `retro-synthesis`, `meeting-brief`, `decision-log`, `launch-checklist`, `business-case`, `presentation-deck` | Weaker ownership, stakeholder, and capacity reasoning |
+| `norms/process.md` | Active runtime input | `doc-review`, `prd-draft`, `generate-tasks`, `status-update`, `sprint-plan`, `retro-synthesis` | Weaker planning, delivery, and document calibration |
+| `norms/communication.md` | Active runtime input | `status-update`, `meeting-brief`, `competitive-intel`, `launch-checklist`, `presentation-deck` | Weaker audience calibration and comms fit |
+| `norms/decisions.md` | Conditional runtime input | `decision-log`, `business-case` | Mainly affects decision framing and approval context |
+| `facts/competitors.md` | Conditional runtime input | `competitive-intel`, `user-feedback` | Mainly affects competitive baseline and competitor mentions |
+| `norms/launch-process.md` | Conditional runtime input | `launch-checklist` | Mainly affects launch-type calibration and approvals |
+| `interfaces/data-sources.md` | Conditional runtime input | `data-analysis`, `user-feedback` | Mainly affects data-source interpretation and channel bias handling |
+| `interfaces/branding.md` | Conditional runtime input | `presentation-deck` Slides mode only | Slides fall back to defaults; narrative mode unaffected |
+| `facts/glossary.md` | Future-facing / not currently consumed | None | No runtime effect today |
+| `interfaces/tools.md` | Future-facing / not currently consumed | None | No runtime effect today |
+| `interfaces/templates.md` | Future-facing / not currently consumed | None | No runtime effect today |
 
 ---
 
 ## Onboarding Priority
 
-**Week 1 (minimum viable context):**
-- `facts/product.md` — Know what the company builds
-- `norms/process.md` — Know how the team works
-- `facts/glossary.md` — Speak the company's language
+**Week 1 core context:**
+- `facts/product.md` — Know what the company builds and how success is measured.
+- `facts/team.md` — Know who owns what and who needs to be informed.
+- `norms/process.md` — Know how work moves and what "ready" or "done" means.
+- `norms/communication.md` — Know how updates and stakeholder communication actually work.
 
-**Week 2 (full context):**
-- Everything else
+**Week 2 conditional context:**
+- `norms/decisions.md` — Add approval paths, escalation rules, and decision conventions.
+- `facts/competitors.md` — Add the actual competitive baseline for analysis-heavy skills.
+- `interfaces/data-sources.md` — Add analytics and feedback-channel context for data work.
+- `norms/launch-process.md` — Add launch-type rules and approval expectations.
+
+**Optional or future-facing:**
+- `interfaces/branding.md` — Fill this in if you plan to use `presentation-deck` Slides mode.
+- `facts/glossary.md`, `interfaces/tools.md`, `interfaces/templates.md` — Good to keep current, but shipped skills do not read them today.
 
 **Ongoing:**
-- Review and update these files quarterly, or when a reorg, process change, or tooling migration happens. Stale context is worse than missing context — it produces confidently wrong output.
+- Review and update active and conditional runtime inputs quarterly, or whenever a reorg, process change, tooling migration, or launch-policy change happens. Stale context is worse than missing context — it produces confidently wrong output.

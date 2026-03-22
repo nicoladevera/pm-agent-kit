@@ -2,7 +2,7 @@
 
 What makes a good user story or ticket. Use this to evaluate tickets — every criterion here is something a ticket should satisfy, and something a review should check.
 
-Companion files: `knowledge/acceptance-criteria.md` (AC standards in detail), `knowledge/story-structure.md` (story scoping and structure).
+Companion files: `references/acceptance-criteria.md` (AC standards in detail), `references/story-structure.md` (story scoping and structure).
 
 ---
 
@@ -10,7 +10,7 @@ Companion files: `knowledge/acceptance-criteria.md` (AC standards in detail), `k
 
 ### 1. Scope Is Atomic
 
-The ticket represents one deployable unit of work — something that can be built, tested, and shipped independently by one engineer within a sprint. See `knowledge/story-structure.md` for right-sizing guidance and when-to-split rules.
+The ticket represents one deployable unit of work — something that can be built, tested, and shipped independently by one engineer within a sprint. See `references/story-structure.md` for right-sizing guidance and when-to-split rules.
 
 **Evaluate:** Can one engineer own this end-to-end? If not, what's the split point?
 
@@ -22,9 +22,9 @@ The ticket describes what the user can do and why it matters — not what the en
 
 ### 3. Acceptance Criteria Are Specific and Testable
 
-Each AC describes exactly one verifiable behavior. See `knowledge/acceptance-criteria.md` for the full standard — what good AC look like, Given/When/Then patterns, data contracts, boundary conditions, and error states.
+Each AC describes exactly one verifiable behavior. See `references/acceptance-criteria.md` for the full standard — what good AC look like, Given/When/Then patterns, data contracts, boundary conditions, and error states.
 
-**Evaluate:** Apply `knowledge/acceptance-criteria.md` directly. The short checklist: no subjective language, no compound criteria, no business outcomes disguised as AC.
+**Evaluate:** Apply `references/acceptance-criteria.md` directly. The short checklist: no subjective language, no compound criteria, no business outcomes disguised as AC.
 
 ### 4. Definition of Done Is Explicit
 
@@ -40,7 +40,7 @@ The ticket leaves nothing for the engineer to guess. Any decision that the PM ha
 
 ### 6. Dependencies Are Named
 
-Anything this ticket relies on — another team's API, a design file, a configuration service, a preceding ticket — is explicitly called out. See `knowledge/story-structure.md` for dependency field conventions (what, owner, hard vs. soft block, API contract location).
+Anything this ticket relies on — another team's API, a design file, a configuration service, a preceding ticket — is explicitly called out. See `references/story-structure.md` for dependency field conventions (what, owner, hard vs. soft block, API contract location).
 
 **Evaluate:** Are dependencies surfaced as a dedicated field, not buried in the description or AC?
 

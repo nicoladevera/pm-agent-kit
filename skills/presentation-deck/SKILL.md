@@ -14,7 +14,7 @@ degradation: proceed-with-caveat
 
 # presentation-deck
 
-Draft a structured narrative for a specific audience and purpose, then optionally generate an actual `.pptx` presentation file. Two modes: **Narrative** (markdown slide-by-slide structure with headlines, content, visual guidance, and speaker notes) and **Slides** (generates a branded `.pptx` file using python-pptx). The narrative is the thinking; the slides are the delivery.
+Draft a structured narrative for a specific audience and purpose, then optionally generate an actual `.pptx` presentation file. Two modes: **Narrative** (markdown slide-by-slide structure with headlines, content, visual guidance, and speaker notes) and **Slides** (generates a branded `.pptx` file using `python-pptx` at runtime). The narrative is the thinking; the slides are the delivery.
 
 ---
 
@@ -51,7 +51,7 @@ Produce a markdown slide-by-slide structured narrative. Each slide has a takeawa
 
 ### Slides
 
-Generate an actual `.pptx` file using python-pptx, with branding applied from `company/interfaces/branding.md`. Produces a presentation-ready file the PM can open in PowerPoint or Google Slides.
+Generate an actual `.pptx` file using `python-pptx`, with branding applied from `company/interfaces/branding.md` when substantive. Produces a presentation-ready file the PM can open in PowerPoint or Google Slides. If a requested visual or template behavior can't be rendered cleanly, use a simpler treatment and note that fallback.
 
 **Triggered by:** "generate slides," "create the .pptx," "build the PowerPoint," "make the presentation file," "generate a slide deck," or any invocation that explicitly requests a file output.
 
@@ -173,17 +173,18 @@ If branding context is missing or stub-level, use the clean professional default
 
 **Dependency:** Slides mode requires the `python-pptx` Python package (`pip install python-pptx`).
 
-Using python-pptx, generate a presentation file that applies branding to the narrative drafted in step 7:
+Using `python-pptx`, generate a presentation file that applies branding to the narrative drafted in step 7:
 
 - Create a slide for each section in the narrative (including title slide and section dividers)
 - Apply the appropriate slide layout per slide type (title, content, data, comparison, quote, closing) from `references/branding-guidelines.md`
-- Set fonts to the brand typography (or defaults if unavailable)
+- Set fonts to the brand typography (or documented defaults if unavailable)
 - Apply brand colors to headlines, accents, and chart elements
 - Place the logo per brand guidelines (if a logo file path is provided)
 - Add speaker notes from the narrative draft to each slide's notes section
+- If a requested visual cannot be rendered cleanly with `python-pptx`, use a simpler text or table treatment and note the fallback in the context note
 - Save the file to `knowledge/presentations/` using the naming convention: `YYYY-MM-DD-descriptive-slug.pptx`
 
-Report the file path and a summary of the slide sequence in the conversation.
+Report the file path, branding source, any fallback behavior, and a summary of the slide sequence in the conversation.
 
 ---
 
@@ -309,4 +310,4 @@ Output in conversation:
 - **Are speaker notes useful?** They add context the slide doesn't show, anticipate questions, and guide delivery. Not just "discuss this slide."
 - **Does the visual guidance help?** The PM knows what type of chart, diagram, or visual to create for each slide. Not just "add a visual."
 - **[Slides mode] Is branding applied consistently?** Fonts, colors, logo placement, and layouts are consistent across all slides. The output looks professional, not like a default template with content pasted in.
-- **[Slides mode] Are slides presentation-ready?** The PM can open the .pptx and present with minimal formatting adjustments. Content fits the slides. Text isn't overflowing. Visual hierarchy is clear.
+- **[Slides mode] Are Slides limitations handled honestly?** If a requested visual or template behavior couldn't be rendered cleanly in `python-pptx`, the output uses a simpler treatment and notes the fallback instead of implying custom-template fidelity it doesn't have.
