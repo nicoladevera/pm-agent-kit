@@ -49,8 +49,12 @@ pm-agent-kit/
 │   │   └── SKILL.md                  Customer feedback synthesis (Analyzer, Tier 3)
 │   ├── data-analysis/
 │   │   └── SKILL.md                  Product data interpretation (Analyzer, Tier 3)
-│   └── competitive-intel/
-│       └── SKILL.md                  Competitive monitoring + deep dives (Analyzer, Tier 3)
+│   ├── competitive-intel/
+│   │   └── SKILL.md                  Competitive monitoring + deep dives (Analyzer, Tier 3)
+│   ├── business-case/
+│   │   └── SKILL.md                  Initiative business cases (Generator, Tier 4)
+│   └── presentation-deck/
+│       └── SKILL.md                  Structured presentation narratives + .pptx (Generator, Tier 4)
 ├── references/                       Shared PM judgment patterns
 │   ├── pm-philosophy.md              Core principles with rationale and behavioral depth
 │   ├── prd-quality-criteria.md       What makes a good PRD (evaluative rubric)
@@ -63,7 +67,10 @@ pm-agent-kit/
 │   ├── launch-readiness.md           Launch readiness dimensions and standards by type
 │   ├── feedback-analysis.md          Feedback clustering, severity, signal vs. noise
 │   ├── data-interpretation.md        Metric interpretation, funnel analysis, anomaly investigation
-│   └── competitive-analysis.md       Signal classification, monitoring, deep dive structure
+│   ├── competitive-analysis.md       Signal classification, monitoring, deep dive structure
+│   ├── business-case-standards.md    Impact sizing, cost models, risk assessment, alternatives
+│   ├── narrative-structure.md        Narrative arc, deck types, slide-level thinking, audience calibration
+│   └── branding-guidelines.md        Presentation branding standards, slide layouts, visual consistency
 ├── knowledge/                        Accumulated PM work product (artifacts produced by skills)
 │   ├── README.md                     Folder purpose, conventions, naming guide
 │   ├── prds/                         PRDs produced by prd-draft
@@ -76,7 +83,9 @@ pm-agent-kit/
 │   ├── launch-checklists/            Launch checklists produced by launch-checklist
 │   ├── feedback/                     Feedback syntheses produced by user-feedback
 │   ├── data-analyses/                Data analysis reports produced by data-analysis
-│   └── competitive/                  Competitive snapshots and deep dives produced by competitive-intel
+│   ├── competitive/                  Competitive snapshots and deep dives produced by competitive-intel
+│   ├── business-cases/               Business cases produced by business-case
+│   └── presentations/                Presentation narratives and .pptx files produced by presentation-deck
 ├── company/                          Company-specific context (rebuilt per role)
 │   ├── onboarding.md                 Setup checklist for a new company
 │   ├── facts/                        Product areas, team structure, glossary
@@ -92,7 +101,8 @@ pm-agent-kit/
 │   └── interfaces/                   Tool configs (Jira, Slack, data sources)
 │       ├── tools.md                  Tool configuration (stub)
 │       ├── templates.md              Company templates (stub)
-│       └── data-sources.md           Data and feedback sources (stub)
+│       ├── data-sources.md           Data and feedback sources (stub)
+│       └── branding.md              Company brand colors, fonts, logo, slide defaults (stub)
 └── evals/                            Evaluation cases per skill
     ├── doc-review/
     │   ├── sample-prd-01.md          Deliberately flawed PRD for testing
@@ -127,9 +137,15 @@ pm-agent-kit/
     ├── data-analysis/
     │   ├── sample-input-01.md        Activation drop with funnel data + red herring
     │   └── rubric.md                 Root cause identification + hypothesis ranking
-    └── competitive-intel/
-        ├── sample-input-01.md        5 signals: noise, signals, and strategic shift
-        └── rubric.md                 Signal classification + landscape assessment
+    ├── competitive-intel/
+    │   ├── sample-input-01.md        5 signals: noise, signals, and strategic shift
+    │   └── rubric.md                 Signal classification + landscape assessment
+    ├── business-case/
+    │   ├── sample-input-01.md        Rough initiative proposal with partial data + missing alternatives
+    │   └── rubric.md                 Impact sizing + alternatives + stress test novelty
+    └── presentation-deck/
+        ├── sample-input-01.md        Business case needing exec review deck for VP
+        └── rubric.md                 Audience calibration + headline quality + narrative arc
 ```
 
 ---
@@ -146,10 +162,10 @@ Phases are defined by quality gates, not dates. Each phase proves something spec
 | 4 | Prove Team-Readiness | Agent output passes the "would someone know this was agent-drafted?" test. | Upcoming |
 | 5 | Tier 2 Skills | System handles weekly-cadence, multi-skill workflows. | → In progress |
 | 6 | Tier 3 Skills | Skills depending on external data and deep company context work. | → In progress |
-| 7 | Tier 4 Skills | Thinking stack integrates into high-judgment strategic artifacts. | Upcoming |
+| 7 | Tier 4 Skills | Structured stress-testing integrates into high-judgment strategic artifacts. | → In progress |
 | 8 | Operators | Generator/Operator separation works. End-to-end workflow touches external systems. | Upcoming |
 
-**Currently in Phases 3 + 6.** Phase 5 added all five Tier 2 skills. Phase 6 added all four Tier 3 skills: `launch-checklist`, `user-feedback`, `data-analysis`, and `competitive-intel`. This introduced skills that depend on external data and deep company context, four new reference files for launch readiness, feedback analysis, data interpretation, and competitive analysis, and three new company context stubs for launch process, competitors, and data sources. Phase 3 (proving context measurably improves output) runs in parallel as company context gets populated.
+**Currently in Phases 3 + 7.** Phase 5 added all five Tier 2 skills. Phase 6 added all four Tier 3 skills: `launch-checklist`, `user-feedback`, `data-analysis`, and `competitive-intel`. Phase 7 adds both Tier 4 skills: `business-case` and `presentation-deck`. These are the first skills to integrate structured stress-testing steps (premortem analysis, blindspot checks, conviction assessment) directly into their instruction flow, and `presentation-deck` introduces dual-mode output — markdown narrative and `.pptx` slide generation via python-pptx. Three new reference files were added for business case standards, narrative structure, and branding guidelines, plus a company context stub for brand values. Phase 3 (proving context measurably improves output) runs in parallel as company context gets populated.
 
 ---
 
@@ -158,6 +174,7 @@ Phases are defined by quality gates, not dates. Each phase proves something spec
 ### Prerequisites
 
 - [Claude Code](https://docs.anthropic.com/en/docs/claude-code) installed
+- `python-pptx` Python package (only needed for `presentation-deck` Slides mode: `pip install python-pptx`)
 
 ### Setup
 
@@ -199,6 +216,8 @@ Invoke a skill using its slash command:
 /user-feedback [paste customer feedback from any channel]
 /data-analysis [paste data question + data]
 /competitive-intel [paste competitive signals or ask about a competitor]
+/business-case [paste problem/opportunity description + any data you have]
+/presentation-deck [paste content + specify audience and deck type]
 ```
 
 Or invoke by name in natural language:
@@ -232,7 +251,7 @@ Skills have two dimensions: **type** (what they do technically) and **tier** (wh
 
 | Type | What it does | Current Skills |
 |------|-------------|----------------|
-| **Generator** | Produces an artifact from inputs (drafts a PRD, generates tasks, creates a launch checklist) | `prd-draft`, `generate-tasks`, `decision-log`, `meeting-brief`, `launch-checklist` |
+| **Generator** | Produces an artifact from inputs (drafts a PRD, generates tasks, creates a launch checklist, builds a business case, drafts a presentation) | `prd-draft`, `generate-tasks`, `decision-log`, `meeting-brief`, `launch-checklist`, `business-case`, `presentation-deck` |
 | **Analyzer** | Evaluates, critiques, or extracts signal (reviews a document, synthesizes feedback, interprets a metric) | `doc-review`, `retro-synthesis`, `user-feedback`, `competitive-intel`, `data-analysis` |
 | **Generator + Analyzer** | Assesses a situation and produces an artifact from the assessment (dual-mode) | `status-update`, `sprint-plan` |
 | **Connector** | Connects to an external system to pull data or push output (queries Snowflake, posts to Jira, writes to Confluence) | Not included, always company-specific |
@@ -257,10 +276,8 @@ Some Tier 2 skills are **dual-mode** (Generator + Analyzer) — they assess a si
 | `user-feedback` | Analyzer | Cluster and summarize customer feedback into themes with frequency, severity, and representative quotes |
 | `competitive-intel` | Analyzer | Monitor the competitive landscape or deep-dive on a specific competitor's approach to a specific problem |
 | `data-analysis` | Analyzer | Answer a data question in product context — metric interpretation, funnel analysis, anomaly investigation |
-| `business-case`* | Generator | Build the argument for or against an initiative: problem, impact sizing, cost, risks, alternatives considered |
-| `presentation-deck`* | Generator | Draft a structured narrative for a specific audience — exec review, QBR, board update, new stakeholder onboarding |
-
-*Not yet built.
+| `business-case` | Generator | Build the argument for or against an initiative: problem, impact sizing, cost, risks, alternatives considered. Includes structured stress test: premortem, blindspot check, conviction assessment. |
+| `presentation-deck` | Generator | Draft a structured narrative or generate a branded .pptx for a specific audience — exec review, QBR, board update, new stakeholder onboarding |
 
 | Tier | Focus | Skills |
 |-------|-------|--------|
@@ -269,7 +286,7 @@ Some Tier 2 skills are **dual-mode** (Generator + Analyzer) — they assess a si
 | **3 — Orient** | External data, deep company context | `user-feedback`, `competitive-intel`, `data-analysis`, `launch-checklist` |
 | **4 — Strategize** | High-judgment, composable reasoning | `business-case`, `presentation-deck` |
 
-All Tier 1, Tier 2, and Tier 3 skills are built. Tier 4 skills are added as the thinking stack integrates.
+All 14 skills across Tiers 1-4 are built. Tier 4 skills integrate structured stress-testing (premortem, blindspot check, conviction assessment) directly into their instruction flow.
 
 ---
 
@@ -300,6 +317,9 @@ Reference files live in `references/` and are consulted by multiple skills. They
 | `feedback-analysis.md` | Feedback clustering, severity assessment, signal vs. noise, source channel weighting | `user-feedback` |
 | `data-interpretation.md` | Metric interpretation, funnel analysis, anomaly investigation, confidence calibration | `data-analysis` |
 | `competitive-analysis.md` | Signal classification, monitoring framework, deep dive structure, reactivity checks | `competitive-intel` |
+| `business-case-standards.md` | Impact sizing frameworks, cost model standards, risk assessment, alternatives quality | `business-case` |
+| `narrative-structure.md` | Narrative arc (SCR), deck types, slide-level thinking, audience calibration, visual guidance | `presentation-deck` |
+| `branding-guidelines.md` | Presentation branding standards, slide layouts, visual consistency, python-pptx implementation | `presentation-deck` (Slides mode) |
 
 ---
 

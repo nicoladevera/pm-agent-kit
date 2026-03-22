@@ -23,6 +23,8 @@ Artifacts produced by skills when they run in Generator or Draft mode. Only subs
 | `feedback/` | `user-feedback` | Feedback synthesis reports |
 | `data-analyses/` | `data-analysis` | Data analysis reports |
 | `competitive/` | `competitive-intel` | Competitive monitoring snapshots and deep dives |
+| `business-cases/` | `business-case` | Business cases for initiatives |
+| `presentations/` | `presentation-deck` | Structured presentation narratives and .pptx files |
 
 ---
 

@@ -34,6 +34,8 @@ Tool configurations. Changes with tooling migrations.
   - *Unlocks:* Tier 3 skills and future Operator skills that interact with external systems
 - [ ] **templates.md** — Links to company PRD template, ticket template, status update template, or other document templates if they exist
   - *Unlocks:* Generated artifacts can follow company document conventions
+- [ ] **branding.md** — Company color palette (hex values), typography (heading/body fonts), logo files, slide layout defaults
+  - *Unlocks:* presentation-deck Slides mode generates on-brand .pptx files
 
 ---
 
