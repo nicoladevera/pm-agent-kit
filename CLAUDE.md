@@ -153,7 +153,7 @@ company/             Company-specific context. Rebuilt at each new company.
   facts/             Product areas, team structure, glossary
   norms/             Sprint process, decision-making, communication patterns
   interfaces/        Tool configs — Jira, Slack, Google Workspace, Confluence, data sources
-eval/                Evaluation cases per skill. Sample inputs, expected outputs, scoring rubrics.
+evals/               Evaluation cases per skill. Sample inputs, expected outputs, scoring rubrics.
 ```
 
 ---

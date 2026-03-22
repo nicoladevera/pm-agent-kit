@@ -1,6 +1,6 @@
 # Evaluation Rubric — retro-synthesis
 
-**Target input:** `eval/retro-synthesis/sample-input-01.md`
+**Target input:** `evals/retro-synthesis/sample-input-01.md`
 **Skill under test:** `skills/retro-synthesis/SKILL.md`
 **Purpose:** Determine whether `retro-synthesis` identifies cross-retro patterns, tracks action item follow-through, credits improvements, and produces synthesis rather than summary.
 

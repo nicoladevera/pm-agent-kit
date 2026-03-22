@@ -1,6 +1,6 @@
 # Evaluation Rubric — doc-review (Tech Spec)
 
-**Target input:** `eval/doc-review/sample-tech-spec-01.md`
+**Target input:** `evals/doc-review/sample-tech-spec-01.md`
 **Skill under test:** `skills/doc-review/SKILL.md`
 **Purpose:** Determine whether `doc-review` correctly identifies the document as a tech spec, applies tech spec quality criteria from a PM perspective, catches planted weaknesses, and avoids false positives.
 

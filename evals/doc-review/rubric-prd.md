@@ -1,6 +1,6 @@
 # Evaluation Rubric — doc-review (PRD)
 
-**Target input:** `eval/doc-review/sample-prd-01.md`
+**Target input:** `evals/doc-review/sample-prd-01.md`
 **Skill under test:** `skills/doc-review/SKILL.md`
 **Purpose:** Determine whether `doc-review` catches what a strong PM would catch, avoids false positives, and produces actionable feedback.
 

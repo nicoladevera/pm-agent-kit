@@ -1,6 +1,6 @@
 # Evaluation Rubric — decision-log
 
-**Target input:** `eval/decision-log/sample-input-01.md`
+**Target input:** `evals/decision-log/sample-input-01.md`
 **Skill under test:** `skills/decision-log/SKILL.md`
 **Purpose:** Determine whether `decision-log` extracts structure from messy conversational input, considers all options genuinely, and produces a decision document ready for resolution.
 

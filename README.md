@@ -74,7 +74,7 @@ pm-agent-kit/
 │   └── interfaces/                   Tool configs (Jira, Slack, data sources)
 │       ├── tools.md                  Tool configuration (stub)
 │       └── templates.md              Company templates (stub)
-└── eval/                             Evaluation cases per skill
+└── evals/                            Evaluation cases per skill
     ├── doc-review/
     │   ├── sample-prd-01.md          Deliberately flawed PRD for testing
     │   └── rubric-prd.md                 Scoring criteria for doc-review output
@@ -184,7 +184,7 @@ When starting at a new company, follow the checklist in `company/onboarding.md`.
 
 The system is designed to travel across companies:
 
-- **Portable:** `CLAUDE.md`, `skills/`, `references/`, `eval/` — these encode PM identity and judgment, not company-specific knowledge.
+- **Portable:** `CLAUDE.md`, `skills/`, `references/`, `evals/` — these encode PM identity and judgment, not company-specific knowledge.
 - **Rebuilt per company:** `company/` — product context, team norms, and tool configs change with every role. The onboarding checklist defines what to populate.
 
 Clone the repo, populate `company/`, and the agent produces useful output in context.
