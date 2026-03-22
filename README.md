@@ -147,7 +147,7 @@ claude
 Invoke a skill using its slash command:
 
 ```
-/doc-review [paste PRD or point to file]
+/doc-review [paste document or point to file — PRD, ticket, project brief, or tech spec]
 /prd-draft [paste problem statement or brief]
 /generate-tasks [paste PRD]
 /decision-log [paste decision context or Slack thread]
@@ -160,7 +160,7 @@ Invoke a skill using its slash command:
 Or invoke by name in natural language:
 
 ```
-Run doc-review on this PRD: [paste or point to file]
+Run doc-review on this document: [paste or point to file]
 ```
 
 Both invocation methods work within this repo checkout. Slash commands are more reliable when CLAUDE.md auto-loading is inconsistent.
@@ -201,7 +201,7 @@ Some Tier 2 skills are **dual-mode** (Generator + Analyzer) — they assess a si
 
 | Skill | Type | What It Does |
 |-------|------|--------------|
-| `doc-review` | Analyzer | Evaluate any structured proposal — PRD, ticket, A/B test design — against quality criteria appropriate to its type |
+| `doc-review` | Analyzer | Evaluate any PM document — PRD, ticket, project brief, or tech spec — against quality criteria appropriate to its type |
 | `prd-draft` | Generator | Draft a PRD from a problem statement, user context, and constraints |
 | `generate-tasks` | Generator | Generate stories/tasks with acceptance criteria from any source artifact: PRD, EDD, meeting notes, rough notes |
 | `status-update` | Generator + Analyzer | Assess delivery state across workstreams and/or produce status comms calibrated to a specific audience |
@@ -242,14 +242,16 @@ Knowledge files live in `knowledge/` and are referenced by multiple skills. They
 | File | What it encodes | Referenced by |
 |------|----------------|---------------|
 | `pm-philosophy.md` | Ten core PM heuristics with rationale and behavioral examples | All skills |
-| `prd-quality-criteria.md` | Eight evaluative criteria for PRDs | `doc-review`, `prd-draft` |
 | `pm-smell-test.md` | Red flags across all PM artifact types (specs, comms, decisions) | All reviewing/analyzing skills |
+| `project-brief-quality-criteria.md` | Evaluative criteria for project briefs, calibrated to document maturity level | `doc-review` |
+| `prd-quality-criteria.md` | Eight evaluative criteria for PRDs | `doc-review`, `prd-draft` |
+| `tech-spec-quality-criteria.md` | Evaluative criteria for technical specs / EDDs, from a PM perspective | `doc-review` |
+| `ticket-quality-criteria.md` | Evaluative criteria for user stories and tickets | `doc-review` |
+| `story-structure.md` | Story scoping, splitting, structure, and data story separation | `doc-review`, `generate-tasks`, `sprint-plan` |
 | `acceptance-criteria.md` | AC standards optimized for agent implementation | `doc-review`, `prd-draft`, `generate-tasks`, `sprint-plan` |
-| `story-structure.md` | Story scoping, splitting, structure, and data story separation | `generate-tasks`, `sprint-plan` |
-| `communication-quality.md` | Quality criteria for PM communications (status updates, briefs, stakeholder comms) | `status-update`, `meeting-brief`, `decision-log`, `retro-synthesis` |
 | `sprint-planning.md` | Sprint goals, capacity, backlog health, carryover standards | `sprint-plan`, `status-update` |
 | `decision-frameworks.md` | Decision anatomy, options quality, reversibility, escalation signals | `decision-log`, `meeting-brief` |
-
+| `communication-quality.md` | Quality criteria for PM communications (status updates, briefs, stakeholder comms) | `status-update`, `meeting-brief`, `decision-log`, `retro-synthesis` |
 ---
 
 ## Design Principles

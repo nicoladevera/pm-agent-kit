@@ -12,9 +12,9 @@ degradation: proceed-with-caveat
 
 # doc-review
 
-Evaluate a PRD against PM quality criteria and produce structured, actionable feedback on what's strong, what's missing, and what needs sharpening.
+Evaluate a PM document against quality criteria appropriate to its type and produce structured, actionable feedback on what's strong, what's missing, and what needs sharpening.
 
-**v1 scope: PRD review only.** This skill will eventually evaluate tickets, A/B test designs, and technical specs. v1 targets PRD review specifically — one document type, one rubric, one quality bar. Broaden scope after the format is proven.
+Supports four document types: **PRD**, **ticket**, **project brief**, and **technical spec**. The skill auto-detects the document type from its content and loads the appropriate evaluation criteria.
 
 ---
 
@@ -22,59 +22,78 @@ Evaluate a PRD against PM quality criteria and produce structured, actionable fe
 
 ### 1. Read the input document
 
-Read the full PRD before producing any output. Do not begin evaluating section-by-section as you read — understand the whole document first, then assess.
+Read the full document before producing any output. Do not begin evaluating section-by-section as you read — understand the whole document first, then assess.
 
-### 2. Load knowledge files
+### 2. Detect the document type
 
-Read these files in full. They are your evaluation rubric:
-- `knowledge/prd-quality-criteria.md` — The eight criteria you evaluate against
-- `knowledge/pm-smell-test.md` — Red flags to scan for
-- `knowledge/acceptance-criteria.md` — The standard for evaluating AC quality
+Scan the document for structural signals to identify its type. State the detected type at the top of your output.
 
-### 3. Load company context (if available)
+| Signal | Document Type |
+|--------|--------------|
+| Has Problem Statement + Success Metrics as primary structure | PRD |
+| Has Acceptance Criteria or Given/When/Then as primary content | Ticket |
+| Is a brief, framing, or scoping document — may be loosely structured, lacks metrics or AC | Project Brief |
+| Describes system architecture, APIs, data models, or implementation approach | Tech Spec |
 
-If `company/norms/process.md` exists and is substantive, read it for context on how PRDs are expected to work at this company (sprint process, document standards, review expectations).
+If the document has signals from more than one type, use the dominant structure. State your assumption and proceed — do not stop and ask. If the document is genuinely unclassifiable, say so explicitly before attempting a review.
+
+### 3. Load knowledge files for the detected type
+
+Load `knowledge/pm-smell-test.md` for all document types — it applies universally.
+
+Then load the type-specific criteria file:
+
+| Document Type | Load These Files |
+|--------------|-----------------|
+| PRD | `knowledge/prd-quality-criteria.md`, `knowledge/acceptance-criteria.md` |
+| Ticket | `knowledge/ticket-quality-criteria.md`, `knowledge/acceptance-criteria.md`, `knowledge/story-structure.md` |
+| Project Brief | `knowledge/project-brief-quality-criteria.md` |
+| Tech Spec | `knowledge/tech-spec-quality-criteria.md` |
+
+### 4. Load company context (if available)
+
+If `company/norms/process.md` exists and is substantive, read it for context on how documents of this type are expected to work at this company.
 
 If `company/facts/product.md` exists and is substantive, read it for context on the product landscape, user segments, and existing functionality.
 
 If either file exists but is still a stub template, treat it as unavailable and say so in the Context Note section of your output.
 
-If neither substantive file is available, proceed — note the absence in the Context Note section of your output.
+### 5. Evaluate against quality criteria
 
-### 4. Evaluate against quality criteria
-
-For each criterion in `knowledge/prd-quality-criteria.md`, determine:
+For each criterion in the type-specific knowledge file, determine:
 - **Strong** — The criterion is clearly satisfied
 - **Needs work** — Partially addressed but has gaps
 - **Missing** — Not addressed at all
 
-Don't just check boxes. For each criterion, engage with the *specific content* of this PRD. Reference exact sections, quote specific language, and name what's working or what's not. Generic feedback that could apply to any PRD is not useful.
+Don't just check boxes. For each criterion, engage with the *specific content* of this document. Reference exact sections, quote specific language, and name what's working or what's not. Generic feedback that could apply to any document is not useful.
 
-### 5. Run the smell test
+For project briefs: calibrate to the document's maturity level before evaluating. A loose set of notes is not held to the same standard as a structured brief — but both should have the core signal present.
 
-Scan for each red flag in `knowledge/pm-smell-test.md`. If a smell is present:
+### 6. Run the smell test
+
+Scan for red flags in `knowledge/pm-smell-test.md`. If a smell is present:
 - Name it
 - Point to the exact section where it appears
 - Explain the risk it creates
 
 If no smells are detected, say so. Don't invent problems.
 
-### 6. Identify strengths
+### 7. Identify strengths
 
-Name 2-3 things the PRD does well. Be specific — reference the section and explain what makes it strong. Acknowledging what works is not optional; it calibrates the review and builds trust. But keep it honest — don't praise mediocre sections to be polite.
+Name 2-3 things the document does well. Be specific — reference the section and explain what makes it strong. Acknowledging what works is not optional; it calibrates the review and builds trust. Keep it honest — don't praise mediocre sections to be polite.
 
-### 7. Identify and prioritize gaps
+### 8. Identify and prioritize gaps
 
 Identify the most important gaps or weaknesses. List them in priority order — the first issue should be the most impactful to fix. For each gap:
 - State what's wrong clearly
 - Explain why it matters (what risk it creates, what confusion it causes)
 - Describe what a stronger version would look like
 
-Limit to the most important issues. A review that lists 15 minor issues buries the ones that matter. If there are genuinely 15 problems, the review should say: "This PRD has fundamental issues" and focus on the structural ones.
+Limit to the most important issues. A review that lists 15 minor issues buries the ones that matter. If there are genuinely 15 problems, the review should say: "This document has fundamental issues" and focus on the structural ones.
 
-### 8. Surface open questions
+### 9. Surface open questions
 
-List questions you'd ask the PM before this PRD moves forward. These should be questions the document raises but doesn't answer — not questions the review already answered.
+List questions you'd ask the PM before this document moves forward. These should be questions the document raises but doesn't answer — not questions the review already answered.
 
 ---
 
@@ -82,6 +101,8 @@ List questions you'd ask the PM before this PRD moves forward. These should be q
 
 ```markdown
 ## Doc Review: [Document Title]
+
+**Document type:** [PRD / Ticket / Project Brief / Tech Spec]
 
 ### Summary
 [2-3 sentence assessment. Overall quality level. The single biggest strength and the single biggest gap.]
@@ -99,9 +120,9 @@ List questions you'd ask the PM before this PRD moves forward. These should be q
 - [Red flags detected, with specific references — or "None detected"]
 
 ### Open Questions
-- [Questions this PRD raises but doesn't answer]
+- [Questions this document raises but doesn't answer]
 
-> **Context note:** [State which substantive company files were loaded, which files were absent, and which files existed but were stub templates and therefore skipped. Note what the review might miss as a result.]
+> **Context note:** [State the detected document type and how it was identified. State which substantive company files were loaded, which were absent, and which were stub templates. Note what the review might miss as a result.]
 ```
 
 ---
@@ -114,5 +135,6 @@ A good doc-review output meets these tests:
 - **Would a PM find this useful?** Not just "technically correct" — genuinely useful for improving the document.
 - **Is every piece of feedback actionable?** Each issue names the problem, the risk, and what better looks like.
 - **Does it prioritize?** The most important issues are first. Minor issues don't crowd out fundamental ones.
-- **Does it engage with this specific PRD?** The feedback references exact sections and content, not generic PRD advice.
+- **Does it engage with this specific document?** The feedback references exact sections and content, not generic advice.
 - **Is it honest about strengths?** It names what works without being performative about it.
+- **Is it calibrated to the document type?** The criteria and tone match what's appropriate for a PRD vs. a loose project brief vs. a tech spec.
