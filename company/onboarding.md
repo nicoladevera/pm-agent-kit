@@ -49,3 +49,35 @@ Populate these files in the order they affect current runtime behavior. Not ever
 
 **Ongoing:**
 - Review and update active and conditional runtime inputs quarterly, or whenever a reorg, process change, tooling migration, or launch-policy change happens. Stale context is worse than missing context — it produces confidently wrong output.
+
+---
+
+## Keeping Company Context Fresh
+
+`knowledge/` accumulates artifacts over time — PRDs, sprint plans, retros, competitive snapshots, status updates. These aren't just outputs; they're signals about what's changed in the company, product, or market. Use them to keep `company/` context current.
+
+**When to update `company/` files:**
+- After a reorg: update `facts/team.md` with new ownership and reporting lines
+- After a product pivot or major initiative kick-off: update `facts/product.md` with new focus areas, revised personas, or dropped bets
+- After new tooling is adopted: update `interfaces/tools.md` and `interfaces/data-sources.md`
+- After a launch or post-mortem: update `norms/launch-process.md` if the process revealed gaps
+- Quarterly: re-read `facts/competitors.md` against recent `knowledge/competitive/` snapshots and reconcile
+
+**How `knowledge/` artifacts signal when `company/` needs updating:**
+- If competitive snapshots consistently surface a competitor not in `facts/competitors.md`, add it
+- If status updates keep flagging the same process friction, that's a signal `norms/process.md` is out of date
+- If sprint retros reveal recurring ownership ambiguity, `facts/team.md` probably needs a refresh
+- If data analyses reference sources not in `interfaces/data-sources.md`, add them
+
+This doesn't require a formal process. A short review at the start or end of a quarterly planning cycle is enough.
+
+---
+
+## Example Context Files
+
+`company/examples/` contains two filled-in examples showing what substantive context looks like:
+
+- `company/examples/product.md` — A generic B2C fintech product context, showing how to describe product areas, personas, current focus, and recent decisions
+- `company/examples/team.md` — A matching team composition example, showing how to describe team structure, velocity, ownership, and known constraints
+
+These are templates, not real companies. Replace the content with your actual company context when filling in the real files.

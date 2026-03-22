@@ -106,7 +106,13 @@ pm-agent-kit/
 └── evals/                            Evaluation cases per skill
     ├── doc-review/
     │   ├── sample-prd-01.md          Deliberately flawed PRD for testing
-    │   └── rubric-prd.md                 Scoring criteria for doc-review output
+    │   ├── sample-ticket-01.md       Deliberately flawed ticket for testing
+    │   ├── sample-project-brief-01.md  Deliberately flawed project brief for testing
+    │   ├── sample-tech-spec-01.md    Deliberately flawed tech spec for testing
+    │   ├── rubric-prd.md             Scoring criteria for PRD review output
+    │   ├── rubric-ticket.md          Scoring criteria for ticket review output
+    │   ├── rubric-project-brief.md   Scoring criteria for project brief review output
+    │   └── rubric-tech-spec.md       Scoring criteria for tech spec review output
     ├── prd-draft/
     │   ├── sample-input-01.md        Rough problem statement for drafting test
     │   └── rubric.md                 Quality criteria + bidirectionality test
@@ -323,7 +329,7 @@ Reference files live in `references/` and are consulted by multiple skills. They
 
 | File | What it encodes | Referenced by |
 |------|----------------|---------------|
-| `pm-philosophy.md` | Ten core PM heuristics with rationale and behavioral examples | All skills |
+| `pm-philosophy.md` | Ten core PM heuristics with rationale and behavioral examples | Foundational for CLAUDE.md; explicitly referenced by `retro-synthesis` |
 | `pm-smell-test.md` | Red flags across all PM artifact types (specs, comms, decisions) | All reviewing/analyzing skills |
 | `project-brief-quality-criteria.md` | Evaluative criteria for project briefs, calibrated to document maturity level | `doc-review` |
 | `prd-quality-criteria.md` | Eight evaluative criteria for PRDs | `doc-review`, `prd-draft` |
@@ -332,7 +338,7 @@ Reference files live in `references/` and are consulted by multiple skills. They
 | `story-structure.md` | Story scoping, splitting, structure, and data story separation | `doc-review`, `generate-tasks`, `sprint-plan` |
 | `acceptance-criteria.md` | AC standards optimized for agent implementation | `doc-review`, `prd-draft`, `generate-tasks`, `sprint-plan` |
 | `sprint-planning.md` | Sprint goals, capacity, backlog health, carryover standards | `sprint-plan`, `status-update` |
-| `decision-frameworks.md` | Decision anatomy, options quality, reversibility, escalation signals | `decision-log`, `meeting-brief` |
+| `decision-frameworks.md` | Decision anatomy, options quality, reversibility, escalation signals | `decision-log`, `meeting-brief`, `business-case` |
 | `communication-quality.md` | Quality criteria for PM communications (status updates, briefs, stakeholder comms) | `status-update`, `meeting-brief`, `decision-log`, `retro-synthesis` |
 | `launch-readiness.md` | Launch readiness dimensions and standards by launch type (internal/alpha/beta/GA) | `launch-checklist` |
 | `feedback-analysis.md` | Feedback clustering, severity assessment, signal vs. noise, source channel weighting | `user-feedback` |
@@ -348,6 +354,6 @@ Reference files live in `references/` and are consulted by multiple skills. They
 
 - **Portable over company-specific.** PM identity travels. Company context is layered on and stripped away.
 - **One skill end-to-end before parallelizing.** Build `doc-review` completely, validate the format, then build the next skill with what you learned.
-- **Per-skill degradation rules.** A document review with missing company context can still be useful. A sprint plan without team capacity cannot. Each skill declares its own behavior when context is missing.
+- **Per-skill degradation rules.** A document review with missing company context can still be useful. A sprint plan's Analyze mode can proceed similarly — but its Draft mode cannot produce a plan without capacity data, and the skill explicitly stops there. The frontmatter rule governs missing context files; skills with multiple modes may enforce mode-specific stops within their instruction bodies.
 - **Reference files are shared, skill references are local.** If multiple skills need the same quality criteria, it lives in `references/`. If only one skill needs a reference file, it lives in the skill's folder.
 - **Eval before graduation.** No skill advances without at least one eval case: sample input plus a scoring rubric.

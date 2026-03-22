@@ -96,7 +96,7 @@ When a file listed in `context-required` is missing or stub-level, or when a ski
 - **`proceed-with-caveat`**: Produce output, but clearly flag what context was missing and how it may have affected quality. Surface this in a visible callout, not buried in the text.
 - **`stop-and-say-why`**: Do not produce output. State what's missing and what the PM needs to provide before the skill can run meaningfully.
 
-The right rule depends on the cost of a plausible-but-wrong output. A document review with missing company context can still be useful (proceed). A sprint plan with no knowledge of the team's capacity cannot (stop).
+The right rule depends on the cost of a plausible-but-wrong output. A document review with missing company context can still be useful (proceed). For skills with multiple modes, the frontmatter rule governs missing context files, but the skill body may enforce mode-specific stops within its instructions. For example, `sprint-plan` uses `proceed-with-caveat` — appropriate for optional context files and Analyze mode — but its Draft mode instructions explicitly stop if capacity or priorities are missing, because a sprint plan drafted from partial inputs is worse than no plan.
 
 When no degradation rule is specified, default to `proceed-with-caveat`.
 

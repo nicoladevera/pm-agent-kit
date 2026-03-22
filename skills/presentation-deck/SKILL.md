@@ -171,7 +171,7 @@ If branding context is missing or stub-level, use the clean professional default
 
 #### 11. Generate .pptx file
 
-**Dependency:** Slides mode requires the `python-pptx` Python package (`pip install python-pptx`).
+**Dependency:** Slides mode requires the `python-pptx` Python package (`pip install python-pptx`). If `python-pptx` is not available at runtime, do not attempt to generate the file. State that the dependency is missing and offer to produce the Narrative output instead, noting that it can be pasted slide-by-slide into PowerPoint or Google Slides. Do not attempt partial generation.
 
 Using `python-pptx`, generate a presentation file that applies branding to the narrative drafted in step 7:
 
