@@ -14,7 +14,7 @@ degradation: proceed-with-caveat
 
 Evaluate a PM document against quality criteria appropriate to its type and produce structured, actionable feedback on what's strong, what's missing, and what needs sharpening.
 
-Supports four document types: **PRD**, **ticket**, **project brief**, and **technical spec**. The skill auto-detects the document type from its content and loads the appropriate evaluation criteria.
+Supports five document types: **PRD**, **ticket**, **project brief**, **technical spec**, and **general document** (catch-all for documents that don't match the four specialized types). The skill auto-detects the document type from its content and loads the appropriate evaluation criteria.
 
 ---
 
@@ -34,8 +34,9 @@ Scan the document for structural signals to identify its type. State the detecte
 | Has Acceptance Criteria or Given/When/Then as primary content | Ticket |
 | Is a brief, framing, or scoping document — may be loosely structured, lacks metrics or AC | Project Brief |
 | Describes system architecture, APIs, data models, or implementation approach | Tech Spec |
+| Does not match any of the above signal patterns | General Document |
 
-If the document has signals from more than one type, use the dominant structure. State your assumption and proceed — do not stop and ask. If the document is genuinely unclassifiable, say so explicitly before attempting a review.
+If the document has signals from more than one type, use the dominant structure. State your assumption and proceed — do not stop and ask. If the document doesn't match any of the four specialized types, classify it as **General Document** and note the specific subtype in parentheses (e.g., "General Document (GTM Strategy)", "General Document (SOP)").
 
 ### 3. Load reference files for the detected type
 
@@ -49,6 +50,7 @@ Then load the type-specific criteria file:
 | Ticket | `references/ticket-quality-criteria.md`, `references/acceptance-criteria.md`, `references/story-structure.md` |
 | Project Brief | `references/project-brief-quality-criteria.md` |
 | Tech Spec | `references/tech-spec-quality-criteria.md` |
+| General Document | `references/general-document-quality-criteria.md` |
 
 ### 4. Load company context (if available)
 
@@ -68,6 +70,8 @@ For each criterion in the type-specific reference file, determine:
 Don't just check boxes. For each criterion, engage with the *specific content* of this document. Reference exact sections, quote specific language, and name what's working or what's not. Generic feedback that could apply to any document is not useful.
 
 For project briefs: calibrate to the document's maturity level before evaluating. A loose set of notes is not held to the same standard as a structured brief — but both should have the core signal present.
+
+For general documents: evaluate against the six universal dimensions in the criteria file. Since these dimensions are deliberately broad, ground every assessment in the document's self-declared purpose and audience. If the document doesn't state its purpose, that is the first and most important finding.
 
 ### 6. Run the smell test
 
@@ -102,7 +106,7 @@ List questions you'd ask the PM before this document moves forward. These should
 ```markdown
 ## Doc Review: [Document Title]
 
-**Document type:** [PRD / Ticket / Project Brief / Tech Spec]
+**Document type:** [PRD / Ticket / Project Brief / Tech Spec / General Document (subtype)]
 
 ### Summary
 [2-3 sentence assessment. Overall quality level. The single biggest strength and the single biggest gap.]
@@ -122,7 +126,7 @@ List questions you'd ask the PM before this document moves forward. These should
 ### Open Questions
 - [Questions this document raises but doesn't answer]
 
-> **Context note:** [State the detected document type and how it was identified. State which substantive company files were loaded, which were absent, and which were stub templates. Note what the review might miss as a result.]
+> **Context note:** [State the detected document type and how it was identified. State which substantive company files were loaded, which were absent, and which were stub templates. Note what the review might miss as a result. For General Document reviews: note that general quality dimensions were used rather than type-specific criteria, and suggest re-running as a specialized type if the document might actually be one.]
 ```
 
 ---
@@ -137,4 +141,5 @@ A good doc-review output meets these tests:
 - **Does it prioritize?** The most important issues are first. Minor issues don't crowd out fundamental ones.
 - **Does it engage with this specific document?** The feedback references exact sections and content, not generic advice.
 - **Is it honest about strengths?** It names what works without being performative about it.
-- **Is it calibrated to the document type?** The criteria and tone match what's appropriate for a PRD vs. a loose project brief vs. a tech spec.
+- **Is it calibrated to the document type?** The criteria and tone match what's appropriate for a PRD vs. a loose project brief vs. a tech spec vs. a general document.
+- **Does it handle the general case honestly?** When reviewing a general document, the review names the limitation of generic criteria and suggests a specialized type if the document might actually be one.

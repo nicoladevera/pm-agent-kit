@@ -28,7 +28,7 @@ pm-agent-kit/
 ├── CLAUDE.md                         Identity + operating principles
 ├── skills/                           Invocable capabilities
 │   ├── doc-review/
-│   │   └── SKILL.md                  PRD review (Analyzer, Tier 1)
+│   │   └── SKILL.md                  Document review (Analyzer, Tier 1)
 │   ├── prd-draft/
 │   │   └── SKILL.md                  PRD drafting (Generator, Tier 1)
 │   ├── generate-tasks/
@@ -112,7 +112,9 @@ pm-agent-kit/
     │   ├── rubric-prd.md             Scoring criteria for PRD review output
     │   ├── rubric-ticket.md          Scoring criteria for ticket review output
     │   ├── rubric-project-brief.md   Scoring criteria for project brief review output
-    │   └── rubric-tech-spec.md       Scoring criteria for tech spec review output
+    │   ├── rubric-tech-spec.md       Scoring criteria for tech spec review output
+    │   ├── sample-general-01.md     Deliberately flawed GTM plan for testing
+    │   └── rubric-general.md        Scoring criteria for general document review output
     ├── prd-draft/
     │   ├── sample-input-01.md        Rough problem statement for drafting test
     │   └── rubric.md                 Quality criteria + bidirectionality test
@@ -210,7 +212,7 @@ claude
 Invoke a skill using its slash command:
 
 ```
-/doc-review [paste document or point to file — PRD, ticket, project brief, or tech spec]
+/doc-review [paste document or point to file — PRD, ticket, project brief, tech spec, or any document]
 /prd-draft [paste problem statement or brief]
 /generate-tasks [paste PRD]
 /decision-log [paste decision context or Slack thread]
@@ -291,7 +293,7 @@ Some Tier 2 skills are **dual-mode** (Generator + Analyzer) — they assess a si
 
 | Skill | Type | What It Does |
 |-------|------|--------------|
-| `doc-review` | Analyzer | Evaluate any PM document — PRD, ticket, project brief, or tech spec — against quality criteria appropriate to its type |
+| `doc-review` | Analyzer | Evaluate any PM document — PRD, ticket, project brief, tech spec, or any general document — against quality criteria appropriate to its type |
 | `prd-draft` | Generator | Draft a PRD from a problem statement, user context, and constraints |
 | `generate-tasks` | Generator | Generate stories/tasks with acceptance criteria from any source artifact: PRD, EDD, meeting notes, rough notes |
 | `status-update` | Generator + Analyzer | Assess delivery state across workstreams and/or produce status comms calibrated to a specific audience |
@@ -331,6 +333,7 @@ Reference files live in `references/` and are consulted by multiple skills. They
 |------|----------------|---------------|
 | `pm-philosophy.md` | Ten core PM heuristics with rationale and behavioral examples | Foundational for CLAUDE.md; explicitly referenced by `retro-synthesis` |
 | `pm-smell-test.md` | Red flags across all PM artifact types (specs, comms, decisions) | All reviewing/analyzing skills |
+| `general-document-quality-criteria.md` | Six universal quality dimensions for documents that don't fit specialized types | `doc-review` |
 | `project-brief-quality-criteria.md` | Evaluative criteria for project briefs, calibrated to document maturity level | `doc-review` |
 | `prd-quality-criteria.md` | Eight evaluative criteria for PRDs | `doc-review`, `prd-draft` |
 | `tech-spec-quality-criteria.md` | Evaluative criteria for technical specs / EDDs, from a PM perspective | `doc-review` |
