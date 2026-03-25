@@ -27,9 +27,13 @@ Any content that needs to become a presentation narrative:
 - A competitive analysis or data analysis
 - A decision that needs stakeholder alignment
 - Rough notes, bullet points, or a verbal download
+- A completed narrative from a previous Narrative mode run (for direct Slides generation)
+- A cohesive artifact from another skill (`knowledge/data-analyses/`, `knowledge/competitive/`, `knowledge/feedback/`, etc.)
 - A combination of the above
 
 The input provides the content. The skill provides the narrative structure, audience calibration, and visual translation.
+
+**Slides mode input flexibility:** For Slides mode specifically, if the input is already a structured narrative (from a prior Narrative run or a well-structured artifact from another skill), the agent may use it directly as the basis for slide design decisions, abbreviating the narrative drafting steps (4-7) where the structure is already sound.
 
 **Required invocation inputs:** Two things must be specified:
 1. **Audience** — Who is this presentation for? (e.g., "my VP," "the board," "the engineering team," "a new stakeholder")
@@ -69,6 +73,7 @@ Audience and deck type are already required. Intake adds the one thing that most
 - **Deck type / purpose:** Stated? (Already required — if missing, the existing hard-stop handles this.)
 - **Core takeaway:** Is there a clear statement of what the audience should walk away believing, deciding, or doing? Or is the input content-forward without a stated point?
 - **Mode clarity:** Is it clear whether the PM wants Narrative (markdown draft) or Slides (.pptx file)?
+- **Delivery context (Slides mode):** Will this be presented live, sent as a pre-read, or used as a standalone reference? This determines slide density budgets per `references/slide-design.md`.
 
 ### Adaptive Response
 
@@ -77,6 +82,7 @@ Audience and deck type are already required. Intake adds the one thing that most
 **Moderate input** (audience and type present, but takeaway or mode unclear): Ask 1-2 targeted questions. Examples:
 - "What's the one thing you want [audience] to walk away believing or deciding?" (only if takeaway is absent)
 - "Do you want the narrative draft (markdown) or a .pptx file?" (only if mode is ambiguous)
+- "Will this be presented live, shared as a pre-read, or used standalone? That changes how dense each slide should be." (only if Slides mode and delivery context is unclear)
 
 **Thin input** (content provided but audience, type, or takeaway missing): The existing hard-stop on audience/type fires first. Once those are established, if takeaway is still unclear, present an interpretation:
 
@@ -193,20 +199,52 @@ Check for:
 
 ### Slides Mode (Additional Steps)
 
-#### 10. Load branding context
+#### 10. Load design and branding references
 
-Read `references/branding-guidelines.md` for slide layout standards, visual consistency rules, and how to apply branding.
+Read both reference files:
+- `references/slide-design.md` — Visual composition: hierarchy, layout patterns, density budgets, typography rules, color strategy, visual storytelling decisions, designed-vs-default checklist
+- `references/branding-guidelines.md` — Brand identity: element inventory, slide type definitions, fallback defaults, python-pptx implementation guidance
 
 If `company/interfaces/branding.md` exists and is substantive, read it for company-specific brand values: color palette (hex values), typography (font names), logo (file paths), and slide defaults.
 
-If branding context is missing or stub-level, use the clean professional defaults from `references/branding-guidelines.md` and flag that default branding was applied in the context note.
+If branding context is missing or stub-level, use the professional defaults from `references/branding-guidelines.md` and flag that default branding was applied in the context note.
 
-#### 11. Generate .pptx file
+#### 11. Make slide-level design decisions
+
+For each slide in the narrative (from step 7), make explicit design decisions before generating the file. This is the design pass — it translates narrative intent into visual composition per `references/slide-design.md`.
+
+For each slide, determine:
+
+1. **Layout pattern:** Which layout best serves this content? (Full-width content, split layout, hero number, full-bleed image.) The choice depends on the content type, not variety for variety's sake.
+2. **Visual tier assignment:** Map each element to a tier (title, key insight, supporting content, source/caption). Assign specific point sizes per the tier system in `references/slide-design.md`.
+3. **Density check:** Count elements (max 5-7). Count words against the delivery context budget (live: 15-25, pre-read: 40-60, standalone: up to 80). If a slide exceeds budget, simplify — move detail to speaker notes or split the slide.
+4. **Visual treatment:** Translate the Visual guidance from step 7 into a specific rendering plan using the decision tree in `references/slide-design.md`. Hero number? Bar chart with N bars in brand colors? Icons with labels replacing bullets? If the planned visual cannot be rendered in python-pptx, choose the simpler fallback now and note it.
+5. **Color application:** Assign the 60-30-10 proportions. Map functional colors to data elements (green for positive, red for negative, gray for neutral) per `references/slide-design.md`.
+
+These are internal working decisions that drive the generation step. They are not shown in the output.
+
+#### 12. Check cross-slide consistency
+
+Review the design decisions from step 11 across all slides as a set:
+
+- Headlines at the same Y position on every content slide
+- Content area starts at the same Y position
+- Same margin and padding values throughout
+- Consistent font size assignments (no slide where body text is 28pt next to a slide where it's 24pt)
+- Color usage is consistent (accent color means the same thing throughout)
+- White space proportion is consistent (no slide at 60% white space next to one at 30%)
+- Layout variety is purposeful (section dividers look different from content slides, but all content slides share a grid)
+
+If inconsistencies are found, resolve them before generation.
+
+#### 13. Generate .pptx file
 
 **Dependency:** Slides mode requires the `python-pptx` Python package (`pip install python-pptx`). If `python-pptx` is not available at runtime, do not attempt to generate the file. State that the dependency is missing and offer to produce the Narrative output instead, noting that it can be pasted slide-by-slide into PowerPoint or Google Slides. Do not attempt partial generation.
 
-Using `python-pptx`, generate a presentation file that applies branding to the narrative drafted in step 7:
+Using `python-pptx`, generate a presentation file driven by the design spec from steps 11-12:
 
+- Apply the layout pattern, tier assignments, and color application from the design spec (step 11) for each slide
+- Use the cross-slide consistency decisions from step 12 to set global values (margins, Y positions, font sizes) before generating individual slides
 - Create a slide for each section in the narrative (including title slide and section dividers)
 - Apply the appropriate slide layout per slide type (title, content, data, comparison, quote, closing) from `references/branding-guidelines.md`
 - Set fonts to the brand typography (or documented defaults if unavailable)
@@ -217,6 +255,19 @@ Using `python-pptx`, generate a presentation file that applies branding to the n
 - Save the file to `knowledge/presentations/` using the naming convention: `YYYY-MM-DD-descriptive-slug.pptx`
 
 Report the file path, branding source, any fallback behavior, and a summary of the slide sequence in the conversation.
+
+#### 14. Design quality self-check
+
+Before reporting the file to the PM, verify against the design standards:
+
+- Does every slide have 3-4 distinct visual tiers? (Flat hierarchy = failed design)
+- Is white space approximately 60% on content slides? (Crowded = failed density)
+- Are word counts within budget for the stated delivery context?
+- Is the 60-30-10 color rule applied?
+- Do all content slides share the same grid (margins, Y positions, font sizes)?
+- Would this deck pass the "designed vs. default" checklist from `references/slide-design.md`?
+
+If any check fails, fix before saving. Note any design compromises in the context note (e.g., "Slide 7 exceeds density target due to comparison table — detail moved to appendix").
 
 ---
 
@@ -320,6 +371,12 @@ Output in conversation:
 2. **[Slide 2 headline]** — [Slide type]
 3. ...
 
+### Design Summary
+
+**Delivery context:** [Live presentation / Pre-read / Standalone reference]
+**Layout patterns used:** [e.g., "Full-width content (6), Split layout (2), Hero number (2), Section divider (3)"]
+**Design compromises:** [Density overruns, visual fallbacks, consistency trade-offs — or "None"]
+
 ### Stress Test
 
 [Same as Narrative mode, if applicable]
@@ -343,3 +400,8 @@ Output in conversation:
 - **Does the visual guidance help?** The PM knows what type of chart, diagram, or visual to create for each slide. Not just "add a visual."
 - **[Slides mode] Is branding applied consistently?** Fonts, colors, logo placement, and layouts are consistent across all slides. The output looks professional, not like a default template with content pasted in.
 - **[Slides mode] Are Slides limitations handled honestly?** If a requested visual or template behavior couldn't be rendered cleanly in `python-pptx`, the output uses a simpler treatment and notes the fallback instead of implying custom-template fidelity it doesn't have.
+- **[Slides mode] Does every slide have clear information hierarchy?** 3-4 visual tiers with distinct sizing. The audience's eye is guided from headline to key insight to supporting detail without effort. Flat hierarchy (everything the same size) fails.
+- **[Slides mode] Is white space intentional, not incidental?** Content slides have approximately 60% white space. Elements are placed with purpose, not just filling available area. Crowded slides that require effort to parse fail.
+- **[Slides mode] Are density limits respected for the delivery context?** Presentation slides stay under 25 words of body content. Pre-reads can go higher. No slide has more than 7 distinct visual elements.
+- **[Slides mode] Is the visual treatment specific and purposeful?** Each visual (chart, number, icon set) directly supports its slide's headline claim. No decorative elements. No generic placeholder visuals. No default chart formatting.
+- **[Slides mode] Is cross-slide consistency maintained?** Headlines, content areas, margins, font sizes, and color application are consistent across all slides of the same type. The deck feels like one designed artifact, not slides assembled from different sources.

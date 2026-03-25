@@ -21,18 +21,18 @@ Every company brand has these elements. When populating `company/interfaces/bran
 
 ### When Brand Values Are Missing
 
-If `company/interfaces/branding.md` is absent or a stub, use clean professional defaults:
+If `company/interfaces/branding.md` is absent or a stub, use these professional defaults. The palette, typography, and sizing are designed to look intentional and contemporary — not like a default template.
 
 | Element | Default |
 |---------|---------|
-| Primary color | `#1a1a2e` (dark navy) |
-| Secondary color | `#0f3460` (deep blue) |
-| Accent color | `#e94560` (coral) |
-| Background | `#ffffff` (white) |
-| Text color | `#333333` (dark gray) |
-| Heading font | Calibri Bold (universally available) |
-| Body font | Calibri Regular |
-| Font sizes | Title: 28pt, Heading: 22pt, Body: 16pt, Caption: 12pt |
+| Primary color | `#2D3142` (charcoal-navy) |
+| Secondary color | `#4F5D75` (slate blue-gray) |
+| Accent color | `#E07A5F` (terracotta) |
+| Background | `#FAFAF8` (warm off-white) |
+| Text color | `#2D3142` (matches primary — tonal cohesion) |
+| Heading font | Georgia Bold (serif headings add authority; universally available) |
+| Body font | Helvetica Neue Regular (Windows fallback: Arial Regular) |
+| Font sizes | Title: 44pt, Heading: 32pt, Body: 24pt, Caption: 16pt |
 | Logo | Omit — don't use a placeholder |
 
 Flag in the context note that default branding was used because company branding context was unavailable.
@@ -126,4 +126,4 @@ When generating `.pptx` files with `python-pptx`, apply branding consistently:
 - **Default chart colors.** Excel/Sheets default colors (blue-orange-gray) look generic. Replace with brand palette colors.
 - **Logo misuse.** Stretched, pixelated, wrong variant (dark logo on dark background), or inconsistent placement across slides.
 - **Slide-to-slide visual jumps.** One slide has a white background, the next has a colored background, the next has a gradient — with no pattern to the variation. Backgrounds should be intentional (e.g., section dividers use color, content slides use white).
-- **Wall of text.** Any slide with more than 6 bullet points or more than 30 words of body text is a document, not a slide. Move the detail to speaker notes.
+- **Wall of text.** For live presentations, any slide exceeding 25 words of body content or 5 bullets. For pre-reads, exceeding 60 words. If the slide reads like a document paragraph, move the detail to speaker notes. See `references/slide-design.md` for full density budgets by delivery context.
