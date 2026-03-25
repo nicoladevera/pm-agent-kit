@@ -173,7 +173,13 @@ When a skill is invoked, the agent:
 2. Loads any files listed in `context-required` that are substantive — if missing or stub-level, applies the skill's degradation rule
 3. Loads any files listed in `context-optional` that are substantive — if absent or stub-level, skips them and notes that in the context note when relevant
 4. Loads files from `references/` as specified in the skill's instructions
-5. Executes the skill's instructions against the provided input
-6. Produces output in the format specified by the skill
+5. **Runs intake (if the skill defines one).** Before executing, the agent assesses how much signal the PM's input provides and adapts:
+   - **Rich input** (problem, audience, constraints, and key parameters are clear): Restate understanding in 1-2 sentences and proceed. Zero to one confirmation question on the single most consequential inference.
+   - **Moderate input** (some signals present, some gaps): Ask 2-4 targeted questions on the gaps. Be specific — name the options, not the category.
+   - **Thin input** (a sentence, a vague ask, or a solution stated without a problem): Infer what you can, present a structured interpretation of your understanding, and ask the PM to confirm or correct before proceeding. Lead with interpretation, not questions.
+
+   The question cap is 4. What changes across input richness is the ratio of inference-to-confirm versus open-ended-ask. When the skill has no intake section, skip this step.
+6. Executes the skill's instructions against the provided input
+7. Produces output in the format specified by the skill
 
 If the PM provides input inline (pasted text), use it directly. If the PM points to a file, read it.

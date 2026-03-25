@@ -31,6 +31,36 @@ The input does not need to be clean or complete. This skill works with what's pr
 
 ---
 
+## Intake
+
+The most common failure in data analysis is answering the wrong question precisely. Confirm the actual question and what decision it informs before analyzing.
+
+### Signals to Check
+
+- **Specific question:** Is the PM asking a clear, answerable question, or providing data and expecting the agent to figure out what to ask?
+- **Decision context:** Does the input say what decision or action the analysis will inform?
+- **Data provided:** Is data included (pasted, referenced, described), or is this a question-only request?
+
+### Adaptive Response
+
+**Rich input** (specific question stated, decision context clear, data provided): Restate the question and proceed. Example: "Question: why did [metric] drop [X%] last [period]. This informs whether to [decision]. Analyzing the provided data now."
+
+**Moderate input** (data provided but question vague, or clear question but no decision context): Ask 1-2 targeted questions. Examples:
+- "I see the data — what's the specific question? Are you asking why [metric] changed, whether it's concerning, or what to do about it?"
+- "What decision does this analysis inform? Knowing that helps me focus on what matters most."
+
+**Thin input** (data dump with no question, or a vague "look at this"): Present a structured interpretation:
+
+> **Here's what I think the question is — correct me:**
+>
+> - **Question:** [Inferred from the data and context — e.g., "Why did activation drop 15% week-over-week?"]
+> - **Analysis type:** [Metric interpretation / Funnel analysis / Cohort analysis / Anomaly investigation]
+> - **Decision this informs:** [Best inference — e.g., "Whether to investigate further or treat as normal variance"]
+>
+> Is that the right question? I want to make sure I'm answering the thing you actually need to know.
+
+---
+
 ## Instructions
 
 ### 1. Read the input fully

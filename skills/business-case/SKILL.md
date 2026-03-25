@@ -32,6 +32,40 @@ The input does not need to be complete. This skill identifies what's present, si
 
 ---
 
+## Intake
+
+A business case built on the wrong problem or sized with the wrong approach wastes the PM's time and produces a plausible-but-wrong argument. Confirm the foundation before building.
+
+### Signals to Check
+
+- **Problem or opportunity:** Is a clear problem/opportunity stated, or does the input lead with "we should build X"?
+- **Available data for sizing:** Are there numbers, metrics, user counts, revenue figures — or is the input qualitative only?
+- **Sizing approach signal:** Does the input suggest top-down (new market), bottom-up (existing flow improvement), or analog-based (comparable past initiative)?
+- **Alternatives awareness:** Does the PM mention alternatives or competing approaches, or is only one path described?
+- **Recommendation stance:** Is the PM looking for a genuine evaluate-and-recommend, or building the argument for an already-decided initiative?
+
+### Adaptive Response
+
+**Rich input** (problem clear, data provided, alternatives mentioned): Restate the problem and confirm the sizing approach. Example: "The opportunity is [X], I have [data signals] to work with, and I'll evaluate [alternative A] and [alternative B] alongside the primary proposal. Sizing bottom-up from the existing funnel data. Proceeding."
+
+**Moderate input** (problem present but data sparse, or data present but problem vague): Ask up to 3 targeted questions. Examples:
+- "What data do you have for sizing — existing funnel metrics, revenue numbers, user counts? Or should I construct estimates from assumptions?"
+- "Are there specific alternatives you want evaluated, or should I generate the most plausible ones?"
+- "Is this a genuine 'should we do this?' or a 'build the argument for this'? Either is fine — it changes the framing."
+
+**Thin input** (a solution pitch, a vague area, or "build a business case for X"): Present a structured interpretation:
+
+> **Here's how I'd frame this — tell me what needs adjusting:**
+>
+> - **Problem/opportunity:** [Translated from the input — problem-first, even if the input was solution-first]
+> - **Sizing approach:** [Which approach and why, given what data seems available]
+> - **Alternatives I'd evaluate:** [2-3 plausible alternatives based on the problem space]
+> - **Recommendation stance:** [Genuine evaluation / Building the argument — my read based on the input]
+>
+> Anything off? I'll adjust before drafting.
+
+---
+
 ## Instructions
 
 ### 1. Read the input fully

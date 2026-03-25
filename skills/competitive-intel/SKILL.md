@@ -54,6 +54,36 @@ Analyze a specific competitor's approach to a specific area. Their solution, pos
 
 ---
 
+## Intake
+
+Applies to **Deep Dive mode only.** Monitor mode has clear enough scope from the input signals — no intake needed.
+
+A competitive deep dive without a decision context produces interesting reading instead of actionable intelligence. Confirm what decision the analysis will inform.
+
+### Signals to Check
+
+- **Competitor:** Named? (Already required for Deep Dive — if missing, the existing ask handles this.)
+- **Area or problem:** Specified? (Already required for Deep Dive — if missing, the existing ask handles this.)
+- **Decision context:** Does the input say what product decision, positioning question, or strategic choice this deep dive will inform?
+
+### Adaptive Response
+
+**Rich input** (competitor named, area specified, decision context clear): Confirm and proceed. Example: "Deep dive on [Competitor]'s approach to [area], informing our [decision]. Proceeding."
+
+**Moderate input** (competitor and area provided, but no decision context): Ask one targeted question:
+- "What decision will this inform — are you evaluating whether to build something similar, thinking about repositioning, or assessing urgency on a current initiative?"
+
+**Thin input** (just a competitor name, or "analyze CompetitorX"): The existing competitor+area ask fires first. Once both are established, if decision context is still absent:
+
+> **To make this actionable, here's what I'd focus the analysis on — adjust if needed:**
+>
+> - **Lens:** [What seems most relevant — e.g., "How their approach compares to what we're planning for Q3"]
+> - **Decision this could inform:** [Best inference — e.g., "Whether our current positioning still differentiates"]
+>
+> Want me to run with that framing?
+
+---
+
 ## Instructions
 
 ### Shared Steps (Both Modes)

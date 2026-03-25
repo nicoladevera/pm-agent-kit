@@ -31,6 +31,39 @@ The input does not need to be organized. This skill produces the organization.
 
 ---
 
+## Intake
+
+Before drafting, confirm alignment on the three things that most determine PRD quality: the problem, who it's for, and what success looks like.
+
+### Signals to Check
+
+- **Problem or pain point:** Is a specific user problem stated, or does the input lead with a solution?
+- **User segment:** Is there a named audience (even rough), or is it implicit/absent?
+- **Success definition:** Is there any signal of what "working" looks like — a metric, a behavior change, a business outcome?
+- **Scope signal:** Is there any indication of what's in vs. out, or is the scope unbounded?
+
+### Adaptive Response
+
+**Rich input** (problem stated, user segment named, success hinted, scope bounded): Restate in 1-2 sentences and proceed. Example: "Got it — the problem is [X] for [user segment], success looks like [Y], scoped to [Z]. Drafting now."
+
+**Moderate input** (some signals present, some gaps): Ask up to 3 targeted questions on the gaps. Examples:
+- "Who's the primary user segment — [inferred option A] or [option B]?"
+- "What does success look like here — are we measuring [metric A], [behavior B], or something else?"
+- "Is [adjacent capability] in scope, or should I keep this focused on [core capability]?"
+
+**Thin input** (a sentence, a solution without a problem, or a vague area): Present a structured interpretation:
+
+> **Here's what I'm hearing — correct me where I'm wrong:**
+>
+> - **Problem:** [Translated to a problem statement, even if input was solution-first]
+> - **Who's affected:** [Best inference from context]
+> - **Success looks like:** [Best inference — or "I don't have a read on this yet"]
+> - **Scope:** [What I'd include / exclude based on the input]
+>
+> Should I draft from this, or does anything need adjusting?
+
+---
+
 ## Instructions
 
 ### 1. Read the input fully
@@ -53,20 +86,7 @@ If either file exists but is still a stub template, treat it as unavailable and 
 
 If neither substantive file is available, proceed — note the absence in the output.
 
-### 4. Assess what's missing from the input
-
-Before drafting, identify critical gaps in the input:
-- **Who is affected?** If the user segment isn't named, you need it.
-- **What does success look like?** If there's no hint at success metrics, you need direction.
-- **What's out of scope?** If the PM hasn't bounded this, they should.
-
-Use judgment on whether to ask or infer:
-- If the gap is critical and the answer could go multiple directions — ask. Don't ask more than 2-3 questions.
-- If the gap can be reasonably inferred from the input — infer it, and flag the assumption in the output.
-
-When asking questions, be specific: "Who is the primary user segment — all active borrowers, or only installment plan users?" not "Can you tell me more about the users?"
-
-### 5. Generate the PRD
+### 4. Generate the PRD
 
 Produce a complete draft satisfying all 8 criteria from `references/prd-quality-criteria.md`. Every section should contain real content, not placeholders. Where the input doesn't provide enough to write a strong section, write the best version you can and flag what's thin.
 
@@ -82,7 +102,7 @@ Structure the output with every section the quality criteria require:
 - Open Questions
 - Assumptions
 
-### 6. Write the problem statement first and strongest
+### 5. Write the problem statement first and strongest
 
 The problem statement is the foundation. Get it right before writing everything else. It should:
 - Name the specific user segment affected
@@ -92,7 +112,7 @@ The problem statement is the foundation. Get it right before writing everything 
 
 If the PM's input started with a solution ("we should build X"), translate it back to the problem ("users are experiencing Y, which causes Z").
 
-### 7. Write acceptance criteria in Given/When/Then format
+### 6. Write acceptance criteria in Given/When/Then format
 
 Every AC must meet the standards in `references/acceptance-criteria.md`:
 - Given/When/Then structure
@@ -101,7 +121,7 @@ Every AC must meet the standards in `references/acceptance-criteria.md`:
 - Error states specified as separate AC
 - Data tracking AC included (not deferred)
 
-### 8. Flag assumptions explicitly
+### 7. Flag assumptions explicitly
 
 Anything the skill inferred rather than received as input goes in the Assumptions section. Be specific: "Assumed success metric target of 20% reduction based on comparable feature benchmarks" not "Made some assumptions about metrics."
 

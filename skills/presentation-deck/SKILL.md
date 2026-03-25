@@ -59,6 +59,38 @@ Generate an actual `.pptx` file using `python-pptx`, with branding applied from 
 
 ---
 
+## Intake
+
+Audience and deck type are already required. Intake adds the one thing that most determines narrative quality: the core takeaway. A deck without a clear takeaway becomes a tour of information rather than an argument.
+
+### Signals to Check
+
+- **Audience:** Named? (Already required — if missing, the existing hard-stop handles this.)
+- **Deck type / purpose:** Stated? (Already required — if missing, the existing hard-stop handles this.)
+- **Core takeaway:** Is there a clear statement of what the audience should walk away believing, deciding, or doing? Or is the input content-forward without a stated point?
+- **Mode clarity:** Is it clear whether the PM wants Narrative (markdown draft) or Slides (.pptx file)?
+
+### Adaptive Response
+
+**Rich input** (audience named, deck type stated, takeaway clear, mode clear): Confirm and proceed. Example: "Deck for [audience], [deck type], driving toward '[core takeaway].' Drafting the narrative now."
+
+**Moderate input** (audience and type present, but takeaway or mode unclear): Ask 1-2 targeted questions. Examples:
+- "What's the one thing you want [audience] to walk away believing or deciding?" (only if takeaway is absent)
+- "Do you want the narrative draft (markdown) or a .pptx file?" (only if mode is ambiguous)
+
+**Thin input** (content provided but audience, type, or takeaway missing): The existing hard-stop on audience/type fires first. Once those are established, if takeaway is still unclear, present an interpretation:
+
+> **Based on this content, here's my read on the core argument:**
+>
+> - **Takeaway:** "[What I think the audience should walk away with]"
+> - **Narrative arc:** Situation: [X]. Complication: [Y]. Resolution: [Z].
+>
+> Does that capture what you're driving at, or should the emphasis shift?
+
+Note: The existing audience/deck-type hard-stop in "What It Accepts" remains unchanged. Intake handles what that hard-stop doesn't cover.
+
+---
+
 ## Instructions
 
 ### Shared Steps (Both Modes)

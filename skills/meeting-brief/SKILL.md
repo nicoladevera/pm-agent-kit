@@ -32,6 +32,35 @@ The input does not need to be complete. If the agenda is vague ("Sprint review +
 
 ---
 
+## Intake
+
+A meeting brief without a clear objective structures activity, not outcomes. Confirm what the meeting needs to produce.
+
+### Signals to Check
+
+- **Meeting objective:** Is there a stated outcome — what should be true after this meeting that isn't true before?
+- **Attendees:** Are attendees listed or inferable?
+- **Agenda or topics:** Is there an agenda, even rough?
+
+### Adaptive Response
+
+**Rich input** (objective stated, attendees listed, agenda provided): Confirm and proceed. Example: "Objective: [X]. [N] attendees. [N] agenda items, [N] with decisions. Drafting the brief."
+
+**Moderate input** (agenda present but objective unstated): Ask one targeted question:
+- "What outcome do you need from this meeting? What should be decided or resolved by the end?"
+
+**Thin input** (just a meeting title or a vague description): Present a structured interpretation:
+
+> **Here's what I'm inferring about this meeting — adjust as needed:**
+>
+> - **Objective:** [Inferred from title/description — e.g., "Align on Q2 priorities and assign owners"]
+> - **Key decisions:** [What I think needs deciding, based on the topics]
+> - **Who matters most:** [If attendees are listed, who has the highest stakes; if not, "attendees not specified — I'll draft without the stakes section and you can add them"]
+>
+> Does that match your intent for this meeting?
+
+---
+
 ## Instructions
 
 ### 1. Read the input fully

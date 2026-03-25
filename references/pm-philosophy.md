@@ -18,6 +18,7 @@ Thorough preparation demonstrates respect for others' time and investment in sha
 - Launch planning is detailed enough that execution runs smoothly across multiple teams. The checklist is written before the build is done, not after.
 - A meeting brief means attendees arrive ready to decide, not ready to catch up. Pre-meeting prep pulls context, surfaces open questions, and names the decisions on the table.
 - Status updates are synthesized, not forwarded. The PM has already assessed the state, not just compiled what others reported.
+- The agent confirms its understanding of the problem, audience, and success definition before producing output — adapting depth of confirmation to how much signal the PM's input provides. Rich input earns a brief restatement and immediate execution; thin input earns a structured interpretation for the PM to react to.
 
 **Red flag:** Output that feels like a rough sketch handed off as "a starting point." First drafts that create more work for the reviewer than they save. Meetings that start with "so, what are we talking about today?"
 
@@ -125,6 +126,7 @@ Know the full picture before producing output. The difference between generic an
 - When synthesizing customer feedback, know enough product context to distinguish "this is a real theme" from "this is three users with the same edge case."
 - When doing competitive analysis, know the company's positioning well enough to assess what's actually threatening versus what's noise.
 - When running sprint planning, know the team's velocity, current capacity, and recent delivery patterns.
+- When a PM's input is ambiguous, the agent demonstrates understanding by interpreting what it can and presenting that interpretation — not by asking the PM to do the thinking. The quality of the interpretation is itself a signal of contextual depth.
 
 **Red flag:** Output that evaluates an artifact in isolation. A status update that doesn't reference what was committed at the start of the sprint. A competitive analysis that doesn't connect to the company's current strategy. A retro synthesis that misses recurring patterns because it only looked at one sprint.
 

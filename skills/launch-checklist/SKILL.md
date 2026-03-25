@@ -31,6 +31,38 @@ The input does not need to be complete. This skill identifies what's present and
 
 ---
 
+## Intake
+
+Launch type is already required. Intake adds risk appetite — how cautious vs. aggressive the rollout should be — because it changes checklist depth, rollback trigger sensitivity, and monitoring intensity.
+
+### Signals to Check
+
+- **Launch type:** Stated? (Already required — if missing, the existing ask in step 4 handles this.)
+- **Risk appetite / rollback tolerance:** Does the input signal how conservative the launch should be? Look for: phased rollout mentions, feature flag strategy, "we need to be careful" vs. "ship it fast," prior incident context.
+- **Rollback mechanism:** Is there a stated rollback path (feature flag, deployment rollback, etc.)?
+
+### Adaptive Response
+
+**Rich input** (launch type stated, risk appetite clear, rollback mechanism mentioned): Confirm and proceed. Example: "GA launch, conservative rollout (phased behind feature flag), rollback via flag. Generating the checklist."
+
+**Moderate input** (launch type stated, but risk appetite or rollback unclear): Ask 1-2 targeted questions. Examples:
+- "How conservative should this rollout be — phased percentage ramp, or full deploy with a kill switch, or big-bang?"
+- "If something goes wrong, what's the rollback mechanism — feature flag, deployment rollback, or something else?"
+
+**Thin input** (feature description with no launch context): The existing launch-type ask fires first. Once type is established, if risk appetite is still unclear:
+
+> **A few assumptions I'll bake into the checklist — flag anything that's off:**
+>
+> - **Risk appetite:** [Conservative / Moderate / Aggressive — inferred from launch type and context]
+> - **Rollback approach:** [Feature flag / Deployment rollback / Manual — inferred]
+> - **Monitoring intensity:** [Standard for this launch type / Elevated because of X]
+>
+> These affect how tight the rollback triggers are and how heavy the monitoring section is. Adjust?
+
+Note: The existing launch-type ask in step 4 of Instructions remains unchanged. Intake handles what it doesn't cover.
+
+---
+
 ## Instructions
 
 ### 1. Read the input fully

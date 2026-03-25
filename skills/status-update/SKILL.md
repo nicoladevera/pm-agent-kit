@@ -52,6 +52,36 @@ Analyze first (same process as Analyze mode), then produce a status communicatio
 
 ---
 
+## Intake
+
+Applies to **Draft mode only.** Analyze mode produces an internal assessment — intake adds no value there.
+
+A status update without a clear top-line message becomes a list of things that happened. Confirm what the PM most wants the reader to take away.
+
+### Signals to Check
+
+- **Audience:** Named? (Already required for Draft mode — if missing, the existing ask handles this.)
+- **Key takeaway:** Does the input signal what the single most important message is — the thing the reader should remember after scanning?
+- **Mode clarity:** Is it clear the PM wants a drafted communication, not just an assessment?
+
+### Adaptive Response
+
+**Rich input** (audience named, delivery data provided, key message clear): Confirm and proceed. Example: "Status update for [audience]. Leading with [key takeaway]. Drafting now."
+
+**Moderate input** (audience and data present, but no clear top-line message): Ask one targeted question:
+- "What's the single most important thing you want [audience] to take away — is it [risk X], [progress on Y], or something else?"
+
+**Thin input** (delivery data dumped with "write an update"): The existing audience ask fires first. Once audience is established, if the key message is unclear:
+
+> **Based on the delivery data, here's the top-line message I'd lead with — tell me if this is right:**
+>
+> - **Lead:** "[Inferred assessment — e.g., 'Sprint is on track overall, but the payments integration is at risk of slipping by 3 days']"
+> - **Emphasis for [audience]:** [What this audience most needs to hear — risk, progress, an ask]
+>
+> Should I lead with that, or is there something more important to surface?
+
+---
+
 ## Instructions
 
 ### Shared Steps (Both Modes)
