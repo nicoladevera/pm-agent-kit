@@ -158,25 +158,6 @@ pm-agent-kit/
 
 ---
 
-## Build Phases
-
-Phases are defined by quality gates, not dates. Each phase proves something specific.
-
-| Phase | Name | What it proves | Status |
-|-------|------|----------------|--------|
-| 1 | Prove the Format | Skill file body structure works. Layer 1 shapes output quality. | ✓ Complete |
-| 2 | Prove It Generalizes | Generator skills use the same format. Knowledge layer is bidirectional. | ✓ Complete |
-| 3 | Prove Context Matters | Company context measurably improves output. Dual-mode skills work. | → In progress |
-| 4 | Prove Team-Readiness | Agent output passes the "would someone know this was agent-drafted?" test. | Upcoming |
-| 5 | Tier 2 Skills | System handles weekly-cadence, multi-skill workflows. | → In progress |
-| 6 | Tier 3 Skills | Skills depending on external data and deep company context work. | → In progress |
-| 7 | Tier 4 Skills | Structured stress-testing integrates into high-judgment strategic artifacts. | → In progress |
-| 8 | Operators | Generator/Operator separation works. End-to-end workflow touches external systems. | Upcoming |
-
-**Currently in Phases 3 + 7.** Phase 5 added all five Tier 2 skills. Phase 6 added all four Tier 3 skills: `launch-checklist`, `user-feedback`, `data-analysis`, and `competitive-intel`. Phase 7 adds both Tier 4 skills: `business-case` and `presentation-deck`. These are the first skills to integrate structured stress-testing steps (premortem analysis, blindspot checks, conviction assessment) directly into their instruction flow, and `presentation-deck` introduces dual-mode output — markdown narrative and `.pptx` slide generation via `python-pptx`. Three new reference files were added for business case standards, narrative structure, and branding guidelines, plus a company context stub for brand values. Phase 3 (proving context measurably improves output) runs in parallel as company context gets populated.
-
----
-
 ## Using the Agent
 
 ### Prerequisites
@@ -285,7 +266,7 @@ Skills have two dimensions: **type** (what they do technically) and **tier** (wh
 | **Generator + Analyzer** | Assesses a situation and produces an artifact from the assessment (dual-mode) | `status-update`, `sprint-plan` |
 | **Connector** | Connects to an external system to pull data or push output (queries Snowflake, posts to Jira, writes to Confluence) | Not included, always company-specific |
 
-Generators and Analyzers work on inputs the PM provides — pasted text, exported files, local documents. Until Phase 8, the PM is the data pipeline: she exports from Amplitude, pastes support tickets, copies the draft to Google Docs. Connector skills automate those handoffs by connecting directly to live systems. They are never portable — each one is built for a specific company's tooling.
+Generators and Analyzers work on inputs the PM provides — pasted text, exported files, local documents. The PM is the data pipeline: she exports from Amplitude, pastes support tickets, copies the draft to Google Docs. Connector skills automate those handoffs by connecting directly to live systems. They are never portable — each one is built for a specific company's tooling.
 
 Some Tier 2 skills are **dual-mode** (Generator + Analyzer) — they assess a situation and produce an artifact from the assessment. `status-update` and `sprint-plan` both work this way.
 
@@ -356,7 +337,7 @@ Reference files live in `references/` and are consulted by multiple skills. They
 ## Design Principles
 
 - **Portable over company-specific.** PM identity travels. Company context is layered on and stripped away.
-- **One skill end-to-end before parallelizing.** Build `doc-review` completely, validate the format, then build the next skill with what you learned.
+- **One skill end-to-end before parallelizing.** Each skill is complete and self-contained. The tier progression is intentional: Tier 1 proved the format; each subsequent tier built on that proof.
 - **Per-skill degradation rules.** A document review with missing company context can still be useful. A sprint plan's Analyze mode can proceed similarly — but its Draft mode cannot produce a plan without capacity data, and the skill explicitly stops there. The frontmatter rule governs missing context files; skills with multiple modes may enforce mode-specific stops within their instruction bodies.
 - **Reference files are shared, skill references are local.** If multiple skills need the same quality criteria, it lives in `references/`. If only one skill needs a reference file, it lives in the skill's folder.
 - **Eval before graduation.** No skill advances without at least one eval case: sample input plus a scoring rubric.
