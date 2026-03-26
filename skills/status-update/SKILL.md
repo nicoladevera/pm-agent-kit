@@ -1,6 +1,6 @@
 ---
 skill: status-update
-type: Generator + Analyzer
+type: Generator
 tier: 2
 approval: draft-confirm
 context-required: []

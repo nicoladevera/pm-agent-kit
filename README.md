@@ -261,14 +261,12 @@ Skills have two dimensions: **type** (what they do technically) and **tier** (wh
 
 | Type | What it does | Current Skills |
 |------|-------------|----------------|
-| **Generator** | Produces an artifact from inputs (drafts a PRD, generates tasks, creates a launch checklist, builds a business case, drafts a presentation) | `prd-draft`, `generate-tasks`, `decision-log`, `meeting-brief`, `launch-checklist`, `business-case`, `presentation-deck` |
+| **Generator** | Produces an artifact from inputs (drafts a PRD, generates tasks, creates a launch checklist, builds a business case, drafts a presentation) | `prd-draft`, `generate-tasks`, `decision-log`, `meeting-brief`, `launch-checklist`, `business-case`, `presentation-deck`, `status-update`, `sprint-plan` |
 | **Analyzer** | Evaluates, critiques, or extracts signal (reviews a document, synthesizes feedback, interprets a metric) | `doc-review`, `retro-synthesis`, `user-feedback`, `competitive-intel`, `data-analysis` |
-| **Generator + Analyzer** | Assesses a situation and produces an artifact from the assessment (dual-mode) | `status-update`, `sprint-plan` |
 | **Connector** | Connects to an external system to pull data or push output (queries Snowflake, posts to Jira, writes to Confluence) | Not included, always company-specific |
 
 Generators and Analyzers work on inputs the PM provides — pasted text, exported files, local documents. The PM is the data pipeline: she exports from Amplitude, pastes support tickets, copies the draft to Google Docs. Connector skills automate those handoffs by connecting directly to live systems. They are never portable — each one is built for a specific company's tooling.
 
-Some Tier 2 skills are **dual-mode** (Generator + Analyzer) — they assess a situation and produce an artifact from the assessment. `status-update` and `sprint-plan` both work this way.
 
 ### Skill Reference
 
@@ -277,8 +275,8 @@ Some Tier 2 skills are **dual-mode** (Generator + Analyzer) — they assess a si
 | `doc-review` | Analyzer | Evaluate any PM document — PRD, ticket, project brief, tech spec, or any general document — against quality criteria appropriate to its type |
 | `prd-draft` | Generator | Draft a PRD from a problem statement, user context, and constraints |
 | `generate-tasks` | Generator | Generate stories/tasks with acceptance criteria from any source artifact: PRD, EDD, meeting notes, rough notes |
-| `status-update` | Generator + Analyzer | Assess delivery state across workstreams and/or produce status comms calibrated to a specific audience |
-| `sprint-plan` | Generator + Analyzer | Draft sprint goals from priorities and capacity; flag backlog issues: missing AC, unclear scope, dependency risks |
+| `status-update` | Generator | Assess delivery state across workstreams and/or produce status comms calibrated to a specific audience |
+| `sprint-plan` | Generator | Draft sprint goals from priorities and capacity; flag backlog issues: missing AC, unclear scope, dependency risks |
 | `retro-synthesis` | Analyzer | Synthesize retro notes into patterns; track action items across retros and flag which ones were never addressed |
 | `meeting-brief` | Generator | Pre-meeting prep: relevant context, open questions, decision points, and attendee stakes |
 | `decision-log` | Generator | Capture a decision or structure a problem for resolution — what was decided, by whom, why, options considered |
