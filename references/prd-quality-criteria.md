@@ -14,9 +14,13 @@ The problem statement is specific, names who is affected, and does not smuggle a
 
 ### 2. Success Metrics Are Defined and Measurable
 
-Metrics have targets, timeframes, and a named data source. Each metric should pass this test: two people reading it should agree, six months from now, on whether it was achieved.
+Metrics are organized in three tiers:
 
-**Evaluate:** Does each metric have a baseline, a target, and a timeframe? Is the data source identified? Could you build a dashboard from what's written here?
+- **Success Metrics** — the primary outcomes this product is expected to move. Each has a priority (P0/P1/P2), baseline, target, and timeframe.
+- **KPI Definitions** — for each success metric, how it is actually calculated: numerator, denominator, required segmentation. Without this, the metric exists on paper but can't be instrumented.
+- **Product Health Metrics** — signals that the product is functioning as expected (error rates, latency, failure counts). Distinct from business outcomes; these tell you if the product is working, not whether it's working well.
+
+**Evaluate:** Does each Success Metric have a baseline, target, and timeframe? Does each KPI Definition specify how the metric is calculated and what data is needed? Are Product Health Metrics present for the riskiest parts of the feature?
 
 ### 3. Scope Is Explicitly Bounded
 
@@ -24,11 +28,14 @@ What's in and what's out. The out-of-scope section is not optional — it's wher
 
 **Evaluate:** Is there a clear "out of scope" section? Does the in-scope section stay within its own boundaries, or does it bleed into "future phases" and "stretch goals"?
 
-### 4. Edge Cases Are Addressed
+### 4. Product Experience Is Fully Specified
 
-The document anticipates what happens when things go wrong or when users are in unexpected states. Payment failures, empty states, concurrent actions, partial completions, timezone differences, multi-product interactions.
+The document specifies what happens in every meaningful state — not just failure modes, but the complete behavioral model: happy path, sad path, error handling, and edge cases. Both paths are documented explicitly so that engineers and agents know the primary flow and the failure recovery paths without inferring either.
 
-**Evaluate:** Does the document address at least the most likely failure modes? Are edge cases relevant to the specific domain covered (not just generic error handling)?
+**Happy path:** The core flow works as designed. Each state, action, and transition is described.
+**Sad path:** Failure modes, error states, partial completions, and system failures are documented with expected behavior for each.
+
+**Evaluate:** Is the happy path described in enough detail to build from? Are failure modes and error states covered — not just "system handles errors gracefully" but specific behaviors per failure scenario? Are both paths labeled and separated so readers can navigate them?
 
 ### 5. Acceptance Criteria Are Specific and Testable
 
@@ -54,13 +61,21 @@ Things the PM hasn't resolved yet are stated explicitly, not buried or omitted. 
 
 **Evaluate:** Is there an open questions section? Are the questions genuine (things that actually need resolution) or cosmetic (things that are already decided but phrased as questions)?
 
+### 9. Domain Terms Are Defined
+
+Any term with a product-specific or technically precise meaning is defined before first use. This applies especially to financial products, platform products, and any domain where common words carry specific technical meaning (e.g., "balance," "payment," "status").
+
+A missing or inconsistent definition is a silent source of implementation errors — agents and engineers will interpret undefined terms according to general knowledge, which may not match the product intent.
+
+**Evaluate:** Are domain-specific terms defined in a Definitions section? Are terms used consistently throughout the document? Would a new engineer or an agent reading this document reach the same understanding of key terms as someone who wrote it?
+
 ---
 
 ## Using These Criteria
 
 **For review (`doc-review`):** Evaluate the document against each criterion. For each, determine: strong, needs work, or missing. Prioritize feedback by impact — a weak problem statement is more fundamental than a missing edge case.
 
-**For generation (`prd-draft`):** Generate toward these criteria. A first draft should satisfy all eight, even if some sections are thinner than others. It's better to have a placeholder open questions section than to silently omit it.
+**For generation (`prd-draft`):** Generate toward these criteria. A first draft should satisfy all nine, even if some sections are thinner than others. It's better to have a placeholder open questions section than to silently omit it.
 
 **Rating scale:**
 - **Strong** — The criterion is clearly satisfied. The section is specific, complete, and doesn't require follow-up.
