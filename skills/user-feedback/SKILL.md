@@ -44,6 +44,7 @@ Absorb the full feedback corpus before producing any output. Understand the volu
 Read these files:
 - `references/feedback-analysis.md` — Clustering standards, severity framework, signal vs. noise, quote selection, source channel weighting
 - `references/pm-smell-test.md` — Check for smells 5 (false precision) and 15 (recency bias in analysis)
+- `references/agent-readable-output.md` — Agent Block format and shared enum vocabulary
 
 ### 3. Load company context (if available)
 
@@ -141,6 +142,17 @@ For the top themes, recommend a next step:
 
 ```markdown
 ## Feedback Synthesis: [Date Range or Description]
+
+<!-- AGENT BLOCK -->
+```yaml
+agent_block:
+  skill: user-feedback
+  theme_count: [integer]
+  high_severity_theme_count: [integer — themes with severity Blocking or Painful]
+  recommended_action_count: [integer]
+  data_quality: [High / Medium / Low]
+```
+<!-- /AGENT BLOCK -->
 
 ### Summary
 

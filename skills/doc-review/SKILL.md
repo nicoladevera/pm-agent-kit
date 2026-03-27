@@ -41,6 +41,7 @@ If the document has signals from more than one type, use the dominant structure.
 ### 3. Load reference files for the detected type
 
 Load `references/pm-smell-test.md` for all document types — it applies universally.
+Load `references/agent-readable-output.md` for all document types — defines Agent Block format and shared enum vocabulary including Criterion ID convention.
 
 Then load the type-specific criteria file:
 
@@ -94,8 +95,15 @@ Identify the most important gaps or weaknesses. List them in priority order — 
 - State what's wrong clearly
 - Explain why it matters (what risk it creates, what confusion it causes)
 - Describe what a stronger version would look like
+- Assign a **severity level**: High (blocks launch or creates significant misalignment), Medium (causes confusion or rework but not blocking), Low (polish and clarity)
+- Assign a **Criterion ID** matching the criterion from the loaded type-specific reference file that the issue violates. Format: `[TYPE-N]` where TYPE is the document type prefix (PRD, TICKET, TECH, BRIEF, GENERAL) and N is the criterion number. See `references/agent-readable-output.md` for the full convention.
 
 Limit to the most important issues. A review that lists 15 minor issues buries the ones that matter. If there are genuinely 15 problems, the review should say: "This document has fundamental issues" and focus on the structural ones.
+
+After completing the review, populate the Agent Block:
+- Count issues by severity level
+- Count smell test flags detected
+- Set `overall_quality` to: Strong (mostly strengths, minor items), Adequate (fixable gaps that don't undermine the document), Needs Work (multiple Medium/High issues requiring significant revision), Fundamental Issues (core sections missing or so weak the document needs substantial rewriting)
 
 ### 9. Surface open questions
 
@@ -110,6 +118,19 @@ List questions you'd ask the PM before this document moves forward. These should
 
 **Document type:** [PRD / Ticket / Project Brief / Tech Spec / General Document (subtype)]
 
+<!-- AGENT BLOCK -->
+```yaml
+agent_block:
+  skill: doc-review
+  document_type: [PRD / Ticket / Project Brief / Tech Spec / General Document]
+  issue_count_high: [integer]
+  issue_count_medium: [integer]
+  issue_count_low: [integer]
+  smell_test_flags: [integer — 0 if none detected]
+  overall_quality: [Strong / Adequate / Needs Work / Fundamental Issues]
+```
+<!-- /AGENT BLOCK -->
+
 ### Summary
 [2-3 sentence assessment. Overall quality level. The single biggest strength and the single biggest gap.]
 
@@ -118,9 +139,9 @@ List questions you'd ask the PM before this document moves forward. These should
 - [Specific strength]
 
 ### What Needs Work
-1. **[Issue name]** — [What's wrong. Why it matters. What a fix looks like.]
-2. **[Issue name]** — [Description]
-3. **[Issue name]** — [Description]
+1. **[Issue name]** `[High / Medium / Low]` `[CriterionID]` — [What's wrong. Why it matters. What a fix looks like.]
+2. **[Issue name]** `[High / Medium / Low]` `[CriterionID]` — [Description]
+3. **[Issue name]** `[High / Medium / Low]` `[CriterionID]` — [Description]
 
 ### Smell Test Flags
 - [Red flags detected, with specific references — or "None detected"]

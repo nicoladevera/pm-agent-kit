@@ -75,6 +75,7 @@ Understand the problem, the user context, the constraints, and any solution hint
 Read these files — they define what the output must satisfy:
 - `references/prd-quality-criteria.md` — Generate toward all 8 criteria
 - `references/acceptance-criteria.md` — AC must meet these standards (Given/When/Then, agent-implementable)
+- `references/agent-readable-output.md` — Agent Block format and shared enum vocabulary
 
 ### 3. Load company context (if available)
 
@@ -127,6 +128,21 @@ Anything the skill inferred rather than received as input goes in the Assumption
 
 The PM should be able to scan the Assumptions section and quickly confirm or correct each one.
 
+### 8. Assign priorities and populate the Agent Block
+
+Assign a priority to each Success Metric:
+- **P0** — must-hit for launch; without it, the release decision is unclear
+- **P1** — important but not launch-blocking; tracked and reviewed post-launch
+- **P2** — nice-to-have or longer-horizon; tracked but not decision-driving
+
+Group Acceptance Criteria by feature area or scenario group, labeling each group with its priority tier (the tier of the highest-priority AC in that group).
+
+Populate the Agent Block:
+- `prd_status`: always Draft unless the PM specifies otherwise
+- `problem_severity`: High if the problem statement quantifies significant user impact or revenue risk; Medium if meaningful but bounded; Low if speculative or not yet quantified
+- `p0_metric_count`: count of P0 rows in the Success Metrics table
+- `critical_dependency_count`: count of dependency rows with High risk
+
 ---
 
 ## Output Format
@@ -138,6 +154,17 @@ The PM should be able to scan the Assumptions section and quickly confirm or cor
 **Status:** Draft
 **Date:** [Current date]
 
+<!-- AGENT BLOCK -->
+```yaml
+agent_block:
+  skill: prd-draft
+  prd_status: [Draft / Review / Approved]
+  problem_severity: [High / Medium / Low]
+  p0_metric_count: [integer]
+  critical_dependency_count: [integer — count of dependencies with High risk]
+```
+<!-- /AGENT BLOCK -->
+
 ---
 
 ## Problem Statement
@@ -148,10 +175,10 @@ The PM should be able to scan the Assumptions section and quickly confirm or cor
 
 ## Success Metrics
 
-| Metric | Baseline | Target | Timeframe | Data Source |
-|--------|----------|--------|-----------|-------------|
-| [Metric 1] | [Current value] | [Target value] | [When] | [Where measured] |
-| [Metric 2] | ... | ... | ... | ... |
+| Metric | Priority | Baseline | Target | Timeframe | Data Source |
+|--------|----------|----------|--------|-----------|-------------|
+| [Metric 1] | [P0 / P1 / P2] | [Current value] | [Target value] | [When] | [Where measured] |
+| [Metric 2] | ... | ... | ... | ... | ... |
 
 ---
 
@@ -188,9 +215,12 @@ The PM should be able to scan the Assumptions section and quickly confirm or cor
 
 ## Acceptance Criteria
 
+**[Feature area or scenario group — P0]**
 - **Given** [precondition], **When** [action], **Then** [expected result]
 - **Given** [precondition], **When** [action], **Then** [expected result]
-[Continue for each AC]
+
+**[Feature area or scenario group — P1]**
+- **Given** [precondition], **When** [action], **Then** [expected result]
 
 ---
 

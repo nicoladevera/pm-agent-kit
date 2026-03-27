@@ -41,6 +41,7 @@ Understand the full scope before decomposing. Note: the problem being solved, th
 Read these files — they define the standards for stories and AC:
 - `references/acceptance-criteria.md` — Every AC must meet these standards
 - `references/story-structure.md` — Story scoping, splitting, and structure standards
+- `references/agent-readable-output.md` — Agent Block format and shared enum vocabulary
 
 ### 3. Load company context (if available)
 
@@ -119,6 +120,17 @@ If any stories have ambiguity that the PM should resolve before engineering pick
 
 ```markdown
 ## Generated Tasks: [Source Document Title]
+
+<!-- AGENT BLOCK -->
+```yaml
+agent_block:
+  skill: generate-tasks
+  story_count: [integer]
+  flagged_item_count: [integer — items needing PM input before implementation]
+  external_dependency_count: [integer — dependencies on teams outside this sprint]
+  implementation_sequence_defined: [Yes / No]
+```
+<!-- /AGENT BLOCK -->
 
 ### Summary
 

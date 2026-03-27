@@ -98,6 +98,7 @@ Read these files:
 - `references/pm-smell-test.md` — Check for smells 4 (audience mismatch), 6 (activity reported as progress), and 12 (risk buried or absent)
 - `references/audience-registers.md` — Per-audience communication register for calibrating tone, depth, and framing
 - `references/pushback-and-negotiation.md` — For risk framing and scope trade-off communication
+- `references/agent-readable-output.md` — Agent Block format and shared enum vocabulary
 
 #### 3. Load company context (if available)
 
@@ -143,6 +144,13 @@ Check for:
 
 Output the assessment using the Analyze Mode format below. Include recommended actions — what should the PM do next based on this assessment?
 
+Populate the Agent Block from the completed assessment:
+- `overall_status`: matches the Overall Status enum
+- `active_blocker_count`: count of Blocked items in the Workstream Status table
+- `at_risk_workstream_count`: count of At Risk items in the Workstream Status table
+- `max_timeline_impact_days`: the largest timeline impact stated across all Risks entries (use 0 if none)
+- `escalation_needed`: Yes if any Blocker entry has "Escalation needed: Yes"
+
 ### Additional Steps for Draft Mode
 
 #### 7. Determine and calibrate for audience
@@ -186,6 +194,18 @@ If the PM's input or invocation signals urgency, crunch, incident, or high-stake
 ### Overall Status: [On Track / At Risk / Blocked]
 
 [1-2 sentence summary. Why this assessment.]
+
+<!-- AGENT BLOCK -->
+```yaml
+agent_block:
+  skill: status-update
+  overall_status: [On Track / At Risk / Blocked]
+  active_blocker_count: [integer]
+  at_risk_workstream_count: [integer]
+  max_timeline_impact_days: [integer — 0 if no impact]
+  escalation_needed: [Yes / No]
+```
+<!-- /AGENT BLOCK -->
 
 ---
 

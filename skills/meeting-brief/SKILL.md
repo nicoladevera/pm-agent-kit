@@ -73,6 +73,7 @@ Read these files:
 - `references/communication-quality.md` — Quality criteria for the brief itself (audience calibration, structured naturally, lead with the point)
 - `references/decision-frameworks.md` — For identifying and framing decisions on the table
 - `references/audience-registers.md` — For mapping attendee communication preferences and calibrating the brief's register
+- `references/agent-readable-output.md` — Agent Block format and shared enum vocabulary
 
 ### 3. Load company context (if available)
 
@@ -148,6 +149,17 @@ If duration isn't known, skip this section.
 **Date:** [Meeting date]
 **Duration:** [Length, if known]
 **Objective:** [What should be decided, aligned on, or resolved by the end of this meeting.]
+
+<!-- AGENT BLOCK -->
+```yaml
+agent_block:
+  skill: meeting-brief
+  decision_count: [integer]
+  undecided_decider_count: [integer — decisions with no assigned decider]
+  attendee_count: [integer]
+  pre_read_required: [Yes / No]
+```
+<!-- /AGENT BLOCK -->
 
 ---
 

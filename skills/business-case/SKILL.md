@@ -78,6 +78,7 @@ Read these files:
 - `references/business-case-standards.md` — Impact sizing frameworks, cost model standards, risk assessment, alternatives quality, audience calibration
 - `references/decision-frameworks.md` — Options quality, reversibility assessment, recommendation standards
 - `references/pm-smell-test.md` — Check for smells 1 (missing why), 5 (false precision), and 14 (options not considered)
+- `references/agent-readable-output.md` — Agent Block format and shared enum vocabulary
 
 ### 3. Load company context (if available)
 
@@ -211,7 +212,17 @@ Check for:
 - **Smell 5 (False Precision):** Are impact estimates presented as ranges with assumptions? Or are single numbers stated with false confidence? Are timelines presented as estimates or commitments?
 - **Smell 14 (Options Not Considered):** Are alternatives genuine? Is "do nothing" honestly evaluated? Is the recommendation chosen or assumed?
 
-### 13. Flag open items
+### 13. Populate the Agent Block
+
+After completing the smell test, fill in the Agent Block:
+- `recommendation`: the one-sentence recommendation from the header (repeat it here)
+- `confidence`: the integer from the Conviction section of the Stress Test
+- `primary_risk`: the risk category with the highest combined likelihood × impact from the Risk Assessment table
+- `reversibility`: from the Reversibility field in Risk Assessment
+- `key_assumption`: the single assumption from the Blindspot Check that, if wrong, would most change the recommendation
+- `do_nothing_viable`: Yes if the Do Nothing alternative analysis shows it is a genuinely reasonable path; No if Do Nothing analysis identifies significant deterioration
+
+### 14. Flag open items
 
 List everything the PM needs to resolve before the business case is ready to present:
 - Missing data that would improve impact sizing confidence
@@ -232,6 +243,19 @@ Open items are a feature of the business case, not a failure of it.
 **Status:** Draft
 **Date:** [Current date]
 **Recommendation:** [One-sentence recommendation — stated up front so the reader knows where this is going]
+
+<!-- AGENT BLOCK -->
+```yaml
+agent_block:
+  skill: business-case
+  recommendation: "[One sentence — what is recommended]"
+  confidence: [1-10]
+  primary_risk: [Execution / Market / Technical / Adoption / Organizational]
+  reversibility: [One-way door / Two-way door]
+  key_assumption: "[One sentence — the single assumption the recommendation is most sensitive to]"
+  do_nothing_viable: [Yes / No]
+```
+<!-- /AGENT BLOCK -->
 
 ---
 

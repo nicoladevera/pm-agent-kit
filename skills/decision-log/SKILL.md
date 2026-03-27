@@ -51,6 +51,7 @@ Read these files:
 - `references/decision-frameworks.md` — Decision anatomy, options quality, reversibility assessment, escalation signals
 - `references/pm-smell-test.md` — Check for Decision and Strategy Smells 14 (options not considered) and 15 (recency bias)
 - `references/pushback-and-negotiation.md` — For escalation framing in Structure mode
+- `references/agent-readable-output.md` — Agent Block format and shared enum vocabulary
 
 ### 4. Load company context (if available)
 
@@ -95,6 +96,15 @@ Check for:
 
 List anything unresolved: downstream decisions this creates, information that's still needed, stakeholders who need to be informed.
 
+### 9. Populate the Agent Block
+
+Fill in the Agent Block fields from the completed log:
+- `decision_status`: matches the Status field (Decided / Pending)
+- `decision`: the one-sentence statement from the Decision section
+- `confidence`: the conviction level from the Rationale — if not explicitly stated, infer from evidence strength (strong evidence with clear rationale = 7–9, mixed evidence = 5–6, thin evidence or speculation = 3–4)
+- `reversibility`: from the Options table Reversibility column for the chosen option
+- `primary_tradeoff`: the key con from the Options table for the chosen option, stated as one sentence
+
 ---
 
 ## Output Format
@@ -105,6 +115,18 @@ List anything unresolved: downstream decisions this creates, information that's 
 **Status:** Decided / Pending
 **Date:** [Decision date or target decision date]
 **Decider:** [Who made or should make this decision]
+
+<!-- AGENT BLOCK -->
+```yaml
+agent_block:
+  skill: decision-log
+  decision_status: [Decided / Pending]
+  decision: "[One sentence — what was decided or recommended]"
+  confidence: [1-10]
+  reversibility: [One-way door / Two-way door]
+  primary_tradeoff: "[One sentence — what was given up by choosing this option]"
+```
+<!-- /AGENT BLOCK -->
 
 ---
 

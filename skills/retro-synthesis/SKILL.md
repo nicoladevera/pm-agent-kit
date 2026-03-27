@@ -42,6 +42,7 @@ Read these files:
 - `references/pm-philosophy.md` — Reference the "Proactive Gap-Closing" heuristic: don't wait for the team to notice patterns; surface them
 - `references/pm-smell-test.md` — Check for smell 6 (activity reported as progress): the team did a retro but nothing changed
 - `references/communication-quality.md` — The synthesis itself is a communication artifact; it should meet communication quality standards
+- `references/agent-readable-output.md` — Agent Block format and shared enum vocabulary
 
 ### 3. Load company context (if available)
 
@@ -122,6 +123,17 @@ Based on the synthesis, recommend 1-2 areas for the team to focus on. Prioritize
 
 ```markdown
 ## Retro Synthesis: [Sprint(s) Covered]
+
+<!-- AGENT BLOCK -->
+```yaml
+agent_block:
+  skill: retro-synthesis
+  pattern_count: [integer]
+  unaddressed_action_item_count: [integer — action items committed but not completed]
+  growing_pattern_count: [integer — patterns with trend: Getting worse]
+  highest_severity_pattern: "[Pattern name — or 'None']"
+```
+<!-- /AGENT BLOCK -->
 
 ### Summary
 

@@ -111,6 +111,7 @@ Read these files:
 - `references/narrative-structure.md` — Narrative arc (SCR), deck types, slide-level thinking, audience calibration, visual guidance conventions, speaker notes standards
 - `references/communication-quality.md` — Lead with the answer, assessment over activity, audience calibration, risk surfaced not buried
 - `references/pm-smell-test.md` — Check for smells 4 (audience mismatch), 6 (activity reported as progress), and 12 (risk buried or absent)
+- `references/agent-readable-output.md` — Agent Block format and shared enum vocabulary
 
 #### 3. Load company context (if available)
 
@@ -143,6 +144,8 @@ Every presentation follows the Situation → Complication → Resolution (SCR) a
 - **Resolution:** What we propose. The recommendation, the plan, the ask.
 
 Map the input content to this arc. The situation might be one slide or three. The complication might unfold across data and competitive context. The resolution might span a recommendation, plan, and explicit ask. But the macro arc must be clear.
+
+After mapping the arc, extract one-sentence forms of Situation, Complication, and Resolution for the Agent Block — these should stand alone without requiring context. Separately, list the specific decisions or actions you are asking the audience to take (the `decisions_asked_of_audience` field). If the deck is purely informational with no ask, use `["Inform only — no decision requested"]`.
 
 #### 6. Calibrate to audience
 
@@ -283,6 +286,22 @@ If any check fails, fix before saving. Note any design compromises in the contex
 **Purpose:** [What the audience should decide, learn, or take away]
 **Estimated length:** [N slides]
 
+<!-- AGENT BLOCK -->
+```yaml
+agent_block:
+  skill: presentation-deck
+  mode: Narrative
+  deck_type: [Exec Review / QBR / Product Explainer / Board Update / Stakeholder Onboarding]
+  audience: "[Who — specific]"
+  situation: "[SCR Situation in one sentence]"
+  complication: "[SCR Complication in one sentence]"
+  resolution: "[SCR Resolution in one sentence]"
+  decisions_asked_of_audience:
+    - "[Decision or action asked of audience — or 'Inform only — no decision requested']"
+  slide_count: [integer]
+```
+<!-- /AGENT BLOCK -->
+
 ---
 
 ### Narrative Arc
@@ -364,6 +383,7 @@ Output in conversation:
 **Audience:** [Who]
 **Slides:** [N total — N main + N appendix]
 **Branding:** [Company brand applied / Default branding (company branding unavailable)]
+**Agent-readable canonical:** Narrative mode — run Narrative mode for machine-parseable output. This Slides mode output provides file reference only.
 
 ### Slide Sequence
 

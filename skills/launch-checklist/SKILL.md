@@ -74,6 +74,7 @@ Understand what's launching, who it affects, what systems are involved, and what
 Read these files:
 - `references/launch-readiness.md` — Launch readiness dimensions and standards by launch type
 - `references/pm-smell-test.md` — Check for smells 2 (no way to measure success), 3 (missing owners), and 11 (no data plan)
+- `references/agent-readable-output.md` — Agent Block format and shared enum vocabulary
 
 ### 3. Load company context (if available)
 
@@ -159,6 +160,18 @@ List anything the PM needs to resolve before the launch is ready. These are gaps
 **Launch type:** [Internal / Alpha / Beta / GA]
 **Target date:** [Date, if provided — "TBD" if not]
 **Launch owner:** [PM or whoever owns the launch — "TBD" if not specified]
+
+<!-- AGENT BLOCK -->
+```yaml
+agent_block:
+  skill: launch-checklist
+  launch_type: [Internal / Alpha / Beta / GA]
+  overall_readiness: [Ready / At Risk / Not Ready]
+  unowned_item_count: [integer — checklist items with no assigned owner]
+  success_criteria_defined: [Yes / No]
+  rollback_plan_defined: [Yes / No]
+```
+<!-- /AGENT BLOCK -->
 
 ---
 

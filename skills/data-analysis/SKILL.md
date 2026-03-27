@@ -72,6 +72,7 @@ Understand the question being asked and what data is available. Separate the que
 Read these files:
 - `references/data-interpretation.md` — Metric interpretation heuristics, funnel analysis standards, cohort patterns, anomaly investigation framework, correlation vs. causation guardrails, data quality flags, confidence levels
 - `references/pm-smell-test.md` — Check for smells 2 (no way to measure success) and 5 (false precision)
+- `references/agent-readable-output.md` — Agent Block format and shared enum vocabulary
 
 ### 3. Load company context (if available)
 
@@ -161,6 +162,18 @@ Based on the analysis, recommend what to do next:
 - **Action to take:** If the finding is strong enough to act on
 - **Monitor:** If the signal is real but not yet actionable
 
+### 10. Sort hypotheses and populate the Agent Block
+
+Sort the Hypotheses table by Rank (1 = most likely) before output. If the data doesn't clearly distinguish likelihood between hypotheses, state the tied ranks and explain in the Limitations section rather than forcing an ordering.
+
+Populate the Agent Block:
+- `analysis_type`: from the classification in step 4
+- `finding`: the key finding in one sentence (the first sentence of the Key Finding section)
+- `confidence`: the categorical confidence level from the Key Finding section
+- `top_hypothesis`: the row number of the Rank 1 hypothesis
+- `recommended_action`: one of Pull more data / Run experiment / Act on finding / Monitor — the primary next step from step 9
+- `sample_size_adequate`: Yes if sample size was assessed as sufficient in step 5; No if a size constraint was identified; Unknown if size wasn't determinable
+
 ---
 
 ## Output Format
@@ -169,6 +182,19 @@ Based on the analysis, recommend what to do next:
 ## Data Analysis: [Question or Topic]
 
 **Analysis type:** [Metric interpretation / Funnel analysis / Cohort analysis / Anomaly investigation]
+
+<!-- AGENT BLOCK -->
+```yaml
+agent_block:
+  skill: data-analysis
+  analysis_type: [Metric interpretation / Funnel analysis / Cohort analysis / Anomaly investigation]
+  finding: "[One sentence summary of the key finding]"
+  confidence: [High / Medium / Low]
+  top_hypothesis: [integer — rank 1 hypothesis number]
+  recommended_action: [Pull more data / Run experiment / Act on finding / Monitor]
+  sample_size_adequate: [Yes / No / Unknown]
+```
+<!-- /AGENT BLOCK -->
 
 ---
 
@@ -180,7 +206,10 @@ Based on the analysis, recommend what to do next:
 
 ### Key Finding
 
-[1-2 sentences. The answer, stated directly. Confidence level: High / Medium / Low.]
+**Finding:** [1-2 sentences. The answer, stated directly.]
+**Confidence:** [High / Medium / Low] — [One sentence on what drives this confidence level — sample size, data quality, or evidence strength]
+**Top Hypothesis:** Hypothesis #[N] — [brief label from the Hypotheses table below]
+**Recommended Action:** [Pull more data / Run experiment / Act on finding / Monitor]
 
 ---
 
@@ -199,10 +228,10 @@ Show the work. Include tables, calculations, and comparisons as appropriate.]
 
 ### Hypotheses
 
-| # | Hypothesis | Evidence For | Evidence Against | Likelihood |
-|---|-----------|-------------|-----------------|------------|
-| 1 | [Hypothesis] | [What supports it] | [What contradicts it] | [High / Medium / Low] |
-| 2 | [Hypothesis] | [Evidence for] | [Evidence against] | [Likelihood] |
+| Rank | # | Hypothesis | Evidence For | Evidence Against | Likelihood |
+|------|---|-----------|-------------|-----------------|------------|
+| 1 | [#] | [Most likely hypothesis] | [What supports it] | [What contradicts it] | [High / Medium / Low] |
+| 2 | [#] | [Second most likely] | [Evidence for] | [Evidence against] | [Likelihood] |
 
 ---
 

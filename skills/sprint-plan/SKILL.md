@@ -69,6 +69,7 @@ Read these files:
 - `references/acceptance-criteria.md` — AC standards for assessing story readiness
 - `references/pm-smell-test.md` — Check for smells 1 (missing the "why") and 2 (no way to measure success)
 - `references/pushback-and-negotiation.md` — For scope tension and capacity trade-off framing
+- `references/agent-readable-output.md` — Agent Block format and shared enum vocabulary
 
 #### 3. Load company context (if available)
 
@@ -184,6 +185,18 @@ Check:
 ```markdown
 ## Backlog Health Report
 
+<!-- AGENT BLOCK -->
+```yaml
+agent_block:
+  skill: sprint-plan
+  mode: Analyze
+  backlog_health: [Healthy / Needs Attention / Critical]
+  ready_story_count: [integer]
+  needs_refinement_count: [integer]
+  missing_data_story_count: [integer]
+```
+<!-- /AGENT BLOCK -->
+
 ### Summary
 
 [X stories assessed. Y ready for sprint, Z need work. Top issues.]
@@ -253,6 +266,19 @@ If Draft mode stops because required inputs are missing, use this format instead
 
 ```markdown
 ## Sprint Plan: [Sprint Name/Number]
+
+<!-- AGENT BLOCK -->
+```yaml
+agent_block:
+  skill: sprint-plan
+  mode: Draft
+  sprint_status: [On Track / At Risk / Blocked]
+  committed_story_count: [integer]
+  capacity_utilization_pct: [integer — 0 to 100]
+  dependency_risk_count: [integer — dependencies with At Risk or Blocked status]
+  carryover_count: [integer]
+```
+<!-- /AGENT BLOCK -->
 
 ### Sprint Goals
 

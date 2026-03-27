@@ -97,6 +97,7 @@ Absorb all competitive information before classifying or analyzing. Understand w
 Read these files:
 - `references/competitive-analysis.md` — Signal classification, monitoring framework, deep dive structure, source reliability, implications framework, reactivity check
 - `references/pm-smell-test.md` — Check for smells 5 (false precision), 14 (options not considered), and 15 (recency bias in analysis)
+- `references/agent-readable-output.md` — Agent Block format and shared enum vocabulary
 
 #### 3. Load company context (if available)
 
@@ -131,9 +132,13 @@ State the classification explicitly for each signal. Don't leave the reader gues
 For each signal or strategic shift:
 - **What happened:** State the factual change
 - **What it means:** Interpret the competitive significance
-- **Action warranted?** Respond / Note / Ignore (per `references/competitive-analysis.md` reactivity framework)
+- **Action warranted?** Respond / Monitor / Ignore (per `references/competitive-analysis.md` reactivity framework)
+- **Threat Severity:** High (directly threatens current revenue, user base, or positioning), Medium (meaningful competitive pressure but manageable), or Low (worth noting but not threatening)
+- **Urgency:** Immediate (days) — response needed within days; Near-term (1-2 sprints) — address within 1-2 sprints; Strategic (quarter+) — factor into quarterly planning; None — no action needed
 
 If the input includes information about the source (press release vs. product teardown vs. customer mention), note the source reliability.
+
+After completing all signal analysis, populate the Monitor mode Agent Block: count high-severity signals, count signals with Action: Respond, and set max_urgency to the most urgent action signal across all signals.
 
 #### 7. Assess overall landscape
 
@@ -199,6 +204,12 @@ Per the implications framework in `references/competitive-analysis.md`:
 
 If all answers are "no," say so. "No action needed" is a valid conclusion.
 
+After writing the four-dimension prose assessment, translate each to a structured enum for the Agent Block:
+- `product_implication`: Act now (build or accelerate something) / Watch (monitor for when it becomes actionable) / No change
+- `positioning_implication`: Differentiate (sharpen differentiation) / Adjust (update positioning) / Holds (current positioning still works)
+- `urgency`: Immediate (days) / Near-term (1-2 sprints) / Strategic (quarter+) / None
+- `risk_level`: High / Medium / Low / None
+
 #### 10. Run the smell test (Deep Dive mode)
 
 - **Smell 14 (Options Not Considered)** — Is the deep dive only evaluating whether we should react to the competitor? Consider also: what can we learn from them? What did they validate for us? What did they get wrong that we should avoid?
@@ -217,6 +228,18 @@ If all answers are "no," say so. "No action needed" is a valid conclusion.
 
 [Overall landscape assessment in 2-3 sentences. Most significant development. Landscape direction: Stable / Shifting / Disrupting.]
 
+<!-- AGENT BLOCK -->
+```yaml
+agent_block:
+  skill: competitive-intel
+  mode: Monitor
+  landscape_status: [Stable / Shifting / Disrupting]
+  high_severity_signal_count: [integer]
+  respond_action_count: [integer — number of signals with Action: Respond]
+  max_urgency: [Immediate (days) / Near-term (1-2 sprints) / Strategic (quarter+) / None]
+```
+<!-- /AGENT BLOCK -->
+
 ---
 
 ### Significant Signals
@@ -228,7 +251,9 @@ If all answers are "no," say so. "No action needed" is a valid conclusion.
 | [What happened] | [Signal / Strategic shift] | [Where you learned this] |
 
 **What it means:** [Interpretation — competitive significance]
-**Action:** [Respond / Note / Ignore] — [Why]
+**Action:** [Respond / Monitor / Ignore] — [Why]
+**Threat Severity:** [High / Medium / Low]
+**Urgency:** [Immediate (days) / Near-term (1-2 sprints) / Strategic (quarter+)]
 
 ---
 
@@ -327,6 +352,21 @@ If all answers are "no," say so. "No action needed" is a valid conclusion.
 - **Risk:** [New risk introduced? Or no new risk.]
 
 **Bottom line:** [One sentence — what to do with this intelligence]
+
+<!-- AGENT BLOCK -->
+```yaml
+agent_block:
+  skill: competitive-intel
+  mode: Deep Dive
+  competitor: "[Competitor name]"
+  area: "[Area analyzed]"
+  product_implication: [Act now / Watch / No change]
+  positioning_implication: [Differentiate / Adjust / Holds]
+  urgency: [Immediate (days) / Near-term (1-2 sprints) / Strategic (quarter+) / None]
+  risk_level: [High / Medium / Low / None]
+  bottom_line: "[Repeat of Bottom line sentence]"
+```
+<!-- /AGENT BLOCK -->
 
 ---
 
