@@ -72,6 +72,7 @@ pm-agent-kit/
 │   ├── competitive-analysis.md       Signal classification, monitoring, deep dive structure
 │   ├── business-case-standards.md    Impact sizing, cost models, risk assessment, alternatives
 │   ├── narrative-structure.md        Narrative arc, deck types, slide-level thinking, audience calibration
+│   ├── slide-design.md              Visual composition: hierarchy, layout, density, typography, color strategy
 │   └── branding-guidelines.md        Presentation branding standards, slide layouts, visual consistency
 ├── knowledge/                        Accumulated PM work product (artifacts produced by skills)
 │   ├── README.md                     Folder purpose, conventions, naming guide
@@ -332,6 +333,7 @@ Reference files live in `references/` and are consulted by multiple skills. They
 | `competitive-analysis.md` | Signal classification, monitoring framework, deep dive structure, reactivity checks | `competitive-intel` |
 | `business-case-standards.md` | Impact sizing frameworks, cost model standards, risk assessment, alternatives quality | `business-case` |
 | `narrative-structure.md` | Narrative arc (SCR), deck types, slide-level thinking, audience calibration, visual guidance | `presentation-deck` |
+| `slide-design.md` | Visual composition: information hierarchy, layout patterns, density budgets, typography, color strategy, visual storytelling, designed-vs-default checklist | `presentation-deck` (Slides mode) |
 | `branding-guidelines.md` | Presentation branding standards, slide layouts, visual consistency, and Slides-mode implementation guidance | `presentation-deck` (Slides mode) |
 
 ---
