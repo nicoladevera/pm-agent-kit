@@ -25,138 +25,12 @@ What makes generic output specific and credible. Product areas, team structure, 
 
 ```
 pm-agent-kit/
-├── CLAUDE.md                         Identity + operating principles
-├── skills/                           Invocable capabilities
-│   ├── doc-review/
-│   │   └── SKILL.md                  Document review (Analyzer, Tier 1)
-│   ├── prd-draft/
-│   │   └── SKILL.md                  PRD drafting (Generator, Tier 1)
-│   ├── generate-tasks/
-│   │   └── SKILL.md                  Story decomposition (Generator, Tier 1)
-│   ├── decision-log/
-│   │   └── SKILL.md                  Decision capture + framing (Generator, Tier 2)
-│   ├── meeting-brief/
-│   │   └── SKILL.md                  Pre-meeting prep (Generator, Tier 2)
-│   ├── status-update/
-│   │   └── SKILL.md                  Delivery assessment + status comms (Gen + Ana, Tier 2)
-│   ├── sprint-plan/
-│   │   └── SKILL.md                  Sprint planning + backlog health (Gen + Ana, Tier 2)
-│   ├── retro-synthesis/
-│   │   └── SKILL.md                  Retro pattern synthesis (Analyzer, Tier 2)
-│   ├── launch-checklist/
-│   │   └── SKILL.md                  Feature launch checklists (Generator, Tier 3)
-│   ├── user-feedback/
-│   │   └── SKILL.md                  Customer feedback synthesis (Analyzer, Tier 3)
-│   ├── data-analysis/
-│   │   └── SKILL.md                  Product data interpretation (Analyzer, Tier 3)
-│   ├── competitive-intel/
-│   │   └── SKILL.md                  Competitive monitoring + deep dives (Analyzer, Tier 3)
-│   ├── business-case/
-│   │   └── SKILL.md                  Initiative business cases (Generator, Tier 4)
-│   └── presentation-deck/
-│       └── SKILL.md                  Structured presentation narratives + .pptx (Generator, Tier 4)
-├── references/                       Shared PM judgment patterns
-│   ├── pm-philosophy.md              Core principles with rationale and behavioral depth
-│   ├── prd-quality-criteria.md       What makes a good PRD (evaluative rubric)
-│   ├── pushback-and-negotiation.md  Scope protection, reframing, escalation, and disagreement patterns
-│   ├── pm-smell-test.md              Red flags across all PM artifact types
-│   ├── acceptance-criteria.md        AC standards optimized for agent implementation
-│   ├── audience-registers.md        Per-audience communication registers by stakeholder type
-│   ├── story-structure.md            Story scoping, splitting, and structure standards
-│   ├── communication-quality.md      Quality criteria for PM communications
-│   ├── sprint-planning.md            Sprint goals, capacity, backlog health standards
-│   ├── decision-frameworks.md        Decision anatomy, options quality, reversibility
-│   ├── launch-readiness.md           Launch readiness dimensions and standards by type
-│   ├── feedback-analysis.md          Feedback clustering, severity, signal vs. noise
-│   ├── data-interpretation.md        Metric interpretation, funnel analysis, anomaly investigation
-│   ├── competitive-analysis.md       Signal classification, monitoring, deep dive structure
-│   ├── business-case-standards.md    Impact sizing, cost models, risk assessment, alternatives
-│   ├── narrative-structure.md        Narrative arc, deck types, slide-level thinking, audience calibration
-│   ├── slide-design.md              Visual composition: hierarchy, layout, density, typography, color strategy
-│   └── branding-guidelines.md        Presentation branding standards, slide layouts, visual consistency
-├── knowledge/                        Accumulated PM work product (artifacts produced by skills)
-│   ├── README.md                     Folder purpose, conventions, naming guide
-│   ├── prds/                         PRDs produced by prd-draft
-│   ├── tasks/                        Story sets produced by generate-tasks
-│   ├── decisions/                    Decision records produced by decision-log
-│   ├── meeting-briefs/               Pre-meeting briefs produced by meeting-brief
-│   ├── status-updates/               Status communications produced by status-update (Draft mode)
-│   ├── sprint-plans/                 Sprint plans produced by sprint-plan (Draft mode)
-│   ├── retros/                       Retro syntheses produced by retro-synthesis
-│   ├── launch-checklists/            Launch checklists produced by launch-checklist
-│   ├── feedback/                     Feedback syntheses produced by user-feedback
-│   ├── data-analyses/                Data analysis reports produced by data-analysis
-│   ├── competitive/                  Competitive snapshots and deep dives produced by competitive-intel
-│   ├── business-cases/               Business cases produced by business-case
-│   └── presentations/                Presentation narratives and .pptx files produced by presentation-deck
-├── company/                          Company-specific context (rebuilt per role)
-│   ├── onboarding.md                 Setup checklist for a new company
-│   ├── facts/                        Product areas, team structure, glossary
-│   │   ├── product.md                Product context (stub — populate per company)
-│   │   ├── team.md                   Team structure (stub)
-│   │   ├── glossary.md               Company glossary (stub)
-│   │   └── competitors.md            Competitive landscape (stub)
-│   ├── norms/                        Sprint process, decision-making, comms patterns
-│   │   ├── process.md                Team process (stub)
-│   │   ├── decisions.md              Decision-making norms (stub)
-│   │   ├── communication.md          Communication norms (stub)
-│   │   └── launch-process.md         Launch process by type (stub)
-│   └── interfaces/                   Tool configs (Jira, Slack, data sources)
-│       ├── tools.md                  Tool configuration (stub)
-│       ├── templates.md              Company templates (stub)
-│       ├── data-sources.md           Data and feedback sources (stub)
-│       └── branding.md               Company brand colors, fonts, logo, slide defaults (stub)
-└── evals/                            Evaluation cases per skill
-    ├── doc-review/
-    │   ├── sample-prd-01.md          Deliberately flawed PRD for testing
-    │   ├── sample-ticket-01.md       Deliberately flawed ticket for testing
-    │   ├── sample-project-brief-01.md  Deliberately flawed project brief for testing
-    │   ├── sample-tech-spec-01.md    Deliberately flawed tech spec for testing
-    │   ├── rubric-prd.md             Scoring criteria for PRD review output
-    │   ├── rubric-ticket.md          Scoring criteria for ticket review output
-    │   ├── rubric-project-brief.md   Scoring criteria for project brief review output
-    │   ├── rubric-tech-spec.md       Scoring criteria for tech spec review output
-    │   ├── sample-general-01.md     Deliberately flawed GTM plan for testing
-    │   └── rubric-general.md        Scoring criteria for general document review output
-    ├── prd-draft/
-    │   ├── sample-input-01.md        Rough problem statement for drafting test
-    │   └── rubric.md                 Quality criteria + bidirectionality test
-    ├── generate-tasks/
-    │   ├── sample-input-01.md        Clean PRD for story decomposition test
-    │   └── rubric.md                 Story quality + AC standards check
-    ├── decision-log/
-    │   ├── sample-input-01.md        Slack thread with implicit decision debate
-    │   └── rubric.md                 Structure extraction + options quality
-    ├── meeting-brief/
-    │   ├── sample-input-01.md        Overloaded meeting with vague agenda
-    │   └── rubric.md                 Decision surfacing + attendee stakes
-    ├── status-update/
-    │   ├── sample-input-01.md        Sprint board dump with hidden risks
-    │   └── rubric.md                 Risk inference + audience calibration
-    ├── sprint-plan/
-    │   ├── sample-input-01.md        Mixed-readiness backlog with capacity info
-    │   └── rubric.md                 Backlog health + realistic capacity math
-    ├── retro-synthesis/
-    │   ├── sample-input-01.md        3 retros with recurring + improving patterns
-    │   └── rubric.md                 Cross-retro synthesis + action item tracking
-    ├── launch-checklist/
-    │   ├── sample-input-01.md        Beta launch with missing rollback + monitoring
-    │   └── rubric.md                 Dimension coverage + gap detection + owner assignment
-    ├── user-feedback/
-    │   ├── sample-input-01.md        Multi-channel feedback with noise + high-severity signal
-    │   └── rubric.md                 Clustering quality + severity accuracy + signal vs. noise
-    ├── data-analysis/
-    │   ├── sample-input-01.md        Activation drop with funnel data + red herring
-    │   └── rubric.md                 Root cause identification + hypothesis ranking
-    ├── competitive-intel/
-    │   ├── sample-input-01.md        5 signals: noise, signals, and strategic shift
-    │   └── rubric.md                 Signal classification + landscape assessment
-    ├── business-case/
-    │   ├── sample-input-01.md        Rough initiative proposal with partial data + missing alternatives
-    │   └── rubric.md                 Impact sizing + alternatives + stress test novelty
-    └── presentation-deck/
-        ├── sample-input-01.md        Business case needing exec review deck for VP
-        └── rubric.md                 Audience calibration + headline quality + narrative arc
+├── CLAUDE.md              Identity + operating principles
+├── skills/                Invocable capabilities (one folder per skill)
+├── references/            Shared PM judgment patterns
+├── knowledge/             Accumulated PM work product (artifacts produced by skills)
+├── company/               Company-specific context (rebuilt per role)
+└── evals/                 Evaluation cases per skill (sample inputs + rubrics)
 ```
 
 ---
@@ -234,16 +108,7 @@ If company branding is missing or still stub-level, the skill should fall back t
 
 ### Setting Up Company Context
 
-When starting at a new company, follow the checklist in `company/onboarding.md`. Not every file in `company/` is consumed by shipped skills today.
-
-| File | Status | Current consumers | Missing impact today |
-|------|--------|-------------------|----------------------|
-| `company/facts/product.md` | Active runtime input | Most shipped skills | Broad quality loss across most skills |
-| `company/facts/team.md` | Active runtime input | Planning, status, meeting, decision, launch, business-case, and deck skills | Weaker ownership, stakeholder, and capacity reasoning |
-| `company/norms/process.md` | Active runtime input | Planning, status, drafting, decomposition, and retro skills | Weaker planning and process calibration |
-| `company/norms/communication.md` | Active runtime input | Status, meeting, competitive, launch, and deck skills | Weaker audience calibration |
-| `company/norms/decisions.md`, `company/facts/competitors.md`, `company/norms/launch-process.md`, `company/interfaces/data-sources.md`, `company/interfaces/branding.md` | Conditional runtime input | Only specific skills or Slides mode | Localized quality loss in those paths |
-| `company/facts/glossary.md`, `company/interfaces/tools.md`, `company/interfaces/templates.md` | Future-facing / not currently consumed | None | No runtime effect today |
+Follow the checklist in `company/onboarding.md`. Most skills degrade noticeably without substantive `company/facts/product.md` and `company/facts/team.md` — these two files have the broadest impact. Other files in `company/` have localized or conditional impact and are noted in the onboarding checklist.
 
 ---
 
