@@ -50,6 +50,7 @@ If the input is ambiguous — it's unclear whether a decision was reached — as
 Read these files:
 - `references/decision-frameworks.md` — Decision anatomy, options quality, reversibility assessment, escalation signals
 - `references/pm-smell-test.md` — Check for Decision and Strategy Smells 14 (options not considered) and 15 (recency bias)
+- `references/pushback-and-negotiation.md` — For escalation framing in Structure mode
 
 ### 4. Load company context (if available)
 
@@ -80,6 +81,8 @@ From the input, extract:
 - **Assess reversibility** — Is this a one-way door or a two-way door? Name it explicitly.
 - **State a recommendation** — If the input provides enough signal, come with a point of view. State it directly. Name the reasoning. Acknowledge what's given up. If there isn't enough signal for a recommendation, say so and name what information would be needed.
 - **Name the decider and timeline** — Who should make this decision and by when. If the input doesn't specify, flag it.
+
+**For escalation decisions** — where the decision needs executive ownership or crosses organizational levels — frame as a fork per `references/pushback-and-negotiation.md`: name the paths, the consequences of each, and the specific commitment being asked for. Don't escalate as complaint; escalate as "here's the fork and here's who needs to choose."
 
 ### 7. Run the smell test
 

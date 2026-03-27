@@ -96,6 +96,8 @@ Read these files:
 - `references/communication-quality.md` — Quality criteria for the output (both modes produce communication)
 - `references/sprint-planning.md` — Sprint health indicators and what they signal
 - `references/pm-smell-test.md` — Check for smells 4 (audience mismatch), 6 (activity reported as progress), and 12 (risk buried or absent)
+- `references/audience-registers.md` — Per-audience communication register for calibrating tone, depth, and framing
+- `references/pushback-and-negotiation.md` — For risk framing and scope trade-off communication
 
 #### 3. Load company context (if available)
 
@@ -153,6 +155,16 @@ Identify the audience from the invocation. Calibrate:
 | **Team** | Sprint progress + blockers | Detailed — operational, actionable | What's next, what's changed |
 | **Cross-functional** | What they need to know + what they need to do | Interface-level — their dependencies and asks | Timeline impacts on shared work |
 | **Stakeholders** | Progress toward commitments + risks to timeline | Mid-level — informed, not overwhelmed | When the next update comes |
+
+#### 7b. Detect and adapt for pressure context
+
+If the PM's input or invocation signals urgency, crunch, incident, or high-stakes context (launch week, production issue, tight deadline, org-wide reprioritization):
+
+- **Shift from consultative to broadcast.** The update informs and directs; it doesn't invite open-ended discussion.
+- **Anchor urgency to business consequences.** Not "this is a P0 bug" but "353 failures today, approaching payday weekend — support tickets will accumulate."
+- **Include an explicit "Not Doing" list.** Name what's deprioritized and why, so the team and stakeholders don't have to guess.
+- **Gratitude goes public and specific.** Under pressure, name individual contributions by person and what they did — not just "great work team."
+- **Don't minimize scope.** Quantify the impact immediately. State what you know and what you don't.
 
 #### 8. Draft the communication
 

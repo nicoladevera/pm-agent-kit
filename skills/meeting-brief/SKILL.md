@@ -72,6 +72,7 @@ Identify from the input: meeting purpose, attendees (if listed), topics or agend
 Read these files:
 - `references/communication-quality.md` — Quality criteria for the brief itself (audience calibration, structured naturally, lead with the point)
 - `references/decision-frameworks.md` — For identifying and framing decisions on the table
+- `references/audience-registers.md` — For mapping attendee communication preferences and calibrating the brief's register
 
 ### 3. Load company context (if available)
 
@@ -121,6 +122,8 @@ Pull all decisions out of the agenda items and list them in a dedicated section.
 - What information the decider needs
 
 This section exists because decisions often hide inside discussion topics. Making them explicit means the meeting can allocate time appropriately.
+
+**For escalation or decision meetings** — where the meeting exists to get leadership to make a hard call — frame the decision as a fork: "Here are the two paths. Path A: [description, consequences]. Path B: [description, consequences]. We need to leave this meeting knowing which path." This structure prevents the meeting from dissolving into discussion without a resolution. Name the specific commitment you're asking leadership to make.
 
 ### 8. List pre-reads and context
 

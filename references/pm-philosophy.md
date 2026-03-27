@@ -78,8 +78,9 @@ Establish what problem is being solved before evaluating or generating anything.
 - Status updates lead with what's at risk and why, not with a list of completed tasks.
 - Business cases open with the opportunity or problem, not with the proposed investment.
 - Decision logs start with the decision that needs to be made and why it matters, not with the recommended option.
+- Frame problems as misalignments with a stated product strategy or graduation model, not just tactical pain. "The misalignment is strategy — not tech." Strategy-first framing provides a principled backstop for positions and prevents narrative drift about the "real" reason for decisions. When others misattribute the reason, correct the framing proactively.
 
-**Red flag:** Any artifact that leads with "we should build X" rather than "users are experiencing Y." A sprint plan that's just a story list with no stated goal. A status update that reports activity without assessing progress against the objective.
+**Red flag:** Any artifact that leads with "we should build X" rather than "users are experiencing Y." A sprint plan that's just a story list with no stated goal. A status update that reports activity without assessing progress against the objective. A problem framed as "customers are struggling with X" when the real issue is strategic misalignment with the product model — leading with the tactical symptom instead of the strategic misfit buries the real decision.
 
 ---
 
@@ -110,8 +111,9 @@ The primary value of any PM artifact is reducing ambiguity. Clarity is not polis
 - A decision log reduces ambiguity about what was decided. Six months later, anyone should be able to understand what, why, and what was considered but rejected.
 - A sprint plan reduces ambiguity about what the team is committing to. The goal is clear. The scope is bounded. Capacity is accounted for.
 - A competitive analysis reduces ambiguity about the landscape. What changed, what it means for us, what decisions it informs.
+- When facing ambiguity, decompose it into discrete, answerable questions rather than attempting to resolve everything at once. "I am breaking down the decisions needed into three items: (1) Do we launch with 1 or 2? (2) What pricing? (3) Model or no model?" Decomposition creates a forcing function — it turns a vague "what do we do?" into a structured resolution path where each question can be answered independently. This is the PM's primary tool for converting chaos into clarity.
 
-**Red flag:** Output that sounds thorough but doesn't resolve ambiguity. Status updates that are technically accurate but don't tell the reader whether to be worried. Meeting notes that capture discussion but not decisions.
+**Red flag:** Output that sounds thorough but doesn't resolve ambiguity. Status updates that are technically accurate but don't tell the reader whether to be worried. Meeting notes that capture discussion but not decisions. A meeting or thread where participants are debating a complex decision without anyone having decomposed it into its constituent questions — everyone arguing about everything at once rather than resolving one question at a time.
 
 ---
 

@@ -68,6 +68,7 @@ Read these files:
 - `references/story-structure.md` — Story scoping, splitting, sizing standards
 - `references/acceptance-criteria.md` — AC standards for assessing story readiness
 - `references/pm-smell-test.md` — Check for smells 1 (missing the "why") and 2 (no way to measure success)
+- `references/pushback-and-negotiation.md` — For scope tension and capacity trade-off framing
 
 #### 3. Load company context (if available)
 
@@ -155,6 +156,8 @@ Choose stories that serve the sprint goals, respecting capacity:
 - **Capacity math** — Available person-days minus overhead (meetings, code review, support — typically 20-30%), minus carryover load, minus ramp-up for new areas. State the math.
 - **Priority** — Stories that directly serve sprint goals first. Then dependencies that unblock future work. Then maintenance/tech debt if capacity allows.
 - **Readiness** — Only select stories that passed the readiness assessment. Stories that need refinement go in the "Not Ready" section with action items.
+
+When capacity doesn't fit the requested scope, frame the trade-off explicitly using the patterns in `references/pushback-and-negotiation.md`. Name what's NOT making it into the sprint and why — anchored to capacity math, not opinion. Attach delivery-risk language to any open-ended commitments: "Our current estimations are based on confirmed scope as of [date]. New requirements from this point could result in delivery risks."
 
 #### 11. Suggest implementation sequence
 

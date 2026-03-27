@@ -52,6 +52,8 @@ Then load the type-specific criteria file:
 | Tech Spec | `references/tech-spec-quality-criteria.md` |
 | General Document | `references/general-document-quality-criteria.md` |
 
+For all document types that include scope definitions or trade-off sections (PRDs, project briefs, tech specs), also consult `references/pushback-and-negotiation.md` — specifically the Scope Protection section. Check whether scope boundaries are written as confirmable contracts ("we are NOT doing X") or left as soft suggestions that will erode under pressure.
+
 ### 4. Load company context (if available)
 
 If `company/norms/process.md` exists and is substantive, read it for context on how documents of this type are expected to work at this company.

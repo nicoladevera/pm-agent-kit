@@ -58,8 +58,10 @@ pm-agent-kit/
 ├── references/                       Shared PM judgment patterns
 │   ├── pm-philosophy.md              Core principles with rationale and behavioral depth
 │   ├── prd-quality-criteria.md       What makes a good PRD (evaluative rubric)
+│   ├── pushback-and-negotiation.md  Scope protection, reframing, escalation, and disagreement patterns
 │   ├── pm-smell-test.md              Red flags across all PM artifact types
 │   ├── acceptance-criteria.md        AC standards optimized for agent implementation
+│   ├── audience-registers.md        Per-audience communication registers by stakeholder type
 │   ├── story-structure.md            Story scoping, splitting, and structure standards
 │   ├── communication-quality.md      Quality criteria for PM communications
 │   ├── sprint-planning.md            Sprint goals, capacity, backlog health standards
@@ -321,6 +323,8 @@ Reference files live in `references/` and are consulted by multiple skills. They
 | `acceptance-criteria.md` | AC standards optimized for agent implementation | `doc-review`, `prd-draft`, `generate-tasks`, `sprint-plan` |
 | `sprint-planning.md` | Sprint goals, capacity, backlog health, carryover standards | `sprint-plan`, `status-update` |
 | `decision-frameworks.md` | Decision anatomy, options quality, reversibility, escalation signals | `decision-log`, `meeting-brief`, `business-case` |
+| `audience-registers.md` | Per-audience communication registers — tone, depth, and framing calibrated by stakeholder type (engineers, designers, data, leadership, cross-functional) | `status-update`, `meeting-brief`, `presentation-deck` |
+| `pushback-and-negotiation.md` | Scope protection, saying no, problem reframing, escalation as fork-framing, navigating disagreement | `doc-review`, `sprint-plan`, `decision-log`, `status-update`, `meeting-brief` |
 | `communication-quality.md` | Quality criteria for PM communications (status updates, briefs, stakeholder comms) | `status-update`, `meeting-brief`, `decision-log`, `retro-synthesis` |
 | `launch-readiness.md` | Launch readiness dimensions and standards by launch type (internal/alpha/beta/GA) | `launch-checklist` |
 | `feedback-analysis.md` | Feedback clustering, severity assessment, signal vs. noise, source channel weighting | `user-feedback` |
