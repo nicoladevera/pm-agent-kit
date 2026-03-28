@@ -4,17 +4,17 @@ Here's a batch of competitive signals I've collected over the past month. Can yo
 
 ---
 
-## Signal 1: Spendulum (direct competitor)
+## Signal 1: Cashew (direct competitor)
 
 **Source:** Their blog, March 5
-Spendulum published a blog post announcing a redesigned dashboard with "improved analytics" and "a refreshed look and feel." The screenshots show minor visual changes — rounded corners, updated color scheme, slightly reorganized navigation. No new functionality visible.
+Cashew published a blog post announcing a redesigned dashboard with "improved analytics" and "a refreshed look and feel." The screenshots show minor visual changes — rounded corners, updated color scheme, slightly reorganized navigation. No new functionality visible.
 
 ---
 
-## Signal 2: Spendulum (direct competitor)
+## Signal 2: Cashew (direct competitor)
 
 **Source:** Their pricing page, March 12 (I check monthly)
-Spendulum changed their pricing model. Previously they charged a flat $4.99/month per active installment plan. Now they've moved to a tiered structure:
+Cashew changed their pricing model. Previously they charged a flat $4.99/month per active installment plan. Now they've moved to a tiered structure:
 - **Basic (free):** Up to 2 active plans, no analytics
 - **Plus ($7.99/mo):** Unlimited plans, basic analytics, email reminders
 - **Pro ($14.99/mo):** Everything in Plus + priority support, advanced analytics, API access
@@ -39,10 +39,10 @@ LendEasy updated their app store description to mention "installment plan manage
 
 ---
 
-## Signal 5: Spendulum (direct competitor)
+## Signal 5: Cashew (direct competitor)
 
 **Source:** Their careers page, March 18
-Spendulum posted 3 new job openings:
+Cashew posted 3 new job openings:
 - Senior Enterprise Account Executive
 - Enterprise Solutions Architect
 - Head of Enterprise Partnerships
@@ -53,6 +53,6 @@ Previously all their job postings were for individual consumer-focused roles. Th
 
 ## Additional context
 
-- Spendulum is our closest direct competitor. They target the same consumer installment plan market we do. They've historically been slightly cheaper but with fewer features.
+- Cashew is our closest direct competitor. They target the same consumer installment plan market we do. They've historically been slightly cheaper but with fewer features.
 - SplitPay has never been in our market (consumer installment plans). They're a B2B payments company.
 - LendEasy is in the broader BNPL space but hasn't competed directly with us on installment plan management specifically.
