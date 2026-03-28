@@ -1,6 +1,6 @@
 # Data Interpretation Standards
 
-What makes a data analysis useful for product decisions. Use this to interpret metrics, analyze funnels, compare cohorts, investigate anomalies, and turn product questions into data insights. The analytical counterpart to `feedback-analysis.md` — that file covers qualitative signal from users; this file covers quantitative signal from behavior.
+What makes a data analysis useful for product decisions. Use this to interpret metrics, analyze funnels, compare cohorts, investigate anomalies, and turn product questions into data insights. The analytical counterpart to `user-feedback-analysis.md` — that file covers qualitative signal from users; this file covers quantitative signal from behavior.
 
 Data interpretation is not reporting. Reporting says "activation dropped 12%." Interpretation says "activation dropped 12%, concentrated in mobile web, coinciding with the March 10 deploy, and it's likely the new onboarding flow introduced a regression in the bank-linking step." The number is the starting point, not the answer.
 

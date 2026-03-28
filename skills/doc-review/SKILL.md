@@ -48,11 +48,11 @@ Then load the type-specific criteria file:
 
 | Document Type | Load These Files |
 |--------------|-----------------|
-| PRD | `references/prd-quality-criteria.md`, `references/acceptance-criteria.md` |
-| Ticket | `references/ticket-quality-criteria.md`, `references/acceptance-criteria.md`, `references/story-structure.md` |
-| Project Brief | `references/project-brief-quality-criteria.md` |
-| Tech Spec | `references/tech-spec-quality-criteria.md` |
-| General Document | `references/general-document-quality-criteria.md` |
+| PRD | `references/quality-criteria-prd.md`, `references/acceptance-criteria.md` |
+| Ticket | `references/quality-criteria-ticket.md`, `references/acceptance-criteria.md`, `references/story-structure.md` |
+| Project Brief | `references/quality-criteria-project-brief.md` |
+| Tech Spec | `references/quality-criteria-tech-spec.md` |
+| General Document | `references/quality-criteria-general-document.md` |
 
 For all document types that include scope definitions or trade-off sections (PRDs, project briefs, tech specs), also consult `references/pushback-and-negotiation.md` — specifically the Scope Protection section. Check whether scope boundaries are written as confirmable contracts ("we are NOT doing X") or left as soft suggestions that will erode under pressure.
 

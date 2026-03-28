@@ -1,6 +1,6 @@
 # Communication Quality Criteria
 
-What makes PM communication worth reading. Use this to evaluate status updates, meeting briefs, stakeholder messages, and any artifact meant to inform, align, or drive action. The communication analog to `prd-quality-criteria.md`.
+What makes PM communication worth reading. Use this to evaluate status updates, meeting briefs, stakeholder messages, and any artifact meant to inform, align, or drive action. The communication analog to `quality-criteria-prd.md`.
 
 These criteria apply across formats — Slack messages, emails, status docs, meeting prep. The medium changes; the standard doesn't.
 

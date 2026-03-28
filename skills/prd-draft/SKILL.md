@@ -74,7 +74,7 @@ Understand the problem, the user context, the constraints, and any solution hint
 ### 2. Load reference files
 
 Read these files — they define what the output must satisfy:
-- `references/prd-quality-criteria.md` — Generate toward all 9 criteria
+- `references/quality-criteria-prd.md` — Generate toward all 9 criteria
 - `references/acceptance-criteria.md` — AC must meet these standards (Given/When/Then, agent-implementable)
 - `references/agent-readable-output.md` — Agent Block format and shared enum vocabulary
 
@@ -92,7 +92,7 @@ If neither substantive file is available, proceed — note the absence in the ou
 
 ### 4. Generate the PRD
 
-Produce a complete draft satisfying all 9 criteria from `references/prd-quality-criteria.md`. Every section should contain real content, not placeholders. Where the input doesn't provide enough to write a strong section, write the best version you can and flag what's thin.
+Produce a complete draft satisfying all 9 criteria from `references/quality-criteria-prd.md`. Every section should contain real content, not placeholders. Where the input doesn't provide enough to write a strong section, write the best version you can and flag what's thin.
 
 Structure the output with every section the quality criteria require:
 - Context

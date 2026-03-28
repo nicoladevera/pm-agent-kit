@@ -1,6 +1,6 @@
 # Competitive Analysis Standards
 
-What makes competitive intelligence useful for product decisions. Use this to monitor the competitive landscape, analyze specific competitors, classify signals, and connect competitive intelligence to product strategy. The external-facing counterpart to `feedback-analysis.md` — that file covers what users tell you; this file covers what the market shows you.
+What makes competitive intelligence useful for product decisions. Use this to monitor the competitive landscape, analyze specific competitors, classify signals, and connect competitive intelligence to product strategy. The external-facing counterpart to `user-feedback-analysis.md` — that file covers what users tell you; this file covers what the market shows you.
 
 Competitive intelligence is not a news summary. A summary says "CompetitorX launched feature Y." Intelligence says "CompetitorX launched feature Y, which addresses the same onboarding friction we identified in Q1. Their approach prioritizes speed over accuracy, which works for SMB but won't satisfy enterprise buyers — where we're stronger. No action needed on our roadmap, but this strengthens the case for accelerating our onboarding redesign."
 

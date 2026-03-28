@@ -8,7 +8,7 @@
 
 ## Quality Criteria Satisfaction
 
-The output must satisfy all 8 criteria from `references/prd-quality-criteria.md`. Rate each:
+The output must satisfy all 8 criteria from `references/quality-criteria-prd.md`. Rate each:
 
 | # | Criterion | What to check in the output |
 |---|-----------|----------------------------|

@@ -49,7 +49,7 @@ The sample GTM plan also contains sections that are deliberately well-done. The 
 
 ## Criteria Application Check
 
-The review must use the six general quality dimensions from `references/general-document-quality-criteria.md`, not PRD criteria.
+The review must use the six general quality dimensions from `references/quality-criteria-general-document.md`, not PRD criteria.
 
 **Pass:** The review evaluates against Purpose Clarity, Audience Fit, Logical Structure, Completeness Relative to Intent, Actionability, and Evidence and Grounding. The assessment is grounded in what a GTM plan needs to accomplish, not what a PRD needs to contain.
 

@@ -43,7 +43,7 @@ Absorb the full feedback corpus before producing any output. Understand the volu
 ### 2. Load reference files
 
 Read these files:
-- `references/feedback-analysis.md` — Clustering standards, severity framework, signal vs. noise, quote selection, source channel weighting
+- `references/user-feedback-analysis.md` — Clustering standards, severity framework, signal vs. noise, quote selection, source channel weighting
 - `references/pm-smell-test.md` — Check for smells 5 (false precision) and 15 (recency bias in analysis)
 - `references/agent-readable-output.md` — Agent Block format and shared enum vocabulary
 
@@ -71,7 +71,7 @@ This catalog goes into the output. It frames the scope and limitations of the sy
 
 ### 5. Cluster into themes
 
-Group feedback by underlying need or problem, not by surface feature request. Apply the clustering standards from `references/feedback-analysis.md`:
+Group feedback by underlying need or problem, not by surface feature request. Apply the clustering standards from `references/user-feedback-analysis.md`:
 
 - "I want dark mode" + "the app hurts my eyes at night" = same theme (visual comfort)
 - "Can't find payment history" + "where are my receipts" = same theme (payment history discoverability)
@@ -88,7 +88,7 @@ Name themes as the underlying problem, not the requested solution: "Payment hist
 For each theme, determine:
 
 - **Frequency:** How many feedback items map to this theme
-- **Severity:** User impact level (Blocking / Painful / Annoying / Cosmetic) per `references/feedback-analysis.md`
+- **Severity:** User impact level (Blocking / Painful / Annoying / Cosmetic) per `references/user-feedback-analysis.md`
 - **Scope:** How widespread the issue is (Widespread / Moderate / Isolated)
 - **Trend:** If a prior synthesis is provided: Growing / Stable / Declining / New. If no prior synthesis: state "No baseline — first analysis."
 - **Source distribution:** Which channels this theme appears in (helps assess whether it's a real cross-channel signal or channel-specific noise)
@@ -101,7 +101,7 @@ For each theme, select 2-3 quotes that:
 - Come from different channels or user segments when possible
 - Are attributed to source channel and date (if available)
 
-Per `references/feedback-analysis.md` — representative, not dramatic.
+Per `references/user-feedback-analysis.md` — representative, not dramatic.
 
 ### 8. Distinguish signal from noise
 

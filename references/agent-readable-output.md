@@ -91,10 +91,10 @@ Used in `doc-review` output to tag each feedback item with the quality criterion
 
 | Document type | Prefix | Reference file |
 |---|---|---|
-| PRD | `PRD` | `references/prd-quality-criteria.md` |
-| Ticket | `TICKET` | `references/ticket-quality-criteria.md` |
-| Tech Spec | `TECH` | `references/tech-spec-quality-criteria.md` |
-| Project Brief | `BRIEF` | `references/project-brief-quality-criteria.md` |
-| General Document | `GENERAL` | `references/general-document-quality-criteria.md` |
+| PRD | `PRD` | `references/quality-criteria-prd.md` |
+| Ticket | `TICKET` | `references/quality-criteria-ticket.md` |
+| Tech Spec | `TECH` | `references/quality-criteria-tech-spec.md` |
+| Project Brief | `BRIEF` | `references/quality-criteria-project-brief.md` |
+| General Document | `GENERAL` | `references/quality-criteria-general-document.md` |
 
-Criterion numbers map to the numbered headings in each reference file (e.g., `### 1.`, `### 2.`). Example: `PRD-3` = criterion 3 in `prd-quality-criteria.md` (Scope Is Explicitly Bounded).
+Criterion numbers map to the numbered headings in each reference file (e.g., `### 1.`, `### 2.`). Example: `PRD-3` = criterion 3 in `quality-criteria-prd.md` (Scope Is Explicitly Bounded).

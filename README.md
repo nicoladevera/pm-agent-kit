@@ -57,7 +57,7 @@ cd pm-agent-kit
 
 `install.sh` copies command files to `~/.claude/commands/`, but those commands still depend on the `references/` and `company/` files in this repo. It sets up slash commands to use this repo, rather than installing a self-contained portable package.
 
-> **Important:** Open Claude Code from this repo root. The registered commands depend on repo-relative paths such as `references/prd-quality-criteria.md` and `company/...`; if you run them outside this checkout, context resolution will break.
+> **Important:** Open Claude Code from this repo root. The registered commands depend on repo-relative paths such as `references/quality-criteria-prd.md` and `company/...`; if you run them outside this checkout, context resolution will break.
 
 ### Running a Skill
 
@@ -180,11 +180,11 @@ Reference files live in `references/` and are consulted by multiple skills. They
 |------|----------------|---------------|
 | `pm-philosophy.md` | Ten core PM heuristics with rationale and behavioral examples | Foundational for CLAUDE.md; explicitly referenced by `retro-synthesis` |
 | `pm-smell-test.md` | Red flags across all PM artifact types (specs, comms, decisions) | All reviewing/analyzing skills |
-| `general-document-quality-criteria.md` | Six universal quality dimensions for documents that don't fit specialized types | `doc-review` |
-| `project-brief-quality-criteria.md` | Evaluative criteria for project briefs, calibrated to document maturity level | `doc-review` |
-| `prd-quality-criteria.md` | Eight evaluative criteria for PRDs | `doc-review`, `prd-draft` |
-| `tech-spec-quality-criteria.md` | Evaluative criteria for technical specs / EDDs, from a PM perspective | `doc-review` |
-| `ticket-quality-criteria.md` | Evaluative criteria for user stories and tickets | `doc-review` |
+| `quality-criteria-general-document.md` | Six universal quality dimensions for documents that don't fit specialized types | `doc-review` |
+| `quality-criteria-project-brief.md` | Evaluative criteria for project briefs, calibrated to document maturity level | `doc-review` |
+| `quality-criteria-prd.md` | Eight evaluative criteria for PRDs | `doc-review`, `prd-draft` |
+| `quality-criteria-tech-spec.md` | Evaluative criteria for technical specs / EDDs, from a PM perspective | `doc-review` |
+| `quality-criteria-ticket.md` | Evaluative criteria for user stories and tickets | `doc-review` |
 | `story-structure.md` | Story scoping, splitting, structure, and data story separation | `doc-review`, `generate-tasks`, `sprint-plan` |
 | `acceptance-criteria.md` | AC standards optimized for agent implementation | `doc-review`, `prd-draft`, `generate-tasks`, `sprint-plan` |
 | `sprint-planning.md` | Sprint goals, capacity, backlog health, carryover standards | `sprint-plan`, `status-update` |
@@ -193,7 +193,7 @@ Reference files live in `references/` and are consulted by multiple skills. They
 | `pushback-and-negotiation.md` | Scope protection, saying no, problem reframing, escalation as fork-framing, navigating disagreement | `doc-review`, `sprint-plan`, `decision-log`, `status-update`, `meeting-brief` |
 | `communication-quality.md` | Quality criteria for PM communications (status updates, briefs, stakeholder comms) | `status-update`, `meeting-brief`, `decision-log`, `retro-synthesis` |
 | `launch-readiness.md` | Launch readiness dimensions and standards by launch type (internal/alpha/beta/GA) | `launch-checklist` |
-| `feedback-analysis.md` | Feedback clustering, severity assessment, signal vs. noise, source channel weighting | `user-feedback` |
+| `user-feedback-analysis.md` | Feedback clustering, severity assessment, signal vs. noise, source channel weighting | `user-feedback` |
 | `data-interpretation.md` | Metric interpretation, funnel analysis, anomaly investigation, confidence calibration | `data-analysis` |
 | `competitive-analysis.md` | Signal classification, monitoring framework, deep dive structure, reactivity checks | `competitive-intel` |
 | `business-case-standards.md` | Impact sizing frameworks, cost model standards, risk assessment, alternatives quality | `business-case` |
