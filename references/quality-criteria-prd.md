@@ -8,7 +8,7 @@ What makes a good PRD. Use this to evaluate PRDs or to generate them — every c
 
 ### 1. Problem Definition Is Clear and Bounded
 
-The problem statement is specific, names who is affected, and does not smuggle a solution into the framing. "Users need a reminder system" is a solution disguised as a problem. "38% of users with active installment plans miss their first payment because they don't know when it's due" is a problem.
+The problem statement is specific, names who is affected, and does not smuggle a solution into the framing. "Users need a reminder system" is a solution disguised as a problem. "52% of users who start onboarding never complete their profile because the required fields aren't visible until the final step, causing them to abandon mid-flow" is a problem.
 
 **Evaluate:** Can you restate the problem without referencing the proposed solution? If not, the problem isn't defined — the solution is.
 
@@ -63,7 +63,7 @@ Things the PM hasn't resolved yet are stated explicitly, not buried or omitted. 
 
 ### 9. Domain Terms Are Defined
 
-Any term with a product-specific or technically precise meaning is defined before first use. This applies especially to financial products, platform products, and any domain where common words carry specific technical meaning (e.g., "balance," "payment," "status").
+Any term with a product-specific or technically precise meaning is defined before first use. This applies in any domain where common words carry specific technical meaning — e.g., "balance," "payment," "status" in financial products; "order," "fulfillment," "return window" in e-commerce; "workspace," "seat," "admin" in B2B SaaS; "listing," "availability," "booking" in marketplaces.
 
 A missing or inconsistent definition is a silent source of implementation errors — agents and engineers will interpret undefined terms according to general knowledge, which may not match the product intent.
 

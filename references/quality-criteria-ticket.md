@@ -16,7 +16,7 @@ The ticket represents one deployable unit of work — something that can be buil
 
 ### 2. Story Is Written From the User's Perspective
 
-The ticket describes what the user can do and why it matters — not what the engineer should build. "Implement backend caching layer for the loan dashboard" is a task. "As a borrower, I can load my loan dashboard in under 2 seconds so I can review my status without waiting" is a story. A story framed around implementation is harder to scope, harder to evaluate, and more likely to miss the user need.
+The ticket describes what the user can do and why it matters — not what the engineer should build. "Add server-side pagination to the admin user table" is a task. "As a workspace admin, I can load the user list in under 2 seconds so I can find and manage team members without waiting" is a story. A story framed around implementation is harder to scope, harder to evaluate, and more likely to miss the user need.
 
 **Evaluate:** Is the user named? Is the user action described? Is the "why" tied to a user outcome, not a technical goal?
 

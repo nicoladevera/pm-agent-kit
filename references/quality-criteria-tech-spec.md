@@ -56,6 +56,14 @@ Unresolved technical decisions are flagged, not buried. An honest open questions
 
 **Evaluate:** Are there genuine open questions named? Are they things that actually need resolution before or during implementation, not cosmetic? Is there a path to resolving each one?
 
+### 9. Spec Is Implementable Without Clarification
+
+An engineer or agent starting from this spec should reach the correct implementation without needing to ask follow-up questions or infer unstated decisions. Human engineers have a safety valve — they can ask in standup, DM the PM, or apply team conventions they already know. An agent has none of these. A spec that relies on implicit conventions, defers decisions to "engineering judgment," or leaves behavioral choices unstated will produce divergent implementations.
+
+This is the strictest form of the completeness standard: if the spec contains a gap, assume it will be filled wrong.
+
+**Evaluate:** Read the spec as someone with no prior context on this codebase who cannot ask any questions. What would you have to decide or assume? Each is a gap. Are team conventions spelled out rather than assumed? Are behavioral decisions stated explicitly — not "TBD" or "per engineering judgment"? Are edge case behaviors specified, not left to implementer discretion?
+
 ---
 
 ## Using These Criteria
