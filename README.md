@@ -1,22 +1,27 @@
 # PM Agent Kit
 
-A portable AI agent system that encodes senior product manager judgment into invocable skills. Built for Claude Code.
+A portable AI agent system that encodes senior product manager judgment into 14 invocable skills. Built for Claude Code.
 
-The agent doesn't replace PM thinking — it removes friction from expressing it. The agent synthesizes, drafts, and structures. The PM evaluates and decides.
+The judgment is concrete: 23 reference files codify PM decision standards — quality criteria per document type, red flags across all artifact types, decision frameworks, communication registers. Every skill loads and consults the relevant files before executing. The result is a reasoning system, not a template system.
+
+The agent synthesizes, drafts, and structures. The PM evaluates and decides.
 
 ---
 
 ## How It Works
 
-The system has three layers. The first two are portable across companies. The third changes per role.
+The system has four layers. The first three are portable across companies. The fourth changes per role.
 
 **Layer 1 — Identity + Operating Principles** (`CLAUDE.md`)
-Who the agent is. How a strong PM thinks. What "good" looks like. What the agent will and won't do. Every skill inherits from this file.
+Four operating principles govern every skill execution — do preparatory work before producing output, earn autonomy through demonstrated quality, let the artifact make the argument, stay within declared scope. Every skill inherits from this file.
 
 **Layer 2 — Skills** (`skills/`)
-Discrete, invocable capabilities. Each skill declares what it does, what context it needs, what approval tier it requires, and how it behaves when context is missing.
+Discrete, invocable capabilities. Each skill declares its context requirements, degradation rule (what to do when context is missing), and quality bar. Skills with multiple modes may enforce different degradation rules per mode. Before executing, skills run an intake protocol that adapts questioning to how much signal the PM's input provides.
 
-**Layer 3 — Company Context** (`company/`)
+**Layer 3 — Reference Standards** (`references/`)
+The judgment layer. 23 files encode PM decision patterns — quality criteria per document type, red flags across all artifact types, decision frameworks, communication registers, and more. Skills load and consult these before executing; this is what distinguishes the system from a prompt library.
+
+**Layer 4 — Company Context** (`company/`)
 What makes generic output specific and credible. Product areas, team structure, sprint process, tool configs. Rebuilt at each new company using the onboarding checklist.
 
 ---
@@ -168,7 +173,15 @@ All 14 skills across Tiers 1-4 are built. Tier 4 skills integrate structured str
 
 ## Trust Model
 
-All skills start at **draft-confirm** — the agent drafts, the PM reviews before using. Trust graduates through demonstrated quality, not on a schedule. Skills that produce team-visible output require **explicit approval** before the PM sends them.
+All skills start at **draft-confirm** — the agent drafts, the PM reviews before using. Trust graduates through demonstrated quality, not on a schedule: when output consistently requires zero edits, autonomy can increase; when quality drops, the feedback loop tightens.
+
+| Tier | What it means |
+|------|---------------|
+| **No approval** | Read data, draft outputs, display in conversation |
+| **Draft-confirm** | Agent drafts; PM reviews before using *(all skills start here)* |
+| **Explicit approval** | Output is visible to the team or stakeholders |
+
+Audience visibility matters as much as output quality — who sees the output determines the approval tier, not just what it contains.
 
 ---
 
@@ -185,6 +198,7 @@ Reference files live in `references/` and are consulted by multiple skills. They
 | `quality-criteria-prd.md` | Nine evaluative criteria for PRDs | `doc-review`, `prd-draft` |
 | `quality-criteria-tech-spec.md` | Evaluative criteria for technical specs / EDDs, from a PM perspective | `doc-review` |
 | `quality-criteria-ticket.md` | Evaluative criteria for user stories and tickets | `doc-review` |
+| `agent-readable-output.md` | Shared enum vocabulary and Agent Block format for machine-parseable skill output | All artifact-producing skills |
 | `story-structure.md` | Story scoping, splitting, structure, and data story separation | `doc-review`, `generate-tasks`, `sprint-plan` |
 | `acceptance-criteria.md` | AC standards optimized for agent implementation | `doc-review`, `prd-draft`, `generate-tasks`, `sprint-plan` |
 | `sprint-planning.md` | Sprint goals, capacity, backlog health, carryover standards | `sprint-plan`, `status-update` |
@@ -205,8 +219,9 @@ Reference files live in `references/` and are consulted by multiple skills. They
 
 ## Design Principles
 
-- **Portable over company-specific.** PM identity travels. Company context is layered on and stripped away.
+- **Portable over company-specific.** PM identity travels. Company context is layered on and stripped away. Everything outside `company/` is designed to last across roles.
+- **Judgment lives in references, not prompts.** Quality standards — what makes a PRD complete, what a sound business case requires, what red flags cut across all artifacts — live in `references/` and are shared across skills. Standards can be updated once and inherited everywhere.
+- **Per-skill degradation rules.** Missing context triggers an explicit rule, not a failure. `proceed-with-caveat` produces output with visible caveats. `stop-and-say-why` produces nothing until the PM provides what's needed. The right rule depends on the cost of a plausible-but-wrong output. Skills with multiple modes may enforce different rules per mode.
+- **Intake adapts to input quality.** Rich input (problem clear, constraints stated) gets one confirmation question and proceeds. Thin input gets a structured interpretation first, then asks the PM to confirm before proceeding. The question cap is four.
 - **One skill end-to-end before parallelizing.** Each skill is complete and self-contained. The tier progression is intentional: Tier 1 proved the format; each subsequent tier built on that proof.
-- **Per-skill degradation rules.** A document review with missing company context can still be useful. A sprint plan's Analyze mode can proceed similarly — but its Draft mode cannot produce a plan without capacity data, and the skill explicitly stops there. The frontmatter rule governs missing context files; skills with multiple modes may enforce mode-specific stops within their instruction bodies.
-- **Reference files are shared, skill references are local.** If multiple skills need the same quality criteria, it lives in `references/`. If only one skill needs a reference file, it lives in the skill's folder.
-- **Eval before graduation.** No skill advances without at least one eval case: sample input plus a scoring rubric.
+- **Eval before graduation.** No skill advances without at least one eval case: a realistic sample input, planted issues the skill must catch, intentional strengths it must not flag, and a scoring rubric.
