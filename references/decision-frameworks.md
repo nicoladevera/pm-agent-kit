@@ -12,7 +12,7 @@ Every decision — made or pending — has the same components. The difference b
 |-----------|-----------|---------------|
 | **The question** | What are we deciding? Framed as a specific, answerable question. | Without a clear question, people debate different things in the same room. |
 | **The context** | Why this decision matters now. What prompted it. What's at stake. | Decisions without context can't be evaluated — or re-evaluated later. |
-| **The options** | At least 2 genuine alternatives with honest trade-offs. | A decision with one option isn't a decision — it's a fait accompli. |
+| **The options** | At least 2 genuine alternatives with honest trade-offs. | A decision with one option isn't a decision — it's a foregone conclusion. |
 | **The criteria** | What matters most in choosing. What are we optimizing for? | Makes the reasoning transparent and auditable. |
 | **The recommendation** | The PM's point of view, stated directly. | Come with a position. Don't present options and wait for someone else to think. |
 | **The decision** | What was decided. By whom. When. | The whole point. If this isn't clear, the log failed. |
@@ -70,7 +70,7 @@ Not all decisions deserve the same process. The right amount of rigor depends on
 Know the full picture before framing a decision. The difference between a useful decision log and a bureaucratic one is whether the person writing it understood the system — adjacent work, history, stakeholder stakes, technical constraints, delivery implications.
 
 **In practice:**
-- Understand prior art — has this been decided before? What changed?
+- Understand decision history — has this been decided before? What changed?
 - Know the stakeholder landscape — who cares about this and what do they care about?
 - Understand downstream effects — what does this decision unlock or block?
 - Know the constraints — timeline, budget, team capacity, technical debt
