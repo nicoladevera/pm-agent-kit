@@ -39,46 +39,55 @@ Flag in the context note that default branding was used because company branding
 
 ---
 
-## Slide Types and Layouts
+## Slide Types and Branding Treatment
 
 ### Standard Slide Types
 
-Every presentation uses a mix of these slide types. Each has a specific layout purpose.
+Every presentation uses a mix of these slide types. Each type defines a purpose and the branding treatment that applies. For layout composition (spatial arrangement, sizing, density), see `references/slide-design.md`.
 
 #### Title Slide
 - **Purpose:** Opening. Sets the topic, context, and presenter identity.
-- **Layout:** Large title text (centered or left-aligned), subtitle with context (date, audience, purpose), presenter name.
-- **Branding:** Primary color as background or accent bar. Logo in corner (if available).
+- **Branding:** Primary color as background or accent bar. Logo in corner (if available). Title in heading font at title size.
 
 #### Section Divider
 - **Purpose:** Marks transitions between major sections of the narrative.
-- **Layout:** Section title only. Minimal text. Visual breathing room.
-- **Branding:** Secondary color or accent treatment. Consistent with title slide style.
+- **Branding:** Secondary color or accent treatment. Consistent with title slide style. Minimal text — section title only.
 
 #### Content Slide
 - **Purpose:** The workhorse. Delivers information with a takeaway headline.
-- **Layout:** Headline at top (takeaway, not topic). Content below: bullets, short text, or data. One visual element maximum.
-- **Branding:** White or neutral background. Heading in primary color. Body in text color.
+- **Branding:** White or neutral background. Headline in primary color. Body in text color.
 
 #### Data Slide
 - **Purpose:** Presents a chart, table, or quantitative evidence.
-- **Layout:** Headline states the data takeaway. Chart or table fills the content area. Source citation at bottom.
-- **Branding:** Chart colors use the brand palette (primary, secondary, accent). Axes and labels in text color. Avoid default chart colors from tools — they rarely match the brand.
+- **Branding:** Chart colors use the brand palette (primary, secondary, accent). Axes and labels in text color. Source citation in caption style. Avoid default chart colors from tools — they rarely match the brand.
 
 #### Comparison Slide
-- **Purpose:** Side-by-side comparison (before/after, us/them, option A/B).
-- **Layout:** Two-column layout with clear labels. Consistent formatting on both sides.
-- **Branding:** Use color coding from brand palette to distinguish the two sides.
+- **Purpose:** Side-by-side comparison of 2-3 options, pillars, or parallel items.
+- **Branding:** Use color coding from brand palette to distinguish the columns. Consistent formatting across all columns.
 
 #### Quote/Callout Slide
-- **Purpose:** Highlights a key user quote, metric, or finding.
-- **Layout:** Large quote or number. Attribution. Minimal supporting text.
-- **Branding:** Accent color for the quote mark or highlight. Clean background.
+- **Purpose:** Highlights a key user quote, finding, or provocative insight through isolation.
+- **Branding:** Accent color for the quote mark or highlight. Clean background. Attribution in caption style.
 
 #### Closing/Ask Slide
 - **Purpose:** States the recommendation, ask, or next steps.
-- **Layout:** Clear statement of what the audience should do. Supporting context minimal.
-- **Branding:** Can use primary color background for emphasis (inverted text).
+- **Branding:** Can use primary color background for emphasis (inverted text). Minimal supporting content.
+
+#### Hero Number Slide
+- **Purpose:** A single metric or number IS the insight. The number carries the argument.
+- **Branding:** Number in primary or accent color at large scale. Context line in body text color. Source in caption style. Clean background.
+
+#### Metrics/Dashboard Slide
+- **Purpose:** Multiple KPIs or numbers carry equal weight — performance snapshot, scorecard.
+- **Branding:** Numbers in primary color. Labels in text color. Optional trend indicators use functional colors (green/red/amber per color strategy). Consistent treatment across all metrics.
+
+#### Timeline/Sequence Slide
+- **Purpose:** Content is inherently sequential — roadmap phases, process steps, historical progression.
+- **Branding:** Nodes or steps in primary or secondary color. Connecting lines in neutral color. Labels in text color. Active/current step can use accent color for emphasis.
+
+#### Full-Bleed Image Slide
+- **Purpose:** A photo, screenshot, or visual IS the primary content.
+- **Branding:** Dark overlay (minimum 60% opacity) for text legibility when headline is overlaid. Headline in white or light text. Logo may be omitted if it competes with the image.
 
 ---
 
