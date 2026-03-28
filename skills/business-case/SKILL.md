@@ -160,6 +160,8 @@ Per options quality standards from `references/decision-frameworks.md` and `refe
 
 If the PM's input mentions alternatives, include them. If not, generate plausible alternatives from the problem context — a strong business case always shows the recommendation was chosen, not assumed.
 
+Close each alternative with a **Verdict** — a single sentence that characterizes the option's role in the decision and resolves it. The verdict does not replace the trade-offs analysis; it closes it. "Right as an interim measure if the preferred option can't be resourced in Q2, but not the target architecture." or "Wrong fit for the current user volume — revisit at scale." A business case where every option ends with trade-offs but no resolution leaves the reader doing the PM's work.
+
 ### 10. Make a recommendation
 
 State the preferred option directly. Per recommendation standards from `references/decision-frameworks.md`:
@@ -199,9 +201,18 @@ Name the assumption and what would happen if it's wrong.
 #### Conviction Test
 *"On a scale of 1-10, how confident am I in this recommendation? What would change my mind?"*
 
-- State a conviction level (1-10) with a brief rationale
-- Name 2-3 specific conditions that would lower confidence significantly
-- Distinguish between what's known, what's assumed, and what's hoped
+**Default — Simple conviction:** State a conviction level (1-10) with a brief rationale. Name 2-3 specific conditions that would lower confidence significantly. Distinguish between what's known, what's assumed, and what's hoped.
+
+**For complex proposals — Tiered Confidence Assessment:** Use this mode when the proposal synthesizes multiple heterogeneous inputs (strategy documents, meeting notes, field research, technical assessments) where different claims have meaningfully different evidentiary quality. A single number obscures those differences. See the Confidence Tiering section in `references/business-case-standards.md` for tier definitions and when to apply each.
+
+Classify each key claim or assumption:
+- **High confidence** — empirically backed, confirmed across multiple independent sources, or grounded in a clear causal relationship. State what makes the claim load-bearing.
+- **Medium confidence** — directionally correct but unvalidated in specifics. State what needs validation and how to get it.
+- **Lower confidence** — genuine unknowns that could invalidate specific parts of the plan. State what must be confirmed before proceeding.
+
+Follow with a **"What Would Change the Recommendation"** table: one row per condition that would specifically alter the course of the recommendation — not just lower confidence, but change what's recommended. This is the operational form of the blindspot check.
+
+Use simple conviction when the uncertainty is more uniform across the proposal. Use tiered confidence when parts of the proposal rest on empirically solid ground while others rest on inference or unconfirmed assumptions.
 
 The stress test should surface something new beyond what's already in the risk assessment. If it merely repeats the risk table in different words, it hasn't added value.
 
@@ -216,7 +227,7 @@ Check for:
 
 After completing the smell test, fill in the Agent Block:
 - `recommendation`: the one-sentence recommendation from the header (repeat it here)
-- `confidence`: the integer from the Conviction section of the Stress Test
+- `confidence`: the integer from the Conviction section of the Stress Test. If tiered confidence was used instead, use the lowest tier's effective integer equivalent (Medium confidence proposals typically map to 5–7) and note in a comment which tier drove the estimate.
 - `primary_risk`: the risk category with the highest combined likelihood × impact from the Risk Assessment table
 - `reversibility`: from the Reversibility field in Risk Assessment
 - `key_assumption`: the single assumption from the Blindspot Check that, if wrong, would most change the recommendation
@@ -353,6 +364,23 @@ agent_block:
 - [Condition 1]
 - [Condition 2]
 
+*For proposals synthesizing multiple heterogeneous sources or involving architecture decisions with meaningfully different evidentiary quality across claims, replace the block above with:*
+
+#### Confidence Assessment
+**High confidence:**
+- [Claim] — [Why: empirical basis / multi-source confirmation / causal relationship]
+
+**Medium confidence:**
+- [Claim] — [Why directionally correct; what validation is needed]
+
+**Lower confidence:**
+- [Claim / assumption] — [What would need to be confirmed before this can be relied on]
+
+**What would change the recommendation:**
+| Condition | Impact on recommendation |
+|-----------|--------------------------|
+| [Specific condition] | [Specific course correction] |
+
 ---
 
 ### Open Items
@@ -384,3 +412,5 @@ agent_block:
 - **Does the stress test surface something new?** The premortem, blindspot check, and conviction test add value beyond what's already in the risk assessment. If they just repeat the risk table in different words, they failed.
 - **Would a VP read this and have enough to decide?** The business case is self-contained. The reader doesn't need a follow-up meeting to understand the argument, the evidence, the alternatives, and the recommendation.
 - **Is the recommendation stated directly?** The PM has a point of view. The reasoning is transparent. Trade-offs are acknowledged. The reader knows what's being recommended and why.
+- **Does each alternative have a verdict?** Each option closes with a single sentence that resolves it — not a trade-off summary, but a characterization of the option's role in the decision. Trade-offs explain; verdicts decide.
+- **If the proposal synthesizes multiple heterogeneous sources, is confidence tiered?** When strategy documents, field research, stakeholder conversations, and technical assessments are all in the mix, different claims rest on different evidentiary bases. A single conviction score flattens that. Tiered confidence is only required when the source mix is genuinely heterogeneous — uniform uncertainty still calls for simple conviction.

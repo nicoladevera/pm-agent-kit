@@ -149,6 +149,7 @@ At least **two genuine alternatives** plus **"do nothing."** Each alternative mu
 - **Cons** — what it costs or risks (every option has cons; if an option has no cons, the analysis is incomplete)
 - **Trade-offs** — what you give up by choosing this over the others
 - **Why it's less preferred** (or not) — the honest assessment of why the recommendation is better
+- **Verdict** — a single sentence that closes the option. Characterize its role in the decision: whether it's right for a specific scenario, wrong for the current context, or worth revisiting at a future stage. Example: "Right as a stopgap if budget approval is delayed past Q2, but not the target architecture." A verdict replaces open-ended trade-off deliberation with resolution.
 
 ### "Do Nothing" Is Always an Option
 
@@ -164,6 +165,28 @@ Explicitly evaluate what happens if the initiative is not pursued. Sometimes "do
 - **Missing "do nothing":** The implicit message is "we must do something." Sometimes the right answer is to wait, gather more data, or invest elsewhere.
 - **Only cost-differentiated:** All alternatives are versions of the same approach at different price points. Real alternatives involve different approaches, not just different budgets.
 - **Recommendation presented as inevitable:** If the analysis reads as "here's why we should obviously do X, and here are some bad options we considered," the alternatives section failed.
+
+---
+
+## Visualization
+
+For proposals involving system components, data flows, or decision routing, include a diagram. ASCII is the default format.
+
+**Why ASCII:** ASCII diagrams survive copy-paste, PDF export, Confluence rendering, and Slack — they require no external tool (no Miro, no Figma, no LucidChart). A diagram that requires a link is a diagram that half the readers won't see.
+
+**When to include a diagram:**
+- The proposal involves an architecture with 3 or more components
+- There is a data or process flow with sequential stages
+- There is a decision routing structure (if X then Y, else Z)
+
+**When to omit:**
+- The proposal is pure business or market analysis with no system components (impact sizing, pricing changes, GTM strategy)
+
+**Diagram standards:**
+- Label every component clearly
+- Show directionality with arrows (`-->`, `<--`, `<-->`)
+- Keep it compact enough to read without zooming — if it needs a legend, it's too complex
+- Position it in the Proposed Solution section or immediately after the component it explains
 
 ---
 
@@ -195,3 +218,34 @@ Business case smells that indicate more thinking is needed:
 - **Recommendation presented as inevitable rather than chosen.** The recommendation should feel selected from genuine options, not preordained.
 - **Strawman alternatives.** Options designed to fail so the preferred option looks good by comparison.
 - **No acknowledgment of what's given up.** Every investment has an opportunity cost. If the business case doesn't name what else could be done with those resources, it's incomplete.
+
+---
+
+## Confidence Tiering for Complex Proposals
+
+When a business case synthesizes multiple heterogeneous inputs — strategy documents, field research, stakeholder conversations, meeting notes, and technical assessments — different claims carry meaningfully different evidentiary bases. A single conviction score obscures this. Confidence tiering makes the evidentiary quality of each key claim explicit.
+
+**When to use tiered confidence instead of a simple conviction score:**
+- The proposal draws on 3 or more source types with meaningfully different reliability (a strategy doc, a customer interview, an engineering estimate, and a competitive analysis carry different weight)
+- Different parts of the proposal have meaningfully different evidentiary quality — some claims are load-bearing facts, others are calibrated guesses
+- The proposal includes architecture or technical decisions where specific unknowns are blockers
+
+**When to use simple conviction (1-10):** The uncertainty is more uniform — all the key claims rest on comparable evidence, and a single score accurately reflects the aggregate confidence.
+
+### Tiers
+
+**High confidence** — Claims empirically backed by the organization's own data, confirmed across multiple independent sources, or grounded in a direct causal relationship. State what makes the claim load-bearing.
+
+**Medium confidence** — Claims that are directionally correct but unvalidated in specifics. State what makes the direction credible and what needs to be confirmed.
+
+**Lower confidence** — Genuine unknowns that could invalidate specific parts of the plan if the assumption is wrong. State what must be confirmed before the relevant section can be relied on.
+
+### "What Would Change the Recommendation" Table
+
+Follow the confidence tiers with a table mapping specific conditions to specific course corrections. This is more operationally useful than a list of things that might lower confidence — it tells the reader exactly what to watch for and what the response would be.
+
+| Condition | Impact on recommendation |
+|-----------|--------------------------|
+| [Specific condition that would change the picture] | [Specific course correction — not just "revisit" but what specifically changes] |
+
+One row per genuine pivot condition. If a condition would merely lower confidence without changing the recommendation, it belongs in the blindspot check, not this table.
