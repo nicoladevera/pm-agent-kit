@@ -12,14 +12,78 @@ Launching is caring. A thorough checklist isn't bureaucracy — it's the differe
 
 Not every launch needs a full GTM playbook. The launch type determines checklist depth — which dimensions apply and how thoroughly.
 
-| Type | Audience | Scope | What's Required |
-|------|----------|-------|-----------------|
-| **Internal** | Team and internal users only | Dogfooding, internal testing, validation | Basic documentation, internal comms, monitoring. No external communication, no support enablement. |
-| **Alpha** | Hand-selected external users | Early signal, direct feedback | Everything in Internal + explicit opt-in process, feedback channel, known limitations documented, rollback plan. |
-| **Beta** | Broader external users, may be self-enrolled | Validation at scale, usability at volume | Everything in Alpha + broader comms, support awareness, feature flag or percentage rollout, success criteria. |
-| **GA** | All users | Full production ship | Everything in Beta + complete documentation, full support enablement, external comms (changelog, blog, email as appropriate), monitoring hardened, rollback tested. |
+| Type | Audience | Scale | Min. Duration | Internal Scope | What's Required |
+|------|----------|-------|---------------|----------------|-----------------|
+| **Internal** | Team and internal users only | 5–20 people | 1–2 weeks | Dogfooding, internal testing, validation | Basic documentation, internal comms, monitoring. No external communication, no support enablement. |
+| **Alpha** | Hand-selected external users | 10–50 users, single invite-only cohort | 2–4 weeks | Early signal, direct feedback | Everything in Internal + explicit opt-in process, feedback channel, known limitations documented, rollback plan. |
+| **Beta** | Broader external users, may be self-enrolled | 100–1,000 users or 1–5% rollout | 4–8 weeks | Validation at scale, usability at volume | Everything in Alpha + broader comms, support awareness, feature flag or percentage rollout, success criteria. |
+| **GA** | All users | 100% | N/A — ongoing | Full production ship | Everything in Beta + complete documentation, full support enablement, external comms (changelog, blog, email as appropriate), monitoring hardened, rollback tested. |
 
-**Red flag:** A GA launch treated with alpha-level preparation. A beta launch with no rollback plan. Any launch type with no monitoring.
+**Red flag:** A GA launch treated with alpha-level preparation. A beta launch with no rollback plan. Any launch type with no monitoring. Scale targets compressed below minimums due to roadmap pressure.
+
+---
+
+### Feature Scope by Launch Type
+
+The table above covers internal readiness requirements. This covers what the *feature itself* needs to include from a user capability standpoint before each launch type is appropriate. A launch checklist can be complete while the feature is still unfit for its intended audience — these are different questions.
+
+| Type | Capability Completeness | Acceptable Gaps | Not Acceptable |
+|------|------------------------|-----------------|----------------|
+| **Internal** | Core mechanic functional end-to-end | Missing edge cases, rough UX, no polish | Core loop broken or blocked |
+| **Alpha** | Primary use case works reliably | Known rough edges, missing secondary flows, accessibility compliance not required | Unstable core, data integrity risks, missing feedback mechanism |
+| **Beta** | Full primary use case + most secondary flows | Minor UX gaps, edge case handling incomplete, non-critical missing features | Accessibility non-compliant (if user-facing), P0/P1 bugs open, missing use cases that were marketed to beta users |
+| **GA** | All documented use cases complete | Minor enhancements deferred to follow-on | Any documented capability missing, known P0/P1 bugs, accessibility violations |
+
+**Red flag:** Launching to GA with scope gaps rationalized as "v1 limitations." Feature capabilities not explicitly scoped before launch, leaving the team to discover gaps from support tickets.
+
+---
+
+### Exit Criteria (Stage Transitions)
+
+These are gates, not suggestions. A launch should not graduate to the next stage until exit criteria are met. Define the quantitative thresholds (marked [X] below) before each stage begins — not after.
+
+**Internal → Alpha:**
+- Core loop validated by at least 3 internal users across different roles
+- No P0 bugs open
+- Feedback mechanism in place for alpha participants
+- Rollback mechanism tested
+
+**Alpha → Beta:**
+- Minimum of [X] user interviews or feedback sessions completed (team sets X before Alpha starts)
+- Top issues from Alpha triaged and dispositioned: fixed, deferred with rationale, or won't fix
+- No P0 or P1 bugs open
+- Primary use case completion rate at or above [X]% (define threshold before Alpha starts)
+- Support briefed on known limitations
+
+**Beta → GA:**
+- Success metrics at or above defined Beta targets — not directionally okay, at the threshold
+- Support fully enabled: FAQ complete, troubleshooting guide tested, escalation path live
+- All P0/P1 bugs resolved
+- External comms drafted and approved
+- Rollback plan tested, not just written
+- Monitoring and alerting live, routed to the right team, and verified
+
+**Red flag:** Declaring Beta done because the calendar says so. Graduating to GA without meeting quantitative success criteria. Skipping stage transitions entirely ("we'll go straight from Alpha to GA"). Thresholds defined after the stage is already underway.
+
+---
+
+### Participant Selection
+
+Who you invite into each stage directly determines the quality of signal you get. "Hand-selected" and "self-enrolled" describe mechanisms — not criteria.
+
+**Alpha participants should be:**
+- Representative of the primary target use case — not just available or willing
+- Tolerant of rough edges and incomplete workflows
+- Willing to give structured, candid feedback (not just validation)
+- Accessible for follow-up questions during the Alpha window
+- Not internal champions or advocates who will rationalize problems away
+
+**Beta participants should be:**
+- Enrolled via segment targeting, not just open sign-up — define which users belong in Beta and which should wait for GA
+- Excluded if a failure during Beta would cause disproportionate harm (high-value accounts, users in regulated contexts, users with no fallback)
+- Diverse enough across use cases and environments to surface edge cases before GA
+
+**Red flag:** Alpha cohort composed entirely of friendly users who won't surface friction. Beta open to all users with no enrollment criteria — that's GA, not Beta.
 
 ---
 
@@ -226,3 +290,7 @@ A scheduled review ensures the team evaluates outcomes rather than moving on to 
 **For launch checklist generation (`launch-checklist` skill):** Generate checklists covering all applicable dimensions for the identified launch type. Every item has an owner. Rollback is specific. Success criteria are measurable. Nothing is deferred to "after launch" that should be in place before launch.
 
 **For launch readiness assessment:** Evaluate a launch against these dimensions. Flag dimensions that are missing or underprepared for the launch type. A checklist with gaps is more useful than no checklist — but the gaps should be named.
+
+**For stage transition decisions:** Use exit criteria to evaluate whether a launch has produced sufficient signal to graduate to the next stage. Exit criteria are gates, not aspirations. If thresholds haven't been defined yet, that's the first gap to close — not the last.
+
+**For feature scope evaluation:** Use the Feature Scope by Launch Type table to assess whether the product itself is appropriate for its intended audience at a given stage, independent of whether internal readiness is complete.
