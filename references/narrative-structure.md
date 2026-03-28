@@ -33,14 +33,34 @@ Different presentations serve different purposes and have different structural e
 | Deck Type | Purpose | Typical Audience | What They Decide or Take Away | Key Sections | Typical Length |
 |-----------|---------|-----------------|------------------------------|-------------|----------------|
 | **Exec Review** | Get a decision or approval on a specific initiative. | VP, C-suite, leadership team | Whether to fund, prioritize, or approve the initiative. | Recommendation (up front), problem, impact, plan, risks, ask. | 8-12 slides |
-| **QBR** | Assess performance and align on priorities for next quarter. | Leadership + cross-functional | What worked, what didn't, what to focus on next. | Results vs. targets, key learnings, themes, next quarter priorities, resource asks. | 15-20 slides |
+| **Business Review** | Assess performance against targets and align on priorities for the next period. | Leadership + cross-functional | What worked, what didn't, what to focus on next. | Results vs. targets, key learnings, themes, next-period priorities, resource asks. | 15–20 slides |
 | **Product Explainer** | Educate someone on what the product does and why. | New stakeholders, partners, cross-functional teams | Understanding of the product, its users, and its direction. | What it does, who it's for, how it works, key metrics, what's coming. | 10-15 slides |
 | **Board Update** | Provide strategic context and surface decisions that need board input. | Board members | Market position confidence, strategic alignment, resource needs. | Market context, key metrics, strategic decisions, risks, asks. | 8-12 slides |
-| **Stakeholder Onboarding** | Bring someone up to speed on the product landscape and current work. | New team member, new exec, new partner | Sufficient context to be a productive contributor or stakeholder. | Product overview, team, process, current state, recent history, upcoming work. | 12-18 slides |
+| **Research / Discovery Readout** | Share findings from user research or discovery sprints; establish what was learned before deciding what to do. | Product, design, cross-functional partners, leadership | What users actually need, where the product falls short, which hypotheses were validated or invalidated. | Research goals, methodology (brief), key findings, implications, open questions or recommended next steps. | 10–15 slides |
+| **Strategy / Vision** | Align stakeholders on multi-year product direction or north star. Not a decision on a specific initiative — a shared framework for how future decisions will be made. | Leadership, board, cross-functional leadership | Where the product is going and why; confidence in the direction; how their work connects to it. | Market context, product vision, strategic pillars, how success will be measured, what this means for each audience. | 12–18 slides |
+| **Roadmap Review** | Present the planned roadmap for alignment, input, or awareness. | Leadership, cross-functional teams, stakeholders | What's coming, why, and in what order; what trade-offs were made; what's explicitly not on the roadmap. | Strategic priorities, roadmap view, key bets and rationale, dependencies, what's out of scope. | 10–15 slides |
+| **Launch Readiness / Go–No-Go** | Internal gate review: are we ready to ship? Criteria-driven; the output is a decision, not a recommendation. | Product, engineering, design, ops, leadership | Go or no-go decision with clear criteria status, open risk owners, and launch timeline. | Launch criteria and status, open risks with owners, launch timeline, rollback plan. | 8–12 slides |
+| **GTM Enablement** | Equip sales, CS, and marketing to sell and support the product. Benefit-led and objection-ready; often the external-facing counterpart to the Launch Readiness review. | Sales, CS, marketing, partner teams | Product positioning, key benefits, how to handle objections, support and escalation guidance. | Product overview, positioning, key benefits, differentiators, objection handling, support runbook, FAQs. | 10–15 slides |
+| **Post-Mortem / Incident Review** | Reconstruct what went wrong, establish root causes, define prevention. | Product, engineering, design, leadership | What happened and why; what changes will prevent recurrence; who owns what action. | Timeline of events, root causes, contributing factors, what worked in the response, action items with owners and due dates. | 10–15 slides |
+
+**Note on Business Review cadence:** The structure is identical regardless of whether the review runs weekly, monthly, quarterly, or annually. The scope of the lookback and forward-look adjusts to the cadence; the deck type does not change.
 
 ### Choosing the Right Type
 
-If the PM specifies the deck type, use it. If they specify audience and purpose but not a type, match based on the table above. If the match is ambiguous, ask.
+If the PM specifies the deck type, use it. If they specify audience and purpose but not a type, match based on the table above.
+
+**When the match is ambiguous:** Most hybrid presentations have a primary purpose and a secondary one. Identify the primary purpose, use that type's structure as the spine, and adapt specific sections from the secondary type where needed. To identify the primary purpose, every presentation is fundamentally doing one of four things:
+
+- **Decide** — the audience needs to make a call (exec review, launch readiness, board update)
+- **Inform** — the audience needs to understand something they don't currently understand (research readout, product explainer, post-mortem)
+- **Align** — the audience needs to converge on a shared direction (strategy/vision, roadmap review, business review)
+- **Enable** — the audience needs to be equipped to act (GTM enablement)
+
+Then apply the audience calibration rules for the actual audience tier, regardless of type.
+
+**Red flag:** A deck trying to serve two primary purposes simultaneously — inform *and* decide, for example — usually fails at both. If a presentation is a research readout *and* an exec approval, that is probably two meetings, not one deck.
+
+If purpose and audience are both unspecified, ask before proceeding.
 
 ---
 
