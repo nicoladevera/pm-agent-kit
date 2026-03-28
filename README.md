@@ -2,7 +2,7 @@
 
 A portable AI agent system that encodes senior product manager judgment into 14 invocable skills. Built for Claude Code.
 
-The judgment is concrete: 23 reference files codify PM decision standards — quality criteria per document type, red flags across all artifact types, decision frameworks, communication registers. Every skill loads and consults the relevant files before executing. The result is a reasoning system, not a template system.
+The judgment is concrete: 23 reference files codifying PM decision standards that every skill is required to load and consult before executing. The result is a reasoning system, not a template system.
 
 The agent synthesizes, drafts, and structures. The PM evaluates and decides.
 
@@ -19,7 +19,7 @@ Four operating principles govern every skill execution — do preparatory work b
 Discrete, invocable capabilities. Each skill declares its context requirements, degradation rule (what to do when context is missing), and quality bar. Skills with multiple modes may enforce different degradation rules per mode. Before executing, skills run an intake protocol that adapts questioning to how much signal the PM's input provides.
 
 **Layer 3 — Reference Standards** (`references/`)
-The judgment layer. 23 files encode PM decision patterns — quality criteria per document type, red flags across all artifact types, decision frameworks, communication registers, and more. Skills load and consult these before executing; this is what distinguishes the system from a prompt library.
+The judgment layer. Quality criteria per document type, red flags across all artifact types, decision frameworks, communication registers, and more. Skills load and consult these before executing; this is what distinguishes the system from a prompt library.
 
 **Layer 4 — Company Context** (`company/`)
 What makes generic output specific and credible. Product areas, team structure, sprint process, tool configs. Rebuilt at each new company using the onboarding checklist.
