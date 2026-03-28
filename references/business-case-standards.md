@@ -17,7 +17,7 @@ Every business case has the same components regardless of initiative size. A sma
 | **Proposed Solution** | What the initiative involves and how it addresses the problem. | Enough to evaluate feasibility and cost, not a full specification. |
 | **Cost Model** | What the investment requires — engineering time, opportunity cost, infrastructure, ongoing maintenance. | Total cost of ownership, not just build cost. The denominator of the ROI calculation. |
 | **Risk Assessment** | What could go wrong and how likely it is. | Honest risk assessment builds credibility. Missing risks destroy it — especially when they materialize. |
-| **Alternatives Considered** | At least two genuine alternatives plus "do nothing," with honest trade-offs for each. | A business case with one option isn't a case — it's a fait accompli. Alternatives prove the recommendation was chosen, not assumed. |
+| **Alternatives Considered** | At least two genuine alternatives plus "do nothing," with honest trade-offs for each. | A business case with one option isn't a case — it's a foregone conclusion. Alternatives prove the recommendation was chosen, not assumed. |
 | **Recommendation** | The PM's point of view, stated directly. | Come with a position. Don't present options and wait for someone else to think. |
 
 ---
