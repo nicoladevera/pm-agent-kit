@@ -140,6 +140,14 @@ Skills have two dimensions: **type** (what they do technically) and **tier** (wh
 
 Generators and Analyzers work on inputs the PM provides — pasted text, exported files, local documents. The PM is the data pipeline: she exports from Amplitude, pastes support tickets, copies the draft to Google Docs. Connector skills automate those handoffs by connecting directly to live systems. They are never portable — each one is built for a specific company's tooling.
 
+| Tier | Focus | Skills |
+|-------|-------|--------|
+| **1 — Operate** | High structure, tight feedback loop | `doc-review`, `prd-draft`, `generate-tasks` |
+| **2 — Communicate** | Weekly-cadence, team-visible output | `status-update`, `sprint-plan`, `retro-synthesis`, `meeting-brief`, `decision-log` |
+| **3 — Orient** | External data, deep company context | `user-feedback`, `competitive-intel`, `data-analysis`, `launch-checklist` |
+| **4 — Strategize** | High-judgment, composable reasoning | `business-case`, `presentation-deck` |
+
+All 14 skills across Tiers 1-4 are built. Tier 4 skills integrate structured stress-testing (premortem, blindspot check, conviction assessment) directly into their instruction flow.
 
 ### Skill Reference
 
@@ -159,15 +167,6 @@ Generators and Analyzers work on inputs the PM provides — pasted text, exporte
 | `data-analysis` | Analyzer | Answer a data question in product context — metric interpretation, funnel analysis, anomaly investigation |
 | `business-case` | Generator | Build the argument for or against an initiative: problem, impact sizing, cost, risks, alternatives considered. Includes structured stress test: premortem, blindspot check, conviction assessment. |
 | `presentation-deck` | Generator | Draft a structured narrative or generate a branded `.pptx` for a specific audience — exec review, QBR, board update, new stakeholder onboarding |
-
-| Tier | Focus | Skills |
-|-------|-------|--------|
-| **1 — Operate** | High structure, tight feedback loop | `doc-review`, `prd-draft`, `generate-tasks` |
-| **2 — Communicate** | Weekly-cadence, team-visible output | `status-update`, `sprint-plan`, `retro-synthesis`, `meeting-brief`, `decision-log` |
-| **3 — Orient** | External data, deep company context | `user-feedback`, `competitive-intel`, `data-analysis`, `launch-checklist` |
-| **4 — Strategize** | High-judgment, composable reasoning | `business-case`, `presentation-deck` |
-
-All 14 skills across Tiers 1-4 are built. Tier 4 skills integrate structured stress-testing (premortem, blindspot check, conviction assessment) directly into their instruction flow.
 
 ---
 
