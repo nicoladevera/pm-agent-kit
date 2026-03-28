@@ -127,6 +127,7 @@ Describe what the initiative involves and how it addresses the problem. Keep thi
 - How it addresses the problem established in step 4
 - Key dependencies or prerequisites
 - If an existing PRD or artifact in `knowledge/` provides more detail, reference it
+- Apply the Visualization standards from `references/business-case-standards.md` — if the initiative involves system components, a process flow, or decision routing, include an ASCII diagram in this section
 
 ### 7. Model the cost
 

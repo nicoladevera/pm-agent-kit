@@ -178,6 +178,19 @@ agent_block:
 
 ---
 
+**Launch timeline** *(always include; adjust day markers to match actual schedule)*
+
+```
+L-5    L-3    L-1    L     L+1    L+3
+ |      |      |     |      |      |
+[Flags] [Docs] [RC] [Go]  [Mon] [Review]
+         |
+      [Rollback
+        tested]
+```
+
+---
+
 ### Pre-Launch
 
 #### Documentation
@@ -230,6 +243,18 @@ agent_block:
 **Authorization:** [Who decides to roll back]
 **Communication on rollback:** [Who gets told, how]
 **Data implications:** [What happens to data created during the launch window]
+
+**Rollback decision tree** *(always include)*
+
+```
+[Metric exceeds threshold]
+         |
+  [Notify on-call lead]
+         |
+   ┌─────┴──────┐
+[Auto-rollback] [Manual review]
+  (flag set)    (ambiguous case)
+```
 
 ---
 

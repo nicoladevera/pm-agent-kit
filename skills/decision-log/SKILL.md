@@ -151,6 +151,18 @@ agent_block:
 | [Option 2] | ... | ... | ... |
 | [Do nothing] | ... | ... | ... |
 
+**Decision fork** *(include when 3 or more options were considered or the trade-off is non-obvious; omit if the table above makes the fork self-evident)*
+
+```
+                 [Decision Point]
+                /        |        \
+        [Option 1]  [Option 2]  [Do Nothing]
+        CHOSEN      [Key diff]  Accepted
+                                risk: [X]
+```
+
+Label the differentiating factor on each branch (cost, speed, risk, reversibility).
+
 ---
 
 ### Rationale

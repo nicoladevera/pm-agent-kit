@@ -189,6 +189,18 @@ agent_block:
 3. **Alongside:** [Data stories paired with their feature counterparts]
 4. **Last:** [Stories that depend on everything above]
 
+**Dependency diagram** *(include when 3 or more stories have cross-story dependencies; omit if all stories are independent)*
+
+```
+[Story A]   [Story B]
+     \         /
+   [Story C]
+       |
+   [Story D] ──── [Story E]
+```
+
+Label each box with the story title or ticket ID. Show only load-bearing dependencies — don't diagram every story if most are independent.
+
 ### Flagged Items
 
 - [Stories or decisions that need PM input before engineering starts]

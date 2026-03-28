@@ -18,6 +18,13 @@ Every PM presentation follows this core structure, adapted from the Minto Pyrami
 | **Complication** | Introduces tension. Why the current situation isn't sufficient. What changed, what's at risk, what opportunity exists. | A gap, a competitive threat, a user problem, a missed target, a market shift. |
 | **Resolution** | Proposes the path forward. What we should do about the complication. | The recommendation, the plan, the investment case, the decision. |
 
+```
+[Situation] ──→ [Complication] ──→ [Resolution]
+  Context           Tension          Path forward
+  (shared           (what's           (what to do
+  ground)           at risk)          about it)
+```
+
 **The arc shapes the entire deck, not just the introduction.** The first few slides establish the situation. The middle slides develop the complication with evidence. The final slides present the resolution with enough support to act on.
 
 **Not every slide maps to one element.** The situation might be one slide or three. The complication might unfold across a data section and a competitive section. The resolution might span a recommendation, a plan, and an ask. But the macro arc — we're here, this is the problem, here's what we should do — must be clear.

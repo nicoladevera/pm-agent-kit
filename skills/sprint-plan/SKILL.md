@@ -325,6 +325,18 @@ agent_block:
 3. **Alongside:** [Data stories]
 4. **Last:** [Stories dependent on earlier work]
 
+**Dependency diagram** *(include when 3 or more stories have cross-story dependencies; omit if all stories are independent)*
+
+```
+[Story A]   [Story B]
+     \         /
+   [Story C]
+       |
+   [Story D] ──── [Story E]
+```
+
+Label each box with the story title or ticket ID. Show only load-bearing dependencies — don't diagram every story if most are independent.
+
 ---
 
 ### Risks

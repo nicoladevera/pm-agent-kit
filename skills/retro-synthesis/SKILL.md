@@ -148,6 +148,18 @@ agent_block:
 | [Theme] | [Sprint X, Y, Z] | [Getting better / Getting worse / Flat] | [High / Medium / Low] |
 | [Theme] | ... | ... | ... |
 
+**Pattern timeline** *(include when synthesis covers 3 or more sprints)*
+
+```
+Pattern                S9   S10  S11  S12  S13  Trend
+─────────────────────────────────────────────────────
+[Pattern name]               ●    ●    ●    ●     ↑
+[Pattern name]          ●         ●              →
+[Pattern name]          ●    ●                   ↓
+```
+
+● = appeared this sprint. Trend: ↑ worsening / → flat / ↓ improving
+
 ---
 
 ### What's Improving
