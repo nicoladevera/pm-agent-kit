@@ -10,7 +10,7 @@ Planning is caring. Showing up to sprint planning with a prepared backlog, asses
 
 ### Goals Are Outcomes, Not Story Lists
 
-A sprint goal answers "what will be true at the end of this sprint that isn't true now?" — not "which stories will we complete." "Reduce first-payment miss rate to under 10%" is a goal. "Complete stories PMT-101 through PMT-108" is a to-do list.
+A sprint goal answers "what will be true at the end of this sprint that isn't true now?" — not "which stories will we complete." "Increase feature activation rate for new users to 60% within the first 7 days" is a goal. "Complete stories PMT-101 through PMT-108" is a to-do list.
 
 **What a good sprint goal looks like:**
 - States the outcome the sprint is driving toward

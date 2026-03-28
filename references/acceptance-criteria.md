@@ -45,11 +45,11 @@ This maps directly to test cases. Agents can translate this format into code wit
 
 Agents implement exactly what you specify. If you want a specific event name, field name, or schema shape — state it.
 
-**Instead of:** "Track plan creation"
+**Instead of:** "Track order creation"
 
 **Write:**
-- **On** installment plan creation, fire event `installment_plan_created`
-- **Payload:** `{ user_id: string, plan_id: string, total_amount: number, currency: string, num_installments: integer, first_payment_date: ISO-8601 date }`
+- **On** successful order submission, fire event `order_placed`
+- **Payload:** `{ user_id: string, order_id: string, total_amount: number, currency: string, item_count: integer, placed_at: ISO-8601 timestamp }`
 - **Destination:** analytics event pipeline
 
 ### Declare Boundary Conditions Explicitly
@@ -72,9 +72,9 @@ Each error scenario should be its own AC with a defined user-facing message and 
 **Instead of:** "Handle errors gracefully"
 
 **Write:**
-- **Given** a payment reminder notification fails to deliver (FCM returns error)
-- **When** the retry limit (3 attempts, 15-minute intervals) is exhausted
-- **Then** log a `reminder_delivery_failed` event with `user_id`, `plan_id`, `error_code`, and do not display an in-app error to the user
+- **Given** a welcome email fails to deliver (mail provider returns a bounce or timeout error)
+- **When** the retry limit (3 attempts, 10-minute intervals) is exhausted
+- **Then** log a `welcome_email_failed` event with `user_id`, `email_address`, `error_code`, and flag the account for manual review — do not surface an error to the user
 
 ### Reference External Contracts
 
@@ -109,9 +109,9 @@ If the AC depends on an API, service, or database schema, name the source of tru
 - Why it's bad: An agent will either ignore this entirely or implement arbitrary edge case handling.
 
 **Good:**
-- **Given** a user attempts a payment exceeding their remaining balance of $150.00 by entering $200.00
-- **When** the payment is submitted
-- **Then** the system caps the payment at $150.00, displays: "Your remaining balance is $150.00. We've adjusted your payment to this amount.", and requires the user to confirm the adjusted amount before processing
+- **Given** a user attempts to upload a 50 MB file when only 20 MB of storage remains in their workspace
+- **When** the upload is submitted
+- **Then** the system rejects the upload before transfer begins, displays: "You need 50 MB but only 20 MB is available. Free up space or upgrade your plan to continue.", and does not partially upload the file
 
 ### Example 3: Data tracking
 
@@ -131,12 +131,12 @@ If the AC depends on an API, service, or database schema, name the source of tru
 - Why it's bad: An agent will choose a time. It might choose midnight.
 
 **Good:**
-- **Given** a user has a payment due on March 15
-- **When** it is March 14 at 8:00 AM in the user's local timezone
-- **Then** send a push notification: "Your installment payment of {amount} is due tomorrow. Tap to pay now."
-- Delivery window: 8:00 AM - 9:00 AM local timezone only
-- If the user has already made the payment, do not send the reminder
-- If the device has notifications disabled, no fallback (do not send SMS or email in v1)
+- **Given** a user's free trial expires on March 15
+- **When** it is March 12 at 10:00 AM in the user's local timezone
+- **Then** send an email: "Your trial ends in 3 days. Upgrade now to keep access to your data."
+- Delivery window: 10:00 AM - 11:00 AM local timezone only
+- If the user has already upgraded to a paid plan, do not send the reminder
+- If the user has opted out of marketing emails, do not send (no in-app fallback in v1)
 
 ---
 

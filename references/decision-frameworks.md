@@ -23,7 +23,7 @@ Every decision — made or pending — has the same components. The difference b
 
 ## Problem Before Options
 
-Frame the decision question before listing solutions. "Should we build or buy a notification system?" is a solution-framed question. "How do we reduce first-payment miss rates from 12% to under 5%?" is a problem-framed question. The second one might lead to building a notification system — or it might lead to something better.
+Frame the decision question before listing solutions. "Should we build or buy a notification system?" is a solution-framed question. "How do we increase week-4 retention for new users from 28% to 40%?" is a problem-framed question. The second one might lead to building a notification system — or it might lead to something better.
 
 **In practice:**
 - Decision logs start with what's being decided and why it matters — not with the recommended option

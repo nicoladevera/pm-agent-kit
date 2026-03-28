@@ -9,8 +9,8 @@ What makes a good story or task — the container around the acceptance criteria
 ## Story Title
 
 - **Imperative form.** Start with a verb: "Display payment schedule on loan detail screen" not "Payment schedule display."
-- **User-facing when possible.** Describe what the user experiences, not the technical implementation: "Send payment reminder 24 hours before due date" not "Implement reminder scheduling cron job."
-- **Specific enough to distinguish.** A team looking at a board of 15 stories should be able to tell each one apart from the title alone. "Update payment flow" is too vague. "Cap overpayment at remaining balance with confirmation" is identifiable.
+- **User-facing when possible.** Describe what the user experiences, not the technical implementation: "Send trial expiration notification 3 days before end date" not "Implement notification scheduling cron job."
+- **Specific enough to distinguish.** A team looking at a board of 15 stories should be able to tell each one apart from the title alone. "Update search results" is too vague. "Block checkout when cart item goes out of stock mid-session" is identifiable.
 
 ---
 
