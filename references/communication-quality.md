@@ -22,9 +22,9 @@ Risks are stated early, stated clearly, and stated with severity. Not softened, 
 
 ### 3. Risk Paired with Mitigation
 
-Never name a risk without a proposed mitigation or next step alongside it. A risk without a mitigation creates anxiety; a risk with a mitigation creates confidence that it's being managed. This is a stronger standard than "risk surfaced" (criterion 2) — that criterion ensures risks appear; this one ensures they appear *with a plan*.
+Name every risk with either a mitigation or an explicit escalation path. A risk with a mitigation creates confidence it's being managed. A risk with an explicit escalation ("we don't have a mitigation yet — escalating to [owner] by [date] to resolve") is honest and actionable. What's not acceptable is a bare risk with nothing alongside it — that's an alarm, not a status update.
 
-**Evaluate:** For every risk named, is there a mitigation, workaround, or next step right next to it? A risk list without actions is an alarm, not a status update.
+**Evaluate:** For every risk named, is there a mitigation, workaround, escalation path, or explicit "here's how we'll know by [date]" right next to it? If a risk is listed with no follow-through at all, the update is incomplete.
 
 ### 4. Assessment Over Activity
 

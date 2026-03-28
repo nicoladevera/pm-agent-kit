@@ -37,9 +37,9 @@ The input provides the content. The skill provides the narrative structure, audi
 
 **Required invocation inputs:** Two things must be specified:
 1. **Audience** — Who is this presentation for? (e.g., "my VP," "the board," "the engineering team," "a new stakeholder")
-2. **Purpose / deck type** — What type of presentation? (e.g., "exec review," "QBR," "product explainer," "board update," "stakeholder onboarding")
+2. **Purpose / deck type** — What type of presentation? (e.g., "exec review," "business review," "product explainer," "board update," "roadmap review," "post-mortem")
 
-If either is missing, ask: "Who is the audience for this presentation, and what type of deck is it (exec review, QBR, product explainer, board update, stakeholder onboarding)?"
+If either is missing, ask: "Who is the audience for this presentation, and what type of deck is it (exec review, business review, product explainer, board update, roadmap review, research readout, strategy/vision, launch readiness, GTM enablement, post-mortem)?"
 
 ---
 
@@ -128,10 +128,15 @@ If any of these files exist but are still stub templates, treat them as unavaila
 From the PM's stated purpose and audience, classify the deck type per `references/narrative-structure.md`:
 
 - **Exec Review** — Decision-oriented. VP/C-suite. Problem, data, recommendation, ask. 8-12 slides.
-- **QBR** — Assessment-oriented. Leadership + cross-functional. Results, learnings, priorities. 15-20 slides.
+- **Business Review** — Assessment-oriented. Leadership + cross-functional. Results, learnings, next-period priorities. 15-20 slides.
 - **Product Explainer** — Education-oriented. New stakeholders, partners. What, who, how, what's coming. 10-15 slides.
 - **Board Update** — Strategic. Board members. Market position, metrics, decisions, asks. 8-12 slides.
-- **Stakeholder Onboarding** — Context-setting. New team member, exec, partner. Landscape, team, process, current state. 12-18 slides.
+- **Research / Discovery Readout** — Findings-oriented. Product, design, cross-functional. What was learned, implications, open questions. 10-15 slides.
+- **Strategy / Vision** — Alignment-oriented. Leadership, board, cross-functional leads. Multi-year direction, strategic pillars, how success is measured. 12-18 slides.
+- **Roadmap Review** — Alignment + input-oriented. Leadership, cross-functional, stakeholders. What's coming, why, trade-offs, what's out. 10-15 slides.
+- **Launch Readiness / Go–No-Go** — Decision-oriented gate review. Product, eng, design, ops, leadership. Criteria status, open risks, launch timeline, rollback plan. 8-12 slides.
+- **GTM Enablement** — Enablement-oriented. Sales, CS, marketing, partners. Positioning, benefits, objection handling, support runbook. 10-15 slides.
+- **Post-Mortem / Incident Review** — Reconstruction-oriented. Product, eng, design, leadership. What happened, root causes, action items with owners. 10-15 slides.
 
 If the deck type is ambiguous from the invocation, ask. State the identified deck type and why.
 
@@ -189,13 +194,13 @@ For **Exec Review** and **Board Update** decks (high-stakes, decision-oriented),
 - What context does the audience have (or lack) that affects how they'll receive this?
 - What's the most likely pushback, and is it addressed in the narrative?
 
-For other deck types (QBR, Product Explainer, Stakeholder Onboarding), these stress-test steps are optional but recommended for any deck where the stakes warrant it.
+For other deck types (Business Review, Product Explainer, Research/Discovery Readout, Strategy/Vision, Roadmap Review, Launch Readiness/Go-No-Go, GTM Enablement, Post-Mortem/Incident Review), these stress-test steps are optional but recommended for any deck where the stakes warrant it.
 
 #### 9. Run the smell test
 
 Check for:
 - **Smell 4 (Audience Mismatch):** Is the content calibrated for who's reading it? Engineering detail for a board? Strategic framing for a sprint review? Feature walkthrough for a VP who needs to make a funding decision?
-- **Smell 6 (Activity Reported as Progress):** Does the presentation tell the audience where things stand, or just what was done? A QBR that lists completed features without assessing impact. A status deck that reports activity without assessment.
+- **Smell 6 (Activity Reported as Progress):** Does the presentation tell the audience where things stand, or just what was done? A business review that lists completed features without assessing impact. A status deck that reports activity without assessment.
 - **Smell 12 (Risk Buried or Absent):** Are risks surfaced prominently, or tucked into the last slide? Would the audience walk away with an accurate picture of what's at risk?
 
 ---
@@ -281,7 +286,7 @@ If any check fails, fix before saving. Note any design compromises in the contex
 ```markdown
 ## Presentation: [Title]
 
-**Deck type:** [Exec Review / QBR / Product Explainer / Board Update / Stakeholder Onboarding]
+**Deck type:** [Exec Review / Business Review / Product Explainer / Board Update / Research / Discovery Readout / Strategy / Vision / Roadmap Review / Launch Readiness / Go–No-Go / GTM Enablement / Post-Mortem / Incident Review]
 **Audience:** [Who — be specific]
 **Purpose:** [What the audience should decide, learn, or take away]
 **Estimated length:** [N slides]
@@ -291,7 +296,7 @@ If any check fails, fix before saving. Note any design compromises in the contex
 agent_block:
   skill: presentation-deck
   mode: Narrative
-  deck_type: [Exec Review / QBR / Product Explainer / Board Update / Stakeholder Onboarding]
+  deck_type: [Exec Review / Business Review / Product Explainer / Board Update / Research/Discovery Readout / Strategy/Vision / Roadmap Review / Launch Readiness/Go-No-Go / GTM Enablement / Post-Mortem/Incident Review]
   audience: "[Who — specific]"
   situation: "[SCR Situation in one sentence]"
   complication: "[SCR Complication in one sentence]"
