@@ -6,6 +6,7 @@ approval: draft-confirm
 context-required: []
 context-optional:
   - company/facts/product.md
+  - company/facts/customers.md
   - company/facts/competitors.md
   - company/interfaces/data-sources.md
 degradation: proceed-with-caveat
@@ -48,7 +49,9 @@ Read these files:
 
 ### 3. Load company context (if available)
 
-If `company/facts/product.md` exists and is substantive, read it for product areas, user segments, and existing features. This helps map themes to product context and distinguish feedback about your product from feedback about adjacent systems.
+If `company/facts/product.md` exists and is substantive, read it for product areas and existing features. This helps map themes to product context and distinguish feedback about your product from feedback about adjacent systems.
+
+If `company/facts/customers.md` exists and is substantive, read it for customer segments, buyer vs. user dynamics, pain points, and voice-of-customer channel context. This helps map themes to specific segments and weight feedback signals by ICP relevance.
 
 If `company/facts/competitors.md` exists and is substantive, read it for competitive landscape. Customer feedback that mentions competitors or alternatives is a specific kind of signal worth calling out.
 

@@ -7,6 +7,7 @@ context-required: []
 context-optional:
   - company/facts/competitors.md
   - company/facts/product.md
+  - company/facts/customers.md
   - company/norms/communication.md
 degradation: proceed-with-caveat
 ---
@@ -103,7 +104,9 @@ Read these files:
 
 If `company/facts/competitors.md` exists and is substantive, read it for the baseline competitive landscape — known competitors, market segments, our advantages and gaps, tracking sources.
 
-If `company/facts/product.md` exists and is substantive, read it for our product positioning, features, and user segments. This is essential for the "compared to us" dimension of any competitive analysis.
+If `company/facts/product.md` exists and is substantive, read it for our product positioning and features. This is essential for the "compared to us" dimension of any competitive analysis.
+
+If `company/facts/customers.md` exists and is substantive, read it for customer segments and ICP definitions. This helps assess ICP overlap with competitors and ground the comparison in actual customer context rather than inferred segments.
 
 If `company/norms/communication.md` exists and is substantive, read it for how competitive intelligence is shared internally — who cares, what format, what level of detail.
 

@@ -14,12 +14,7 @@
 
 ## User Segments
 
-<!-- Who uses the product. For each segment:
-- Name / label
-- Approximate size (users, accounts, revenue — whatever the company tracks)
-- What they care about (their primary jobs-to-be-done)
-- How they differ from other segments
--->
+<!-- Customer segment definitions, pain points, buyer vs. user dynamics, and voice-of-customer channels have moved to company/facts/customers.md. -->
 
 ## Key Metrics
 

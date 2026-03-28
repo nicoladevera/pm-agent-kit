@@ -6,7 +6,7 @@ Format:
 - **Term** — Definition. Context for when/where it's used if helpful.
 
 Examples:
-- **CaaS** — Credit as a Service. Tala's B2B lending infrastructure product.
+- **CaaS** — Credit as a Service. B2B lending infrastructure platform.
 - **Golden path** — The standard deployment pipeline that all services are expected to use.
 - **WAU** — Weekly active users. Primary engagement metric reported in Monday metrics review.
 -->

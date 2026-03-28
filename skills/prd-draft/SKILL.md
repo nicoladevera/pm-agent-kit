@@ -6,6 +6,7 @@ approval: draft-confirm
 context-required: []
 context-optional:
   - company/facts/product.md
+  - company/facts/customers.md
   - company/norms/process.md
 degradation: proceed-with-caveat
 ---
@@ -79,7 +80,9 @@ Read these files — they define what the output must satisfy:
 
 ### 3. Load company context (if available)
 
-If `company/facts/product.md` exists and is substantive, read it for product landscape, existing functionality, and user segments. This helps the PRD reference adjacent systems and avoid re-specifying what already exists.
+If `company/facts/product.md` exists and is substantive, read it for product landscape and existing functionality. This helps the PRD reference adjacent systems and avoid re-specifying what already exists.
+
+If `company/facts/customers.md` exists and is substantive, read it for customer segments, pain points, jobs-to-be-done, and buyer vs. user dynamics. This grounds user stories in actual customer context rather than inferred segments.
 
 If `company/norms/process.md` exists and is substantive, read it for how PRDs are expected to work at this company — what sections are standard, what level of detail engineering expects.
 

@@ -8,6 +8,7 @@ context-optional:
   - company/norms/launch-process.md
   - company/norms/communication.md
   - company/facts/product.md
+  - company/facts/customers.md
   - company/facts/team.md
 degradation: proceed-with-caveat
 ---
@@ -82,7 +83,9 @@ If `company/norms/launch-process.md` exists and is substantive, read it for how 
 
 If `company/norms/communication.md` exists and is substantive, read it for communication channel conventions and stakeholder preferences.
 
-If `company/facts/product.md` exists and is substantive, read it for product landscape context — adjacent features, user segments, what already exists.
+If `company/facts/product.md` exists and is substantive, read it for product landscape context — adjacent features, what already exists.
+
+If `company/facts/customers.md` exists and is substantive, read it for customer segments and pain points — helps identify which segments are affected by the launch and what their specific readiness needs might be.
 
 If `company/facts/team.md` exists and is substantive, read it for team structure, stakeholders who need to be informed, and support/on-call structure.
 

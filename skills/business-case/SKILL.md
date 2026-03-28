@@ -6,6 +6,7 @@ approval: draft-confirm
 context-required: []
 context-optional:
   - company/facts/product.md
+  - company/facts/customers.md
   - company/facts/team.md
   - company/norms/decisions.md
 degradation: proceed-with-caveat
@@ -82,7 +83,9 @@ Read these files:
 
 ### 3. Load company context (if available)
 
-If `company/facts/product.md` exists and is substantive, read it for product landscape, user segments, and key metrics. This grounds impact sizing in the actual product context.
+If `company/facts/product.md` exists and is substantive, read it for product landscape and key metrics. This grounds impact sizing in the actual product context.
+
+If `company/facts/customers.md` exists and is substantive, read it for customer segments, pain points, and ICP definitions. This enables more specific impact sizing by segment and grounds the opportunity claim in real customer context.
 
 If `company/facts/team.md` exists and is substantive, read it for team structure, capacity, and stakeholder landscape. This informs the cost model and organizational risk assessment.
 

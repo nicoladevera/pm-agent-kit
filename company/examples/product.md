@@ -27,13 +27,7 @@
 
 ---
 
-## Key User Personas
-
-**Budget-Curious Newcomer** — 24-28 years old, first job or early career. Has never used a budgeting app consistently. Motivated by anxiety about overspending rather than a clear savings goal. Low patience for setup friction. Likely to churn within the first week if the app doesn't show immediate value.
-
-**Goal-Driven Saver** — 28-35 years old, mid-career. Has a specific goal (emergency fund, down payment, travel). Willing to connect bank account if it makes tracking effortless. Upgrade candidate. Churns when life events disrupt the habit (new job, move, relationship change).
-
-**Re-engager** — Previously used a finance app, stopped, and is trying again. Has opinions about what doesn't work. Skeptical of onboarding promises. Responds well to "you're back, here's where you left off" moments.
+<!-- Customer segments and personas have moved to company/examples/customers.md. -->
 
 ---
 

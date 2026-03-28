@@ -15,6 +15,7 @@ Populate these files in the order they affect current runtime behavior. Not ever
 | File | Status | Current consumers | Missing impact today |
 |------|--------|-------------------|----------------------|
 | `facts/product.md` | Active runtime input | `doc-review`, `prd-draft`, `generate-tasks`, `status-update`, `sprint-plan`, `meeting-brief`, `decision-log`, `data-analysis`, `user-feedback`, `competitive-intel`, `launch-checklist`, `business-case`, `presentation-deck` | Broad quality loss across most skills |
+| `facts/customers.md` | Active runtime input | `user-feedback`, `prd-draft`, `business-case`, `competitive-intel`, `data-analysis`, `launch-checklist`, `doc-review` | Weaker segment reasoning, ICP framing, and customer-evidence quality |
 | `facts/team.md` | Active runtime input | `status-update`, `sprint-plan`, `retro-synthesis`, `meeting-brief`, `decision-log`, `launch-checklist`, `business-case`, `presentation-deck` | Weaker ownership, stakeholder, and capacity reasoning |
 | `norms/process.md` | Active runtime input | `doc-review`, `prd-draft`, `generate-tasks`, `status-update`, `sprint-plan`, `retro-synthesis` | Weaker planning, delivery, and document calibration |
 | `norms/communication.md` | Active runtime input | `status-update`, `meeting-brief`, `competitive-intel`, `launch-checklist`, `presentation-deck` | Weaker audience calibration and comms fit |
@@ -34,6 +35,7 @@ Populate these files in the order they affect current runtime behavior. Not ever
 **Week 1 core context:**
 - `facts/product.md` — Know what the company builds and how success is measured.
 - `facts/team.md` — Know who owns what and who needs to be informed.
+- `facts/customers.md` — Know who you're building for: buyer vs. user, segment jobs-to-be-done, and where customer signal surfaces.
 - `norms/process.md` — Know how work moves and what "ready" or "done" means.
 - `norms/communication.md` — Know how updates and stakeholder communication actually work.
 
@@ -58,7 +60,8 @@ Populate these files in the order they affect current runtime behavior. Not ever
 
 **When to update `company/` files:**
 - After a reorg: update `facts/team.md` with new ownership and reporting lines
-- After a product pivot or major initiative kick-off: update `facts/product.md` with new focus areas, revised personas, or dropped bets
+- After a product pivot or major initiative kick-off: update `facts/product.md` with new focus areas or dropped bets
+- After a positioning change or ICP shift: update `facts/customers.md` with revised segment definitions and updated pain point priorities
 - After new tooling is adopted: update `interfaces/tools.md` and `interfaces/data-sources.md`
 - After a launch or post-mortem: update `norms/launch-process.md` if the process revealed gaps
 - Quarterly: re-read `facts/competitors.md` against recent `knowledge/competitive/` snapshots and reconcile

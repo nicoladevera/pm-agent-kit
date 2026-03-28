@@ -7,6 +7,7 @@ context-required: []
 context-optional:
   - company/norms/process.md
   - company/facts/product.md
+  - company/facts/customers.md
 degradation: proceed-with-caveat
 ---
 
@@ -59,9 +60,11 @@ For all document types that include scope definitions or trade-off sections (PRD
 
 If `company/norms/process.md` exists and is substantive, read it for context on how documents of this type are expected to work at this company.
 
-If `company/facts/product.md` exists and is substantive, read it for context on the product landscape, user segments, and existing functionality.
+If `company/facts/product.md` exists and is substantive, read it for context on the product landscape and existing functionality.
 
-If either file exists but is still a stub template, treat it as unavailable and say so in the Context Note section of your output.
+If `company/facts/customers.md` exists and is substantive, read it for customer segments, pain points, and buyer vs. user dynamics. This helps evaluate whether documents ground their problem statements and user stories in real customer context.
+
+If any of these files exist but are still stub templates, treat them as unavailable and say so in the Context Note section of your output.
 
 ### 5. Evaluate against quality criteria
 

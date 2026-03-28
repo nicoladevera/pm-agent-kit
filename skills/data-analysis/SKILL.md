@@ -6,6 +6,7 @@ approval: draft-confirm
 context-required: []
 context-optional:
   - company/facts/product.md
+  - company/facts/customers.md
   - company/interfaces/data-sources.md
 degradation: proceed-with-caveat
 ---
@@ -76,7 +77,9 @@ Read these files:
 
 ### 3. Load company context (if available)
 
-If `company/facts/product.md` exists and is substantive, read it for product areas, user segments, and feature landscape. This helps interpret metrics in context (e.g., a drop in "activation" means something different depending on what activation means for this product).
+If `company/facts/product.md` exists and is substantive, read it for product areas and feature landscape. This helps interpret metrics in context (e.g., a drop in "activation" means something different depending on what activation means for this product).
+
+If `company/facts/customers.md` exists and is substantive, read it for customer segment definitions. This helps frame cohort analysis using actual segment definitions rather than inferred ones.
 
 If `company/interfaces/data-sources.md` exists and is substantive, read it for data infrastructure context — what tools track what, known limitations, key dashboards.
 
