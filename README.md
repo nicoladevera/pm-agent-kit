@@ -219,8 +219,6 @@ Reference files live in `references/` and are consulted by multiple skills. They
 ## Design Principles
 
 - **Portable over company-specific.** PM identity travels. Company context is layered on and stripped away. Everything outside `company/` is designed to last across roles.
+- **Intake adapts to input quality.** Rich input (problem clear, constraints stated) gets one confirmation question and proceeds. Thin input gets a structured interpretation first, then asks the PM to confirm before proceeding. The question cap is four.
 - **Judgment lives in references, not prompts.** Quality standards — what makes a PRD complete, what a sound business case requires, what red flags cut across all artifacts — live in `references/` and are shared across skills. Standards can be updated once and inherited everywhere.
 - **Per-skill degradation rules.** Missing context triggers an explicit rule, not a failure. `proceed-with-caveat` produces output with visible caveats. `stop-and-say-why` produces nothing until the PM provides what's needed. The right rule depends on the cost of a plausible-but-wrong output. Skills with multiple modes may enforce different rules per mode.
-- **Intake adapts to input quality.** Rich input (problem clear, constraints stated) gets one confirmation question and proceeds. Thin input gets a structured interpretation first, then asks the PM to confirm before proceeding. The question cap is four.
-- **One skill end-to-end before parallelizing.** Each skill is complete and self-contained. The tier progression is intentional: Tier 1 proved the format; each subsequent tier built on that proof.
-- **Eval before graduation.** No skill advances without at least one eval case: a realistic sample input, planted issues the skill must catch, intentional strengths it must not flag, and a scoring rubric.
