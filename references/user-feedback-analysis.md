@@ -1,6 +1,6 @@
-# Feedback Analysis Standards
+# User Feedback Analysis Standards
 
-What makes a feedback synthesis useful for product decisions. Use this to cluster customer feedback into themes, assess severity and frequency, distinguish signal from noise, and connect feedback to product work. The analytical counterpart to `communication-quality.md` — that file covers how to communicate findings; this file covers how to find what's worth communicating.
+What makes a user feedback synthesis useful for product decisions. Use this to cluster customer feedback into themes, assess severity and frequency, distinguish signal from noise, and connect feedback to product work. The analytical counterpart to `communication-quality.md` — that file covers how to communicate findings; this file covers how to find what's worth communicating.
 
 Feedback synthesis is not summarization. Summarizing feedback restates what customers said. Synthesizing feedback identifies what customers need — which is often different from what they asked for. "Users want dark mode" is a summary. "Users are experiencing eye strain during extended evening sessions" is a synthesis that opens up a broader solution space.
 
