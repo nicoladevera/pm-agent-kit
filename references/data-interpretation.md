@@ -170,8 +170,28 @@ For every key finding, state a confidence level:
 
 ---
 
+## Connecting Analysis to Decisions
+
+### "So What?"
+
+Every data analysis should answer "so what?" — how does this finding connect to decisions we need to make?
+
+| Category | Question to answer |
+|----------|-------------------|
+| **Finding** | What does this data actually tell us — and what doesn't it tell us? |
+| **Product** | Does this change what we should build, fix, or prioritize? |
+| **Urgency** | Does this increase or decrease the urgency of any current initiative? |
+| **Investigation** | Do we need more data before acting, or is the signal strong enough? |
+| **Risk** | Does this reveal a risk we weren't tracking — a regression, churn driver, or silent failure? |
+
+If the answer to all five is "no," the analysis is informational — worth noting but not worth acting on. Say so explicitly. "No action needed" is a valid and valuable conclusion.
+
+**Red flag:** An analysis that presents findings without connecting them to a decision or explicitly stating "no action needed" has done the hard work but skipped the valuable part.
+
+---
+
 ## Using These Standards
 
-**For data analysis (`data-analysis` skill):** Establish context before interpreting. Characterize anomalies before hypothesizing. Segment to find causes. State confidence honestly. Name limitations. The analysis answers the PM's question, not a related question.
+**For data analysis (`data-analysis` skill):** Establish context before interpreting. Characterize anomalies before hypothesizing. Segment to find causes. State confidence honestly. Name limitations. Connect findings to decisions using the "So What?" framework. The analysis answers the PM's question, not a related question.
 
-**For interpreting data in other skills:** When metrics or data appear as input to other skills (e.g., in a status update, a sprint plan, or a business case), apply these standards to assess data quality and appropriate confidence. Don't amplify weak data into strong claims.
+**For interpreting data in other skills:** When metrics or data appear as input to other skills (e.g., in a status update, a sprint plan, or a business case), apply these standards to assess data quality, appropriate confidence, and whether the data implies any product decision or action. Don't amplify weak data into strong claims — but don't leave strong data disconnected from decisions either.

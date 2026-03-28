@@ -142,10 +142,26 @@ When product context is available, connect each theme to existing work:
 
 The goal is to help the PM translate themes into action — not just "here's what users said" but "here's what this means for what we're building."
 
+### "So What?"
+
+Beyond mapping themes to existing work, every feedback synthesis should answer "so what?" — how does this theme connect to decisions we need to make?
+
+| Category | Question to answer |
+|----------|-------------------|
+| **Product** | Does this theme change what we should build or reprioritize? |
+| **Severity** | Is this painful enough to warrant interrupting current plans? |
+| **Positioning** | Does this feedback reveal a gap between how users perceive our product and what we intend? |
+| **Urgency** | Is this growing, and will it get worse if we don't act this cycle? |
+| **Risk** | Does this theme signal churn risk, trust erosion, or reputational damage? |
+
+If the answer to all five is "no," the theme is informational — worth tracking but not worth acting on this cycle. Say so explicitly. "No action needed" is a valid and valuable conclusion.
+
+**Red flag:** A feedback synthesis that catalogs themes without stating what to do about them — or explicitly stating "no action needed" — has organized the data but hasn't finished the analysis.
+
 ---
 
 ## Using These Standards
 
-**For feedback synthesis (`user-feedback` skill):** Cluster feedback by underlying need. Assess severity and frequency for each theme. Distinguish signal from noise. Select representative quotes. Connect to product work when context is available. Prioritize by impact (frequency × severity × trend).
+**For feedback synthesis (`user-feedback` skill):** Cluster feedback by underlying need. Assess severity and frequency for each theme. Distinguish signal from noise. Select representative quotes. Connect to product work when context is available. Apply the "So What?" framework to each significant theme. Prioritize by impact (frequency × severity × trend).
 
-**For interpreting feedback in other skills:** When customer feedback appears as input to other skills (e.g., as context for a PRD, as signal in a status update), apply these standards to assess its weight. A single NPS comment is not the same as a cross-channel theme.
+**For interpreting feedback in other skills:** When customer feedback appears as input to other skills (e.g., as context for a PRD, as signal in a status update), apply these standards to assess its weight and whether it implies any product decision or action. A single NPS comment is not the same as a cross-channel theme — but a cross-channel theme that isn't connected to a decision is still incomplete.
