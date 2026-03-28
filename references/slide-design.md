@@ -23,7 +23,7 @@ Every slide uses 3-4 distinct visual tiers. Fewer means the hierarchy is flat (t
 | **Supporting content** | Data, bullets, explanatory text | 24-32pt |
 | **Source / caption** | Attribution, footnotes | 14-18pt |
 
-Not every slide uses all four tiers. A hero number slide might use three (headline, number, source). A content slide might use three (headline, body, source). But every slide must have at least three tiers with visible size differentiation.
+Not every slide uses all four tiers. A hero number slide might use three (headline, number, source). A content slide might use three (headline, body, source). A metrics row uses three (headline, numbers with labels, source). A quote/pullout uses three (headline, quote text, attribution). But every slide must have at least three tiers with visible size differentiation.
 
 ### Pyramid Principle Per Slide
 
@@ -56,10 +56,14 @@ Choose the pattern that serves the content, not for variety's sake.
 | **Split layout (40/60)** | Text and visual carry equal weight | Text left (40%), visual right (60%). Never text right — Western reading order starts left. |
 | **Hero number** | The insight IS a single number | Large centered number (44-60pt), one-line context below (24pt), source at bottom (16pt). Minimal surrounding content. |
 | **Full-bleed image** | Photo or screenshot is the primary content | Image fills slide. Dark overlay (minimum 60% opacity) for text legibility. Headline overlaid. |
+| **Multi-column comparison** | Comparing 2-3 options, pillars, or parallel items at equal weight | 2 or 3 equal-width columns, each with a header and content. Consistent vertical structure across columns. |
+| **Quote / Pullout** | A single statement deserves emphasis through isolation — user quote, key finding, provocative insight | Large centered text (28-36pt), attribution or context below (18-24pt). Minimal surrounding content. The emptiness is the emphasis. |
+| **Metrics row** | Multiple KPIs or numbers carry equal weight — performance snapshot, scorecard, state-of-the-business | 3-4 numbers arranged horizontally, each with a label (16-18pt) and the number itself (36-48pt). Optional trend indicator per metric. |
+| **Timeline / Sequence** | Content is inherently sequential — roadmap phases, process steps, historical progression | 3-5 labeled nodes arranged horizontally, connected by lines or arrows. Each node has a short label and optional one-line description below. |
 
 ### Anti-Patterns
 
-- **Centered body text.** Harder to scan than left-aligned. Center alignment is acceptable only for title slides and hero numbers.
+- **Centered body text.** Harder to scan than left-aligned. Center alignment is acceptable only for title slides, hero numbers, quote/pullout slides, and metrics rows.
 - **Content touching slide edges.** No breathing room destroys readability. Maintain consistent padding on all sides.
 - **Inconsistent margins between slides.** Content that shifts position slide-to-slide looks assembled, not designed.
 
@@ -120,7 +124,7 @@ Density depends on how the audience encounters the slides.
 ### Readability
 
 - **Line spacing:** 1.2-1.5x for body text. 1.0-1.2x acceptable for tight bullet lists.
-- **Left-align body text.** Center-aligned body text is harder to scan. Center alignment is acceptable only for title slides and hero numbers.
+- **Left-align body text.** Center-aligned body text is harder to scan. Center alignment is acceptable only for title slides, hero numbers, quote/pullout slides, and metrics rows.
 - **Contrast:** Dark text on light backgrounds as the default. Light text on dark backgrounds only for title slides, section dividers, or full-bleed image overlays.
 
 ---
@@ -174,6 +178,9 @@ For which visual type fits each narrative purpose, see `references/narrative-str
 | Composition of a whole | **Stacked bar or donut chart.** Maximum 5 segments. More than 5 → group small segments into "Other." |
 | A process or relationship | **Simple diagram.** Maximum 5-7 nodes. If more complex, break into multiple slides showing each phase. |
 | A product or UX point | **Screenshot with annotation.** Circle, arrow, or highlight the specific element. No full-page screenshots without focus. |
+| A comparison of 2-3 options or parallel items | **Multi-column comparison.** Equal-width columns, each with a header. Consistent vertical structure. Max 3 columns — more needs a table. |
+| A key quote or provocative finding | **Quote/pullout layout.** Large centered text, attribution below. The isolation IS the emphasis. |
+| Multiple KPIs or a performance snapshot | **Metrics row.** 3-4 numbers horizontally with labels. Optional trend indicator. More than 4 → split across slides. |
 | A list of capabilities or benefits | **Icons with short labels.** Replace bullet points with icons for faster pattern recognition. 3-6 items maximum. |
 
 ### The Pairing Rule

@@ -218,7 +218,7 @@ For each slide in the narrative (from step 7), make explicit design decisions be
 
 For each slide, determine:
 
-1. **Layout pattern:** Which layout best serves this content? (Full-width content, split layout, hero number, full-bleed image.) The choice depends on the content type, not variety for variety's sake.
+1. **Layout pattern:** Which layout best serves this content? (Full-width content, split layout, hero number, full-bleed image, multi-column comparison, quote/pullout, metrics row, timeline/sequence.) The choice depends on the content type, not variety for variety's sake.
 2. **Visual tier assignment:** Map each element to a tier (title, key insight, supporting content, source/caption). Assign specific point sizes per the tier system in `references/slide-design.md`.
 3. **Density check:** Count elements (max 5-7). Count words against the delivery context budget (live: 15-25, pre-read: 40-60, standalone: up to 80). If a slide exceeds budget, simplify — move detail to speaker notes or split the slide.
 4. **Visual treatment:** Translate the Visual guidance from step 7 into a specific rendering plan using the decision tree in `references/slide-design.md`. Hero number? Bar chart with N bars in brand colors? Icons with labels replacing bullets? If the planned visual cannot be rendered in python-pptx, choose the simpler fallback now and note it.
@@ -394,7 +394,7 @@ Output in conversation:
 ### Design Summary
 
 **Delivery context:** [Live presentation / Pre-read / Standalone reference]
-**Layout patterns used:** [e.g., "Full-width content (6), Split layout (2), Hero number (2), Section divider (3)"]
+**Layout patterns used:** [e.g., "Full-width content (4), Split layout (2), Hero number (1), Metrics row (2), Multi-column comparison (1), Section divider (3)"]
 **Design compromises:** [Density overruns, visual fallbacks, consistency trade-offs — or "None"]
 
 ### Stress Test
