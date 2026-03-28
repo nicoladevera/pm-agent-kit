@@ -7,7 +7,7 @@ context-required: []
 context-optional:
   - company/facts/product.md
   - company/facts/customers.md
-  - company/norms/process.md
+  - company/norms/team-process.md
 degradation: proceed-with-caveat
 ---
 
@@ -84,7 +84,7 @@ If `company/facts/product.md` exists and is substantive, read it for product lan
 
 If `company/facts/customers.md` exists and is substantive, read it for customer segments, pain points, jobs-to-be-done, and buyer vs. user dynamics. This grounds user stories in actual customer context rather than inferred segments.
 
-If `company/norms/process.md` exists and is substantive, read it for how PRDs are expected to work at this company — what sections are standard, what level of detail engineering expects.
+If `company/norms/team-process.md` exists and is substantive, read it for how PRDs are expected to work at this company — what sections are standard, what level of detail engineering expects.
 
 If either file exists but is still a stub template, treat it as unavailable and say so in the output.
 

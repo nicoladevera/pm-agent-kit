@@ -17,7 +17,7 @@ Populate these files in the order they affect current runtime behavior. Not ever
 | `facts/product.md` | Active runtime input | `doc-review`, `prd-draft`, `generate-tasks`, `status-update`, `sprint-plan`, `meeting-brief`, `decision-log`, `data-analysis`, `user-feedback`, `competitive-intel`, `launch-checklist`, `business-case`, `presentation-deck` | Broad quality loss across most skills |
 | `facts/customers.md` | Active runtime input | `user-feedback`, `prd-draft`, `business-case`, `competitive-intel`, `data-analysis`, `launch-checklist`, `doc-review` | Weaker segment reasoning, ICP framing, and customer-evidence quality |
 | `facts/team.md` | Active runtime input | `status-update`, `sprint-plan`, `retro-synthesis`, `meeting-brief`, `decision-log`, `launch-checklist`, `business-case`, `presentation-deck` | Weaker ownership, stakeholder, and capacity reasoning |
-| `norms/process.md` | Active runtime input | `doc-review`, `prd-draft`, `generate-tasks`, `status-update`, `sprint-plan`, `retro-synthesis` | Weaker planning, delivery, and document calibration |
+| `norms/team-process.md` | Active runtime input | `doc-review`, `prd-draft`, `generate-tasks`, `status-update`, `sprint-plan`, `retro-synthesis` | Weaker planning, delivery, and document calibration |
 | `norms/communication.md` | Active runtime input | `status-update`, `meeting-brief`, `competitive-intel`, `launch-checklist`, `presentation-deck` | Weaker audience calibration and comms fit |
 | `norms/decisions.md` | Conditional runtime input | `decision-log`, `business-case` | Mainly affects decision framing and approval context |
 | `facts/competitors.md` | Conditional runtime input | `competitive-intel`, `user-feedback` | Mainly affects competitive baseline and competitor mentions |
@@ -36,7 +36,7 @@ Populate these files in the order they affect current runtime behavior. Not ever
 - `facts/product.md` — Know what the company builds and how success is measured.
 - `facts/team.md` — Know who owns what and who needs to be informed.
 - `facts/customers.md` — Know who you're building for: buyer vs. user, segment jobs-to-be-done, and where customer signal surfaces.
-- `norms/process.md` — Know how work moves and what "ready" or "done" means.
+- `norms/team-process.md` — Know how work moves and what "ready" or "done" means.
 - `norms/communication.md` — Know how updates and stakeholder communication actually work.
 
 **Week 2 conditional context:**
@@ -68,7 +68,7 @@ Populate these files in the order they affect current runtime behavior. Not ever
 
 **How `knowledge/` artifacts signal when `company/` needs updating:**
 - If competitive snapshots consistently surface a competitor not in `facts/competitors.md`, add it
-- If status updates keep flagging the same process friction, that's a signal `norms/process.md` is out of date
+- If status updates keep flagging the same process friction, that's a signal `norms/team-process.md` is out of date
 - If sprint retros reveal recurring ownership ambiguity, `facts/team.md` probably needs a refresh
 - If data analyses reference sources not in `interfaces/data-sources.md`, add them
 

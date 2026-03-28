@@ -6,7 +6,7 @@ approval: draft-confirm
 context-required: []
 context-optional:
   - company/facts/product.md
-  - company/norms/process.md
+  - company/norms/team-process.md
 degradation: proceed-with-caveat
 ---
 
@@ -47,7 +47,7 @@ Read these files — they define the standards for stories and AC:
 
 If `company/facts/product.md` exists and is substantive, read it for product context that affects how stories should be scoped (e.g., which services exist, what teams own what).
 
-If `company/norms/process.md` exists and is substantive, read it for how stories are typically structured at this company (sprint cadence, ticket conventions, definition of done).
+If `company/norms/team-process.md` exists and is substantive, read it for how stories are typically structured at this company (sprint cadence, ticket conventions, definition of done).
 
 If either file exists but is still a stub template, treat it as unavailable and say so in the output.
 

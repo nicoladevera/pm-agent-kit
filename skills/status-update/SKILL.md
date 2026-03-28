@@ -6,7 +6,7 @@ approval: draft-confirm
 context-required: []
 context-optional:
   - company/norms/communication.md
-  - company/norms/process.md
+  - company/norms/team-process.md
   - company/facts/team.md
   - company/facts/product.md
 degradation: proceed-with-caveat
@@ -104,7 +104,7 @@ Read these files:
 
 If `company/norms/communication.md` exists and is substantive, read it for status update conventions — who receives updates, how often, what format, what's expected.
 
-If `company/norms/process.md` exists and is substantive, read it for sprint cadence and process context.
+If `company/norms/team-process.md` exists and is substantive, read it for sprint cadence and process context.
 
 If `company/facts/team.md` exists and is substantive, read it for team structure, stakeholders, and who cares about what.
 

@@ -5,7 +5,7 @@ tier: 2
 approval: draft-confirm
 context-required: []
 context-optional:
-  - company/norms/process.md
+  - company/norms/team-process.md
   - company/facts/team.md
 degradation: proceed-with-caveat
 ---
@@ -46,7 +46,7 @@ Read these files:
 
 ### 3. Load company context (if available)
 
-If `company/norms/process.md` exists and is substantive, read it for retro cadence, sprint rhythm, and team process context. This helps assess whether issues are process-related or situational.
+If `company/norms/team-process.md` exists and is substantive, read it for retro cadence, sprint rhythm, and team process context. This helps assess whether issues are process-related or situational.
 
 If `company/facts/team.md` exists and is substantive, read it for team structure context — who owns what, team dynamics references.
 

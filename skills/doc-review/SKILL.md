@@ -5,7 +5,7 @@ tier: 1
 approval: draft-confirm
 context-required: []
 context-optional:
-  - company/norms/process.md
+  - company/norms/team-process.md
   - company/facts/product.md
   - company/facts/customers.md
 degradation: proceed-with-caveat
@@ -58,7 +58,7 @@ For all document types that include scope definitions or trade-off sections (PRD
 
 ### 4. Load company context (if available)
 
-If `company/norms/process.md` exists and is substantive, read it for context on how documents of this type are expected to work at this company.
+If `company/norms/team-process.md` exists and is substantive, read it for context on how documents of this type are expected to work at this company.
 
 If `company/facts/product.md` exists and is substantive, read it for context on the product landscape and existing functionality.
 
