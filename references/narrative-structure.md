@@ -53,7 +53,7 @@ Every slide headline should state the conclusion or takeaway of that slide. The 
 | Topic label (wrong) | Takeaway headline (right) |
 |---------------------|--------------------------|
 | Q3 Results | Q3 activation exceeded target by 12%, driven by onboarding redesign |
-| Competitive Landscape | PayFlex's free tier launch signals a pricing war we're not positioned for |
+| Competitive Landscape | Spendulum's free tier launch signals a pricing war we're not positioned for |
 | User Feedback | Three of five top pain points trace to a single onboarding flow |
 | Proposed Investment | A $200K investment in self-service tooling would eliminate 40% of support tickets |
 | Next Steps | We need a decision on funding by March 15 to hit the Q2 launch window |
