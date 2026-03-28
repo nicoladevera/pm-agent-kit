@@ -28,7 +28,7 @@ Any content that needs to become a presentation narrative:
 - A decision that needs stakeholder alignment
 - Rough notes, bullet points, or a verbal download
 - A completed narrative from a previous Narrative mode run (for direct Slides generation)
-- A cohesive artifact from another skill (`knowledge/data-analyses/`, `knowledge/competitive/`, `knowledge/feedback/`, etc.)
+- A cohesive artifact from another skill (`knowledge/data-analyses/`, `knowledge/competition/`, `knowledge/user-feedback/`, etc.)
 - A combination of the above
 
 The input provides the content. The skill provides the narrative structure, audience calibration, and visual translation.

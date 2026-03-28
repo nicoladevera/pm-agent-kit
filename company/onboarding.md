@@ -64,7 +64,7 @@ Populate these files in the order they affect current runtime behavior. Not ever
 - After a positioning change or ICP shift: update `facts/customers.md` with revised segment definitions and updated pain point priorities
 - After new tooling is adopted: update `interfaces/tools.md` and `interfaces/data-sources.md`
 - After a launch or post-mortem: update `norms/launch-process.md` if the process revealed gaps
-- Quarterly: re-read `facts/competitors.md` against recent `knowledge/competitive/` snapshots and reconcile
+- Quarterly: re-read `facts/competitors.md` against recent `knowledge/competition/` snapshots and reconcile
 
 **How `knowledge/` artifacts signal when `company/` needs updating:**
 - If competitive snapshots consistently surface a competitor not in `facts/competitors.md`, add it

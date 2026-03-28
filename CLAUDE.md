@@ -150,9 +150,9 @@ knowledge/           Accumulated PM work product. Artifacts produced by skills, 
   sprint-plans/      Sprint plans produced by sprint-plan (Draft mode)
   retros/            Retro syntheses produced by retro-synthesis
   launch-checklists/ Launch checklists produced by launch-checklist
-  feedback/          Feedback syntheses produced by user-feedback
+  user-feedback/     Feedback syntheses produced by user-feedback
   data-analyses/     Data analysis reports produced by data-analysis
-  competitive/       Competitive snapshots and deep dives produced by competitive-intel
+  competition/       Competitive snapshots and deep dives produced by competitive-intel
   business-cases/    Business cases produced by business-case
   presentations/     Presentation narratives and .pptx files produced by presentation-deck
 company/             Company-specific context. Rebuilt at each new company.

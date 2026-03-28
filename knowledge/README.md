@@ -20,9 +20,9 @@ Artifacts produced by skills when they run in Generator or Draft mode. Only subs
 | `sprint-plans/` | `sprint-plan` (Draft mode) | Sprint plans |
 | `retros/` | `retro-synthesis` | Retro synthesis reports |
 | `launch-checklists/` | `launch-checklist` | Feature launch checklists |
-| `feedback/` | `user-feedback` | Feedback synthesis reports |
+| `user-feedback/` | `user-feedback` | Feedback synthesis reports |
 | `data-analyses/` | `data-analysis` | Data analysis reports |
-| `competitive/` | `competitive-intel` | Competitive monitoring snapshots and deep dives |
+| `competition/` | `competitive-intel` | Competitive monitoring snapshots and deep dives |
 | `business-cases/` | `business-case` | Business cases for initiatives |
 | `presentations/` | `presentation-deck` | Structured presentation narratives and `.pptx` files |
 

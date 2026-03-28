@@ -113,7 +113,7 @@ Spendulum is B2C — no named enterprise accounts. The relevant high-value cohor
 - Volume: 5–8 interviews per quarter, conducted by Growth PM
 - Cadence: Quarterly; typically aligned to planning cycles
 - Bias: Recruited from engaged users — similar sampling problem as NPS; churned users are rarely captured
-- Access: Interview notes in Notion; synthesis lives in `knowledge/feedback/`
+- Access: Interview notes in Notion; synthesis lives in `knowledge/user-feedback/`
 
 ---
 
