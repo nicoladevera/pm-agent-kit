@@ -418,3 +418,9 @@ agent_block:
 - **Is the recommendation stated directly?** The PM has a point of view. The reasoning is transparent. Trade-offs are acknowledged. The reader knows what's being recommended and why.
 - **Does each alternative have a verdict?** Each option closes with a single sentence that resolves it — not a trade-off summary, but a characterization of the option's role in the decision. Trade-offs explain; verdicts decide.
 - **If the proposal synthesizes multiple heterogeneous sources, is confidence tiered?** When strategy documents, field research, stakeholder conversations, and technical assessments are all in the mix, different claims rest on different evidentiary bases. A single conviction score flattens that. Tiered confidence is only required when the source mix is genuinely heterogeneous — uniform uncertainty still calls for simple conviction.
+
+---
+
+## Save
+
+After producing the artifact, write it to `knowledge/business-cases/` using the naming convention: `feature-name-business-case.md`, where `feature-name` is a lowercase hyphenated slug derived from the initiative name. Report the saved file path in the conversation.

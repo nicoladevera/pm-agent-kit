@@ -304,3 +304,9 @@ L-5    L-3    L-1    L     L+1    L+3
 - **Are success criteria measurable?** Metrics with targets and timeframes, not "track adoption." Data sources named.
 - **Is monitoring on the checklist, not deferred?** Day-one monitoring is a launch prerequisite, not a follow-up task.
 - **Would the PM feel confident nothing falls through the cracks?** The checklist is the coordination artifact. If the PM can hand it to the team and everyone knows what they own and when it's due, it's working.
+
+---
+
+## Save
+
+After producing the artifact, write it to `knowledge/launch-checklists/` using the naming convention: `feature-name-launch-checklist.md`, where `feature-name` is a lowercase hyphenated slug derived from the feature name. Report the saved file path in the conversation.

@@ -306,3 +306,9 @@ agent_block:
 - **Is audience calibration correct?** A VP update is strategic, not operational. A team update is detailed, not summarized. The content matches what the reader needs.
 - **Are risks stated with severity?** Not just "X is at risk" but how severe, what the timeline impact is, and what would mitigate it.
 - **Would the PM trust this enough to send it?** After reviewing and editing, the PM should feel confident putting their name on it. The assessment should be one she'd use to prepare for a stakeholder conversation.
+
+---
+
+## Save
+
+*Draft mode only.* After producing the artifact, write it to `knowledge/status-updates/` using the naming convention: `YYYY-MM-DD-period-status.md`, where `YYYY-MM-DD` is today's date and `period` is a lowercase hyphenated slug derived from the sprint or time period named in the update. Report the saved file path in the conversation. Analyze mode output is ephemeral — do not save it.

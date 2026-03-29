@@ -361,3 +361,9 @@ Label each box with the story title or ticket ID. Show only load-bearing depende
 - **Are backlog issues specific and actionable?** Each issue names what's wrong and what the fix looks like. The PM can act on every flag without follow-up.
 - **Would the team know exactly what they're committing to?** Scope is clear. Stories are ready. Dependencies are visible. Nothing is ambiguous.
 - **Does the plan respect dependencies?** Foundation work is sequenced first. Blocked work isn't committed. Cross-team asks are flagged.
+
+---
+
+## Save
+
+*Draft mode only.* After producing the artifact, write it to `knowledge/sprint-plans/` using the naming convention: `sprint-NN-plan.md`, where `NN` is the sprint number. Report the saved file path in the conversation. Analyze mode output is ephemeral — do not save it.

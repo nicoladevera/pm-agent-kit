@@ -220,3 +220,9 @@ The output should meet these tests:
 - **Are dependencies visible?** Cross-story and cross-team dependencies are flagged, not implied.
 - **Is the sizing right?** Stories are deployable units — not too large (multi-sprint epics) and not too small (single AC without context).
 - **Does the implementation sequence make sense?** Foundation work comes first. Parallel tracks are identified. Nothing is scheduled before its dependencies.
+
+---
+
+## Save
+
+After producing the artifact, write it to `knowledge/tasks/` using the naming convention: `feature-name-tasks.md`, where `feature-name` is a lowercase hyphenated slug derived from the source document title. Report the saved file path in the conversation.

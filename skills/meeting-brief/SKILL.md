@@ -221,3 +221,9 @@ agent_block:
 - **Are attendee stakes specific?** Not "stakeholder engagement" — what does this particular person care about in this particular meeting?
 - **Does it distinguish discussion from FYI?** The brief signals which topics need the room's energy and which are informational.
 - **Would the PM save time preparing?** The brief reduces prep work to reviewing and adjusting — not writing the prep from scratch.
+
+---
+
+## Save
+
+After producing the artifact, write it to `knowledge/meeting-briefs/` using the naming convention: `YYYY-MM-DD-meeting-slug-brief.md`, where `YYYY-MM-DD` is today's date and `meeting-slug` is a lowercase hyphenated slug derived from the meeting title. Report the saved file path in the conversation.

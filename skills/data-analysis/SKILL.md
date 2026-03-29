@@ -270,3 +270,9 @@ Show the work. Include tables, calculations, and comparisons as appropriate.]
 - **Are limitations stated honestly?** The analysis says what it can't tell you, not just what it can. Sample size, confounders, data quality — all named.
 - **Is confidence calibrated to the data?** High confidence requires strong data. Medium confidence is stated when caveats exist. Low confidence is used when the data is thin. The PM knows how much to trust the finding.
 - **Would a data-literate PM trust this analysis?** The reasoning is visible, the math is sound, confounders are addressed, and the conclusion follows from the evidence.
+
+---
+
+## Save
+
+After producing the artifact, write it to `knowledge/data-analyses/` using the naming convention: `YYYY-MM-DD-analysis-slug.md`, where `YYYY-MM-DD` is today's date and `analysis-slug` is a lowercase hyphenated slug derived from the question or topic. Report the saved file path in the conversation.

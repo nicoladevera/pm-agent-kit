@@ -195,3 +195,9 @@ Label the differentiating factor on each branch (cost, speed, risk, reversibilit
 - **Is the reasoning specific to this decision?** Not generic decision-making advice, but the actual factors that drove this particular choice.
 - **Is reversibility assessed?** The reader knows whether this is a one-way door requiring careful consideration or a two-way door where speed matters more than deliberation.
 - **If pending: is the path to resolution clear?** Who decides, by when, and what information they need. The brief is ready for the decider to decide, not to investigate.
+
+---
+
+## Save
+
+After producing the artifact, write it to `knowledge/decisions/` using the naming convention: `YYYY-MM-DD-decision-slug.md`, where `YYYY-MM-DD` is today's date and `decision-slug` is a lowercase hyphenated slug derived from the decision title. Report the saved file path in the conversation.

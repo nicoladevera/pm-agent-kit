@@ -391,3 +391,14 @@ agent_block:
 - **Would this change how the PM thinks about the competitive landscape?** The analysis informs decisions — positioning, roadmap, urgency — not just "here's what competitors did." If no action is needed, it says so.
 - **Is reactivity checked?** The analysis doesn't recommend panic in response to a single competitor move. It assesses whether action, noting, or ignoring is the right response. Pattern matters more than recency.
 - **Is the analysis honest about our position?** Where the competitor is genuinely stronger, the analysis says so. Competitive intelligence that only highlights competitor weaknesses is cheerleading, not intelligence.
+
+---
+
+## Save
+
+After producing the artifact, write it to `knowledge/competition/` using the naming convention for the mode:
+
+- **Monitor:** `YYYY-MM-DD-competitive-update.md`, where `YYYY-MM-DD` is today's date. If the update covers a named period (e.g., "Q1 2026"), append it: `YYYY-MM-DD-q1-2026-competitive-update.md`.
+- **Deep Dive:** `competitor-name-topic-deep-dive.md`, where `competitor-name` is the competitor's name and `topic` is a lowercase hyphenated slug of the area analyzed (e.g., `stripe-checkout-deep-dive.md`).
+
+Report the saved file path in the conversation.

@@ -371,3 +371,9 @@ The draft should meet these tests:
 - **Is it a real first draft, not a template?** The output should contain specific content drawn from the input — not generic placeholder text like "[describe the problem here]."
 - **Are assumptions flagged?** Everything the skill inferred should be visible and correctable.
 - **Would the PM save time?** The draft should reduce the PM's work to editing and sharpening — not to writing the PRD from scratch after reading a template.
+
+---
+
+## Save
+
+After producing the artifact, write it to `knowledge/prds/` using the naming convention: `feature-name-prd.md`, where `feature-name` is a lowercase hyphenated slug derived from the PRD title. Report the saved file path in the conversation.

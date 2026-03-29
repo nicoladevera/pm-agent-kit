@@ -230,3 +230,9 @@ agent_block:
 - **Does the synthesis distinguish signal from noise?** Edge cases, misattributed issues, and personal preferences are explicitly flagged. The PM knows what to act on and what to ignore.
 - **Is source channel bias acknowledged?** The synthesis doesn't treat support tickets and NPS verbatims as equivalent without noting their different biases.
 - **Would the PM trust this enough to take it to a prioritization discussion?** The themes, evidence, and recommended actions are strong enough to inform product decisions — not just a restatement of what customers said.
+
+---
+
+## Save
+
+After producing the artifact, write it to `knowledge/user-feedback/` using the naming convention: `YYYY-MM-DD-feedback-slug.md`, where `YYYY-MM-DD` is today's date and `feedback-slug` is a lowercase hyphenated slug derived from the date range or description. Report the saved file path in the conversation.

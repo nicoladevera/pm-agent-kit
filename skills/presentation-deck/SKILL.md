@@ -430,3 +430,10 @@ Output in conversation:
 - **[Slides mode] Are density limits respected for the delivery context?** Presentation slides stay under 25 words of body content. Pre-reads can go higher. No slide has more than 7 distinct visual elements.
 - **[Slides mode] Is the visual treatment specific and purposeful?** Each visual (chart, number, icon set) directly supports its slide's headline claim. No decorative elements. No generic placeholder visuals. No default chart formatting.
 - **[Slides mode] Is cross-slide consistency maintained?** Headlines, content areas, margins, font sizes, and color application are consistent across all slides of the same type. The deck feels like one designed artifact, not slides assembled from different sources.
+
+---
+
+## Save
+
+- **Narrative mode:** After producing the artifact, write it to `knowledge/presentations/` using the naming convention: `YYYY-MM-DD-descriptive-slug.md`, where `YYYY-MM-DD` is today's date and `descriptive-slug` is a lowercase hyphenated slug derived from the presentation title. Report the saved file path in the conversation.
+- **Slides mode:** Save instruction is embedded in the execution steps above — write the `.pptx` file to `knowledge/presentations/YYYY-MM-DD-descriptive-slug.pptx`.

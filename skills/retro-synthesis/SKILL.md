@@ -211,3 +211,9 @@ Pattern                S9   S10  S11  S12  S13  Trend
 - **Is the "getting worse" section honest?** Not softened, not buried. If something is deteriorating, the synthesis says so plainly and names the impact.
 - **Does the recommended focus prioritize by impact?** Not by recency. The most important pattern gets top billing even if it's not the newest one.
 - **Would a team lead find this useful for improving team health?** The synthesis gives them ammunition: data-backed patterns, specific recommendations, and accountability for past commitments.
+
+---
+
+## Save
+
+After producing the artifact, write it to `knowledge/retros/` using the naming convention: `sprint-NN-retro.md`, where `NN` is the sprint number covered. For multi-sprint syntheses, use the range: `sprint-NN-MM-retro.md` (e.g., `sprint-40-42-retro.md`). Report the saved file path in the conversation.
