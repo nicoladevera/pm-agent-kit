@@ -81,7 +81,7 @@ For general documents: evaluate against the six universal dimensions in the crit
 
 ### 6. Run the smell test
 
-Scan for red flags in `references/pm-smell-test.md`. If a smell is present:
+Scan for red flags. If a smell is present:
 - Name it
 - Point to the exact section where it appears
 - Explain the risk it creates

@@ -239,7 +239,19 @@ agent_block:
 
 ### User Flow
 
-[Step-by-step flow from the user's perspective]
+[Step-by-step flow from the user's perspective. Use prose for simple linear flows. Include an ASCII diagram when the flow has branching, decision points, or multiple actors.]
+
+*(ASCII diagram — include when flow has branching or multiple actors; omit for straight linear flows)*
+
+```
+[User] ──→ [Action A] ──→ [State B]
+                               |
+                      [Decision Point?]
+                       /              \
+               [Path C]            [Path D]
+                    \                 /
+                  [Outcome / End State]
+```
 
 ---
 
