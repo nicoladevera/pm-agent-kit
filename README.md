@@ -1,8 +1,8 @@
 # PM Agent Kit
 
-A portable AI agent system that encodes senior product manager judgment into 14 invocable skills. Built for Claude Code.
+A portable AI agent system that encodes senior product manager judgment into 16 invocable skills. Built for Claude Code.
 
-The judgment is concrete: 23 reference files codifying PM decision standards that every skill is required to load and consult before executing. The result is a reasoning system, not a template system.
+The judgment is concrete: 25 reference files codifying PM decision standards that every skill is required to load and consult before executing. The result is a reasoning system, not a template system.
 
 The agent synthesizes, drafts, and structures. The PM evaluates and decides.
 
@@ -89,6 +89,8 @@ Invoke a skill using its slash command:
 /competitive-intel [paste competitive signals or ask about a competitor]
 /business-case [paste problem/opportunity description + any data you have]
 /presentation-deck [paste content + specify audience and deck type]
+/discovery-plan [paste problem area or initiative hypothesis + what's already known]
+/roadmap-prioritization [paste candidate initiatives + goals + constraints]
 ```
 
 Or invoke by name in natural language:
@@ -134,7 +136,7 @@ Skills have two dimensions: **type** (what they do technically) and **tier** (wh
 
 | Type | What it does | Current Skills |
 |------|-------------|----------------|
-| **Generator** | Produces an artifact from inputs (drafts a PRD, generates tasks, creates a launch checklist, builds a business case, drafts a presentation) | `prd-draft`, `generate-tasks`, `decision-log`, `meeting-brief`, `launch-checklist`, `business-case`, `presentation-deck`, `status-update`, `sprint-plan` |
+| **Generator** | Produces an artifact from inputs (drafts a PRD, generates tasks, creates a launch checklist, builds a business case, drafts a presentation, plans discovery, prioritizes roadmap) | `prd-draft`, `generate-tasks`, `decision-log`, `meeting-brief`, `launch-checklist`, `business-case`, `presentation-deck`, `status-update`, `sprint-plan`, `discovery-plan`, `roadmap-prioritization` |
 | **Analyzer** | Evaluates, critiques, or extracts signal (reviews a document, synthesizes feedback, interprets a metric) | `doc-review`, `retro-synthesis`, `user-feedback`, `competitive-intel`, `data-analysis` |
 | **Connector** | Connects to an external system to pull data or push output (queries Snowflake, posts to Jira, writes to Confluence) | Not included, always company-specific |
 
@@ -145,9 +147,9 @@ Generators and Analyzers work on inputs the PM provides — pasted text, exporte
 | **1 — Operate** | High structure, tight feedback loop | `doc-review`, `prd-draft`, `generate-tasks` |
 | **2 — Communicate** | Weekly-cadence, team-visible output | `status-update`, `sprint-plan`, `retro-synthesis`, `meeting-brief`, `decision-log` |
 | **3 — Orient** | External data, deep company context | `user-feedback`, `competitive-intel`, `data-analysis`, `launch-checklist` |
-| **4 — Strategize** | High-judgment, composable reasoning | `business-case`, `presentation-deck` |
+| **4 — Strategize** | High-judgment, composable reasoning | `business-case`, `presentation-deck`, `discovery-plan`, `roadmap-prioritization` |
 
-All 14 skills across Tiers 1-4 are built. Tier 4 skills integrate structured stress-testing (premortem, blindspot check, conviction assessment) directly into their instruction flow.
+All 16 skills across Tiers 1-4 are built. Tier 4 skills integrate structured stress-testing (premortem, blindspot check, conviction assessment) directly into their instruction flow.
 
 ### Skill Reference
 
@@ -167,6 +169,8 @@ All 14 skills across Tiers 1-4 are built. Tier 4 skills integrate structured str
 | `data-analysis` | Analyzer | Answer a data question in product context — metric interpretation, funnel analysis, anomaly investigation |
 | `business-case` | Generator | Build the argument for or against an initiative: problem, impact sizing, cost, risks, alternatives considered. Includes structured stress test: premortem, blindspot check, conviction assessment. |
 | `presentation-deck` | Generator | Draft a structured narrative or generate a branded `.pptx` for a specific audience — exec review, QBR, board update, new stakeholder onboarding |
+| `discovery-plan` | Generator | Plan what to learn before committing: map assumptions, rank by cost of being wrong, select research methods, define evidence thresholds, sequence the research |
+| `roadmap-prioritization` | Generator | Compare candidate initiatives, sequence work, manage opportunity cost, and explain why A beats B — the prioritization rationale behind the roadmap |
 
 ---
 
@@ -191,7 +195,7 @@ Reference files live in `references/` and are consulted by multiple skills. They
 | File | What it encodes | Referenced by |
 |------|----------------|---------------|
 | `pm-philosophy.md` | Ten core PM heuristics with rationale and behavioral examples | Foundational for CLAUDE.md; explicitly referenced by `retro-synthesis` |
-| `pm-smell-test.md` | Red flags across all PM artifact types (specs, comms, decisions) | All reviewing/analyzing skills |
+| `pm-smell-test.md` | Red flags across all PM artifact types (specs, comms, decisions) | All reviewing/analyzing skills, `discovery-plan`, `roadmap-prioritization` |
 | `quality-criteria-general-document.md` | Six universal quality dimensions for documents that don't fit specialized types | `doc-review` |
 | `quality-criteria-project-brief.md` | Evaluative criteria for project briefs, calibrated to document maturity level | `doc-review` |
 | `quality-criteria-prd.md` | Nine evaluative criteria for PRDs | `doc-review`, `prd-draft` |
@@ -201,7 +205,7 @@ Reference files live in `references/` and are consulted by multiple skills. They
 | `story-structure.md` | Story scoping, splitting, structure, and data story separation | `doc-review`, `generate-tasks`, `sprint-plan` |
 | `acceptance-criteria.md` | AC standards optimized for agent implementation | `doc-review`, `prd-draft`, `generate-tasks`, `sprint-plan` |
 | `sprint-planning.md` | Sprint goals, capacity, backlog health, carryover standards | `sprint-plan`, `status-update` |
-| `decision-frameworks.md` | Decision anatomy, options quality, reversibility, escalation signals | `decision-log`, `meeting-brief`, `business-case` |
+| `decision-frameworks.md` | Decision anatomy, options quality, reversibility, escalation signals | `decision-log`, `meeting-brief`, `business-case`, `roadmap-prioritization` |
 | `audience-registers.md` | Per-audience communication registers — tone, depth, and framing calibrated by stakeholder type (engineers, designers, data, leadership, cross-functional) | `status-update`, `meeting-brief` |
 | `pushback-and-negotiation.md` | Scope protection, saying no, problem reframing, escalation as fork-framing, navigating disagreement | `doc-review`, `sprint-plan`, `decision-log`, `status-update`, `meeting-brief` |
 | `communication-quality.md` | Quality criteria for PM communications (status updates, briefs, stakeholder comms) | `status-update`, `meeting-brief`, `retro-synthesis` |
@@ -209,10 +213,12 @@ Reference files live in `references/` and are consulted by multiple skills. They
 | `user-feedback-analysis.md` | Feedback clustering, severity assessment, signal vs. noise, source channel weighting | `user-feedback` |
 | `data-interpretation.md` | Metric interpretation, funnel analysis, anomaly investigation, confidence calibration | `data-analysis` |
 | `competitive-analysis.md` | Signal classification, monitoring framework, deep dive structure, reactivity checks | `competitive-intel` |
-| `business-case-standards.md` | Impact sizing frameworks, cost model standards, risk assessment, alternatives quality | `business-case` |
+| `business-case-standards.md` | Impact sizing frameworks, cost model standards, risk assessment, alternatives quality | `business-case`, `roadmap-prioritization` |
 | `narrative-structure.md` | Narrative arc (SCR), deck types, slide-level thinking, audience calibration, visual guidance | `presentation-deck` |
 | `slide-design.md` | Visual composition: information hierarchy, layout patterns, density budgets, typography, color strategy, visual storytelling, designed-vs-default checklist | `presentation-deck` (Slides mode) |
 | `branding-guidelines.md` | Presentation branding standards, slide layouts, visual consistency, and Slides-mode implementation guidance | `presentation-deck` (Slides mode) |
+| `discovery-methods.md` | Assumption mapping, risk ranking, research method menu, evidence thresholds, research operations standards | `discovery-plan` |
+| `prioritization-judgment.md` | Opportunity cost framework, candidate comparison anatomy, sequencing heuristics, framework traps, stakeholder communication | `roadmap-prioritization` |
 
 ---
 

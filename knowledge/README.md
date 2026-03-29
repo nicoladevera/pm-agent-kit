@@ -25,6 +25,8 @@ Artifacts produced by skills when they run in Generator or Draft mode. Only subs
 | `competition/` | `competitive-intel` | Competitive monitoring snapshots and deep dives |
 | `business-cases/` | `business-case` | Business cases for initiatives |
 | `presentations/` | `presentation-deck` | Structured presentation narratives and `.pptx` files |
+| `discovery-plans/` | `discovery-plan` | Discovery plans — assumption maps, research plans, evidence criteria |
+| `roadmaps/` | `roadmap-prioritization` | Prioritization rationales — candidate comparisons, sequencing, trade-offs |
 
 ---
 
@@ -41,11 +43,13 @@ Artifacts produced by skills when they run in Generator or Draft mode. Only subs
 
 Use consistent naming so artifacts are findable later:
 
-- **Time-ordered artifacts** (status updates, decisions, meeting briefs, user feedback, data analyses, competitive monitor updates, competitive deep dives): `YYYY-MM-DD-descriptive-slug.md`
-  - Example: `2026-03-22-q1-launch-status.md`, `2026-03-29-auth-provider-decision.md`, `2026-03-29-q2-planning-brief.md`, `2026-04-14-notion-onboarding-deep-dive.md`
+- **Time-ordered artifacts** (status updates, decisions, meeting briefs, user feedback, data analyses, competitive monitor updates, competitive deep dives, discovery plans): `YYYY-MM-DD-descriptive-slug.md`
+  - Example: `2026-03-22-q1-launch-status.md`, `2026-03-29-auth-provider-decision.md`, `2026-03-29-q2-planning-brief.md`, `2026-04-14-notion-onboarding-deep-dive.md`, `2026-04-01-enterprise-onboarding-discovery-plan.md`
 - **Feature-scoped artifacts** (PRDs, task sets, launch checklists, business cases): `feature-name-artifact-type.md`
   - Example: `bulk-export-prd.md`, `subscription-pricing-tasks.md`, `android-app-launch-checklist.md`
 - **Sprint-scoped artifacts** (sprint plans, retro syntheses): `YYYY-sprint-NN-artifact-type.md`
   - Example: `2026-sprint-20-plan.md`, `2026-sprint-22-retro.md`, `2026-sprint-20-22-retro.md`
+- **Planning-period artifacts** (prioritization rationales): `YYYY-QN-prioritization-rationale.md`
+  - Example: `2026-Q3-prioritization-rationale.md`
 
 These are conventions, not rules. Adjust for your workflow.

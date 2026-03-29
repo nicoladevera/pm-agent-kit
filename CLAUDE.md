@@ -155,6 +155,8 @@ knowledge/           Accumulated PM work product. Artifacts produced by skills, 
   competition/       Competitive snapshots and deep dives produced by competitive-intel
   business-cases/    Business cases produced by business-case
   presentations/     Presentation narratives and .pptx files produced by presentation-deck
+  discovery-plans/   Discovery plans produced by discovery-plan
+  roadmaps/          Prioritization rationales produced by roadmap-prioritization
 company/             Company-specific context. Rebuilt at each new company.
   facts/             Product areas, team structure, glossary
   norms/             Sprint process, decision-making, communication patterns

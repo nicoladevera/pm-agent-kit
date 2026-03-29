@@ -14,15 +14,15 @@ Populate these files in the order they affect current runtime behavior. (Note: N
 
 | File | Status | Current consumers | Missing impact today |
 |------|--------|-------------------|----------------------|
-| `facts/product.md` | Active runtime input | `doc-review`, `prd-draft`, `generate-tasks`, `status-update`, `sprint-plan`, `meeting-brief`, `decision-log`, `data-analysis`, `user-feedback`, `competitive-intel`, `launch-checklist`, `business-case`, `presentation-deck` | Broad quality loss across most skills |
-| `facts/customers.md` | Active runtime input | `user-feedback`, `prd-draft`, `business-case`, `competitive-intel`, `data-analysis`, `launch-checklist`, `doc-review` | Weaker segment reasoning, ICP framing, and customer-evidence quality |
-| `facts/team.md` | Active runtime input | `status-update`, `sprint-plan`, `retro-synthesis`, `meeting-brief`, `decision-log`, `launch-checklist`, `business-case`, `presentation-deck` | Weaker ownership, stakeholder, and capacity reasoning |
+| `facts/product.md` | Active runtime input | `doc-review`, `prd-draft`, `generate-tasks`, `status-update`, `sprint-plan`, `meeting-brief`, `decision-log`, `data-analysis`, `user-feedback`, `competitive-intel`, `launch-checklist`, `business-case`, `presentation-deck`, `discovery-plan`, `roadmap-prioritization` | Broad quality loss across most skills |
+| `facts/customers.md` | Active runtime input | `user-feedback`, `prd-draft`, `business-case`, `competitive-intel`, `data-analysis`, `launch-checklist`, `doc-review`, `discovery-plan`, `roadmap-prioritization` | Weaker segment reasoning, ICP framing, and customer-evidence quality |
+| `facts/team.md` | Active runtime input | `status-update`, `sprint-plan`, `retro-synthesis`, `meeting-brief`, `decision-log`, `launch-checklist`, `business-case`, `presentation-deck`, `roadmap-prioritization` | Weaker ownership, stakeholder, and capacity reasoning |
 | `norms/team-process.md` | Active runtime input | `doc-review`, `prd-draft`, `generate-tasks`, `status-update`, `sprint-plan`, `retro-synthesis` | Weaker planning, delivery, and document calibration |
 | `norms/communication.md` | Active runtime input | `status-update`, `meeting-brief`, `competitive-intel`, `launch-checklist`, `presentation-deck` | Weaker audience calibration and comms fit |
-| `norms/decisions.md` | Conditional runtime input | `decision-log`, `business-case` | Mainly affects decision framing and approval context |
+| `norms/decisions.md` | Conditional runtime input | `decision-log`, `business-case`, `roadmap-prioritization` | Mainly affects decision framing and approval context |
 | `facts/competitors.md` | Conditional runtime input | `competitive-intel`, `user-feedback` | Mainly affects competitive baseline and competitor mentions |
 | `norms/launch-process.md` | Conditional runtime input | `launch-checklist` | Mainly affects launch-type calibration and approvals |
-| `interfaces/data-sources.md` | Conditional runtime input | `data-analysis`, `user-feedback` | Mainly affects data-source interpretation and channel bias handling |
+| `interfaces/data-sources.md` | Conditional runtime input | `data-analysis`, `user-feedback`, `discovery-plan` | Mainly affects data-source interpretation and channel bias handling |
 | `interfaces/branding.md` | Conditional runtime input | `presentation-deck` Slides mode only | Slides fall back to defaults; narrative mode unaffected |
 | `facts/glossary.md` | Future-facing / not currently consumed | None | No runtime effect today |
 | `interfaces/tools.md` | Future-facing / not currently consumed | None | No runtime effect today |
