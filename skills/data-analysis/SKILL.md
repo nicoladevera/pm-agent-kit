@@ -114,6 +114,8 @@ If only a question is provided without data, describe:
 
 ### 6. Analyze
 
+**When numeric data is provided, run calculations programmatically.** Do not estimate arithmetic. For funnel math, growth rate deltas, percentage changes, cohort comparisons, and statistical computations — execute the calculation in code (Python) and show the result. Estimation introduces exactly the false precision that Smell 5 flags. If the data is too messy to compute directly, name what's wrong with it before approximating.
+
 Run the analysis appropriate to the type. Follow the standards in `references/data-interpretation.md`:
 
 **For metric interpretation:**

@@ -41,11 +41,11 @@ Artifacts produced by skills when they run in Generator or Draft mode. Only subs
 
 Use consistent naming so artifacts are findable later:
 
-- **Time-ordered artifacts** (status updates, decisions, meeting briefs, user feedback, data analyses, competitive monitor updates): `YYYY-MM-DD-descriptive-slug.md`
-  - Example: `2026-03-22-q1-launch-status.md`, `2026-03-29-payment-auth-decision.md`, `2026-03-29-q1-planning-brief.md`
-- **Feature-scoped artifacts** (PRDs, task sets, launch checklists, business cases, competitive deep dives): `feature-name-artifact-type.md`
-  - Example: `installment-schedule-prd.md`, `payment-reminders-tasks.md`, `stripe-checkout-deep-dive.md`
+- **Time-ordered artifacts** (status updates, decisions, meeting briefs, user feedback, data analyses, competitive monitor updates, competitive deep dives): `YYYY-MM-DD-descriptive-slug.md`
+  - Example: `2026-03-22-q1-launch-status.md`, `2026-03-29-auth-provider-decision.md`, `2026-03-29-q2-planning-brief.md`, `2026-04-14-notion-onboarding-deep-dive.md`
+- **Feature-scoped artifacts** (PRDs, task sets, launch checklists, business cases): `feature-name-artifact-type.md`
+  - Example: `bulk-export-prd.md`, `subscription-pricing-tasks.md`, `android-app-launch-checklist.md`
 - **Sprint-scoped artifacts** (sprint plans, retro syntheses): `sprint-NN-artifact-type.md`
-  - Example: `sprint-42-plan.md`, `sprint-42-retro.md`, `sprint-40-42-retro.md`
+  - Example: `sprint-20-plan.md`, `sprint-22-retro.md`, `sprint-20-22-retro.md`
 
 These are conventions, not rules. Adjust for your workflow.

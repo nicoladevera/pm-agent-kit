@@ -35,7 +35,7 @@ Any form of competitive information:
 
 ## Modes
 
-This skill operates in two modes. The PM selects the mode through how they invoke it.
+This skill operates in three modes. The PM selects the mode through how they invoke it.
 
 ### Monitor
 
@@ -51,23 +51,31 @@ Analyze a specific competitor's approach to a specific area. Their solution, pos
 
 **Requires:** A named competitor and a specific area or problem to analyze. If either is missing, ask: "Which competitor, and what specific area or problem should I analyze?"
 
-**Default:** If the mode is ambiguous, ask: "Do you want a competitive landscape update, or a deep dive on a specific competitor's approach to a specific problem?"
+### Research
+
+Agent-sourced monitoring. The PM names which competitors to research and optionally a time frame; the agent searches the web for relevant signals across all monitoring dimensions, then applies the full Monitor synthesis pipeline. No input data required.
+
+**Triggered by:** "research [competitor(s)]," "what's new with [list of competitors]," "competitive research on [names]," or any invocation that names competitors but contains no pasted competitive data.
+
+**Default:** If the mode is ambiguous between Monitor and Research (signals provided vs. not), ask: "Do you have competitive signals to share, or should I go research these competitors online?" If the mode is ambiguous between Research and Deep Dive, ask: "Do you want a broad research sweep, or a deep dive on a specific competitor's approach to a specific problem?"
 
 ---
 
 ## Intake
 
-Applies to **Deep Dive mode only.** Monitor mode has clear enough scope from the input signals — no intake needed.
+Applies to **Deep Dive and Research modes.** Monitor mode has clear enough scope from the input signals — no intake needed.
+
+### Deep Dive Intake
 
 A competitive deep dive without a decision context produces interesting reading instead of actionable intelligence. Confirm what decision the analysis will inform.
 
-### Signals to Check
+#### Signals to Check
 
 - **Competitor:** Named? (Already required for Deep Dive — if missing, the existing ask handles this.)
 - **Area or problem:** Specified? (Already required for Deep Dive — if missing, the existing ask handles this.)
 - **Decision context:** Does the input say what product decision, positioning question, or strategic choice this deep dive will inform?
 
-### Adaptive Response
+#### Adaptive Response
 
 **Rich input** (competitor named, area specified, decision context clear): Confirm and proceed. Example: "Deep dive on [Competitor]'s approach to [area], informing our [decision]. Proceeding."
 
@@ -82,6 +90,24 @@ A competitive deep dive without a decision context produces interesting reading 
 > - **Decision this could inform:** [Best inference — e.g., "Whether our current positioning still differentiates"]
 >
 > Want me to run with that framing?
+
+---
+
+### Research Intake
+
+#### Signals to Check
+
+- **Competitors:** Named? (Required — if missing, ask: "Which competitors should I research?")
+- **Time frame:** Specified? Default to "last 30 days" if not provided. Accept natural language ("last quarter," "since January," "past 6 months").
+- **Focus areas:** Any narrowing stated (e.g., "pricing and product changes only")? If absent, search all monitoring dimensions.
+
+#### Adaptive Response
+
+**Rich input** (competitors named, time frame specified): Confirm and proceed. Example: "Researching [list] over [time frame]. Searching across product, pricing, positioning, hiring, partnerships, and funding signals."
+
+**Moderate input** (competitors named, no time frame): Confirm the default and proceed. Example: "Researching [list] for the past 30 days — let me know if you want a different window."
+
+**Thin input** (no competitors named): Ask: "Which competitors should I research, and over what time frame (default: last 30 days)?"
 
 ---
 
@@ -114,7 +140,7 @@ If any of these files exist but are still stub templates, treat them as unavaila
 
 #### 4. Determine mode
 
-Identify Monitor or Deep Dive from the invocation. If ambiguous, ask.
+Identify Monitor, Deep Dive, or Research from the invocation. If ambiguous, apply the mode disambiguation rules from the Modes section above.
 
 ---
 
@@ -220,6 +246,48 @@ After writing the four-dimension prose assessment, translate each to a structure
 
 ---
 
+### Research Mode
+
+#### 5. Build the search plan
+
+For each named competitor, plan searches across all monitoring dimensions from `references/competitive-analysis.md`:
+
+- **Product changes:** "[Competitor] new features [month/year]", "[Competitor] product update [time frame]", "[Competitor] changelog"
+- **Pricing:** "[Competitor] pricing [year]", "[Competitor] pricing change"
+- **Positioning:** "[Competitor] homepage", "[Competitor] about page"
+- **Hiring signals:** "[Competitor] jobs [year]", "[Competitor] hiring [time frame]"
+- **Partnerships / integrations:** "[Competitor] partnership announcement [time frame]", "[Competitor] integration [year]"
+- **Funding / financial:** "[Competitor] funding [year]", "[Competitor] revenue", "[Competitor] layoffs [year]"
+
+If focus areas were specified in intake, narrow the search plan accordingly.
+
+#### 6. Execute searches
+
+Run searches for each competitor. For each search:
+- Use WebSearch for news, announcements, blog content, and job postings
+- Use WebFetch to read full content when a result appears high-signal (e.g., a pricing page, a changelog, a press release about a major launch)
+- Target 3–5 substantive results per competitor; don't pad with low-quality hits
+- Assess source reliability per the signal sources table in `references/competitive-analysis.md` — a pricing page teardown is more reliable than a press release
+- Note source type for each result (press release, product teardown, pricing page, job posting, blog post, review, etc.)
+
+#### 7. Catalog gathered signals
+
+Before classifying, list what was found per competitor:
+- Source (URL or description)
+- Source type
+- Date (if determinable from the content or URL)
+- One-sentence summary of what it contains
+
+This catalog is the raw intelligence layer. The synthesis that follows is built on top of it.
+
+#### 8 onwards: Apply Monitor mode pipeline
+
+Continue with Monitor mode steps 5–9: classify each gathered signal as noise / signal / strategic shift, analyze significant signals, assess overall landscape direction, compare to prior snapshot (if available), and run the smell test.
+
+The Research mode output uses the Monitor format, with one addition: a Sources Consulted section appended at the end (see Output Format).
+
+---
+
 ## Output Format
 
 ### Monitor Mode
@@ -296,7 +364,15 @@ agent_block:
 - **Smell 15 (Recency Bias):** [Finding — or "Balanced — no single signal dominating the analysis"]
 - **Smell 5 (False Precision):** [Finding — or "Clear — claims distinguished as observed vs. inferred"]
 
-> **Context note:** [State which substantive company files were loaded, which were absent, and which were stub templates. Note what the analysis might miss without competitive baseline context.]
+> **Context note:** [State which substantive company files were loaded, which were absent, and which were stub templates. Note what the analysis might miss without competitive baseline context. **Research mode only:** Add — "Signals gathered via web search for [competitors] over [time frame]. Coverage is limited to publicly available information; enterprise-only features, internal strategy, and paywalled content are not accessible."]
+
+---
+
+### Sources Consulted *(Research mode only — omit for Monitor)*
+
+| Competitor | Source | Type | Date | Used? |
+|------------|--------|------|------|-------|
+| [Name] | [URL or description] | [Press release / Pricing page / Changelog / Job posting / Blog post / Review] | [Date or "undated"] | [Yes — informed [signal summary] / No — low signal] |
 ```
 
 ### Deep Dive Mode
@@ -399,6 +475,7 @@ agent_block:
 After producing the artifact, write it to `knowledge/competition/` using the naming convention for the mode:
 
 - **Monitor:** `YYYY-MM-DD-competitive-update.md`, where `YYYY-MM-DD` is today's date. If the update covers a named period (e.g., "Q1 2026"), append it: `YYYY-MM-DD-q1-2026-competitive-update.md`.
-- **Deep Dive:** `competitor-name-topic-deep-dive.md`, where `competitor-name` is the competitor's name and `topic` is a lowercase hyphenated slug of the area analyzed (e.g., `stripe-checkout-deep-dive.md`).
+- **Deep Dive:** `YYYY-MM-DD-competitor-name-topic-deep-dive.md`, where `YYYY-MM-DD` is today's date, `competitor-name` is the competitor's name, and `topic` is a lowercase hyphenated slug of the area analyzed (e.g., `2026-03-29-stripe-checkout-deep-dive.md`).
+- **Research:** `YYYY-MM-DD-competitive-research.md` for multi-competitor sweeps, or `YYYY-MM-DD-competitor-name-research.md` for single-competitor research (e.g., `2026-03-29-notion-research.md`).
 
 Report the saved file path in the conversation.
