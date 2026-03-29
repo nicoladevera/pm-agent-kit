@@ -1,6 +1,6 @@
 # Company Onboarding Checklist
 
-Populate these files in the order they affect current runtime behavior. Not every file in `company/` is consumed by shipped skills today.
+Populate these files in the order they affect current runtime behavior. (Note: Not every file in `company/` is consumed by shipped skills today.)
 
 ---
 

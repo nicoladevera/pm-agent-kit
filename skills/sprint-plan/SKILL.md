@@ -143,7 +143,7 @@ Do not silently downgrade Draft mode into Analyze mode. If the PM asked for a sp
 #### 9. Set sprint goals
 
 State 1-3 sprint goals. Each goal:
-- Is an outcome, not a story list: "Reduce first-payment miss rate to under 10%" not "Complete PMT-101 through PMT-108"
+- Is an outcome, not a story list: "Reduce onboarding drop-off at Step 2 from 38% to under 25%" not "Complete ONBRD-101 through ONBRD-108"
 - Connects to a product or business objective
 - Is evaluable at sprint end — you can tell whether it was achieved
 - Has the "why" stated: why this goal matters for this sprint

@@ -200,4 +200,31 @@ Label the differentiating factor on each branch (cost, speed, risk, reversibilit
 
 ## Save
 
-After producing the artifact, write it to `knowledge/decisions/` using the naming convention: `YYYY-MM-DD-decision-slug.md`, where `YYYY-MM-DD` is today's date and `decision-slug` is a lowercase hyphenated slug derived from the decision title. Report the saved file path in the conversation.
+After producing the artifact:
+
+**Step 1 — Write the individual decision file**
+
+Write to `knowledge/decisions/` using the naming convention: `YYYY-MM-DD-decision-slug.md`, where `YYYY-MM-DD` is today's date and `decision-slug` is a lowercase hyphenated slug derived from the decision title.
+
+**Step 2 — Append to the master decision log**
+
+Open `knowledge/decisions/DECISION-LOG.md`. If the file does not exist, create it with this header:
+
+```markdown
+# Decision Log
+
+| Date | Decision | Status | Summary | Reversibility |
+|------|----------|--------|---------|---------------|
+```
+
+Then append a new row to the table — always append, never update an existing row. Each run creates its own entry so the history of how decisions evolve over time is preserved.
+
+| Field | Value |
+|---|---|
+| Date | Decision date (or today's date if not specified) |
+| Decision | Markdown link: `[Decision Title](YYYY-MM-DD-decision-slug.md)` |
+| Status | `Decided` or `Pending` — from the agent block |
+| Summary | The one-sentence `decision` value from the agent block |
+| Reversibility | From the agent block — `One-way door` or `Two-way door` |
+
+Report both saved file paths in the conversation.
