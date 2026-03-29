@@ -4,6 +4,11 @@
 **Skill under test:** `skills/competitive-intel/SKILL.md`
 **Purpose:** Determine whether `competitive-intel` correctly classifies signals, distinguishes noise from strategic shifts, produces implications connected to product decisions, and avoids recency bias.
 
+## Coverage
+
+**This rubric tests:** Monitor mode — batch of competitive signals, landscape snapshot output.
+**Not covered here:** Deep Dive mode (`rubric-deep-dive.md`), Research mode (deferred — requires live web search).
+
 ---
 
 ## Mode Detection

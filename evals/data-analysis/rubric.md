@@ -4,6 +4,11 @@
 **Skill under test:** `skills/data-analysis/SKILL.md`
 **Purpose:** Determine whether `data-analysis` correctly identifies the root cause of an activation drop by analyzing funnel data, segmenting by platform, evaluating competing hypotheses, and stating confidence appropriately.
 
+## Coverage
+
+**This rubric tests:** Anomaly investigation with funnel analysis as the primary method.
+**Not covered here:** Metric interpretation (`rubric-metric.md`), Cohort analysis (`rubric-cohort.md`).
+
 ---
 
 ## Analysis Type Classification

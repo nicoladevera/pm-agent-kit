@@ -4,6 +4,11 @@
 **Skill under test:** `skills/status-update/SKILL.md`
 **Purpose:** Determine whether `status-update` catches risks the data implies but doesn't state, calibrates correctly for a VP audience, and leads with assessment over activity.
 
+## Coverage
+
+**This rubric tests:** Draft mode — produces a VP-calibrated status communication.
+**Not covered here:** Analyze mode (internal delivery state assessment, no audience) — see `rubric-analyze.md`.
+
 ---
 
 ## Mode Detection
@@ -80,3 +85,17 @@ Sarah proposed shipping English-only and patching localization next sprint. The 
 - Does he know what he needs to do (if anything)?
 
 **Pass threshold:** Correctly identifies draft mode with VP audience, assesses sprint as "at risk," catches all 3 must-catch risks (velocity, localization, Mexico timeline), addresses the June 30 question honestly, and leads with assessment not activity.
+
+---
+
+## Scoring
+
+| Dimension | Weight | Pass Criteria |
+|-----------|--------|---------------|
+| Mode and audience detection | 10% | Draft mode identified; VP audience calibrated |
+| Risks correctly inferred | 30% | All 3 must-catch risks surfaced (velocity, localization, Mexico timeline) |
+| VP audience calibration | 20% | Leads with assessment; strategic framing; right detail level; explicit ask |
+| Honest answer to VP's question | 15% | June 30 question addressed directly with honest assessment |
+| Fallback framing | 10% | English-only fallback presented as option, not assumed decided |
+| Smell detection | 10% | Avoids Activity as Progress, Risk Buried, Audience Mismatch in its own output |
+| Output format compliance | 5% | Matches declared format; context note present |

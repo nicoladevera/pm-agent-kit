@@ -4,6 +4,11 @@
 **Skill under test:** `skills/presentation-deck/SKILL.md`
 **Purpose:** Determine whether `presentation-deck` correctly identifies the deck type, calibrates to the specific audience (VP Sarah), produces takeaway headlines, maintains a coherent narrative arc, proactively addresses the VP's known concerns, and applies the stress test for this high-stakes deck.
 
+## Coverage
+
+**This rubric tests:** Narrative mode — markdown slide-by-slide structure with headlines, speaker notes, and visual guidance.
+**Not covered here:** Slides mode (.pptx generation via python-pptx) — deferred pending environment dependency.
+
 ---
 
 ## Deck Type Identification

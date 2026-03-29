@@ -4,6 +4,11 @@
 **Skill under test:** `skills/sprint-plan/SKILL.md`
 **Purpose:** Determine whether `sprint-plan` produces realistic goals, catches backlog issues, handles capacity honestly, and respects dependencies.
 
+## Coverage
+
+**This rubric tests:** Draft mode — produces a full sprint plan with goals, capacity math, and story selection.
+**Not covered here:** Analyze mode (backlog health assessment only) — see `rubric-analyze.md`.
+
 ---
 
 ## Mode Detection
@@ -119,3 +124,18 @@ The plan should assess why Sprint 14 items carried over:
 - Would a PM feel confident walking into sprint planning with this document?
 
 **Pass threshold:** Catches PMT-302 sizing issue, flags all 3 no-AC stories, identifies PMT-502 staleness, produces realistic capacity math (~20-24 person-days), states outcome-oriented goals, and defers unready work with action items.
+
+---
+
+## Scoring
+
+| Dimension | Weight | Pass Criteria |
+|-----------|--------|---------------|
+| Mode detection | 5% | Draft mode identified; sprint plan produced (not just backlog assessment) |
+| Backlog issues caught | 20% | PMT-302 flagged for splitting; PMT-305/307/308 deferred as no-AC; PMT-306 partial-AC gap named; PMT-502 staleness called out |
+| Capacity assessment | 20% | PTO, on-call, new engineer ramp-up, and overhead accounted for; total in 20-24 range |
+| Sprint goals quality | 15% | Outcome-oriented, evaluable at sprint end, connected to Q2 priorities, realistic against capacity |
+| Story selection and sequencing | 15% | Correct stories in / deferred; dependencies respected; implementation sequence logical |
+| Carryover assessment | 10% | Each carryover item has a reason and impact assessment on Sprint 15 capacity |
+| Smell detection | 10% | Sprint goals state why they matter (not just what); goals are evaluable at sprint end; plan isn't overstuffed given realistic capacity |
+| Output format compliance | 5% | Matches declared format; context note present |

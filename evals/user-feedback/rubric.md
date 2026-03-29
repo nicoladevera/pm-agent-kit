@@ -3,6 +3,7 @@
 **Target input:** `evals/user-feedback/sample-input-01.md`
 **Skill under test:** `skills/user-feedback/SKILL.md`
 **Purpose:** Determine whether `user-feedback` correctly clusters feedback by underlying need, assesses severity and frequency, distinguishes signal from noise, and produces a synthesis a PM would trust for prioritization.
+**Coverage:** Single mode — full skill coverage.
 
 ---
 
@@ -100,6 +101,21 @@ The autopay payment method issue should be the #1 priority:
 
 **Pass:** Autopay issue ranked first. **Fail:** Payment history or crashes ranked above autopay despite lower severity.
 
+### Channel Source Weighting
+
+Feedback from different channels has different selection biases. Support tickets are filed by users who hit a specific problem and decided to report it — they undersample passive frustration. NPS is filed by users who received a survey — they oversample recent experience. App store reviews skew toward extreme sentiment (very happy or very frustrated).
+
+The synthesis should note when a theme is concentrated in a single channel, because channel concentration affects confidence in the severity and frequency assessment.
+
+**In this sample:**
+- The autopay payment method issue appears across all 3 channels (tickets + NPS + app store) — cross-channel presence strengthens the signal
+- Dark mode requests appear in 2 NPS responses — single-channel, low severity; appropriate to note as low-priority personal preference rather than a product problem
+- App crashes appear across tickets and NPS — cross-channel, which strengthens the Blocking assessment
+
+**Pass:** When a theme is significantly concentrated in one channel, the synthesis notes this and calibrates confidence accordingly (e.g., "5 support tickets on this theme — likely undercounts users who experienced it but didn't file a ticket"). Cross-channel themes noted as stronger signals.
+
+**Fail:** All themes treated as equally representative regardless of channel distribution. The fact that dark mode requests only appear in NPS (self-selected survey) is not noted, despite it affecting confidence in the frequency assessment.
+
 ---
 
 ## Scoring
@@ -112,6 +128,7 @@ The autopay payment method issue should be the #1 priority:
 | Payment status delay surfaced despite low frequency | 10% | Appears in high-severity/low-frequency section |
 | Competitive mentions noted | 10% | [CompetitorX] references connected to relevant themes |
 | No false positives on strengths | 5% | Positive feedback not manufactured into a theme |
-| Quote selection quality | 10% | Representative, attributed, varied across channels |
+| Quote selection quality | 7% | Representative, attributed, varied across channels |
 | Prioritization order | 10% | Autopay issue ranked #1 |
-| Output format compliance | 5% | Matches declared format; context note and data quality section present |
+| Channel source weighting | 5% | Cross-channel themes noted as stronger signals; single-channel themes noted with appropriate confidence caveat |
+| Output format compliance | 3% | Matches declared format; context note and data quality section present |

@@ -3,6 +3,7 @@
 **Target input:** `evals/generate-tasks/sample-input-01.md`
 **Skill under test:** `skills/generate-tasks/SKILL.md`
 **Purpose:** Determine whether generate-tasks decomposes a PRD into well-scoped stories with agent-implementable AC.
+**Coverage:** Single mode — full skill coverage.
 
 ---
 
@@ -33,6 +34,19 @@ The exact decomposition may vary, but it should roughly cover these areas:
 - **No micro-stories** — A story that's just a single AC with no context is too small
 - **Natural boundaries** — Stories should split along logical lines (different UI components, different user flows, different teams), not arbitrary ones
 - **Frontend/backend separation** — Since the backend API already exists, stories should be frontend-focused. If any backend work is identified, it should be a separate story
+
+### Story Split/Merge Judgment
+
+The skill must exercise judgment on when to split and when to merge — not just flag stories mechanically.
+
+| Check | Pass | Fail |
+|-------|------|------|
+| **Large stories identified for splitting** | Stories with >8 AC are flagged as split candidates with a specific suggested split approach (e.g., "split along scheduling logic / retry logic / routing logic") — not just "this story is too large" | Story with 12 AC included in output without flagging, or flagged with no split suggestion |
+| **Natural split points named** | Split suggestions follow logical seams: different subsystems, different user flows, different team ownership | Arbitrary splits that would create stories requiring each other to be meaningful |
+| **No over-splitting of simple components** | Small, cohesive components (e.g., tooltip dismiss + persistence) kept as one story | Every AC written as its own story; 2-line components become 3-ticket epics |
+| **Merge candidates identified** | Stories that always ship together and have <3 AC each are noted as merge candidates | 4 micro-stories that are functionally one deployable unit, never grouped |
+
+**Pass:** Split/merge decisions follow deployable-unit logic. Splits are along natural seams with specific rationale. No over-fragmentation. **Fail:** Size criteria applied mechanically without considering logical boundaries.
 
 ---
 
@@ -109,3 +123,17 @@ Per `references/story-structure.md`, analytics and instrumentation should be the
 **Is the sizing right?** Stories should be completable in a few days, not multi-sprint efforts. Stories should be substantial enough to be meaningful, not just individual AC wrapped in a story format.
 
 **Pass threshold:** All functionality covered. All AC meet acceptance-criteria.md standards. Data stories separated. Dependencies visible. Implementation sequence logical. No silent assumptions.
+
+---
+
+## Scoring
+
+| Dimension | Weight | Pass Criteria |
+|-----------|--------|---------------|
+| Story decomposition coverage | 20% | All PRD functionality covered with no gaps; each story is a deployable unit |
+| Acceptance criteria quality | 25% | Given/When/Then format; specific; boundary conditions; error handling; agent-implementable |
+| Story split/merge judgment | 10% | Split candidates have specific split rationale; no over-fragmentation; merge candidates flagged where applicable |
+| Data stories | 15% | Separated from feature stories; all 5 events specified with payloads; dashboard captured |
+| Dependencies | 15% | Cross-story and external dependencies visible; hard blocks vs. soft dependencies distinguished |
+| Implementation sequence | 10% | Logical build order; foundation stories first; parallel tracks identified |
+| Flagged items | 5% | Open questions from PRD preserved or resolved with flagged assumptions |

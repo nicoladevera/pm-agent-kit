@@ -3,6 +3,7 @@
 **Target input:** `evals/retro-synthesis/sample-input-01.md`
 **Skill under test:** `skills/retro-synthesis/SKILL.md`
 **Purpose:** Determine whether `retro-synthesis` identifies cross-retro patterns, tracks action item follow-through, credits improvements, and produces synthesis rather than summary.
+**Coverage:** Single mode — full skill coverage.
 
 ---
 
@@ -55,6 +56,27 @@ The most critical quality test. The output should surface insights not visible f
 
 ---
 
+## Proactive Gap-Closing
+
+The highest bar for synthesis: surfacing insights the team hasn't named, not just connecting things they have named.
+
+The key test: **could someone read all 3 retro inputs and independently reach every point in the synthesis?** If yes, the synthesis is thorough but not proactive. Proactive synthesis finds the thing no individual retro explicitly says.
+
+### What proactive gap-closing looks like in this sample
+
+The three retros never state: "the problem might be our estimation model, not our tactics." They describe symptoms (carryover, scope expansion, missed estimates) but don't diagnose the root cause. A proactive synthesis would:
+- Observe that the team has tried 3 different tactical interventions for carryover (story splitting, capacity buffer, design sign-off), none of which have resolved it
+- Name that when interventions don't work, the root cause may be upstream of the tactics — in this case, estimation accuracy during planning, not execution discipline
+- Recommend tracking actual vs. estimated points per story for 2 sprints to surface where the gap lives
+
+This insight is deducible from the data but never explicitly named in any retro.
+
+**Pass:** The synthesis includes at least one insight that isn't stated in any retro input — something deducible from the pattern across retros but requiring interpretive synthesis. The PM reads it and learns something they didn't already know from reading the retros themselves.
+
+**Fail:** Every point in the synthesis can be traced to a verbatim statement in one of the three retro inputs. The synthesis is comprehensive but not analytical — it's an organized copy, not an interpretation.
+
+---
+
 ## Recommended Focus Quality
 
 The synthesis should recommend 1-2 focus areas:
@@ -97,3 +119,17 @@ Are action items tracked with sprint of commitment, owner, and status? Are unadd
 - Would the PM walk into the next retro with data-backed observations instead of feelings?
 
 **Pass threshold:** Identifies all 5 patterns (carryover recurring, code review improved, testing gaps persist, cross-team comm fixed, planning improved), tracks action items with status across retros, produces synthesis (not summary), and recommends specific focus areas.
+
+---
+
+## Scoring
+
+| Dimension | Weight | Pass Criteria |
+|-----------|--------|---------------|
+| Pattern identification | 25% | All 5 patterns identified (carryover recurring, code review improved, testing gaps persist, cross-team comm fixed, planning improved) |
+| Action item tracking | 20% | Every action item has sprint of commitment, owner, and status; 3-sprint carryover pattern named |
+| Synthesis vs. summary test | 20% | Cross-retro insights produced; connections made between themes; not just organized summary |
+| Proactive gap-closing | 10% | At least one insight not stated in any retro input — deducible from pattern across retros but requiring interpretive synthesis |
+| Recommended focus quality | 10% | Top 1-2 priorities are specific and actionable; not generic ("improve processes") |
+| Honesty | 10% | Persistent problems named directly; action items not working called out without softening |
+| Output format compliance | 5% | Matches declared format; context note present |

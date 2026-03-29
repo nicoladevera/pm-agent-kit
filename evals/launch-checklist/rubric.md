@@ -4,6 +4,11 @@
 **Skill under test:** `skills/launch-checklist/SKILL.md`
 **Purpose:** Determine whether `launch-checklist` produces a complete, calibrated checklist that catches gaps the PM hasn't addressed, assigns owners, and includes a specific rollback plan.
 
+## Coverage
+
+**This rubric tests:** Checklist mode for a Beta launch type.
+**Not covered here:** Overview mode (multi-stage launch journey map, Internal → Alpha → Beta → GA) — see `rubric-overview.md`.
+
 ---
 
 ## Launch Type Detection
