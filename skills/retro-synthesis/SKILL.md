@@ -216,4 +216,4 @@ Pattern                S9   S10  S11  S12  S13  Trend
 
 ## Save
 
-After producing the artifact, write it to `knowledge/retros/` using the naming convention: `sprint-NN-retro.md`, where `NN` is the sprint number covered. For multi-sprint syntheses, use the range: `sprint-NN-MM-retro.md` (e.g., `sprint-40-42-retro.md`). Report the saved file path in the conversation.
+After producing the artifact, write it to `knowledge/retros/` using the naming convention: `YYYY-sprint-NN-retro.md`, where `YYYY` is the four-digit year and `NN` is the sprint number covered. For multi-sprint syntheses, use the range: `YYYY-sprint-NN-MM-retro.md` (e.g., `2026-sprint-40-42-retro.md`). Report the saved file path in the conversation.

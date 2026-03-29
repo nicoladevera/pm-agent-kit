@@ -30,7 +30,7 @@ Artifacts produced by skills when they run in Generator or Draft mode. Only subs
 
 ## What Doesn't Go Here
 
-- Analyze mode outputs from `status-update` and `sprint-plan` — delivery assessments and backlog health reports are ephemeral by default. If you want to save one, store it in the relevant subfolder with a filename that makes the mode clear (e.g., `sprint-42-assessment.md` vs. `sprint-42-plan.md`).
+- Analyze mode outputs from `status-update` and `sprint-plan` — delivery assessments and backlog health reports are ephemeral by default. If you want to save one, store it in the relevant subfolder with a filename that makes the mode clear (e.g., `2026-sprint-42-plan.md`).
 - `doc-review` feedback — evaluative feedback on a document is transient; the value lands in the improved document, not as a stored artifact.
 - Company context — team structure, sprint process, and tool configs belong in `company/`.
 - PM judgment patterns, quality criteria, and smell tests — those live in `references/`.
@@ -45,7 +45,7 @@ Use consistent naming so artifacts are findable later:
   - Example: `2026-03-22-q1-launch-status.md`, `2026-03-29-auth-provider-decision.md`, `2026-03-29-q2-planning-brief.md`, `2026-04-14-notion-onboarding-deep-dive.md`
 - **Feature-scoped artifacts** (PRDs, task sets, launch checklists, business cases): `feature-name-artifact-type.md`
   - Example: `bulk-export-prd.md`, `subscription-pricing-tasks.md`, `android-app-launch-checklist.md`
-- **Sprint-scoped artifacts** (sprint plans, retro syntheses): `sprint-NN-artifact-type.md`
-  - Example: `sprint-20-plan.md`, `sprint-22-retro.md`, `sprint-20-22-retro.md`
+- **Sprint-scoped artifacts** (sprint plans, retro syntheses): `YYYY-sprint-NN-artifact-type.md`
+  - Example: `2026-sprint-20-plan.md`, `2026-sprint-22-retro.md`, `2026-sprint-20-22-retro.md`
 
 These are conventions, not rules. Adjust for your workflow.

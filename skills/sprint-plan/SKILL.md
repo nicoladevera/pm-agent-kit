@@ -366,4 +366,4 @@ Label each box with the story title or ticket ID. Show only load-bearing depende
 
 ## Save
 
-*Draft mode only.* After producing the artifact, write it to `knowledge/sprint-plans/` using the naming convention: `sprint-NN-plan.md`, where `NN` is the sprint number. Report the saved file path in the conversation. Analyze mode output is ephemeral — do not save it.
+*Draft mode only.* After producing the artifact, write it to `knowledge/sprint-plans/` using the naming convention: `YYYY-sprint-NN-plan.md`, where `YYYY` is the four-digit year and `NN` is the sprint number. Report the saved file path in the conversation. Analyze mode output is ephemeral — do not save it.
