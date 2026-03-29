@@ -157,7 +157,7 @@ List anything the PM needs to resolve before the launch is ready. These are gaps
 
 ## Output Format
 
-```markdown
+````markdown
 ## Launch Checklist: [Feature Name]
 
 **Launch type:** [Internal / Alpha / Beta / GA]
@@ -291,7 +291,7 @@ L-5    L-3    L-1    L     L+1    L+3
 - **Smell 11 (No Data Plan):** [Finding or "Clear — instrumentation and metrics on the checklist"]
 
 > **Context note:** [State the identified launch type and how it was determined. State which substantive company files were loaded, which were absent, and which were stub templates. Note what the checklist might miss without company-specific launch process context.]
-```
+````
 
 ---
 

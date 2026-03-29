@@ -181,7 +181,7 @@ Populate the Agent Block:
 
 ## Output Format
 
-```markdown
+````markdown
 ## Data Analysis: [Question or Topic]
 
 **Analysis type:** [Metric interpretation / Funnel analysis / Cohort analysis / Anomaly investigation]
@@ -258,7 +258,7 @@ Show the work. Include tables, calculations, and comparisons as appropriate.]
 - **Smell 5 (False Precision):** [Is confidence calibrated to sample size and data quality? Finding or "Clear — confidence levels match the evidence"]
 
 > **Context note:** [State which substantive company files were loaded, which were absent, and which were stub templates. Note what the analysis might miss without product context or data source context.]
-```
+````
 
 ---
 

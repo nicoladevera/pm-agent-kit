@@ -109,7 +109,7 @@ Fill in the Agent Block fields from the completed log:
 
 ## Output Format
 
-```markdown
+````markdown
 ## Decision Log: [Decision Title]
 
 **Status:** Decided / Pending
@@ -184,7 +184,7 @@ Label the differentiating factor on each branch (cost, speed, risk, reversibilit
 - [Anything still unresolved — follow-up decisions, missing information, stakeholders to inform]
 
 > **Context note:** [State which substantive company files were loaded, which files were absent, and which files existed but were stub templates and therefore skipped. Note what the log might miss without that context.]
-```
+````
 
 ---
 

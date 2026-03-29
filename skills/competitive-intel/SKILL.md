@@ -224,7 +224,7 @@ After writing the four-dimension prose assessment, translate each to a structure
 
 ### Monitor Mode
 
-```markdown
+````markdown
 ## Competitive Update: [Period or Description]
 
 ### Summary
@@ -379,7 +379,7 @@ agent_block:
 - **Smell 5 (False Precision):** [Finding — or "Clear — observed facts and inferences distinguished"]
 
 > **Context note:** [State which substantive company files were loaded, which were absent, and which were stub templates. Note what the analysis might miss without product context for comparison.]
-```
+````
 
 ---
 

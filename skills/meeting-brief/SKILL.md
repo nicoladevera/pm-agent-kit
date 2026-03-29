@@ -143,7 +143,7 @@ If duration isn't known, skip this section.
 
 ## Output Format
 
-```markdown
+````markdown
 ## Meeting Brief: [Meeting Title]
 
 **Date:** [Meeting date]
@@ -210,7 +210,7 @@ agent_block:
 | [Topic 2] | [X] | [...] |
 
 > **Context note:** [State which substantive company files were loaded, which files were absent, and which files existed but were stub templates and therefore skipped. Also note whether the attendee list was available and what the brief might miss without fuller context.]
-```
+````
 
 ---
 

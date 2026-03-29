@@ -188,7 +188,7 @@ If the PM's input or invocation signals urgency, crunch, incident, or high-stake
 
 ### Analyze Mode
 
-```markdown
+````markdown
 ## Delivery Assessment: [Sprint/Period]
 
 ### Overall Status: [On Track / At Risk / Blocked]
@@ -295,7 +295,7 @@ agent_block:
 - [What to expect in the next update cycle]
 
 > **Context note:** [State which substantive company files were loaded, which files were absent, and which files existed but were stub templates and therefore skipped. Note that audience calibration was based on the stated or inferred audience.]
-```
+````
 
 ---
 

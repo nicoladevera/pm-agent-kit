@@ -252,7 +252,7 @@ Open items are a feature of the business case, not a failure of it.
 
 ## Output Format
 
-```markdown
+````markdown
 ## Business Case: [Initiative Name]
 
 **Status:** Draft
@@ -403,7 +403,7 @@ agent_block:
 - **Smell 14 (Options Not Considered):** [Finding — or "Clear — genuine alternatives evaluated, including do-nothing"]
 
 > **Context note:** [State which substantive company files were loaded, which were absent, and which were stub templates. Note how missing context may have affected the quality of impact sizing, cost estimates, or risk assessment.]
-```
+````
 
 ---
 

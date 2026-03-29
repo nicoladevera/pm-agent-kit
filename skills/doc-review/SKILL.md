@@ -116,7 +116,7 @@ List questions you'd ask the PM before this document moves forward. These should
 
 ## Output Format
 
-```markdown
+````markdown
 ## Doc Review: [Document Title]
 
 **Document type:** [PRD / Ticket / Project Brief / Tech Spec / General Document (subtype)]
@@ -153,7 +153,7 @@ agent_block:
 - [Questions this document raises but doesn't answer]
 
 > **Context note:** [State the detected document type and how it was identified. State which substantive company files were loaded, which were absent, and which were stub templates. Note what the review might miss as a result. For General Document reviews: note that general quality dimensions were used rather than type-specific criteria, and suggest re-running as a specialized type if the document might actually be one.]
-```
+````
 
 ---
 

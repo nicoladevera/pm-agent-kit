@@ -283,7 +283,7 @@ If any check fails, fix before saving. Note any design compromises in the contex
 
 ### Narrative Mode
 
-```markdown
+````markdown
 ## Presentation: [Title]
 
 **Deck type:** [Exec Review / Business Review / Product Explainer / Board Update / Research / Discovery Readout / Strategy / Vision / Roadmap Review / Launch Readiness / Go–No-Go / GTM Enablement / Post-Mortem / Incident Review]
@@ -411,7 +411,7 @@ Output in conversation:
 [Same as Narrative mode]
 
 > **Context note:** [Same as Narrative mode, plus note on branding source]
-```
+````
 
 ---
 

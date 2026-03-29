@@ -143,7 +143,7 @@ For the top themes, recommend a next step:
 
 ## Output Format
 
-```markdown
+````markdown
 ## Feedback Synthesis: [Date Range or Description]
 
 <!-- AGENT BLOCK -->
@@ -218,7 +218,7 @@ agent_block:
 - **Smell 15 (Recency Bias):** [Finding — or "No prior synthesis available for comparison" / "Longitudinal balance checked"]
 
 > **Context note:** [State which substantive company files were loaded, which were absent, and which were stub templates. Note what the synthesis might miss without product context or feedback channel context.]
-```
+````
 
 ---
 

@@ -121,7 +121,7 @@ Based on the synthesis, recommend 1-2 areas for the team to focus on. Prioritize
 
 ## Output Format
 
-```markdown
+````markdown
 ## Retro Synthesis: [Sprint(s) Covered]
 
 <!-- AGENT BLOCK -->
@@ -200,7 +200,7 @@ Pattern                S9   S10  S11  S12  S13  Trend
 2. **[Second priority]** — Why: [...]. Suggested action: [...]
 
 > **Context note:** [State which substantive company files were loaded, which files were absent, and which files existed but were stub templates and therefore skipped. Also note the number of retros analyzed and whether a previous synthesis was available for longitudinal tracking.]
-```
+````
 
 ---
 

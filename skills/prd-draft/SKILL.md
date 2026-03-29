@@ -184,7 +184,7 @@ Populate the Agent Block:
 
 ## Output Format
 
-```markdown
+````markdown
 # PRD: [Title]
 
 **Author:** [PM name — leave as placeholder if unknown]
@@ -346,7 +346,7 @@ agent_block:
 - [Assumption 2]
 
 > **Context note:** [State which substantive company files were loaded, which files were absent, and which files existed but were stub templates and therefore skipped. Note what the draft might miss without that context.]
-```
+````
 
 ---
 

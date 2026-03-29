@@ -118,7 +118,7 @@ If any stories have ambiguity that the PM should resolve before engineering pick
 
 ## Output Format
 
-```markdown
+````markdown
 ## Generated Tasks: [Source Document Title]
 
 <!-- AGENT BLOCK -->
@@ -206,7 +206,7 @@ Label each box with the story title or ticket ID. Show only load-bearing depende
 - [Stories or decisions that need PM input before engineering starts]
 
 > **Context note:** [State which substantive company files were loaded, which files were absent, and which files existed but were stub templates and therefore skipped. Note what the decomposition might miss without that context.]
-```
+````
 
 ---
 
