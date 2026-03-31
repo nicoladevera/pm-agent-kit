@@ -8,6 +8,7 @@ context-optional:
   - company/norms/team-process.md
   - company/facts/product.md
   - company/facts/customers.md
+  - company/facts/glossary.md
 degradation: proceed-with-caveat
 ---
 
