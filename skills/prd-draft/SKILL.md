@@ -7,6 +7,7 @@ context-required: []
 context-optional:
   - company/facts/product.md
   - company/facts/customers.md
+  - company/facts/glossary.md
   - company/norms/team-process.md
 degradation: proceed-with-caveat
 ---

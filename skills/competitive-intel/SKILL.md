@@ -8,6 +8,7 @@ context-optional:
   - company/facts/competitors.md
   - company/facts/product.md
   - company/facts/customers.md
+  - company/facts/glossary.md
   - company/norms/communication.md
 degradation: proceed-with-caveat
 ---

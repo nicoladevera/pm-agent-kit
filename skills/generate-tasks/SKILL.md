@@ -6,6 +6,7 @@ approval: draft-confirm
 context-required: []
 context-optional:
   - company/facts/product.md
+  - company/facts/glossary.md
   - company/norms/team-process.md
 degradation: proceed-with-caveat
 ---
