@@ -115,7 +115,7 @@ If company branding is missing or still stub-level, the skill should fall back t
 
 ### Setting Up Company Context
 
-Follow the checklist in `company/onboarding.md`. Most skills degrade noticeably without substantive `company/facts/product.md`, `company/facts/team.md`, and `company/facts/customers.md` — these three files have the broadest impact. Other files in `company/` have localized or conditional impact and are noted in the onboarding checklist.
+Follow the checklist in `company/ONBOARDING.md`. Most skills degrade noticeably without substantive `company/facts/product.md`, `company/facts/team.md`, and `company/facts/customers.md` — these three files have the broadest impact. Other files in `company/` have localized or conditional impact and are noted in the onboarding checklist.
 
 ---
 
