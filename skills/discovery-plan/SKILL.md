@@ -1,14 +1,16 @@
 ---
-skill: discovery-plan
-type: Generator
-tier: 4
-approval: draft-confirm
-context-required: []
-context-optional:
-  - company/facts/product.md
-  - company/facts/customers.md
-  - company/interfaces/data-sources.md
-degradation: proceed-with-caveat
+name: discovery-plan
+description: Plans what to learn before committing — assumption mapping, method selection, evidence thresholds, sequencing. Use when asked to "plan discovery", "what should we research first", "create a discovery plan", "map our assumptions", or "help us decide what to test".
+metadata:
+  type: Generator
+  tier: 4
+  approval: draft-confirm
+  context-required: []
+  context-optional:
+    - company/facts/product.md
+    - company/facts/customers.md
+    - company/interfaces/data-sources.md
+  degradation: proceed-with-caveat
 ---
 
 # discovery-plan

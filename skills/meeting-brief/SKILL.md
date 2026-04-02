@@ -1,15 +1,17 @@
 ---
-skill: meeting-brief
-type: Generator
-tier: 2
-approval: draft-confirm
-context-required: []
-context-optional:
-  - company/facts/team.md
-  - company/norms/communication.md
-  - company/facts/product.md
-  - company/facts/glossary.md
-degradation: proceed-with-caveat
+name: meeting-brief
+description: Prepares a pre-meeting brief with agenda, decisions to make, and attendee context. Use when asked to "prep for this meeting", "create a meeting brief", "write an agenda", or "help me prepare for [meeting name]".
+metadata:
+  type: Generator
+  tier: 2
+  approval: draft-confirm
+  context-required: []
+  context-optional:
+    - company/facts/team.md
+    - company/norms/communication.md
+    - company/facts/product.md
+    - company/facts/glossary.md
+  degradation: proceed-with-caveat
 ---
 
 # meeting-brief

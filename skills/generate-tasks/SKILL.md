@@ -1,14 +1,16 @@
 ---
-skill: generate-tasks
-type: Generator
-tier: 1
-approval: draft-confirm
-context-required: []
-context-optional:
-  - company/facts/product.md
-  - company/facts/glossary.md
-  - company/norms/team-process.md
-degradation: proceed-with-caveat
+name: generate-tasks
+description: Decomposes a PRD, spec, or feature description into shippable stories with acceptance criteria. Use when asked to "break this into tickets", "generate tasks", "write user stories", "create acceptance criteria", or "decompose this feature for engineering".
+metadata:
+  type: Generator
+  tier: 1
+  approval: draft-confirm
+  context-required: []
+  context-optional:
+    - company/facts/product.md
+    - company/facts/glossary.md
+    - company/norms/team-process.md
+  degradation: proceed-with-caveat
 ---
 
 # generate-tasks

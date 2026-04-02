@@ -1,16 +1,18 @@
 ---
-skill: launch-checklist
-type: Generator
-tier: 3
-approval: draft-confirm
-context-required: []
-context-optional:
-  - company/norms/launch-process.md
-  - company/norms/communication.md
-  - company/facts/product.md
-  - company/facts/customers.md
-  - company/facts/team.md
-degradation: proceed-with-caveat
+name: launch-checklist
+description: Creates a launch readiness checklist or multi-stage launch journey overview. Use when asked to "create a launch checklist", "what do we need to launch", "build a launch plan", "are we ready to ship", or "walk me through launch stages".
+metadata:
+  type: Generator
+  tier: 3
+  approval: draft-confirm
+  context-required: []
+  context-optional:
+    - company/norms/launch-process.md
+    - company/norms/communication.md
+    - company/facts/product.md
+    - company/facts/customers.md
+    - company/facts/team.md
+  degradation: proceed-with-caveat
 ---
 
 # launch-checklist

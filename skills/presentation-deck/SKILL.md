@@ -1,15 +1,17 @@
 ---
-skill: presentation-deck
-type: Generator
-tier: 4
-approval: draft-confirm
-context-required: []
-context-optional:
-  - company/facts/product.md
-  - company/facts/team.md
-  - company/norms/communication.md
-  - company/interfaces/branding.md
-degradation: proceed-with-caveat
+name: presentation-deck
+description: Creates a slide narrative or generates a branded .pptx file. Use when asked to "build a deck", "create slides", "make a presentation", "write a slide narrative", "turn this into a deck", or "generate a PowerPoint".
+metadata:
+  type: Generator
+  tier: 4
+  approval: draft-confirm
+  context-required: []
+  context-optional:
+    - company/facts/product.md
+    - company/facts/team.md
+    - company/norms/communication.md
+    - company/interfaces/branding.md
+  degradation: proceed-with-caveat
 ---
 
 # presentation-deck

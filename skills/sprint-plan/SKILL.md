@@ -1,14 +1,16 @@
 ---
-skill: sprint-plan
-type: Generator
-tier: 2
-approval: draft-confirm
-context-required: []
-context-optional:
-  - company/norms/team-process.md
-  - company/facts/team.md
-  - company/facts/product.md
-degradation: proceed-with-caveat
+name: sprint-plan
+description: Analyzes backlog health or drafts a sprint plan with goals, capacity math, and story selection. Use when asked to "plan the sprint", "analyze the backlog", "create a sprint plan", "help with sprint planning", or "select stories for the sprint".
+metadata:
+  type: Generator
+  tier: 2
+  approval: draft-confirm
+  context-required: []
+  context-optional:
+    - company/norms/team-process.md
+    - company/facts/team.md
+    - company/facts/product.md
+  degradation: proceed-with-caveat
 ---
 
 # sprint-plan

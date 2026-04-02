@@ -1,16 +1,18 @@
 ---
-skill: user-feedback
-type: Analyzer
-tier: 3
-approval: draft-confirm
-context-required: []
-context-optional:
-  - company/facts/product.md
-  - company/facts/customers.md
-  - company/facts/glossary.md
-  - company/facts/competitors.md
-  - company/interfaces/data-sources.md
-degradation: proceed-with-caveat
+name: user-feedback
+description: Clusters customer feedback into themes with frequency, severity, and representative quotes. Use when asked to "analyze this feedback", "synthesize customer feedback", "what are users saying", "cluster these support tickets", or "find patterns in this feedback".
+metadata:
+  type: Analyzer
+  tier: 3
+  approval: draft-confirm
+  context-required: []
+  context-optional:
+    - company/facts/product.md
+    - company/facts/customers.md
+    - company/facts/glossary.md
+    - company/facts/competitors.md
+    - company/interfaces/data-sources.md
+  degradation: proceed-with-caveat
 ---
 
 # user-feedback

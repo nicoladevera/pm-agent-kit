@@ -1,14 +1,16 @@
 ---
-skill: decision-log
-type: Generator
-tier: 2
-approval: draft-confirm
-context-required: []
-context-optional:
-  - company/norms/decisions.md
-  - company/facts/team.md
-  - company/facts/product.md
-degradation: proceed-with-caveat
+name: decision-log
+description: Captures a decision already made or structures a pending decision with options and trade-offs. Use when asked to "log this decision", "document this decision", "help me think through this decision", "frame our options", or "structure this for sign-off".
+metadata:
+  type: Generator
+  tier: 2
+  approval: draft-confirm
+  context-required: []
+  context-optional:
+    - company/norms/decisions.md
+    - company/facts/team.md
+    - company/facts/product.md
+  degradation: proceed-with-caveat
 ---
 
 # decision-log

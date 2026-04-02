@@ -1,16 +1,18 @@
 ---
-skill: status-update
-type: Generator
-tier: 2
-approval: draft-confirm
-context-required: []
-context-optional:
-  - company/norms/communication.md
-  - company/norms/team-process.md
-  - company/facts/team.md
-  - company/facts/product.md
-  - company/facts/glossary.md
-degradation: proceed-with-caveat
+name: status-update
+description: Analyzes delivery state and drafts audience-calibrated status communications. Use when asked to "write a status update", "draft a project update", "write the weekly update", "how are we tracking", or "summarize delivery health for stakeholders".
+metadata:
+  type: Generator
+  tier: 2
+  approval: draft-confirm
+  context-required: []
+  context-optional:
+    - company/norms/communication.md
+    - company/norms/team-process.md
+    - company/facts/team.md
+    - company/facts/product.md
+    - company/facts/glossary.md
+  degradation: proceed-with-caveat
 ---
 
 # status-update

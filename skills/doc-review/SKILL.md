@@ -1,15 +1,17 @@
 ---
-skill: doc-review
-type: Analyzer
-tier: 1
-approval: draft-confirm
-context-required: []
-context-optional:
-  - company/norms/team-process.md
-  - company/facts/product.md
-  - company/facts/customers.md
-  - company/facts/glossary.md
-degradation: proceed-with-caveat
+name: doc-review
+description: Reviews PM documents against quality criteria and produces actionable feedback with severity ratings. Use when asked to "review this PRD", "give feedback on this doc", "evaluate this spec", "review this ticket", or "assess this project brief". Detects document type automatically.
+metadata:
+  type: Analyzer
+  tier: 1
+  approval: draft-confirm
+  context-required: []
+  context-optional:
+    - company/norms/team-process.md
+    - company/facts/product.md
+    - company/facts/customers.md
+    - company/facts/glossary.md
+  degradation: proceed-with-caveat
 ---
 
 # doc-review

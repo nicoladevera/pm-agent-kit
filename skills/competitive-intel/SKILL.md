@@ -1,16 +1,18 @@
 ---
-skill: competitive-intel
-type: Analyzer
-tier: 3
-approval: draft-confirm
-context-required: []
-context-optional:
-  - company/facts/competitors.md
-  - company/facts/product.md
-  - company/facts/customers.md
-  - company/facts/glossary.md
-  - company/norms/communication.md
-degradation: proceed-with-caveat
+name: competitive-intel
+description: Monitors competitive landscape, deep-dives a specific competitor, or conducts web research. Use when asked to "analyze competitors", "what is [competitor] doing", "competitive landscape", "monitor the competition", or "deep dive on [competitor name]".
+metadata:
+  type: Analyzer
+  tier: 3
+  approval: draft-confirm
+  context-required: []
+  context-optional:
+    - company/facts/competitors.md
+    - company/facts/product.md
+    - company/facts/customers.md
+    - company/facts/glossary.md
+    - company/norms/communication.md
+  degradation: proceed-with-caveat
 ---
 
 # competitive-intel

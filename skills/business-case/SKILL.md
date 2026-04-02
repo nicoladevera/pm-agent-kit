@@ -1,15 +1,17 @@
 ---
-skill: business-case
-type: Generator
-tier: 4
-approval: draft-confirm
-context-required: []
-context-optional:
-  - company/facts/product.md
-  - company/facts/customers.md
-  - company/facts/team.md
-  - company/norms/decisions.md
-degradation: proceed-with-caveat
+name: business-case
+description: Builds the argument for or against an initiative — problem sizing, cost, risks, alternatives, recommendation. Use when asked to "build a business case", "make the case for X", "justify this investment", "should we do X", or "what's the ROI on this".
+metadata:
+  type: Generator
+  tier: 4
+  approval: draft-confirm
+  context-required: []
+  context-optional:
+    - company/facts/product.md
+    - company/facts/customers.md
+    - company/facts/team.md
+    - company/norms/decisions.md
+  degradation: proceed-with-caveat
 ---
 
 # business-case

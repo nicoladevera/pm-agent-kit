@@ -1,13 +1,15 @@
 ---
-skill: retro-synthesis
-type: Analyzer
-tier: 2
-approval: draft-confirm
-context-required: []
-context-optional:
-  - company/norms/team-process.md
-  - company/facts/team.md
-degradation: proceed-with-caveat
+name: retro-synthesis
+description: Synthesizes retrospective notes into cross-sprint patterns and tracks action item follow-through. Use when asked to "synthesize the retro", "analyze retro themes", "what patterns keep coming up", or "did we address last sprint's action items".
+metadata:
+  type: Analyzer
+  tier: 2
+  approval: draft-confirm
+  context-required: []
+  context-optional:
+    - company/norms/team-process.md
+    - company/facts/team.md
+  degradation: proceed-with-caveat
 ---
 
 # retro-synthesis

@@ -1,15 +1,17 @@
 ---
-skill: prd-draft
-type: Generator
-tier: 1
-approval: draft-confirm
-context-required: []
-context-optional:
-  - company/facts/product.md
-  - company/facts/customers.md
-  - company/facts/glossary.md
-  - company/norms/team-process.md
-degradation: proceed-with-caveat
+name: prd-draft
+description: Drafts a full PRD from rough input — problem statements, meeting notes, bullets, or partial drafts. Use when asked to "write a PRD", "draft a product requirements doc", "turn these notes into a PRD", or "structure this problem as a PRD". Applies quality criteria from doc-review automatically.
+metadata:
+  type: Generator
+  tier: 1
+  approval: draft-confirm
+  context-required: []
+  context-optional:
+    - company/facts/product.md
+    - company/facts/customers.md
+    - company/facts/glossary.md
+    - company/norms/team-process.md
+  degradation: proceed-with-caveat
 ---
 
 # prd-draft

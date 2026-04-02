@@ -1,15 +1,17 @@
 ---
-skill: roadmap-prioritization
-type: Generator
-tier: 4
-approval: draft-confirm
-context-required: []
-context-optional:
-  - company/facts/product.md
-  - company/facts/team.md
-  - company/facts/customers.md
-  - company/norms/decisions.md
-degradation: proceed-with-caveat
+name: roadmap-prioritization
+description: Compares initiative candidates, sequences work, and produces prioritization rationale with explicit trade-offs. Use when asked to "prioritize the roadmap", "help me decide what to build next", "compare these initiatives", "sequence our work", or "roadmap planning".
+metadata:
+  type: Generator
+  tier: 4
+  approval: draft-confirm
+  context-required: []
+  context-optional:
+    - company/facts/product.md
+    - company/facts/team.md
+    - company/facts/customers.md
+    - company/norms/decisions.md
+  degradation: proceed-with-caveat
 ---
 
 # roadmap-prioritization

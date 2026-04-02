@@ -1,15 +1,17 @@
 ---
-skill: data-analysis
-type: Analyzer
-tier: 3
-approval: draft-confirm
-context-required: []
-context-optional:
-  - company/facts/product.md
-  - company/facts/customers.md
-  - company/facts/glossary.md
-  - company/interfaces/data-sources.md
-degradation: proceed-with-caveat
+name: data-analysis
+description: Interprets product data and metrics in context, classifying analysis type and producing calibrated insights. Use when asked to "analyze this data", "what does this metric mean", "interpret these numbers", "help me understand this trend", or "analyze this funnel drop-off".
+metadata:
+  type: Analyzer
+  tier: 3
+  approval: draft-confirm
+  context-required: []
+  context-optional:
+    - company/facts/product.md
+    - company/facts/customers.md
+    - company/facts/glossary.md
+    - company/interfaces/data-sources.md
+  degradation: proceed-with-caveat
 ---
 
 # data-analysis
