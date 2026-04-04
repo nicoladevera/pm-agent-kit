@@ -96,4 +96,4 @@ The three cohorts have substantially different sample sizes: paid social (n=3,20
 | Analysis connected to CAC allocation decision | 20% | Directional recommendation on referral, paid social optimization, and organic |
 | Service type confounder named | 15% | Mix effect hypothesis stated; investigation path specified |
 | Confidence calibrated to sample size differences | 10% | Paid social high confidence; referral directional with caveat; recommendation still given |
-| Output format compliance | 5% | Matches declared output format; Agent Block populated; context note present |
+| Output format compliance | 5% | Matches declared output format; Agent Block populated; context note present; Visualizations section present with PNG filename(s) and insight-first captions |

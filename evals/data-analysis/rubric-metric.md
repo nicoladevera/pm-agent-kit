@@ -108,4 +108,4 @@ A board-ready framing:
 | Push notification as contributing factor, not primary cause | 20% | Named as contributing factor; distinguished from promotion story; causal hedge applied |
 | Confidence calibrated with named confounders | 15% | Medium confidence stated; both events named as confounders; investigation path specified |
 | Board-ready framing provided | 10% | Explicit narrative the PM can take to the board, with defensible framing |
-| Output format compliance | 5% | Matches declared output format; Agent Block populated; context note present |
+| Output format compliance | 5% | Matches declared output format; Agent Block populated; context note present; Visualizations section present with PNG filename(s) and insight-first captions |

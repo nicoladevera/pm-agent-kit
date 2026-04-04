@@ -115,4 +115,4 @@ The analysis should recommend actionable next steps:
 | Confidence appropriately calibrated | 10% | Medium-to-high, with caveats about single week of data |
 | Limitations stated | 10% | At least 2-3 meaningful limitations named |
 | Next steps are actionable | 10% | Specific investigations recommended (not generic "look into it") |
-| Output format compliance | 5% | Matches declared format; context note present |
+| Output format compliance | 5% | Matches declared format; context note present; Visualizations section present with PNG filename(s) and insight-first captions |

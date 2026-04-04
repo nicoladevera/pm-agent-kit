@@ -22,7 +22,7 @@ Artifacts produced by skills when they run in Generator or Draft mode. Only subs
 | `retros/` | `retro-synthesis` | Retro synthesis reports |
 | `launch-checklists/` | `launch-checklist` | Feature launch checklists |
 | `user-feedback/` | `user-feedback` | Feedback synthesis reports |
-| `data-analyses/` | `data-analysis` | Data analysis reports |
+| `data-analyses/` | `data-analysis` | Data analysis reports (`.md`) and accompanying chart files (`.png`) |
 | `competition/` | `competitive-intel` | Competitive monitoring snapshots and deep dives |
 | `business-cases/` | `business-case` | Business cases for initiatives |
 | `presentations/` | `presentation-deck` | Structured presentation narratives and `.pptx` files |
@@ -47,6 +47,7 @@ Use consistent naming so artifacts are findable later:
 
 - **Time-ordered artifacts** (status updates, decisions, meeting briefs, user feedback, data analyses, competitive monitor updates, competitive deep dives, discovery plans, alignment memos, one-pagers): `YYYY-MM-DD-descriptive-slug.md`
   - Example: `2026-03-22-q1-launch-status.md`, `2026-03-29-auth-provider-decision.md`, `2026-03-29-q2-planning-brief.md`, `2026-04-14-notion-onboarding-deep-dive.md`, `2026-04-01-enterprise-onboarding-discovery-plan.md`, `2026-04-04-ai-adoption-framework.md`, `2026-04-04-hackathon-q3-one-pager.md`
+  - Chart files from data analyses use the same date-slug prefix: `YYYY-MM-DD-descriptive-slug-chart.png` (append `_2`, `_3` for additional charts from the same analysis). Example: `2026-04-04-nwsl-chance-creation-efficiency-chart.png`
 - **Feature-scoped artifacts** (PRDs, task sets, launch checklists, business cases): `feature-name-artifact-type.md`
   - Example: `bulk-export-prd.md`, `subscription-pricing-tasks.md`, `android-app-launch-checklist.md`
 - **Sprint-scoped artifacts** (sprint plans, retro syntheses): `YYYY-sprint-NN-artifact-type.md`

@@ -47,6 +47,7 @@ pm-agent-kit/
 
 - [Claude Code](https://docs.anthropic.com/en/docs/claude-code) installed
 - `python-pptx` Python package (only needed for `presentation-deck` Slides mode: `pip install python-pptx`)
+- `matplotlib` Python package (needed for `data-analysis` chart generation: `pip install matplotlib`)
 
 ### Setup
 
@@ -163,7 +164,7 @@ All 18 skills across Tiers 1-4 are built. Tier 4 skills integrate structured str
 | `launch-checklist` | Generator | Generate a launch checklist calibrated to launch type (internal/alpha/beta/GA), covering all readiness dimensions |
 | `user-feedback` | Analyzer | Cluster and summarize customer feedback into themes with frequency, severity, and representative quotes |
 | `competitive-intel` | Analyzer | Monitor the competitive landscape or deep-dive on a specific competitor's approach to a specific problem |
-| `data-analysis` | Analyzer | Answer a data question in product context — metric interpretation, funnel analysis, anomaly investigation |
+| `data-analysis` | Analyzer | Answer a data question in product context — metric interpretation, funnel analysis, anomaly investigation; produces PNG charts alongside the markdown artifact |
 | `business-case` | Generator | Build the argument for or against an initiative: problem, impact sizing, cost, risks, alternatives considered. Includes structured stress test: premortem, blindspot check, conviction assessment. |
 | `presentation-deck` | Generator | Draft a structured narrative or generate a branded `.pptx` for a specific audience — exec review, QBR, board update, new stakeholder onboarding |
 | `discovery-plan` | Generator | Plan what to learn before committing: map assumptions, rank by cost of being wrong, select research methods, define evidence thresholds, sequence the research |
@@ -209,6 +210,7 @@ Reference files live in `references/` and are consulted by multiple skills. They
 | `launch-readiness.md` | Launch readiness dimensions and standards by launch type (internal/alpha/beta/GA) | `launch-checklist` |
 | `user-feedback-analysis.md` | Feedback clustering, severity assessment, signal vs. noise, source channel weighting | `user-feedback` |
 | `data-interpretation.md` | Metric interpretation, funnel analysis, anomaly investigation, confidence calibration | `data-analysis` |
+| `visualization-standards.md` | Chart selection by analysis type, insight-first titling, annotation standards, comparison anchors, label discipline, style rules, technical save pattern | `data-analysis` |
 | `competitive-analysis.md` | Signal classification, monitoring framework, deep dive structure, reactivity checks | `competitive-intel` |
 | `business-case-standards.md` | Impact sizing frameworks, cost model standards, risk assessment, alternatives quality | `business-case`, `roadmap-prioritization` |
 | `narrative-structure.md` | Narrative arc (SCR), deck types, slide-level thinking, audience calibration, visual guidance | `presentation-deck` |

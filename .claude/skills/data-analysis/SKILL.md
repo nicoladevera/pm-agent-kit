@@ -77,6 +77,7 @@ Read these files:
 - `references/data-interpretation.md` — Metric interpretation heuristics, funnel analysis standards, cohort patterns, anomaly investigation framework, correlation vs. causation guardrails, data quality flags, confidence levels
 - `references/pm-smell-test.md` — Check for smells 2 (no way to measure success) and 5 (false precision)
 - `references/agent-readable-output.md` — Agent Block format and shared enum vocabulary
+- `references/visualization-standards.md` — Chart selection by analysis type, insight-first titling, annotation standards, comparison anchors, label discipline, style rules, technical save pattern
 
 ### 3. Load company context (if available)
 
@@ -145,6 +146,23 @@ Run the analysis appropriate to the type. Follow the standards in `references/da
 - Generate candidate explanations ranked by likelihood
 - Recommend investigation steps to confirm or rule out the top hypothesis
 
+### 6.5. Generate visualizations
+
+When numeric data is provided, always produce 1–3 charts as PNG files. The chart is not decoration — it should make the key finding visually obvious without requiring the reader to parse the prose. Run programmatically in Python (matplotlib). Do not sketch or estimate.
+
+Load and apply `references/visualization-standards.md` for all chart decisions: type selection, titling, annotation, comparison anchors, label placement, color, and save pattern.
+
+**Chart type by analysis type:**
+
+| Analysis type | Primary chart | Secondary (if a second finding warrants it) |
+|--------------|--------------|----------------------------------------------|
+| Metric interpretation | Line/time-series with the key movement annotated | Bar showing magnitude vs. baseline |
+| Funnel analysis | Horizontal waterfall — absolute users at each stage | Segmented bar at the biggest drop-off step |
+| Cohort analysis | Grouped bar (cohorts × metric, same time window) | Dot plot or heatmap for retention over time |
+| Anomaly investigation | Time series with the anomaly window highlighted | Breakdown bar showing which segment drives the scope |
+
+Save pattern and naming convention: see `references/visualization-standards.md`.
+
 ### 7. Run the smell test
 
 Check for:
@@ -201,6 +219,8 @@ agent_block:
   top_hypothesis: [integer — rank 1 hypothesis number]
   recommended_action: [Pull more data / Run experiment / Act on finding / Monitor]
   sample_size_adequate: [Yes / No / Unknown]
+  charts:
+    - knowledge/data-analyses/YYYY-MM-DD-slug-chart.png
 ```
 <!-- /AGENT BLOCK -->
 
@@ -231,6 +251,16 @@ For cohort analysis: cohort definitions, comparison table, divergence analysis.
 For anomaly investigation: characterization (timing, magnitude, scope, shape), hypotheses.
 
 Show the work. Include tables, calculations, and comparisons as appropriate.]
+
+---
+
+### Visualizations
+
+![Insight-first title stating the key finding](./YYYY-MM-DD-slug-chart.png)
+*Chart 1: [One sentence — what the chart shows and what the reader should conclude. Cite the reference line or comparison anchor used.]*
+
+![Second insight-first title](./YYYY-MM-DD-slug-chart_2.png)
+*Chart 2: [Caption.] — Omit this entry if only one chart was produced.*
 
 ---
 
@@ -275,9 +305,14 @@ Show the work. Include tables, calculations, and comparisons as appropriate.]
 - **Are limitations stated honestly?** The analysis says what it can't tell you, not just what it can. Sample size, confounders, data quality — all named.
 - **Is confidence calibrated to the data?** High confidence requires strong data. Medium confidence is stated when caveats exist. Low confidence is used when the data is thin. The PM knows how much to trust the finding.
 - **Would a data-literate PM trust this analysis?** The reasoning is visible, the math is sound, confounders are addressed, and the conclusion follows from the evidence.
+- **Does every chart title state the insight?** A chart titled "Metric by Segment" has failed. The title makes the finding obvious before a single data point is read.
 
 ---
 
 ## Save
 
-After producing the artifact, write it to `knowledge/data-analyses/` using the naming convention: `YYYY-MM-DD-analysis-slug.md`, where `YYYY-MM-DD` is today's date and `analysis-slug` is a lowercase hyphenated slug derived from the question or topic. Report the saved file path in the conversation.
+After producing the artifact, write it to `knowledge/data-analyses/` using the naming convention: `YYYY-MM-DD-analysis-slug.md`, where `YYYY-MM-DD` is today's date and `analysis-slug` is a lowercase hyphenated slug derived from the question or topic.
+
+Save each PNG to the same directory: `knowledge/data-analyses/`. Naming: `YYYY-MM-DD-analysis-slug-chart.png`. Append `_2`, `_3` for additional charts from the same analysis.
+
+Report all saved file paths (both `.md` and `.png` files) in the conversation.
