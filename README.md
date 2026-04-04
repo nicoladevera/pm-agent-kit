@@ -1,6 +1,6 @@
 # PM Agent Kit
 
-A portable AI agent system that encodes senior product manager judgment into 16 invocable skills. Built for Claude Code.
+A portable AI agent system that encodes senior product manager judgment into 17 invocable skills. Built for Claude Code.
 
 The judgment is concrete: 25 reference files codifying PM decision standards that every skill is required to load and consult before executing. The result is a reasoning system, not a template system.
 
@@ -91,6 +91,7 @@ Invoke a skill using its slash command:
 /presentation-deck [paste content + specify audience and deck type]
 /discovery-plan [paste problem area or initiative hypothesis + what's already known]
 /roadmap-prioritization [paste candidate initiatives + goals + constraints]
+/alignment-memo [paste context or describe the framework/standard/proposal you want to draft]
 ```
 
 Or invoke by name in natural language:
@@ -136,7 +137,7 @@ Skills have two dimensions: **type** (what they do technically) and **tier** (wh
 
 | Type | What it does | Current Skills |
 |------|-------------|----------------|
-| **Generator** | Produces an artifact from inputs (drafts a PRD, generates tasks, creates a launch checklist, builds a business case, drafts a presentation, plans discovery, prioritizes roadmap) | `prd-draft`, `generate-tasks`, `decision-log`, `meeting-brief`, `launch-checklist`, `business-case`, `presentation-deck`, `status-update`, `sprint-plan`, `discovery-plan`, `roadmap-prioritization` |
+| **Generator** | Produces an artifact from inputs (drafts a PRD, generates tasks, creates a launch checklist, builds a business case, drafts a presentation, plans discovery, prioritizes roadmap, drafts alignment memos) | `prd-draft`, `generate-tasks`, `decision-log`, `meeting-brief`, `launch-checklist`, `business-case`, `presentation-deck`, `status-update`, `sprint-plan`, `discovery-plan`, `roadmap-prioritization`, `alignment-memo` |
 | **Analyzer** | Evaluates, critiques, or extracts signal (reviews a document, synthesizes feedback, interprets a metric) | `doc-review`, `retro-synthesis`, `user-feedback`, `competitive-intel`, `data-analysis` |
 | **Connector** | Connects to an external system to pull data or push output (queries Snowflake, posts to Jira, writes to Confluence) | Not included, always company-specific |
 
@@ -147,9 +148,9 @@ Generators and Analyzers work on inputs the PM provides — pasted text, exporte
 | **1 — Operate** | High structure, tight feedback loop | `doc-review`, `prd-draft`, `generate-tasks` |
 | **2 — Communicate** | Weekly-cadence, team-visible output | `status-update`, `sprint-plan`, `retro-synthesis`, `meeting-brief`, `decision-log` |
 | **3 — Orient** | External data, deep company context | `user-feedback`, `competitive-intel`, `data-analysis`, `launch-checklist` |
-| **4 — Strategize** | High-judgment, composable reasoning | `business-case`, `presentation-deck`, `discovery-plan`, `roadmap-prioritization` |
+| **4 — Strategize** | High-judgment, composable reasoning | `business-case`, `presentation-deck`, `discovery-plan`, `roadmap-prioritization`, `alignment-memo` |
 
-All 16 skills across Tiers 1-4 are built. Tier 4 skills integrate structured stress-testing (premortem, blindspot check, conviction assessment) directly into their instruction flow.
+All 17 skills across Tiers 1-4 are built. Tier 4 skills integrate structured stress-testing (premortem, blindspot check, conviction assessment) directly into their instruction flow.
 
 ### Skill Reference
 
@@ -171,6 +172,7 @@ All 16 skills across Tiers 1-4 are built. Tier 4 skills integrate structured str
 | `presentation-deck` | Generator | Draft a structured narrative or generate a branded `.pptx` for a specific audience — exec review, QBR, board update, new stakeholder onboarding |
 | `discovery-plan` | Generator | Plan what to learn before committing: map assumptions, rank by cost of being wrong, select research methods, define evidence thresholds, sequence the research |
 | `roadmap-prioritization` | Generator | Compare candidate initiatives, sequence work, manage opportunity cost, and explain why A beats B — the prioritization rationale behind the roadmap |
+| `alignment-memo` | Generator | Draft internal alignment artifacts — frameworks, operating standards, program proposals, and best practices memos |
 
 ---
 
@@ -194,9 +196,9 @@ Reference files live in `references/` and are consulted by multiple skills. They
 
 | File | What it encodes | Referenced by |
 |------|----------------|---------------|
-| `pm-philosophy.md` | Ten core PM heuristics with rationale and behavioral examples | Foundational for CLAUDE.md; explicitly referenced by `retro-synthesis` |
+| `pm-philosophy.md` | Ten core PM heuristics with rationale and behavioral examples | Foundational for CLAUDE.md; explicitly referenced by `retro-synthesis`, `alignment-memo` |
 | `pm-smell-test.md` | Red flags across all PM artifact types (specs, comms, decisions) | All reviewing/analyzing skills, `discovery-plan`, `roadmap-prioritization` |
-| `quality-criteria-general-document.md` | Six universal quality dimensions for documents that don't fit specialized types | `doc-review` |
+| `quality-criteria-general-document.md` | Six universal quality dimensions for documents that don't fit specialized types | `doc-review`, `alignment-memo` |
 | `quality-criteria-project-brief.md` | Evaluative criteria for project briefs, calibrated to document maturity level | `doc-review` |
 | `quality-criteria-prd.md` | Nine evaluative criteria for PRDs | `doc-review`, `prd-draft` |
 | `quality-criteria-tech-spec.md` | Evaluative criteria for technical specs / EDDs, from a PM perspective | `doc-review` |
@@ -206,9 +208,9 @@ Reference files live in `references/` and are consulted by multiple skills. They
 | `acceptance-criteria.md` | AC standards optimized for agent implementation | `doc-review`, `prd-draft`, `generate-tasks`, `sprint-plan` |
 | `sprint-planning.md` | Sprint goals, capacity, backlog health, carryover standards | `sprint-plan`, `status-update` |
 | `decision-frameworks.md` | Decision anatomy, options quality, reversibility, escalation signals | `decision-log`, `meeting-brief`, `business-case`, `roadmap-prioritization` |
-| `audience-registers.md` | Per-audience communication registers — tone, depth, and framing calibrated by stakeholder type (engineers, designers, data, leadership, cross-functional) | `status-update`, `meeting-brief` |
+| `audience-registers.md` | Per-audience communication registers — tone, depth, and framing calibrated by stakeholder type (engineers, designers, data, leadership, cross-functional) | `status-update`, `meeting-brief`, `alignment-memo` |
 | `pushback-and-negotiation.md` | Scope protection, saying no, problem reframing, escalation as fork-framing, navigating disagreement | `doc-review`, `sprint-plan`, `decision-log`, `status-update`, `meeting-brief` |
-| `communication-quality.md` | Quality criteria for PM communications (status updates, briefs, stakeholder comms) | `status-update`, `meeting-brief`, `retro-synthesis` |
+| `communication-quality.md` | Quality criteria for PM communications (status updates, briefs, stakeholder comms) | `status-update`, `meeting-brief`, `retro-synthesis`, `alignment-memo` |
 | `launch-readiness.md` | Launch readiness dimensions and standards by launch type (internal/alpha/beta/GA) | `launch-checklist` |
 | `user-feedback-analysis.md` | Feedback clustering, severity assessment, signal vs. noise, source channel weighting | `user-feedback` |
 | `data-interpretation.md` | Metric interpretation, funnel analysis, anomaly investigation, confidence calibration | `data-analysis` |
