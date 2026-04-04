@@ -146,6 +146,7 @@ knowledge/           Accumulated PM work product. Artifacts produced by skills, 
   tasks/             Story sets produced by generate-tasks
   decisions/         Decision records produced by decision-log
   meeting-briefs/    Pre-meeting briefs produced by meeting-brief
+  one-pagers/        One-pagers produced by one-pager
   status-updates/    Status communications produced by status-update (Draft mode)
   sprint-plans/      Sprint plans produced by sprint-plan (Draft mode)
   retros/            Retro syntheses produced by retro-synthesis

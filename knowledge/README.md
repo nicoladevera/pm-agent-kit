@@ -16,6 +16,7 @@ Artifacts produced by skills when they run in Generator or Draft mode. Only subs
 | `tasks/` | `generate-tasks` | Story sets with acceptance criteria |
 | `decisions/` | `decision-log` | Decision records — captured or structured |
 | `meeting-briefs/` | `meeting-brief` | Pre-meeting briefs |
+| `one-pagers/` | `one-pager` | Compressed single-page pitches and proposals |
 | `status-updates/` | `status-update` (Draft mode) | Status communications |
 | `sprint-plans/` | `sprint-plan` (Draft mode) | Sprint plans |
 | `retros/` | `retro-synthesis` | Retro synthesis reports |
@@ -44,8 +45,8 @@ Artifacts produced by skills when they run in Generator or Draft mode. Only subs
 
 Use consistent naming so artifacts are findable later:
 
-- **Time-ordered artifacts** (status updates, decisions, meeting briefs, user feedback, data analyses, competitive monitor updates, competitive deep dives, discovery plans, alignment memos): `YYYY-MM-DD-descriptive-slug.md`
-  - Example: `2026-03-22-q1-launch-status.md`, `2026-03-29-auth-provider-decision.md`, `2026-03-29-q2-planning-brief.md`, `2026-04-14-notion-onboarding-deep-dive.md`, `2026-04-01-enterprise-onboarding-discovery-plan.md`, `2026-04-04-ai-adoption-framework.md`
+- **Time-ordered artifacts** (status updates, decisions, meeting briefs, user feedback, data analyses, competitive monitor updates, competitive deep dives, discovery plans, alignment memos, one-pagers): `YYYY-MM-DD-descriptive-slug.md`
+  - Example: `2026-03-22-q1-launch-status.md`, `2026-03-29-auth-provider-decision.md`, `2026-03-29-q2-planning-brief.md`, `2026-04-14-notion-onboarding-deep-dive.md`, `2026-04-01-enterprise-onboarding-discovery-plan.md`, `2026-04-04-ai-adoption-framework.md`, `2026-04-04-hackathon-q3-one-pager.md`
 - **Feature-scoped artifacts** (PRDs, task sets, launch checklists, business cases): `feature-name-artifact-type.md`
   - Example: `bulk-export-prd.md`, `subscription-pricing-tasks.md`, `android-app-launch-checklist.md`
 - **Sprint-scoped artifacts** (sprint plans, retro syntheses): `YYYY-sprint-NN-artifact-type.md`

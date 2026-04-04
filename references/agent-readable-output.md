@@ -61,6 +61,7 @@ Use these exact strings — match case and spacing precisely. Agents compare fie
 | Risk category | `Execution` / `Market` / `Technical` / `Adoption` / `Organizational` |
 | Action signal | `Respond` / `Monitor` / `Ignore` |
 | Urgency | `Immediate (days)` / `Near-term (1-2 sprints)` / `Strategic (quarter+)` / `None` |
+| Ask type | `Approve` / `Fund` / `Prioritize` / `Feedback` / `Awareness` |
 | Boolean | `Yes` / `No` |
 
 ### Planning
