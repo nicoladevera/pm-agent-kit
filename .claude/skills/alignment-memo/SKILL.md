@@ -3,7 +3,7 @@ name: alignment-memo
 description: Drafts internal alignment artifacts — frameworks, standards, operating memos, and lightweight program proposals. Use when asked to "draft a framework", "write a memo on how we should think about X", "create a standard for Y", "propose a hackathon", or "write an operating memo".
 metadata:
   type: Generator
-  tier: 4
+  tier: 2
   approval: draft-confirm
   context-required: []
   context-optional:
