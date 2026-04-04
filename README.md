@@ -131,7 +131,7 @@ Skills have two dimensions: **type** (what they do technically) and **tier** (wh
 
 | Type | What it does | Current Skills |
 |------|-------------|----------------|
-| **Generator** | Produces an artifact from inputs (drafts a PRD, generates tasks, creates a launch checklist, builds a business case, drafts a presentation, plans discovery, prioritizes roadmap, drafts alignment memos, compresses arguments into one-pagers) | `prd-draft`, `generate-tasks`, `status-update`, `sprint-plan`, `meeting-brief`, `decision-log`, `alignment-memo`, `launch-checklist`, `business-case`, `presentation-deck`, `discovery-plan`, `roadmap-prioritization`, `one-pager` |
+| **Generator** | Produces an artifact from inputs (drafts a PRD, generates tasks, creates a launch checklist, builds a business case, drafts a presentation, plans discovery, prioritizes roadmap, drafts alignment memos, compresses arguments into one-pagers) | `prd-draft`, `generate-tasks`, `status-update`, `sprint-plan`, `meeting-brief`, `decision-log`, `one-pager`, `alignment-memo`, `launch-checklist`, `business-case`, `presentation-deck`, `discovery-plan`, `roadmap-prioritization` |
 | **Analyzer** | Evaluates, critiques, or extracts signal (reviews a document, synthesizes feedback, interprets a metric) | `doc-review`, `retro-synthesis`, `user-feedback`, `competitive-intel`, `data-analysis` |
 | **Connector** | Connects to an external system to pull data or push output (queries Snowflake, posts to Jira, writes to Confluence) | Not included, always company-specific |
 
@@ -140,9 +140,9 @@ Generators and Analyzers work on inputs the PM provides — pasted text, exporte
 | Tier | Focus | Skills |
 |-------|-------|--------|
 | **1 — Operate** | High structure, tight feedback loop | `doc-review`, `prd-draft`, `generate-tasks` |
-| **2 — Communicate** | Weekly-cadence, team-visible output | `status-update`, `sprint-plan`, `retro-synthesis`, `meeting-brief`, `decision-log`, `alignment-memo` |
+| **2 — Communicate** | Regular cadence, team-visible output | `status-update`, `sprint-plan`, `retro-synthesis`, `meeting-brief`, `decision-log`, `alignment-memo`, `one-pager` |
 | **3 — Orient** | External data, deep company context | `user-feedback`, `competitive-intel`, `data-analysis`, `launch-checklist` |
-| **4 — Strategize** | High-judgment, composable reasoning | `business-case`, `presentation-deck`, `discovery-plan`, `roadmap-prioritization`, `one-pager` |
+| **4 — Strategize** | High-judgment, composable reasoning | `business-case`, `presentation-deck`, `discovery-plan`, `roadmap-prioritization` |
 
 All 18 skills across Tiers 1-4 are built. Tier 4 skills integrate structured stress-testing (premortem, blindspot check, conviction assessment) directly into their instruction flow.
 
@@ -159,6 +159,7 @@ All 18 skills across Tiers 1-4 are built. Tier 4 skills integrate structured str
 | `meeting-brief` | Generator | Pre-meeting prep: relevant context, open questions, decision points, and attendee stakes |
 | `decision-log` | Generator | Capture a decision or structure a problem for resolution — what was decided, by whom, why, options considered |
 | `alignment-memo` | Generator | Draft internal alignment artifacts — frameworks, operating standards, program proposals, and best practices memos |
+| `one-pager` | Generator | Compress any argument — initiative, proposal, budget request, process change — into a single-page artifact calibrated for a specific audience and ask |
 | `launch-checklist` | Generator | Generate a launch checklist calibrated to launch type (internal/alpha/beta/GA), covering all readiness dimensions |
 | `user-feedback` | Analyzer | Cluster and summarize customer feedback into themes with frequency, severity, and representative quotes |
 | `competitive-intel` | Analyzer | Monitor the competitive landscape or deep-dive on a specific competitor's approach to a specific problem |
@@ -167,7 +168,6 @@ All 18 skills across Tiers 1-4 are built. Tier 4 skills integrate structured str
 | `presentation-deck` | Generator | Draft a structured narrative or generate a branded `.pptx` for a specific audience — exec review, QBR, board update, new stakeholder onboarding |
 | `discovery-plan` | Generator | Plan what to learn before committing: map assumptions, rank by cost of being wrong, select research methods, define evidence thresholds, sequence the research |
 | `roadmap-prioritization` | Generator | Compare candidate initiatives, sequence work, manage opportunity cost, and explain why A beats B — the prioritization rationale behind the roadmap |
-| `one-pager` | Generator | Compress any argument — initiative, proposal, budget request, process change — into a single-page artifact calibrated for a specific audience and ask |
 
 ---
 

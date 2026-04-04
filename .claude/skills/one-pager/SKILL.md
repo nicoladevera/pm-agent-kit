@@ -3,7 +3,7 @@ name: one-pager
 description: Compresses any argument — initiative, proposal, budget request, process change — into a single-page artifact calibrated for a specific audience and ask. Use when asked to "write a one-pager", "distill this into a one-pager", "I need a one-page pitch for X", "compress this for my VP", or "summarize this as a one-pager".
 metadata:
   type: Generator
-  tier: 4
+  tier: 2
   approval: draft-confirm
   context-required: []
   context-optional:
