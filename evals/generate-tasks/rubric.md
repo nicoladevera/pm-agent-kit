@@ -1,7 +1,7 @@
 # Evaluation Rubric — generate-tasks
 
 **Target input:** `evals/generate-tasks/sample-input-01.md`
-**Skill under test:** `skills/generate-tasks/SKILL.md`
+**Skill under test:** `.claude/skills/generate-tasks/SKILL.md`
 **Purpose:** Determine whether generate-tasks decomposes a PRD into well-scoped stories with agent-implementable AC.
 **Coverage:** Single mode — full skill coverage.
 

@@ -1,7 +1,7 @@
 # Evaluation Rubric — prd-draft (B2B SaaS)
 
 **Target input:** `evals/prd-draft/sample-input-02.md`
-**Skill under test:** `skills/prd-draft/SKILL.md`
+**Skill under test:** `.claude/skills/prd-draft/SKILL.md`
 **Purpose:** Determine whether `prd-draft` produces a complete, structured PRD that satisfies all 9 quality criteria, handles the rough input's planted gaps (missing metrics baseline, no data plan, implicit scope decisions), and preserves the input's genuine strengths without manufacturing problems.
 
 **Coverage:** Single mode — full skill coverage.

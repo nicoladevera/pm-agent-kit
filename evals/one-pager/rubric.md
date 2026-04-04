@@ -1,7 +1,7 @@
 # Evaluation Rubric — one-pager (From Scratch: Hackathon Proposal)
 
 **Target input:** `evals/one-pager/sample-input-01.md`
-**Skill under test:** `skills/one-pager/SKILL.md`
+**Skill under test:** `.claude/skills/one-pager/SKILL.md`
 **Purpose:** Determine whether `one-pager` correctly handles a from-scratch scenario with thin input, translates a solution-first pitch into a problem-first argument, enforces the one-page constraint, calibrates for a delivery-focused VP audience, and includes the right conditional sections for a budget/approval ask.
 **Coverage:** From-scratch workflow. Tests thin-input intake, problem-first translation, VP audience calibration, one-page constraint enforcement, and conditional section logic for a Fund ask.
 

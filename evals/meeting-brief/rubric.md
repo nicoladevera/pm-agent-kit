@@ -1,7 +1,7 @@
 # Evaluation Rubric — meeting-brief
 
 **Target input:** `evals/meeting-brief/sample-input-01.md`
-**Skill under test:** `skills/meeting-brief/SKILL.md`
+**Skill under test:** `.claude/skills/meeting-brief/SKILL.md`
 **Purpose:** Determine whether `meeting-brief` imposes structure on an overloaded meeting, surfaces decisions, and produces a brief that makes 90 minutes productive instead of chaotic.
 **Coverage:** Single mode — full skill coverage.
 

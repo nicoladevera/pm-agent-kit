@@ -1,7 +1,7 @@
 # Evaluation Rubric — doc-review (Ticket: Consumer E-Commerce Express Checkout)
 
 **Target input:** `evals/doc-review/sample-ticket-02.md`
-**Skill under test:** `skills/doc-review/SKILL.md`
+**Skill under test:** `.claude/skills/doc-review/SKILL.md`
 **Purpose:** Determine whether `doc-review` correctly identifies the 4 planted issues in this e-commerce checkout ticket, preserves the valid story framing, and provides criterion-referenced feedback.
 
 **Coverage:** Single mode — doc-review on a Ticket document type.

@@ -1,7 +1,7 @@
 # Evaluation Rubric — roadmap-prioritization (Platform vs. Growth)
 
 **Target input:** `evals/roadmap-prioritization/sample-input-02.md`
-**Skill under test:** `skills/roadmap-prioritization/SKILL.md`
+**Skill under test:** `.claude/skills/roadmap-prioritization/SKILL.md`
 **Purpose:** Determine whether `roadmap-prioritization` handles a two-candidate, high-stakes, politically charged prioritization with genuine trade-offs, a technical dependency between the options, and conflicting stakeholder preferences — producing a defensible recommendation rather than a compromise that satisfies nobody.
 **Coverage:** Single mode — full skill coverage. Tests the skill's ability to handle thin candidate lists with deep trade-offs rather than broad candidate lists with surface comparison.
 

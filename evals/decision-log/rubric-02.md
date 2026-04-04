@@ -1,7 +1,7 @@
 # Evaluation Rubric — decision-log (B2B SaaS: Native App vs. Mobile Web)
 
 **Target input:** `evals/decision-log/sample-input-02.md`
-**Skill under test:** `skills/decision-log/SKILL.md`
+**Skill under test:** `.claude/skills/decision-log/SKILL.md`
 **Purpose:** Determine whether `decision-log` correctly triggers Structure mode, frames genuine alternatives (including hybrid/PWA), assesses reversibility honestly (native app is a one-way door in terms of maintenance burden), interprets mobile session data for what it implies about the right solution, frames the escalation fork clearly, and closes each option with a verdict rather than just a trade-off summary.
 
 **Coverage:** Single mode — Structure mode tested (pending decision).

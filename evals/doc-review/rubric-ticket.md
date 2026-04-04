@@ -1,7 +1,7 @@
 # Evaluation Rubric — doc-review (Ticket)
 
 **Target input:** `evals/doc-review/sample-ticket-01.md`
-**Skill under test:** `skills/doc-review/SKILL.md`
+**Skill under test:** `.claude/skills/doc-review/SKILL.md`
 **Purpose:** Determine whether `doc-review` correctly identifies the document as a ticket, applies ticket quality criteria, catches planted weaknesses, and avoids false positives.
 
 ---

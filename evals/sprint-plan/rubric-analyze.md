@@ -1,7 +1,7 @@
 # Evaluation Rubric — sprint-plan (Analyze Mode)
 
 **Target input:** `evals/sprint-plan/sample-input-02.md`
-**Skill under test:** `skills/sprint-plan/SKILL.md`
+**Skill under test:** `.claude/skills/sprint-plan/SKILL.md`
 **Purpose:** Determine whether `sprint-plan` Analyze mode correctly identifies all backlog health issues, outputs a backlog health report (not a sprint plan), and provides actionable remediation steps for each issue found.
 
 ## Coverage

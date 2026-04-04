@@ -1,7 +1,7 @@
 # Evaluation Rubric — meeting-brief (Consumer E-Commerce: Checkout Redesign Review)
 
 **Target input:** `evals/meeting-brief/sample-input-02.md`
-**Skill under test:** `skills/meeting-brief/SKILL.md`
+**Skill under test:** `.claude/skills/meeting-brief/SKILL.md`
 **Purpose:** Determine whether `meeting-brief` surfaces all 3 explicit decisions, correctly maps attendee stakes to specific topics, flags the overloaded agenda (5 items, 45 min), and recommends removing or async-ing the FYI item.
 
 **Coverage:** Single mode — full skill coverage.

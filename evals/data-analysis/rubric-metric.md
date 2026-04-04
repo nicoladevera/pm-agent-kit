@@ -1,7 +1,7 @@
 # Evaluation Rubric — data-analysis (Metric Interpretation)
 
 **Target input:** `evals/data-analysis/sample-input-02.md`
-**Skill under test:** `skills/data-analysis/SKILL.md`
+**Skill under test:** `.claude/skills/data-analysis/SKILL.md`
 **Purpose:** Determine whether `data-analysis` correctly interprets a DAU/WAU ratio decline by decomposing the ratio into its components, identifying the true driver (WAU growth outpaced DAU growth), avoiding the "engagement collapsed" misread, and calibrating confidence appropriately for correlational data with two overlapping events.
 
 ## Coverage

@@ -1,7 +1,7 @@
 # Evaluation Rubric — sprint-plan
 
 **Target input:** `evals/sprint-plan/sample-input-01.md`
-**Skill under test:** `skills/sprint-plan/SKILL.md`
+**Skill under test:** `.claude/skills/sprint-plan/SKILL.md`
 **Purpose:** Determine whether `sprint-plan` produces realistic goals, catches backlog issues, handles capacity honestly, and respects dependencies.
 
 ## Coverage

@@ -1,7 +1,7 @@
 # Evaluation Rubric — business-case
 
 **Target input:** `evals/business-case/sample-input-01.md`
-**Skill under test:** `skills/business-case/SKILL.md`
+**Skill under test:** `.claude/skills/business-case/SKILL.md`
 **Purpose:** Determine whether `business-case` correctly extracts a problem from solution-flavored input, sizes impact honestly with stated assumptions, generates genuine alternatives, produces a complete cost model, and delivers a stress test that adds value beyond the risk assessment.
 **Coverage:** Single mode — full skill coverage.
 

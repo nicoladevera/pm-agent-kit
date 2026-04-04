@@ -1,7 +1,7 @@
 # Evaluation Rubric — status-update (Analyze Mode)
 
 **Target input:** `evals/status-update/sample-input-02.md`
-**Skill under test:** `skills/status-update/SKILL.md`
+**Skill under test:** `.claude/skills/status-update/SKILL.md`
 **Purpose:** Determine whether `status-update` Analyze mode correctly infers risks from data (including unstated ones), surfaces the explicit blocker and both implicit risks, and produces an internal assessment — not an audience-addressed communication.
 
 ## Coverage

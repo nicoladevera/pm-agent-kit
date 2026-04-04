@@ -1,7 +1,7 @@
 # Evaluation Rubric — presentation-deck (Narrative Mode)
 
 **Target input:** `evals/presentation-deck/sample-input-01.md`
-**Skill under test:** `skills/presentation-deck/SKILL.md`
+**Skill under test:** `.claude/skills/presentation-deck/SKILL.md`
 **Purpose:** Determine whether `presentation-deck` correctly identifies the deck type, calibrates to the specific audience (VP Sarah), produces takeaway headlines, maintains a coherent narrative arc, proactively addresses the VP's known concerns, and applies the stress test for this high-stakes deck.
 
 ## Coverage

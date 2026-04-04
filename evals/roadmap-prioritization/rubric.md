@@ -1,7 +1,7 @@
 # Evaluation Rubric — roadmap-prioritization
 
 **Target input:** `evals/roadmap-prioritization/sample-input-01.md`
-**Skill under test:** `skills/roadmap-prioritization/SKILL.md`
+**Skill under test:** `.claude/skills/roadmap-prioritization/SKILL.md`
 **Purpose:** Determine whether `roadmap-prioritization` correctly profiles candidates with uneven evidence quality, weights evidence quality visibly in the comparison, handles a soft commitment constraint, identifies the dependency between SSO auth refactoring and other work, produces a substantive "what we're not doing" section, and delivers a stress test that surfaces non-obvious risks.
 **Coverage:** Single mode — full skill coverage.
 

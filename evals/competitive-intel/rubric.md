@@ -1,7 +1,7 @@
 # Evaluation Rubric — competitive-intel (Monitor Mode)
 
 **Target input:** `evals/competitive-intel/sample-input-01.md`
-**Skill under test:** `skills/competitive-intel/SKILL.md`
+**Skill under test:** `.claude/skills/competitive-intel/SKILL.md`
 **Purpose:** Determine whether `competitive-intel` correctly classifies signals, distinguishes noise from strategic shifts, produces implications connected to product decisions, and avoids recency bias.
 
 ## Coverage

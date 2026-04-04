@@ -1,7 +1,7 @@
 # Evaluation Rubric — user-feedback
 
 **Target input:** `evals/user-feedback/sample-input-01.md`
-**Skill under test:** `skills/user-feedback/SKILL.md`
+**Skill under test:** `.claude/skills/user-feedback/SKILL.md`
 **Purpose:** Determine whether `user-feedback` correctly clusters feedback by underlying need, assesses severity and frequency, distinguishes signal from noise, and produces a synthesis a PM would trust for prioritization.
 **Coverage:** Single mode — full skill coverage.
 

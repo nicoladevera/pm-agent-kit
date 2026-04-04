@@ -1,7 +1,7 @@
 # Evaluation Rubric — launch-checklist (Overview Mode)
 
 **Target input:** `evals/launch-checklist/sample-input-02.md`
-**Skill under test:** `skills/launch-checklist/SKILL.md`
+**Skill under test:** `.claude/skills/launch-checklist/SKILL.md`
 **Purpose:** Determine whether `launch-checklist` Overview mode produces a complete multi-stage launch journey (Internal → Alpha → Beta → GA), with per-stage requirements, compliance dimensions at every stage, accurate exit criteria, and red flags surfaced for the high-risk elements in this scenario.
 
 ## Coverage

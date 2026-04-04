@@ -1,7 +1,7 @@
 # Evaluation Rubric — launch-checklist
 
 **Target input:** `evals/launch-checklist/sample-input-01.md`
-**Skill under test:** `skills/launch-checklist/SKILL.md`
+**Skill under test:** `.claude/skills/launch-checklist/SKILL.md`
 **Purpose:** Determine whether `launch-checklist` produces a complete, calibrated checklist that catches gaps the PM hasn't addressed, assigns owners, and includes a specific rollback plan.
 
 ## Coverage

@@ -15,7 +15,7 @@ The system has four layers. The first three are portable across companies. The f
 **Layer 1 — Identity + Operating Principles** (`CLAUDE.md`)
 Four operating principles govern every skill execution — do preparatory work before producing output, earn autonomy through demonstrated quality, let the artifact make the argument, stay within declared scope. Every skill inherits from this file.
 
-**Layer 2 — Skills** (`skills/`)
+**Layer 2 — Skills** (`.claude/skills/`)
 Discrete, invocable capabilities. Each skill declares its context requirements, degradation rule (what to do when context is missing), and quality bar. Skills with multiple modes may enforce different degradation rules per mode. Before executing, skills run an intake protocol that adapts questioning to how much signal the PM's input provides.
 
 **Layer 3 — Reference Standards** (`references/`)
@@ -30,8 +30,9 @@ What makes generic output specific and credible. Product areas, team structure, 
 
 ```
 pm-agent-kit/
+├── .claude/
+│   └── skills/            Invocable capabilities (one folder per skill)
 ├── CLAUDE.md              Identity + operating principles
-├── skills/                Invocable capabilities (one folder per skill)
 ├── references/            Shared PM judgment patterns
 ├── knowledge/             Accumulated PM work product (artifacts produced by skills)
 ├── company/               Company-specific context (rebuilt per role)
@@ -52,17 +53,9 @@ pm-agent-kit/
 ```bash
 git clone https://github.com/nicoladevera/pm-agent-kit.git
 cd pm-agent-kit
-
-# Register all skills as slash commands for this repo checkout
-./install.sh
-
-# Or register a specific skill
-./install.sh doc-review
 ```
 
-`install.sh` copies command files to `~/.claude/commands/`, but those commands still depend on the `references/` and `company/` files in this repo. It sets up slash commands to use this repo, rather than installing a self-contained portable package.
-
-> **Important:** Open Claude Code from this repo root. The registered commands depend on repo-relative paths such as `references/quality-criteria-prd.md` and `company/...`; if you run them outside this checkout, context resolution will break.
+Skills live in `.claude/skills/` and are automatically discovered by Claude Code when you open this repo. No install step required.
 
 ### Running a Skill
 
@@ -101,7 +94,7 @@ Or invoke by name in natural language:
 Run doc-review on this document: [paste or point to file]
 ```
 
-Both invocation methods work within this repo checkout. Slash commands are more reliable when CLAUDE.md auto-loading is inconsistent.
+Both invocation methods work within this repo checkout.
 
 ### Slides Mode
 
@@ -125,7 +118,7 @@ Follow the checklist in `company/ONBOARDING.md`. Most skills degrade noticeably 
 
 The system is designed to travel across companies:
 
-- **Portable:** `CLAUDE.md`, `skills/`, `references/`, `evals/` — these encode PM identity and judgment, not company-specific knowledge.
+- **Portable:** `CLAUDE.md`, `.claude/skills/`, `references/`, `evals/` — these encode PM identity and judgment, not company-specific knowledge.
 - **Rebuilt per company:** `company/` — product context, team norms, and tool configs change with every role. The onboarding checklist defines what to populate.
 
 Clone the repo, populate `company/`, and the agent produces useful output in context.

@@ -1,7 +1,7 @@
 # Evaluation Rubric — data-analysis (Cohort Analysis)
 
 **Target input:** `evals/data-analysis/sample-input-03.md`
-**Skill under test:** `skills/data-analysis/SKILL.md`
+**Skill under test:** `.claude/skills/data-analysis/SKILL.md`
 **Purpose:** Determine whether `data-analysis` correctly reads retention curves across cohorts, surfaces the LTV inversion (paid social has the highest early retention but the lowest LTV), connects the analysis to a specific product/marketing decision (CAC allocation), and names the confounder (service type mix may differ by acquisition source).
 
 ## Coverage

@@ -1,7 +1,7 @@
 # Evaluation Rubric — retro-synthesis
 
 **Target input:** `evals/retro-synthesis/sample-input-01.md`
-**Skill under test:** `skills/retro-synthesis/SKILL.md`
+**Skill under test:** `.claude/skills/retro-synthesis/SKILL.md`
 **Purpose:** Determine whether `retro-synthesis` identifies cross-retro patterns, tracks action item follow-through, credits improvements, and produces synthesis rather than summary.
 **Coverage:** Single mode — full skill coverage.
 

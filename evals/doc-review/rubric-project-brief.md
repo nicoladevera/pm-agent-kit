@@ -1,7 +1,7 @@
 # Evaluation Rubric — doc-review (Project Brief)
 
 **Target input:** `evals/doc-review/sample-project-brief-01.md`
-**Skill under test:** `skills/doc-review/SKILL.md`
+**Skill under test:** `.claude/skills/doc-review/SKILL.md`
 **Purpose:** Determine whether `doc-review` correctly identifies the document as a project brief, calibrates its evaluation to the brief's maturity level, catches planted weaknesses, and avoids false positives.
 
 ---

@@ -1,7 +1,7 @@
 # Evaluation Rubric — prd-draft
 
 **Target input:** `evals/prd-draft/sample-input-01.md`
-**Skill under test:** `skills/prd-draft/SKILL.md`
+**Skill under test:** `.claude/skills/prd-draft/SKILL.md`
 **Purpose:** Determine whether prd-draft produces a structured, substantive PRD from rough input — and whether the references layer works bidirectionally with doc-review.
 **Coverage:** Single mode — full skill coverage.
 

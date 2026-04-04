@@ -1,7 +1,7 @@
 # Evaluation Rubric — data-analysis
 
 **Target input:** `evals/data-analysis/sample-input-01.md`
-**Skill under test:** `skills/data-analysis/SKILL.md`
+**Skill under test:** `.claude/skills/data-analysis/SKILL.md`
 **Purpose:** Determine whether `data-analysis` correctly identifies the root cause of an activation drop by analyzing funnel data, segmenting by platform, evaluating competing hypotheses, and stating confidence appropriately.
 
 ## Coverage

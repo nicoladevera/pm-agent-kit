@@ -136,10 +136,11 @@ When no degradation rule is specified, default to `proceed-with-caveat`.
 ## Repo Structure
 
 ```
-skills/              Invocable capabilities. Each skill is a folder with a SKILL.md inside.
-  <skill-name>/
-    SKILL.md         Skill definition (frontmatter + body)
-    [references]     Skill-specific reference files, if any
+.claude/
+  skills/            Invocable capabilities. Each skill is a folder with a SKILL.md inside.
+    <skill-name>/
+      SKILL.md       Skill definition (frontmatter + body)
+      [references]   Skill-specific reference files, if any
 references/          PM judgment patterns. Shared across skills, not invoked directly.
 knowledge/           Accumulated PM work product. Artifacts produced by skills, organized by type.
   prds/              PRDs produced by prd-draft
@@ -173,7 +174,7 @@ evals/               Evaluation cases per skill. Sample inputs and scoring rubri
 Skills are invoked by name in conversation (e.g., "run doc-review on this PRD").
 
 When a skill is invoked, the agent:
-1. Reads the skill's `SKILL.md` from `/skills/<skill-name>/`
+1. Reads the skill's `SKILL.md` from `.claude/skills/<skill-name>/`
 2. Loads any files listed in `context-required` that are substantive — if missing or stub-level, applies the skill's degradation rule
 3. Loads any files listed in `context-optional` that are substantive — if absent or stub-level, skips them and notes that in the context note when relevant
 4. Loads files from `references/` as specified in the skill's instructions

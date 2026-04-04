@@ -1,7 +1,7 @@
 # Evaluation Rubric — doc-review (PRD: B2B SaaS Scheduling Feature)
 
 **Target input:** `evals/doc-review/sample-prd-02.md`
-**Skill under test:** `skills/doc-review/SKILL.md`
+**Skill under test:** `.claude/skills/doc-review/SKILL.md`
 **Purpose:** Determine whether `doc-review` correctly identifies the 4 planted quality issues in this B2B SaaS PRD, avoids false positives on the intentional strengths, and produces actionable, criterion-referenced feedback.
 
 **Coverage:** Single mode — doc-review on a PRD document type.

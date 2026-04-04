@@ -1,7 +1,7 @@
 # Evaluation Rubric — business-case (Consumer Marketplace: Price Guarantee)
 
 **Target input:** `evals/business-case/sample-input-02.md`
-**Skill under test:** `skills/business-case/SKILL.md`
+**Skill under test:** `.claude/skills/business-case/SKILL.md`
 **Purpose:** Determine whether `business-case` correctly flips the solution-first input to a problem-first frame, builds a cost model that includes guarantee liability, surfaces the retention-friction blindspot, and treats the "do nothing" alternative honestly.
 
 **Coverage:** Single mode — full skill coverage.

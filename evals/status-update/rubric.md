@@ -1,7 +1,7 @@
 # Evaluation Rubric — status-update
 
 **Target input:** `evals/status-update/sample-input-01.md`
-**Skill under test:** `skills/status-update/SKILL.md`
+**Skill under test:** `.claude/skills/status-update/SKILL.md`
 **Purpose:** Determine whether `status-update` catches risks the data implies but doesn't state, calibrates correctly for a VP audience, and leads with assessment over activity.
 
 ## Coverage

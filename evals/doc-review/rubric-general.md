@@ -1,7 +1,7 @@
 # Evaluation Rubric — doc-review (General Document)
 
 **Target input:** `evals/doc-review/sample-general-01.md`
-**Skill under test:** `skills/doc-review/SKILL.md`
+**Skill under test:** `.claude/skills/doc-review/SKILL.md`
 **Purpose:** Determine whether `doc-review` correctly classifies the document as a General Document, names the subtype, applies general quality criteria (not PRD criteria), catches planted weaknesses, and avoids false positives on intentional strengths.
 
 ---

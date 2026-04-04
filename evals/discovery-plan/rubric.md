@@ -1,7 +1,7 @@
 # Evaluation Rubric — discovery-plan
 
 **Target input:** `evals/discovery-plan/sample-input-01.md`
-**Skill under test:** `skills/discovery-plan/SKILL.md`
+**Skill under test:** `.claude/skills/discovery-plan/SKILL.md`
 **Purpose:** Determine whether `discovery-plan` correctly extracts assumptions from a problem area with multiple competing hypotheses, risk-ranks by consequence rather than comfort, selects appropriate methods matched to assumption types, defines pre-registered evidence criteria, and sequences research to test the problem before the solution.
 **Coverage:** Single mode — full skill coverage.
 

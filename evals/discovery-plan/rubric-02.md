@@ -1,7 +1,7 @@
 # Evaluation Rubric — discovery-plan (International Expansion)
 
 **Target input:** `evals/discovery-plan/sample-input-02.md`
-**Skill under test:** `skills/discovery-plan/SKILL.md`
+**Skill under test:** `.claude/skills/discovery-plan/SKILL.md`
 **Purpose:** Determine whether `discovery-plan` handles a greenfield discovery scenario with thin input, maximum uncertainty, and strong organizational pressure (CEO enthusiasm, board push) — testing assumption extraction from sparse context, appropriate method selection when the team has no existing user base in the target market, and intellectual honesty when the prevailing narrative is optimistic.
 **Coverage:** Single mode — full skill coverage. Tests thin-input intake behavior.
 

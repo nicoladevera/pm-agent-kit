@@ -1,7 +1,7 @@
 # Evaluation Rubric — retro-synthesis (Platform Engineering: Kubernetes Migration)
 
 **Target input:** `evals/retro-synthesis/sample-input-02.md`
-**Skill under test:** `skills/retro-synthesis/SKILL.md`
+**Skill under test:** `.claude/skills/retro-synthesis/SKILL.md`
 **Purpose:** Determine whether `retro-synthesis` credits the two interventions that worked (documentation runbook, alert tuning), surfaces the stalled on-call review as an accountability failure (3 sprints, same owner, never completed), identifies that incident response time has not improved despite fewer incidents, and correctly distinguishes a 1-sprint emergence from a recurring pattern.
 
 **Coverage:** Single mode — full skill coverage.

@@ -1,7 +1,7 @@
 # Evaluation Rubric — alignment-memo (Framework: AI Adoption)
 
 **Target input:** `evals/alignment-memo/sample-input-01.md`
-**Skill under test:** `skills/alignment-memo/SKILL.md`
+**Skill under test:** `.claude/skills/alignment-memo/SKILL.md`
 **Purpose:** Determine whether `alignment-memo` correctly translates a solution-first, platitude-heavy input into a problem-first framework with grounded principles, actionable depth, and a realistic adoption path — while handling missing audience and uneven organizational context.
 **Coverage:** Single subtype — Framework.
 

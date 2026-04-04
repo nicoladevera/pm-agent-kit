@@ -1,7 +1,7 @@
 # Evaluation Rubric — alignment-memo (Standard: Data Requirements)
 
 **Target input:** `evals/alignment-memo/sample-input-02.md`
-**Skill under test:** `skills/alignment-memo/SKILL.md`
+**Skill under test:** `.claude/skills/alignment-memo/SKILL.md`
 **Purpose:** Determine whether `alignment-memo` preserves concrete failure examples as motivation, produces grounded principles (not generic "data is important"), maps requirements to specific SDLC stages with role-specific expectations, and proposes realistic adoption mechanisms that build on existing partial practices.
 **Coverage:** Single subtype — Standard.
 

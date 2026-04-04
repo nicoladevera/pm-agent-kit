@@ -1,7 +1,7 @@
 # Evaluation Rubric — user-feedback (B2B SaaS: Project Management Tool)
 
 **Target input:** `evals/user-feedback/sample-input-02.md`
-**Skill under test:** `skills/user-feedback/SKILL.md`
+**Skill under test:** `.claude/skills/user-feedback/SKILL.md`
 **Purpose:** Determine whether `user-feedback` correctly clusters feedback by underlying need, distinguishes the search/filter functional failure from cosmetic complaints, avoids manufacturing themes from positive feedback, and notes the competitive mention in context.
 
 **Coverage:** Single mode — full skill coverage.

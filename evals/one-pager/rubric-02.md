@@ -1,7 +1,7 @@
 # Evaluation Rubric — one-pager (Compression: API Integration Business Case)
 
 **Target input:** `evals/one-pager/sample-input-02.md`
-**Skill under test:** `skills/one-pager/SKILL.md`
+**Skill under test:** `.claude/skills/one-pager/SKILL.md`
 **Purpose:** Determine whether `one-pager` correctly compresses a full business case into a single page, recalibrates from an internal decision-making audience to a cross-functional partnership audience, preserves the core argument without distortion, applies the Feedback ask type correctly, and maintains the one-page constraint under compression pressure.
 **Coverage:** Compression workflow. Tests information triage, audience recalibration, compression fidelity, Feedback ask type handling, and one-page constraint enforcement when source material is long.
 

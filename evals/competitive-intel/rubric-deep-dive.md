@@ -1,7 +1,7 @@
 # Evaluation Rubric — competitive-intel (Deep Dive Mode)
 
 **Target input:** `evals/competitive-intel/sample-input-02.md`
-**Skill under test:** `skills/competitive-intel/SKILL.md`
+**Skill under test:** `.claude/skills/competitive-intel/SKILL.md`
 **Purpose:** Determine whether `competitive-intel` Deep Dive mode goes beyond feature enumeration to philosophy and trade-off analysis, connects competitive insights to a specific product decision, and properly distinguishes observed facts from inferences.
 
 ## Coverage
