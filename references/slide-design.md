@@ -211,6 +211,104 @@ Override only if `company/interfaces/branding.md` explicitly specifies 4:3. Do n
 
 ---
 
+## HTML/CSS Rendering
+
+When generating self-contained HTML presentations, map the same design principles (hierarchy, layout, density, typography, color) to CSS. The goal is visual parity with the pptx output — same spatial relationships, same hierarchy, same brand application — rendered in HTML/CSS instead of python-pptx.
+
+### Slide Container and Dimensions
+
+Preserve the 16:9 aspect ratio in the browser viewport:
+
+```css
+.slide {
+  width: 100vw;
+  max-width: 1200px;       /* prevents excessive width on ultrawide monitors */
+  aspect-ratio: 16 / 9;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+  padding: var(--slide-padding, 5% 6%);
+}
+```
+
+Each slide is a `<section class="slide">`. Slides stack vertically in the document flow. CSS `scroll-snap-type: y mandatory` on the parent container and `scroll-snap-align: start` on each `.slide` enables slide-by-slide scrolling.
+
+### Print / PDF Stylesheet
+
+For PDF conversion (step 13c) and browser print:
+
+```css
+@media print {
+  @page {
+    size: 13.333in 7.5in;   /* matches pptx 16:9 dimensions */
+    margin: 0;
+  }
+  .slide {
+    width: 100%;
+    height: 100vh;
+    page-break-after: always;
+    break-after: page;
+    aspect-ratio: auto;      /* let @page size govern */
+  }
+  .speaker-notes { display: none; }
+  .slide-nav { display: none; }
+}
+```
+
+### Layout Pattern CSS Mapping
+
+Map each layout pattern from the Layout Composition section to CSS Grid or Flexbox:
+
+| Pattern | CSS Implementation |
+|---------|-------------------|
+| **Full-width content** | Single-column CSS Grid: `grid-template-rows: auto 1fr auto`. Headline top, content middle, source bottom. |
+| **Split layout (40/60)** | CSS Grid: `grid-template-columns: 2fr 3fr` with `gap: 4%`. Text in left column, visual in right. |
+| **Hero number** | Flexbox column, `align-items: center; justify-content: center`. Number in a `.hero-value` element with large font-size. |
+| **Full-bleed image** | Background image via `background-image` with `background-size: cover`. Dark overlay via `::before` pseudo-element with `background: rgba(0,0,0,0.6)`. Text positioned via Flexbox. |
+| **Multi-column comparison** | CSS Grid: `grid-template-columns: repeat(N, 1fr)` where N is 2-3. Equal-width columns with consistent internal structure. |
+| **Quote / Pullout** | Flexbox column, centered. Quote text at 1.75-2.25rem, attribution below at 1.125-1.5rem. Generous padding. |
+| **Metrics row** | CSS Grid: `grid-template-columns: repeat(N, 1fr)` where N is 3-4. Each metric in a flex-column cell with number and label. |
+| **Timeline / Sequence** | Flexbox row with connecting `::after` pseudo-element lines between nodes. 3-5 nodes, each a flex-column with icon/step and label. |
+
+### Typography: pt to CSS Mapping
+
+Map the point-size tier system to CSS units. Use `rem` for consistency, with the slide container's font-size as the scaling base (1rem = 16px):
+
+| Element | pt range | CSS size | Class |
+|---------|----------|----------|-------|
+| Title (title slide) | 36-60pt | 2.25-3.75rem | `.tier-title` |
+| Headline (content) | 28-44pt | 1.75-2.75rem | `.tier-headline` |
+| Key insight / number | 40-48pt | 2.5-3rem | `.tier-key-insight` |
+| Body text | 24-32pt | 1.5-2rem | `.tier-supporting` |
+| Caption / source | 14-18pt | 0.875-1.125rem | `.tier-caption` |
+
+### Inline SVG Chart Standards
+
+All charts are inline SVG within the HTML. No external JavaScript charting libraries.
+
+**General SVG rules:**
+- Use `viewBox` for responsive scaling — no fixed `width`/`height` on the `<svg>` element. Let the CSS container size the chart.
+- Apply brand colors via CSS custom properties: `fill: var(--brand-primary)`, `stroke: var(--brand-secondary)`.
+- Text labels inside SVG use `<text>` elements with `font-family` matching the brand body font.
+- Minimum font-size in SVG: 12px (equivalent to the 14pt floor, scaled for SVG coordinate space).
+
+**Chart type specifics:**
+
+| Chart type | SVG approach |
+|-----------|--------------|
+| **Horizontal bar chart** | `<rect>` elements for bars, `<text>` for labels and values. Sort by value descending. Focal bar uses `var(--brand-accent)`, others use `var(--color-neutral)`. |
+| **Line chart** | `<polyline>` or `<path>` for the data line, `<circle>` for data points, `<text>` for axis labels. Annotate the key inflection point. |
+| **Donut chart** | `<circle>` elements with `stroke-dasharray` and `stroke-dashoffset` to create segments. Center label via `<text>`. Maximum 5 segments. |
+| **Metrics row** | Not SVG — rendered as HTML elements with CSS Grid. Numbers in `.hero-value` spans with functional color for trend indicators. |
+| **Hero number** | Not SVG — rendered as an HTML element with large CSS font-size in `.tier-key-insight` or `.tier-title` class. |
+
+### CSS Custom Properties for Theming
+
+Define all brand values as CSS custom properties in `:root`. See `references/branding-guidelines.md` HTML Implementation Guidance for the full property list and defaults. The slide-design rendering layer consumes these properties — it does not define them.
+
+---
+
 ## Cross-Platform Compatibility (PowerPoint and Google Slides)
 
 Generated `.pptx` files must render correctly in both PowerPoint and Google Slides. These four rules prevent the most common cross-platform failures. Apply all four on every Slides mode generation.

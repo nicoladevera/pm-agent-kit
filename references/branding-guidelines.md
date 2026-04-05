@@ -117,6 +117,104 @@ When generating `.pptx` files with `python-pptx`, apply branding consistently:
 - Respect clear space rules — the logo should have padding equal to at least its height on all sides.
 - Never stretch or distort the logo. Maintain aspect ratio.
 
+### HTML Implementation Guidance
+
+When generating self-contained HTML presentation files, apply branding through CSS custom properties. This ensures the same brand identity from `company/interfaces/branding.md` renders consistently in HTML as it does in pptx.
+
+#### CSS Custom Properties
+
+Define all brand values in `:root` so they cascade to every slide element:
+
+```css
+:root {
+  /* Colors */
+  --brand-primary: #2D3142;       /* charcoal-navy — headlines, primary backgrounds */
+  --brand-secondary: #4F5D75;     /* slate blue-gray — section dividers, secondary elements */
+  --brand-accent: #E07A5F;        /* terracotta — emphasis, callouts, focal data points */
+  --brand-background: #FAFAF8;    /* warm off-white — slide backgrounds */
+  --brand-text: #2D3142;          /* matches primary — body text */
+  --brand-text-light: #FFFFFF;    /* white — text on dark backgrounds */
+
+  /* Functional colors */
+  --color-positive: #4A7C59;      /* green — growth, success, targets met */
+  --color-negative: #C1442E;      /* red — decline, risk, targets missed */
+  --color-caution: #D4A843;       /* amber — approaching threshold, watch */
+  --color-neutral: #9A9BA3;       /* gray — baseline, non-focal elements */
+
+  /* Typography */
+  --font-heading: 'Georgia', serif;
+  --font-body: 'Helvetica Neue', 'Arial', sans-serif;
+  --font-weight-heading: 700;
+  --font-weight-body: 400;
+
+  /* Spacing */
+  --slide-padding: 5% 6%;
+  --element-gap: 1.5rem;
+}
+```
+
+These are the **default values** (matching the defaults in the "When Brand Values Are Missing" table above). When `company/interfaces/branding.md` provides actual brand values, substitute them into the custom properties at generation time. The CSS structure stays the same — only the values change.
+
+#### Font Application
+
+```css
+.slide h1, .slide h2, .slide .tier-headline {
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-heading);
+  color: var(--brand-primary);
+}
+
+.slide p, .slide li, .slide .tier-supporting {
+  font-family: var(--font-body);
+  font-weight: var(--font-weight-body);
+  color: var(--brand-text);
+}
+
+.slide .tier-caption {
+  font-family: var(--font-body);
+  color: var(--brand-secondary);
+}
+```
+
+If the brand specifies a web font that may not be installed locally, include an `@font-face` declaration with the font file base64-encoded inline in the CSS. The HTML file must remain fully self-contained — no external font URLs. If the font cannot be embedded (file too large or unavailable), fall back to the closest system font and note the substitution in the context note.
+
+#### Color Application by Slide Type
+
+Apply the same slide type branding treatments defined in the "Slide Types and Branding Treatment" section above, mapped to CSS:
+
+| Slide type | CSS treatment |
+|-----------|---------------|
+| **Title slide** | `background: var(--brand-primary)` or accent bar via `border-top: 6px solid var(--brand-primary)`. Headline in `var(--brand-text-light)` if dark background, `var(--brand-primary)` if light. |
+| **Section divider** | `background: var(--brand-secondary)`. Title text in `var(--brand-text-light)`. |
+| **Content slide** | `background: var(--brand-background)`. Headline in `var(--brand-primary)`. Body in `var(--brand-text)`. |
+| **Data slide** | Charts use `var(--brand-primary)`, `var(--brand-secondary)`, `var(--brand-accent)` for data series. Axis labels in `var(--brand-text)`. |
+| **Hero number** | Number in `var(--brand-primary)` or `var(--brand-accent)`. Context line in `var(--brand-text)`. |
+| **Quote/Callout** | Quote mark or highlight bar in `var(--brand-accent)`. Quote text in `var(--brand-text)`. Attribution in `var(--brand-secondary)`. |
+| **Closing/Ask** | Can use `background: var(--brand-primary)` with `color: var(--brand-text-light)` for emphasis. |
+| **Metrics row** | Numbers in `var(--brand-primary)`. Trend indicators use `var(--color-positive)`, `var(--color-negative)`, `var(--color-caution)`. |
+
+#### Logo Placement
+
+If a logo file path is provided in `company/interfaces/branding.md`, embed it as an inline `<img>` with a base64-encoded `src` (or inline SVG if the logo is SVG format). Position via CSS:
+
+```css
+.slide-logo {
+  position: absolute;
+  top: 4%;
+  right: 4%;
+  height: 2rem;
+  width: auto;            /* maintain aspect ratio */
+}
+```
+
+Place the logo on every slide except the title slide (consistent with pptx guidance). Respect clear space by ensuring no other elements overlap the logo area.
+
+#### Contrast and Accessibility
+
+- All text-on-background combinations must meet WCAG AA contrast (4.5:1 for body, 3:1 for large text) — same standard as pptx.
+- Use `aria-label` on SVG chart elements for basic accessibility.
+- Use semantic HTML: `<section>` for slides, `<h2>` for headlines, `<p>` for body text, `<figure>` for charts.
+
 ---
 
 ## Visual Consistency Standards
