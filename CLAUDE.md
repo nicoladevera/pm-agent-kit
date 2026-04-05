@@ -156,7 +156,7 @@ knowledge/           Accumulated PM work product. Artifacts produced by skills, 
   data-analyses/     Data analysis reports produced by data-analysis
   competition/       Competitive snapshots and deep dives produced by competitive-intel
   business-cases/    Business cases produced by business-case
-  presentations/     Presentation narratives and .pptx files produced by presentation-deck
+  presentations/     Presentation narratives and presentation files (.html, .pdf, .pptx) produced by presentation-deck
   discovery-plans/   Discovery plans produced by discovery-plan
   roadmaps/          Prioritization rationales produced by roadmap-prioritization
   memos/             Alignment memos produced by alignment-memo

@@ -46,7 +46,8 @@ pm-agent-kit/
 ### Prerequisites
 
 - [Claude Code](https://docs.anthropic.com/en/docs/claude-code) installed
-- `python-pptx` Python package (only needed for `presentation-deck` Slides mode: `pip install python-pptx`)
+- `python-pptx` Python package (only needed for `presentation-deck` Slides mode PPTX output: `pip install python-pptx`)
+- `playwright` or `weasyprint` Python package (only needed for `presentation-deck` Slides mode PDF output: `pip install playwright` or `pip install weasyprint`)
 - `matplotlib` Python package (needed for `data-analysis` chart generation: `pip install matplotlib`)
 
 ### Setup
@@ -99,15 +100,22 @@ Both invocation methods work within this repo checkout.
 
 ### Slides Mode
 
-Slides mode is a runtime workflow, not a shipped renderer. When invoked to generate slides, the skill uses `python-pptx` plus `references/branding-guidelines.md` and `company/interfaces/branding.md` (when substantive) to produce a `.pptx` saved to `knowledge/presentations/`.
+Slides mode is a runtime workflow, not a shipped renderer. When invoked to generate slides, the skill produces a presentation file in the requested format (HTML, PDF, or PPTX) using `references/branding-guidelines.md` and `company/interfaces/branding.md` (when substantive), saved to `knowledge/presentations/`.
 
-Install the dependency if needed:
+**Output formats:**
+- **HTML** (default) — Self-contained `.html` file with embedded CSS and inline SVG charts. No dependencies required.
+- **PDF** — Generated from HTML via `playwright` (preferred) or `weasyprint`. Install one of these dependencies if PDF output is needed:
+  ```bash
+  python3 -m pip install playwright
+  # or
+  python3 -m pip install weasyprint
+  ```
+- **PPTX** — Generated using `python-pptx`. Install if PowerPoint/Google Slides output is needed:
+  ```bash
+  python3 -m pip install python-pptx
+  ```
 
-```bash
-python3 -m pip install python-pptx
-```
-
-If company branding is missing or still stub-level, the skill should fall back to the clean defaults documented in `references/branding-guidelines.md` and note that in the context note.
+If company branding is missing or still stub-level, the skill falls back to the clean defaults documented in `references/branding-guidelines.md` and notes that in the context note.
 
 ### Setting Up Company Context
 

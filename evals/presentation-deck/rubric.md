@@ -7,7 +7,7 @@
 ## Coverage
 
 **This rubric tests:** Narrative mode — markdown slide-by-slide structure with headlines, speaker notes, and visual guidance.
-**Not covered here:** Slides mode (.pptx generation via python-pptx) — deferred pending environment dependency.
+**Slides mode coverage:** Slides mode supports three output formats (HTML default, PDF, PPTX) — scoring criteria focus on narrative and content quality, which are format-agnostic.
 
 ---
 

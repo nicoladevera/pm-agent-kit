@@ -4,7 +4,7 @@
 **Skill under test:** `.claude/skills/presentation-deck/SKILL.md`
 **Purpose:** Determine whether `presentation-deck` correctly calibrates for a data-first VP audience, leads with the recommendation (not a data walkthrough), surfaces the conversion drop prominently despite the PM's instinct to lead with engagement wins, and structures a coherent SCR arc that names the tension between metrics as the complication.
 
-**Coverage:** Narrative mode tested. Slides mode (.pptx generation) not covered.
+**Coverage:** Narrative mode tested. Slides mode supports three output formats (HTML default, PDF, PPTX) — scoring criteria focus on narrative and content quality, which are format-agnostic.
 
 ---
 
