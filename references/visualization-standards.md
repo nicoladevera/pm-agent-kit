@@ -197,10 +197,9 @@ plt.close()
 `bbox_inches='tight'` prevents labels and titles from being clipped. `dpi=150` produces crisp PNGs at reasonable file size. Always call `plt.close()` immediately after saving — open figure state accumulates and causes rendering issues.
 
 **File naming:**
-- Primary chart: `YYYY-MM-DD-analysis-slug-chart.png`
-- Additional charts: `YYYY-MM-DD-analysis-slug-chart_2.png`, `_3.png`, etc.
-- Use the same date and slug as the corresponding `.md` artifact
-- Save to `knowledge/data-analyses/` alongside the markdown file
+- For `data-analysis` run folders, save the primary chart as `chart.png`
+- Additional charts: `chart_2.png`, `chart_3.png`, etc.
+- Save charts inside the analysis run folder under `knowledge/data-analyses/YYYY-MM-DD-analysis-slug/`
 
 **Figure size:**
 - Default: `figsize=(10, 6)` for landscape charts (bar charts, line charts, scatter plots)

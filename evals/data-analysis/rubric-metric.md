@@ -98,14 +98,34 @@ A board-ready framing:
 
 ---
 
+## Reproducibility and Verification
+
+This is a numeric analysis, so the output should only count as complete if it produces a verified replay bundle under `knowledge/data-analyses/YYYY-MM-DD-analysis-slug/`.
+
+Required artifacts:
+- `report.md`
+- `analysis.py`
+- `calc-log.jsonl`
+- `manifest.yaml`
+- `verification.json`
+- chart files at the run-folder top level
+- regenerated replay outputs under `replay/`
+
+The report should cite key ratio-decomposition calculations with `[calc:...]`, and `verification.json` should show `status: Passed`.
+
+**Pass:** Bundle artifacts exist, important calculations are calc-cited, and replay verification passed. **Fail:** Missing reproducibility artifacts, missing calc citations, or verification did not pass.
+
+---
+
 ## Scoring
 
 | Dimension | Weight | Pass Criteria |
 |-----------|--------|---------------|
 | Analysis type classification (metric interpretation) | 5% | Classified as metric interpretation, not anomaly investigation |
 | Ratio decomposition (WAU vs. DAU separated) | 25% | WAU and DAU analyzed separately; primary insight named ("mix effect, not engagement collapse") |
-| Promotion identified as primary structural driver | 20% | Week 5 WAU spike connected to promotion; mix effect explained |
-| Push notification as contributing factor, not primary cause | 20% | Named as contributing factor; distinguished from promotion story; causal hedge applied |
+| Promotion identified as primary structural driver | 15% | Week 5 WAU spike connected to promotion; mix effect explained |
+| Push notification as contributing factor, not primary cause | 15% | Named as contributing factor; distinguished from promotion story; causal hedge applied |
 | Confidence calibrated with named confounders | 15% | Medium confidence stated; both events named as confounders; investigation path specified |
 | Board-ready framing provided | 10% | Explicit narrative the PM can take to the board, with defensible framing |
-| Output format compliance | 5% | Matches declared output format; Agent Block populated; context note present; Visualizations section present with PNG filename(s) and insight-first captions |
+| Reproducibility and replay verification | 10% | Run folder includes required bundle artifacts and `verification.json` shows `Passed` |
+| Output format compliance | 5% | Matches declared output format; Agent Block populated; context note present; Visualizations section present with run-folder chart paths, calc citations, and reproducibility section |

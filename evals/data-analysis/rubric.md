@@ -104,15 +104,33 @@ The analysis should recommend actionable next steps:
 
 ---
 
+## Reproducibility and Verification
+
+Numeric `data-analysis` runs are incomplete unless they produce a verified replay bundle. For this case, the output should be saved under a run folder in `knowledge/data-analyses/` and include:
+- `report.md`
+- `analysis.py`
+- `calc-log.jsonl`
+- `manifest.yaml`
+- `verification.json`
+- at least one chart file
+- `replay/` with regenerated chart and derived outputs
+
+The report should cite key numeric claims with `[calc:...]` references, and `verification.json` should show `status: Passed`.
+
+**Pass:** The run folder exists, required reproducibility artifacts are present, key numeric claims are calc-cited, and replay verification passed. **Fail:** Flat-file output only; missing code, manifest, calc log, or verification artifact; or verification status is not `Passed`.
+
+---
+
 ## Scoring
 
 | Dimension | Weight | Pass Criteria |
 |-----------|--------|---------------|
-| Mobile web identified as outlier | 20% | Platform segmentation performed; mobile web's 12.4pp drop highlighted |
-| Step 5 identified as critical funnel point | 15% | Step 5's 6.9pp drop identified as the biggest deterioration |
-| Deploy ranked as most likely cause | 15% | v2.4.1 deploy connected to steps 4-5 redesign and mobile web concentration |
-| Marketing campaign debunked | 15% | Reasoning explains why the campaign ending doesn't explain the data |
+| Mobile web identified as outlier | 17% | Platform segmentation performed; mobile web's 12.4pp drop highlighted |
+| Step 5 identified as critical funnel point | 13% | Step 5's 6.9pp drop identified as the biggest deterioration |
+| Deploy ranked as most likely cause | 13% | v2.4.1 deploy connected to steps 4-5 redesign and mobile web concentration |
+| Marketing campaign debunked | 12% | Reasoning explains why the campaign ending doesn't explain the data |
 | Confidence appropriately calibrated | 10% | Medium-to-high, with caveats about single week of data |
 | Limitations stated | 10% | At least 2-3 meaningful limitations named |
 | Next steps are actionable | 10% | Specific investigations recommended (not generic "look into it") |
-| Output format compliance | 5% | Matches declared format; context note present; Visualizations section present with PNG filename(s) and insight-first captions |
+| Reproducibility and replay verification | 10% | Run folder includes required bundle artifacts and `verification.json` shows `Passed` |
+| Output format compliance | 5% | Matches declared format; context note present; Visualizations section present with run-folder chart paths, calc citations, and reproducibility section |

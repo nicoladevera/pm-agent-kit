@@ -153,7 +153,7 @@ knowledge/           Accumulated PM work product. Artifacts produced by skills, 
   retros/            Retro syntheses produced by retro-synthesis
   launch-checklists/ Launch checklists produced by launch-checklist
   user-feedback/     Feedback syntheses produced by user-feedback
-  data-analyses/     Data analysis reports produced by data-analysis
+  data-analyses/     Verified data analysis run folders produced by data-analysis
   competition/       Competitive snapshots and deep dives produced by competitive-intel
   business-cases/    Business cases produced by business-case
   presentations/     Presentation narratives and presentation files (.html, .pdf, .pptx) produced by presentation-deck

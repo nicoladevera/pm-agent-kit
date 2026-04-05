@@ -86,14 +86,34 @@ The three cohorts have substantially different sample sizes: paid social (n=3,20
 
 ---
 
+## Reproducibility and Verification
+
+This is a numeric cohort analysis, so the output should only count as complete if it produces a verified replay bundle under `knowledge/data-analyses/YYYY-MM-DD-analysis-slug/`.
+
+Required artifacts:
+- `report.md`
+- `analysis.py`
+- `calc-log.jsonl`
+- `manifest.yaml`
+- `verification.json`
+- chart files at the run-folder top level
+- regenerated replay outputs under `replay/`
+
+The report should cite key cohort-retention and LTV calculations with `[calc:...]`, and `verification.json` should show `status: Passed`.
+
+**Pass:** Bundle artifacts exist, important calculations are calc-cited, and replay verification passed. **Fail:** Missing reproducibility artifacts, missing calc citations, or verification did not pass.
+
+---
+
 ## Scoring
 
 | Dimension | Weight | Pass Criteria |
 |-----------|--------|---------------|
 | Analysis type classification (cohort analysis) | 5% | Classified as cohort analysis, not funnel or metric interpretation |
 | Retention curve inversion identified and named | 25% | Inversion stated with specific numbers; optimization misalignment named |
-| LTV calculation performed per cohort | 20% | Jobs × order value calculated for all 3 cohorts; gap quantified |
-| Analysis connected to CAC allocation decision | 20% | Directional recommendation on referral, paid social optimization, and organic |
+| LTV calculation performed per cohort | 15% | Jobs × order value calculated for all 3 cohorts; gap quantified |
+| Analysis connected to CAC allocation decision | 15% | Directional recommendation on referral, paid social optimization, and organic |
 | Service type confounder named | 15% | Mix effect hypothesis stated; investigation path specified |
 | Confidence calibrated to sample size differences | 10% | Paid social high confidence; referral directional with caveat; recommendation still given |
-| Output format compliance | 5% | Matches declared output format; Agent Block populated; context note present; Visualizations section present with PNG filename(s) and insight-first captions |
+| Reproducibility and replay verification | 10% | Run folder includes required bundle artifacts and `verification.json` shows `Passed` |
+| Output format compliance | 5% | Matches declared output format; Agent Block populated; context note present; Visualizations section present with run-folder chart paths, calc citations, and reproducibility section |

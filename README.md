@@ -172,7 +172,7 @@ All 18 skills across Tiers 1-4 are built. Tier 4 skills integrate structured str
 | `launch-checklist` | Generator | Generate a launch checklist calibrated to launch type (internal/alpha/beta/GA), covering all readiness dimensions |
 | `user-feedback` | Analyzer | Cluster and summarize customer feedback into themes with frequency, severity, and representative quotes |
 | `competitive-intel` | Analyzer | Monitor the competitive landscape or deep-dive on a specific competitor's approach to a specific problem |
-| `data-analysis` | Analyzer | Answer a data question in product context — metric interpretation, funnel analysis, anomaly investigation; produces PNG charts alongside the markdown artifact |
+| `data-analysis` | Analyzer | Answer a data question in product context — metric interpretation, funnel analysis, anomaly investigation; produces a verified run folder with report, charts, replayable code, and reproducibility artifacts |
 | `business-case` | Generator | Build the argument for or against an initiative: problem, impact sizing, cost, risks, alternatives considered. Includes structured stress test: premortem, blindspot check, conviction assessment. |
 | `presentation-deck` | Generator | Draft a structured narrative or generate a branded presentation file (`.html`, `.pdf`, or `.pptx`) for a specific audience — exec review, QBR, board update, new stakeholder onboarding |
 | `discovery-plan` | Generator | Plan what to learn before committing: map assumptions, rank by cost of being wrong, select research methods, define evidence thresholds, sequence the research |

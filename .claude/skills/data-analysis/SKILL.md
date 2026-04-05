@@ -18,6 +18,8 @@ metadata:
 
 Answer a data question in product context. The skill's job is to turn a product question and data into an insight — not to restate numbers, but to interpret what they mean and what to do about them. The analysis type adapts to the question: metric interpretation, funnel analysis, cohort comparison, or anomaly investigation.
 
+For numeric analyses, the output is not final until it has been bundled and replay-verified. This skill now requires a reproducibility bundle (inputs, derived tables, calculation log, saved code, charts, manifest) and a replay pass using `.claude/skills/data-analysis/run_analysis.py`.
+
 ---
 
 ## What It Accepts
@@ -120,6 +122,8 @@ If only a question is provided without data, describe:
 
 **When numeric data is provided, run calculations programmatically.** Do not estimate arithmetic. For funnel math, growth rate deltas, percentage changes, cohort comparisons, and statistical computations — execute the calculation in code (Python) and show the result. Estimation introduces exactly the false precision that Smell 5 flags. If the data is too messy to compute directly, name what's wrong with it before approximating.
 
+Every calculation that supports a key numeric claim must be logged with a stable `calc_id`. In the markdown report, cite the supporting calculation inline using the format `[calc:your-calc-id]`. Numeric analyses without calc citations are incomplete.
+
 Run the analysis appropriate to the type. Follow the standards in `references/data-interpretation.md`:
 
 **For metric interpretation:**
@@ -165,6 +169,47 @@ Load and apply `references/visualization-standards.md` for all chart decisions: 
 
 Save pattern and naming convention: see `references/visualization-standards.md`.
 
+### 6.6. Prepare the reproducibility bundle
+
+For every numeric analysis, save the computational basis alongside the prose:
+- `report.md` — the human-readable report
+- `analysis.py` — the exact replayable code used to generate calculations, derived tables, and charts
+- `inputs/` — copies of every raw input file or normalized inline-input dump
+- `derived/` — every transformed table used in the analysis
+- `calc-log.jsonl` — one JSON object per calculation with `calc_id`, `label`, `formula`, `inputs`, `result`, `units`, `source_artifacts`, and `derived_artifacts`
+- `manifest.yaml` — run metadata, file inventory, dependencies, rerun command, and verification status
+
+`analysis.py` must support this replay interface:
+- `--input-dir`
+- `--derived-dir`
+- `--chart-dir`
+- `--calc-log`
+
+The same values are also passed via environment variables during verification:
+- `PM_AGENT_INPUT_DIR`
+- `PM_AGENT_DERIVED_DIR`
+- `PM_AGENT_CHART_DIR`
+- `PM_AGENT_CALC_LOG`
+
+### 6.7. Finalize with replay verification
+
+For numeric analyses, do not treat the work as final until replay verification passes.
+
+Use `.claude/skills/data-analysis/run_analysis.py`:
+
+1. Create a JSON spec describing the report markdown, analysis code, raw inputs, derived tables, chart files, calc log, date, slug, question, and analysis type.
+2. Run:
+   `python3 .claude/skills/data-analysis/run_analysis.py finalize --spec /path/to/spec.json`
+3. Confirm that:
+   - `verification.json` exists
+   - `manifest.yaml` has `verification_status: Passed`
+   - replay outputs were written under `replay/`
+
+If replay verification fails:
+- Do not present the analysis as finalized
+- Surface the failure reason
+- Keep the bundle for debugging, but mark it unverified
+
 ### 7. Run the smell test
 
 Check for:
@@ -201,6 +246,15 @@ Populate the Agent Block:
 - `top_hypothesis`: the row number of the Rank 1 hypothesis
 - `recommended_action`: one of Pull more data / Run experiment / Act on finding / Monitor — the primary next step from step 9
 - `sample_size_adequate`: Yes if sample size was assessed as sufficient in step 5; No if a size constraint was identified; Unknown if size wasn't determinable
+- `run_dir`: the run folder under `knowledge/data-analyses/`
+- `report`: workspace-relative path to `report.md`
+- `code_artifact`: workspace-relative path to `analysis.py`
+- `calc_log_artifact`: workspace-relative path to `calc-log.jsonl`
+- `source_artifacts`: workspace-relative paths to files in `inputs/`
+- `derived_artifacts`: workspace-relative paths to files in `derived/`
+- `manifest_artifact`: workspace-relative path to `manifest.yaml`
+- `verification_artifact`: workspace-relative path to `verification.json`
+- `verification_status`: `Passed` / `Failed` / `Not Required`
 
 ---
 
@@ -221,8 +275,19 @@ agent_block:
   top_hypothesis: [integer — rank 1 hypothesis number]
   recommended_action: [Pull more data / Run experiment / Act on finding / Monitor]
   sample_size_adequate: [Yes / No / Unknown]
+  run_dir: knowledge/data-analyses/YYYY-MM-DD-analysis-slug
+  report: knowledge/data-analyses/YYYY-MM-DD-analysis-slug/report.md
+  code_artifact: knowledge/data-analyses/YYYY-MM-DD-analysis-slug/analysis.py
+  calc_log_artifact: knowledge/data-analyses/YYYY-MM-DD-analysis-slug/calc-log.jsonl
+  source_artifacts:
+    - knowledge/data-analyses/YYYY-MM-DD-analysis-slug/inputs/source_01.csv
+  derived_artifacts:
+    - knowledge/data-analyses/YYYY-MM-DD-analysis-slug/derived/table_01.csv
+  manifest_artifact: knowledge/data-analyses/YYYY-MM-DD-analysis-slug/manifest.yaml
+  verification_artifact: knowledge/data-analyses/YYYY-MM-DD-analysis-slug/verification.json
+  verification_status: [Passed / Failed / Not Required]
   charts:
-    - knowledge/data-analyses/YYYY-MM-DD-slug-chart.png
+    - knowledge/data-analyses/YYYY-MM-DD-analysis-slug/chart.png
 ```
 <!-- /AGENT BLOCK -->
 
@@ -236,7 +301,7 @@ agent_block:
 
 ### Key Finding
 
-**Finding:** [1-2 sentences. The answer, stated directly.]
+**Finding:** [1-2 sentences. The answer, stated directly. Cite key numeric claims with `[calc:calc_id]`.]
 **Confidence:** [High / Medium / Low] — [One sentence on what drives this confidence level — sample size, data quality, or evidence strength]
 **Top Hypothesis:** Hypothesis #[N] — [brief label from the Hypotheses table below]
 **Recommended Action:** [Pull more data / Run experiment / Act on finding / Monitor]
@@ -258,10 +323,10 @@ Show the work. Include tables, calculations, and comparisons as appropriate.]
 
 ### Visualizations
 
-![Insight-first title stating the key finding](./YYYY-MM-DD-slug-chart.png)
+![Insight-first title stating the key finding](./chart.png)
 *Chart 1: [One sentence — what the chart shows and what the reader should conclude. Cite the reference line or comparison anchor used.]*
 
-![Second insight-first title](./YYYY-MM-DD-slug-chart_2.png)
+![Second insight-first title](./chart_2.png)
 *Chart 2: [Caption.] — Omit this entry if only one chart was produced.*
 
 ---
@@ -289,6 +354,15 @@ Show the work. Include tables, calculations, and comparisons as appropriate.]
 
 ---
 
+### Reproducibility
+
+- **Verification:** [Passed / Failed / Not Required]
+- **Runner command:** `python3 .claude/skills/data-analysis/run_analysis.py verify --run-dir knowledge/data-analyses/YYYY-MM-DD-analysis-slug`
+- **Important calc IDs:** [List the critical `calc_id`s cited in the report]
+- **Bundle contents:** `report.md`, `analysis.py`, `inputs/`, `derived/`, `calc-log.jsonl`, `manifest.yaml`, `verification.json`, charts, and `replay/`
+
+---
+
 ### Smell Test
 
 - **Smell 2 (No Way to Measure):** [Can the available data actually answer the question? Finding or "Clear — data is sufficient for the question asked"]
@@ -308,13 +382,26 @@ Show the work. Include tables, calculations, and comparisons as appropriate.]
 - **Is confidence calibrated to the data?** High confidence requires strong data. Medium confidence is stated when caveats exist. Low confidence is used when the data is thin. The PM knows how much to trust the finding.
 - **Would a data-literate PM trust this analysis?** The reasoning is visible, the math is sound, confounders are addressed, and the conclusion follows from the evidence.
 - **Does every chart title state the insight?** A chart titled "Metric by Segment" has failed. The title makes the finding obvious before a single data point is read.
+- **Could another agent replay this analysis without guessing?** The run folder includes the saved code, raw inputs, derived tables, calc log, and verification result. Numeric analyses are not final unless replay passes.
 
 ---
 
 ## Save
 
-After producing the artifact, write it to `knowledge/data-analyses/` using the naming convention: `YYYY-MM-DD-analysis-slug.md`, where `YYYY-MM-DD` is today's date and `analysis-slug` is a lowercase hyphenated slug derived from the question or topic.
+Create a run folder in `knowledge/data-analyses/` using the naming convention: `YYYY-MM-DD-analysis-slug/`, where `YYYY-MM-DD` is today's date and `analysis-slug` is a lowercase hyphenated slug derived from the question or topic.
 
-Save each PNG to the same directory: `knowledge/data-analyses/`. Naming: `YYYY-MM-DD-analysis-slug-chart.png`. Append `_2`, `_3` for additional charts from the same analysis.
+Inside that folder, save:
+- `report.md`
+- `analysis.py`
+- `calc-log.jsonl`
+- `manifest.yaml`
+- `verification.json`
+- `inputs/`
+- `derived/`
+- `replay/`
+- `chart.png` and `chart_2.png` / `chart_3.png` when additional charts exist
 
-Report all saved file paths (both `.md` and `.png` files) in the conversation.
+For numeric analyses, finalize the run with:
+`python3 .claude/skills/data-analysis/run_analysis.py finalize --spec /path/to/spec.json`
+
+Report the run directory, verification status, and all saved artifact paths in the conversation.
