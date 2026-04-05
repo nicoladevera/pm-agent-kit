@@ -152,6 +152,8 @@ When numeric data is provided, always produce 1–3 charts as PNG files. The cha
 
 Load and apply `references/visualization-standards.md` for all chart decisions: type selection, titling, annotation, comparison anchors, label placement, color, and save pattern.
 
+**Before writing any chart code:** Identify which narrative role each chart will play — Context (establish the baseline or landscape), Tension (reveal the finding), Resolution (explain why or what to do). State each role in a code comment at the top of that chart's block. The order of charts in the Visualizations section must follow Context → Tension → Resolution.
+
 **Chart type by analysis type:**
 
 | Analysis type | Primary chart | Secondary (if a second finding warrants it) |
