@@ -196,6 +196,64 @@ The strongest slides pair three elements: **statistic + visual + narrative headl
 
 ---
 
+## Technical Standards
+
+### Slide Dimensions
+
+Default to **16:9** — set before adding any slides:
+
+```python
+prs.slide_width  = Inches(13.333)
+prs.slide_height = Inches(7.5)
+```
+
+Override only if `company/interfaces/branding.md` explicitly specifies 4:3. Do not rely on the python-pptx default (it is 4:3 and will produce a narrow deck that looks wrong on any modern display or projector).
+
+---
+
+## Cross-Platform Compatibility (PowerPoint and Google Slides)
+
+Generated `.pptx` files must render correctly in both PowerPoint and Google Slides. These four rules prevent the most common cross-platform failures. Apply all four on every Slides mode generation.
+
+### Rule 1 — No soft line breaks inside strings
+
+**Avoid:** embedding `\n` in a string passed to a textbox paragraph.
+
+**Use instead:** a separate `tf.add_paragraph()` call for each line.
+
+**Why:** In python-pptx, `\n` inside a string creates a soft break XML element (`<a:br>`). Google Slides applies the paragraph's `line_spacing` value across soft breaks the same as across paragraph boundaries — producing gaps 2–3× the intended height. Separate paragraphs render consistently across both platforms.
+
+### Rule 2 — Use proportional line spacing, not absolute
+
+**Avoid:** `paragraph.line_spacing = Pt(X)` (absolute point value)
+
+**Use instead:** `paragraph.line_spacing = 1.15` (unitless float = proportional multiple of font size)
+
+**Why:** Absolute spacing is calculated against the local font metrics at render time. When Google Slides substitutes a font with slightly different metrics, the absolute value becomes wrong. A proportional float scales with whatever font is active, producing consistent visual rhythm on both platforms.
+
+### Rule 3 — Add height buffer to all textboxes
+
+**Avoid:** sizing a textbox height to exactly fit the expected text.
+
+**Use instead:** add 20–30% extra height. If text is expected to need ~1 inch, set the textbox to 1.3 inches.
+
+**Why:** Cross-platform font rendering causes text to reflow slightly differently than at authoring time. Fixed-height boxes with no buffer overflow in Google Slides, pushing downstream elements into overlap. The extra space is invisible when the text fits and prevents breakage when it doesn't.
+
+### Rule 4 — Explicitly suppress image borders
+
+**Avoid:** `slide.shapes.add_picture(path, left, top, ...)` with no border treatment.
+
+**Use instead:** immediately after `add_picture()`, suppress the border:
+
+```python
+pic = slide.shapes.add_picture(path, left, top, width=width)
+pic.line.fill.background()
+```
+
+**Why:** Google Slides renders a default 1pt border frame around any imported image unless the line is explicitly set to none in the `.pptx` XML. python-pptx does not suppress this by default.
+
+---
+
 ## Designed vs. Default
 
 A quick self-check. Professional slides share these markers — if any are missing, the slide needs revision.

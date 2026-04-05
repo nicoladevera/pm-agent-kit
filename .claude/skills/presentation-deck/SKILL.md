@@ -262,6 +262,7 @@ Using `python-pptx`, generate a presentation file driven by the design spec from
 - Place the logo per brand guidelines (if a logo file path is provided)
 - Add speaker notes from the narrative draft to each slide's notes section
 - If a requested visual cannot be rendered cleanly with `python-pptx`, use a simpler text or table treatment and note the fallback in the context note
+- Apply cross-platform compatibility rules from `references/slide-design.md` throughout generation: use `add_paragraph()` instead of `\n` in strings, use proportional line spacing (unitless float, not `Pt()`), add 20–30% height buffers to all textboxes, and call `pic.line.fill.background()` on every imported image to suppress borders
 - Save the file to `knowledge/presentations/` using the naming convention: `YYYY-MM-DD-descriptive-slug.pptx`
 
 Report the file path, branding source, any fallback behavior, and a summary of the slide sequence in the conversation.
