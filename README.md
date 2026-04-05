@@ -174,7 +174,7 @@ All 18 skills across Tiers 1-4 are built. Tier 4 skills integrate structured str
 | `competitive-intel` | Analyzer | Monitor the competitive landscape or deep-dive on a specific competitor's approach to a specific problem |
 | `data-analysis` | Analyzer | Answer a data question in product context — metric interpretation, funnel analysis, anomaly investigation; produces PNG charts alongside the markdown artifact |
 | `business-case` | Generator | Build the argument for or against an initiative: problem, impact sizing, cost, risks, alternatives considered. Includes structured stress test: premortem, blindspot check, conviction assessment. |
-| `presentation-deck` | Generator | Draft a structured narrative or generate a branded `.pptx` for a specific audience — exec review, QBR, board update, new stakeholder onboarding |
+| `presentation-deck` | Generator | Draft a structured narrative or generate a branded presentation file (`.html`, `.pdf`, or `.pptx`) for a specific audience — exec review, QBR, board update, new stakeholder onboarding |
 | `discovery-plan` | Generator | Plan what to learn before committing: map assumptions, rank by cost of being wrong, select research methods, define evidence thresholds, sequence the research |
 | `roadmap-prioritization` | Generator | Compare candidate initiatives, sequence work, manage opportunity cost, and explain why A beats B — the prioritization rationale behind the roadmap |
 
