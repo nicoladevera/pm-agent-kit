@@ -66,6 +66,7 @@ Choose the pattern that serves the content, not for variety's sake.
 - **Centered body text.** Harder to scan than left-aligned. Center alignment is acceptable only for title slides, hero numbers, quote/pullout slides, and metrics rows.
 - **Content touching slide edges.** No breathing room destroys readability. Maintain consistent padding on all sides.
 - **Inconsistent margins between slides.** Content that shifts position slide-to-slide looks assembled, not designed.
+- **`margin-top: auto` on title slide footer elements.** Title slides often include a bottom-anchored footer (data stats, source line). Do NOT use `margin-top: auto` to push it down — this absorbs all flex space and overrides `justify-content: center`, causing the main title content to pack at the top of the slide. Instead, use `position: absolute; bottom: [slide-padding]; left: [slide-padding]; right: [slide-padding]` on the footer element. The slide container already uses `position: relative`, so absolute positioning works without HTML changes. The main content block (eyebrow → title → subtitles) then centers correctly.
 
 ---
 
@@ -266,9 +267,9 @@ Map each layout pattern from the Layout Composition section to CSS Grid or Flexb
 | **Split layout (40/60)** | CSS Grid: `grid-template-columns: 2fr 3fr` with `gap: 4%`. Text in left column, visual in right. |
 | **Hero number** | Flexbox column, `align-items: center; justify-content: center`. Number in a `.hero-value` element with large font-size. |
 | **Full-bleed image** | Background image via `background-image` with `background-size: cover`. Dark overlay via `::before` pseudo-element with `background: rgba(0,0,0,0.6)`. Text positioned via Flexbox. |
-| **Multi-column comparison** | CSS Grid: `grid-template-columns: repeat(N, 1fr)` where N is 2-3. Equal-width columns with consistent internal structure. |
+| **Multi-column comparison** | CSS Grid: `grid-template-columns: repeat(N, 1fr)` where N is 2-3. Equal-width columns with consistent internal structure. Use `margin: auto 0` on the grid container — NOT `flex: 1`. `flex: 1` stretches the grid to fill all remaining vertical space, inflating cards and concentrating whitespace inside their lower halves. `margin: auto 0` sizes cards to their natural content height and centers the card group in the available space. CSS grid row-stretching is preserved, so all cards in a row remain equal height. |
 | **Quote / Pullout** | Flexbox column, centered. Quote text at 1.75-2.25rem, attribution below at 1.125-1.5rem. Generous padding. |
-| **Metrics row** | CSS Grid: `grid-template-columns: repeat(N, 1fr)` where N is 3-4. Each metric in a flex-column cell with number and label. |
+| **Metrics row** | CSS Grid: `grid-template-columns: repeat(N, 1fr)` where N is 3-4. Each metric in a flex-column cell with number and label. Use `margin: auto 0` on the grid container — NOT `flex: 1`. Same reason as multi-column comparison above. |
 | **Timeline / Sequence** | Flexbox row with connecting `::after` pseudo-element lines between nodes. 3-5 nodes, each a flex-column with icon/step and label. |
 
 ### Typography: pt to CSS Mapping
