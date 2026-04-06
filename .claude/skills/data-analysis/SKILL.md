@@ -18,7 +18,7 @@ metadata:
 
 Answer a data question in product context. The skill's job is to turn a product question and data into an insight — not to restate numbers, but to interpret what they mean and what to do about them. The analysis type adapts to the question: metric interpretation, funnel analysis, cohort comparison, or anomaly investigation.
 
-For numeric analyses, the output is not final until it has been bundled and replay-verified. This skill now requires a reproducibility bundle (inputs, derived tables, calculation log, saved code, charts, manifest) and a replay pass using `.claude/skills/data-analysis/run_analysis.py`.
+For numeric analyses, the output is not final until it has been bundled and replay-verified. This skill now requires a reproducibility bundle (inputs, derived tables, calculation log, saved code, charts, manifest) and a replay pass using `.claude/skills/data-analysis/analysis_runner.py`.
 
 ---
 
@@ -195,11 +195,11 @@ The same values are also passed via environment variables during verification:
 
 For numeric analyses, do not treat the work as final until replay verification passes.
 
-Use `.claude/skills/data-analysis/run_analysis.py`:
+Use `.claude/skills/data-analysis/analysis_runner.py`:
 
 1. Create a JSON spec describing the report markdown, analysis code, raw inputs, derived tables, chart files, calc log, date, slug, question, and analysis type.
 2. Run:
-   `python3 .claude/skills/data-analysis/run_analysis.py finalize --spec /path/to/spec.json`
+   `python3 .claude/skills/data-analysis/analysis_runner.py finalize --spec /path/to/spec.json`
 3. Confirm that:
    - `verification.json` exists
    - `manifest.yaml` has `verification_status: Passed`
@@ -357,7 +357,7 @@ Show the work. Include tables, calculations, and comparisons as appropriate.]
 ### Reproducibility
 
 - **Verification:** [Passed / Failed / Not Required]
-- **Runner command:** `python3 .claude/skills/data-analysis/run_analysis.py verify --run-dir knowledge/data-analyses/YYYY-MM-DD-analysis-slug`
+- **Runner command:** `python3 .claude/skills/data-analysis/analysis_runner.py verify --run-dir knowledge/data-analyses/YYYY-MM-DD-analysis-slug`
 - **Important calc IDs:** [List the critical `calc_id`s cited in the report]
 - **Bundle contents:** `report.md`, `analysis.py`, `inputs/`, `derived/`, `calc-log.jsonl`, `manifest.yaml`, `verification.json`, charts, and `replay/`
 
@@ -402,6 +402,6 @@ Inside that folder, save:
 - `chart.png` and `chart_2.png` / `chart_3.png` when additional charts exist
 
 For numeric analyses, finalize the run with:
-`python3 .claude/skills/data-analysis/run_analysis.py finalize --spec /path/to/spec.json`
+`python3 .claude/skills/data-analysis/analysis_runner.py finalize --spec /path/to/spec.json`
 
 Report the run directory, verification status, and all saved artifact paths in the conversation.

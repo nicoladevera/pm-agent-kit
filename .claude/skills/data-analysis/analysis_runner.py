@@ -346,7 +346,7 @@ def capture(spec_path: Path, overwrite: bool = False) -> Path:
         "python_version": sys.version.split()[0],
         "dependencies": spec.get("dependencies", ["python3"]),
         "rerun_command": (
-            f"python3 .claude/skills/data-analysis/run_analysis.py verify "
+            f"python3 .claude/skills/data-analysis/analysis_runner.py verify "
             f"--run-dir {relative_to_repo(run_dir)}"
         ),
     }
