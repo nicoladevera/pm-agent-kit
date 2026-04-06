@@ -100,10 +100,10 @@ Both invocation methods work within this repo checkout.
 
 ### Slides Mode
 
-Slides mode is a runtime workflow, not a shipped renderer. When invoked to generate slides, the skill produces a presentation file in the requested format (HTML, PDF, or PPTX) using `references/branding-guidelines.md` and `company/interfaces/branding.md` (when substantive), saved to `knowledge/presentations/`.
+Slides mode is a runtime workflow, not a shipped renderer. When invoked to generate slides, the skill produces a presentation file in the requested format (HTML, PDF, or PPTX) using `references/branding-guidelines.md` and `company/interfaces/branding.md` (when substantive), saved to `knowledge/presentations/`. Before reporting a Slides-mode artifact as complete, the workflow runs `.claude/skills/presentation-deck/slides_postprocessing.py` to catch and optionally fix mechanical formatting issues.
 
 **Output formats:**
-- **HTML** (default) — Self-contained `.html` file with embedded CSS and inline SVG charts. No dependencies required.
+- **HTML** (default) — Self-contained `.html` file with embedded CSS, inline SVG for charts generated in the deck, and embedded raster visuals when reusing upstream artifacts. No dependencies required.
 - **PDF** — Generated from HTML via `playwright` (preferred) or `weasyprint`. Install one of these dependencies if PDF output is needed:
   ```bash
   python3 -m pip install playwright
