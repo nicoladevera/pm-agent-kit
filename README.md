@@ -2,7 +2,7 @@
 
 A portable AI agent system that encodes senior product manager judgment into 18 invocable skills. Built for Claude Code.
 
-The judgment is concrete: 25 reference files codifying PM decision standards that every skill is required to load and consult before executing. The result is a reasoning system, not a template system.
+The judgment is concrete: 26 reference files codifying PM decision standards that every skill is required to load and consult before executing. The result is a reasoning system, not a template system.
 
 The agent synthesizes, drafts, and structures. The PM evaluates and decides.
 
