@@ -83,6 +83,7 @@ class SlideSummary:
     text_chunks: list[str] = field(default_factory=list)
     data_img_count: int = 0
     data_svg_count: int = 0
+    divider_num_text: str | None = None  # text inside .divider-num on .slide-divider slides
 
     @property
     def word_count(self) -> int:
@@ -222,6 +223,13 @@ class DeckHtmlParser(HTMLParser):
         text = data.strip()
         if text and self._has_copy_context():
             self._current_slide.text_chunks.append(text)
+        # Capture ghost number text on section divider slides
+        if (
+            text
+            and "slide-divider" in self._current_slide.classes
+            and any("divider-num" in classes for _, classes in self._tag_stack)
+        ):
+            self._current_slide.divider_num_text = text
 
 
 def is_remote_ref(value: str) -> bool:
@@ -529,6 +537,23 @@ def analyze_html(
             warnings.append(
                 f"{selector} {size_info.source} is {size_info.comparable_rem:.3g}rem, "
                 f"below the recommended {minimum:.3g}rem minimum."
+            )
+
+    # Section divider ghost number consistency
+    divider_slides = [s for s in parser.slide_sections if "slide-divider" in s.classes]
+    if divider_slides:
+        numbered = [s for s in divider_slides if s.divider_num_text]
+        if numbered and len(divider_slides) == 1:
+            warnings.append(
+                f"Single section divider has a ghost number ('{numbered[0].divider_num_text}'). "
+                f"A ghost number on a lone divider implies a multi-section structure that doesn't exist. "
+                f"Remove the ghost number or add numbered dividers for every section."
+            )
+        elif numbered and len(numbered) < len(divider_slides):
+            warnings.append(
+                f"Section dividers have inconsistent ghost numbering: "
+                f"{len(numbered)} of {len(divider_slides)} divider slide(s) have a .divider-num element. "
+                f"Either all dividers should be numbered sequentially or none should."
             )
 
     metadata = {

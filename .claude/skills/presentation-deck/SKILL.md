@@ -37,11 +37,7 @@ The input provides the content. The skill provides the narrative structure, audi
 
 **Slides mode input flexibility:** For Slides mode specifically, if the input is already a structured narrative (from a prior Narrative run or a well-structured artifact from another skill), the agent may use it directly as the basis for slide design decisions, abbreviating the narrative drafting steps (4-7) where the structure is already sound.
 
-**Required invocation inputs:** Two things must be specified:
-1. **Audience** — Who is this presentation for? (e.g., "my VP," "the board," "the engineering team," "a new stakeholder")
-2. **Purpose / deck type** — What type of presentation? (e.g., "exec review," "business review," "product explainer," "board update," "roadmap review," "post-mortem")
-
-If either is missing, ask: "Who is the audience for this presentation, and what type of deck is it (exec review, business review, product explainer, board update, roadmap review, research readout, strategy/vision, launch readiness, GTM enablement, post-mortem)?"
+**Required invocation inputs:** Audience and purpose/deck type are required. See Step 0 in Instructions — the gate check fires before any content is read or generated.
 
 ---
 
@@ -112,6 +108,19 @@ Note: The existing audience/deck-type hard-stop in "What It Accepts" remains unc
 ## Instructions
 
 ### Shared Steps (Both Modes)
+
+#### 0. Gate check: required inputs
+
+Before reading or processing any content, confirm that both required inputs are present:
+
+1. **Audience** — Who is this presentation for?
+2. **Purpose / deck type** — What type of presentation is this?
+
+If either is missing or cannot be inferred from the invocation, stop and ask before proceeding:
+
+> "Who is the audience for this presentation, and what type of deck is it — exec review, business review, product explainer, board update, roadmap review, research readout, strategy/vision, launch readiness, GTM enablement, or post-mortem?"
+
+Do not proceed to Step 1 until both are established.
 
 #### 1. Read the input fully
 
@@ -381,6 +390,8 @@ Before reporting the file to the PM, verify against the design standards. Core c
 - When charts are generated in this run, are they inline SVG with correct brand colors and readable labels? Reused upstream visuals may remain embedded raster as long as they are bundled into the file
 - Does keyboard navigation work (arrow keys scroll between sections)?
 - Does the HTML preserve the intended slide layout model cleanly? Either a fixed 16:9 stage or full-viewport slides with scroll-snap is acceptable, but the helper must not introduce gutters or cross-slide bleed.
+- Are section dividers numbered consistently? If any `.slide-divider` slide contains a ghost number element, verify that every divider in the deck is numbered and that the numbers are sequential. A lone ghost number on a single divider (e.g. "02" with no "01") implies a structure that doesn't exist — remove it or add matching numbered dividers for all sections.
+- Do any bullet or list slides need a bold label + description structure? If so, verify the HTML uses a single `<span class="bullet-content">` wrapper inside each `<li>` — not `<strong>` and description text as separate direct children of `<li>`, and not `display: grid` on `<li>` with a `::before` marker (pseudo-elements are grid items and will break the column layout). Correct structure: `<li><span class="bullet-content"><strong>Label.</strong> Body text.</span></li>` with `.bullet-list li { display: flex; gap: 0.75rem; align-items: flex-start }` and `.bullet-content { flex: 1 }`. See the anti-pattern in `references/slide-design.md`.
 
 **PDF-specific checks:**
 - Does page count match slide count? (One slide per page)

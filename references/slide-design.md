@@ -66,6 +66,7 @@ Choose the pattern that serves the content, not for variety's sake.
 - **Centered body text.** Harder to scan than left-aligned. Center alignment is acceptable only for title slides, hero numbers, quote/pullout slides, and metrics rows.
 - **Content touching slide edges.** No breathing room destroys readability. Maintain consistent padding on all sides.
 - **Inconsistent margins between slides.** Content that shifts position slide-to-slide looks assembled, not designed.
+- **Decorative section numbers without full sequential coverage.** If a section divider uses a ghost number (e.g. "02"), every divider in the deck must use one, and they must be sequential. A lone "02" with no "01" or "03" implies a multi-section structure that doesn't exist. Rule: either all dividers are numbered or none are. If there is only one divider in the deck, omit the ghost number entirely.
 - **`margin-top: auto` on title slide footer elements.** Title slides often include a bottom-anchored footer (data stats, source line). Do NOT use `margin-top: auto` to push it down — this absorbs all flex space and overrides `justify-content: center`, causing the main title content to pack at the top of the slide. Instead, use `position: absolute; bottom: [slide-padding]; left: [slide-padding]; right: [slide-padding]` on the footer element. The slide container already uses `position: relative`, so absolute positioning works without HTML changes. The main content block (eyebrow → title → subtitles) then centers correctly.
 
 ---
@@ -101,6 +102,7 @@ Density depends on how the audience encounters the slides.
 - **Wall of text.** More than 5 bullets or exceeding the word budget for the delivery context. Move detail to speaker notes.
 - **4+ data series on one chart.** The audience can't distinguish the series. Split into multiple slides or highlight the one that matters.
 - **More than 3 seconds to parse.** If the slide requires effort to decode, it's too dense. Simplify or split.
+- **`<strong>` labels as direct flex or grid siblings in list items.** When a bullet item has a bold label + description (`<strong>Label.</strong> description`), do NOT make `<strong>` a direct child of `<li>` alongside the `::before` pseudo-element — in a flex `<li>`, every direct child is a separate flex item, so the label and description become independent columns that wrap at different points. Do NOT switch `<li>` to `display: grid` without accounting for `::before`: pseudo-elements participate in grid layout as automatic grid items. On `display: grid; grid-template-columns: max-content 1fr`, three items (`::before`, `.bullet-label`, `.bullet-body`) fill two columns — `::before` takes `max-content` (the tiny marker width), `.bullet-label` takes `1fr` (the full remaining row width, appearing right-justified), and `.bullet-body` wraps to row 2 under the marker. The fix: wrap label and body together in a single `<span class="bullet-content">` and keep `<li>` as `display: flex`. `<li>` structure: `<li><span class="bullet-content"><strong>Label.</strong> Body text.</span></li>`. CSS: `.bullet-list li { display: flex; gap: 0.75rem; align-items: flex-start }` with `.bullet-content { flex: 1; line-height: 1.45 }`. The marker `::before` is one flex item; `.bullet-content` is the other. Label and body wrap naturally together as inline text inside the container.
 
 ---
 
@@ -235,6 +237,8 @@ Preserve the 16:9 aspect ratio in the browser viewport:
 
 Each slide is a `<section class="slide">`. Slides stack vertically in the document flow. CSS `scroll-snap-type: y mandatory` on the parent container and `scroll-snap-align: start` on each `.slide` enables slide-by-slide scrolling.
 
+**Critical:** `margin` on `.slide` must be `0 auto` — never `0.5rem auto` or any non-zero vertical value. Any top or bottom margin creates a visible gutter between slides in the browser, breaks scroll-snap (two slides can appear in one viewport simultaneously), and signals the deck is not a proper slide presentation. If centering the slide stage in the viewport is needed, use a `height: 100vh` wrapper element with `display: flex; align-items: center; justify-content: center` and `scroll-snap-align: start` on the wrapper — not margin on the slide itself.
+
 ### Print / PDF Stylesheet
 
 For PDF conversion (step 13c) and browser print:
@@ -263,7 +267,7 @@ Map each layout pattern from the Layout Composition section to CSS Grid or Flexb
 
 | Pattern | CSS Implementation |
 |---------|-------------------|
-| **Full-width content** | Single-column CSS Grid: `grid-template-rows: auto 1fr auto`. Headline top, content middle, source bottom. |
+| **Full-width content** | Single-column CSS Grid: `grid-template-rows: auto 1fr auto`. Headline top, content middle, source bottom. Use `1fr` only when the middle row contains a substantial content block (body text, a chart, a comparison grid) that should fill the available height. When the middle content is sparse — a short bullet list, a metrics row, or a single paragraph — use `display: flex; flex-direction: column; gap: var(--element-gap)` with `justify-content: center` instead. A `1fr` row with sparse content creates a large empty gap between the headline and the caption because `1fr` expands to fill the full available height and leaves the sparse content stranded at the top of that space. |
 | **Split layout (40/60)** | CSS Grid: `grid-template-columns: 2fr 3fr` with `gap: 4%`. Text in left column, visual in right. |
 | **Hero number** | Flexbox column, `align-items: center; justify-content: center`. Number in a `.hero-value` element with large font-size. |
 | **Full-bleed image** | Background image via `background-image` with `background-size: cover`. Dark overlay via `::before` pseudo-element with `background: rgba(0,0,0,0.6)`. Text positioned via Flexbox. |
