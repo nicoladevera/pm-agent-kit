@@ -13,7 +13,7 @@ Artifacts produced by skills when they run in Generator or Draft mode. Only subs
 | Subfolder | Skill that produces it | What it contains |
 |-----------|----------------------|-----------------|
 | `prds/` | `prd-draft` | Product requirement documents |
-| `tasks/` | `generate-tasks` | Story sets with acceptance criteria |
+| `tasks/` | `backlog-tasks` | Story sets with acceptance criteria |
 | `decisions/` | `decision-log` | Decision records — captured or structured |
 | `meeting-briefs/` | `meeting-brief` | Pre-meeting briefs |
 | `one-pagers/` | `one-pager` | Compressed single-page pitches and proposals |

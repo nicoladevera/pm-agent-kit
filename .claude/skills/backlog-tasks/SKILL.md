@@ -1,5 +1,5 @@
 ---
-name: generate-tasks
+name: backlog-tasks
 description: Decomposes a PRD, spec, or feature description into shippable stories with acceptance criteria. Use when asked to "break this into tickets", "generate tasks", "write user stories", "create acceptance criteria", or "decompose this feature for engineering".
 metadata:
   type: Generator
@@ -13,7 +13,7 @@ metadata:
   degradation: proceed-with-caveat
 ---
 
-# generate-tasks
+# backlog-tasks
 
 Generate stories and tasks with acceptance criteria from any source artifact. The skill decomposes a product artifact into discrete, shippable units of work — each one specific enough that a coding agent with human oversight can pick it up and implement it without follow-up questions.
 
@@ -127,7 +127,7 @@ If any stories have ambiguity that the PM should resolve before engineering pick
 <!-- AGENT BLOCK -->
 ```yaml
 agent_block:
-  skill: generate-tasks
+  skill: backlog-tasks
   story_count: [integer]
   flagged_item_count: [integer — items needing PM input before implementation]
   external_dependency_count: [integer — dependencies on teams outside this sprint]

@@ -72,7 +72,7 @@ Invoke a skill using its slash command:
 ```
 /doc-review [paste document or point to file — PRD, ticket, project brief, tech spec, or any document]
 /prd-draft [paste problem statement or brief]
-/generate-tasks [paste PRD]
+/backlog-tasks [paste PRD]
 /decision-log [paste decision context or Slack thread]
 /meeting-brief [paste agenda or calendar invite]
 /status-update [paste sprint data + specify audience]
@@ -140,7 +140,7 @@ Skills have two dimensions: **type** (what they do technically) and **tier** (wh
 
 | Type | What it does | Current Skills |
 |------|-------------|----------------|
-| **Generator** | Produces an artifact from inputs (drafts a PRD, generates tasks, creates a launch checklist, builds a business case, drafts a presentation, plans discovery, prioritizes roadmap, drafts alignment memos, compresses arguments into one-pagers) | `prd-draft`, `generate-tasks`, `status-update`, `sprint-plan`, `meeting-brief`, `decision-log`, `one-pager`, `alignment-memo`, `launch-checklist`, `business-case`, `presentation-deck`, `discovery-plan`, `roadmap-prioritization` |
+| **Generator** | Produces an artifact from inputs (drafts a PRD, generates tasks, creates a launch checklist, builds a business case, drafts a presentation, plans discovery, prioritizes roadmap, drafts alignment memos, compresses arguments into one-pagers) | `prd-draft`, `backlog-tasks`, `status-update`, `sprint-plan`, `meeting-brief`, `decision-log`, `one-pager`, `alignment-memo`, `launch-checklist`, `business-case`, `presentation-deck`, `discovery-plan`, `roadmap-prioritization` |
 | **Analyzer** | Evaluates, critiques, or extracts signal (reviews a document, synthesizes feedback, interprets a metric) | `doc-review`, `retro-synthesis`, `user-feedback`, `competitive-intel`, `data-analysis` |
 | **Connector** | Connects to an external system to pull data or push output (queries Snowflake, posts to Jira, writes to Confluence) | Not included, always company-specific |
 
@@ -148,7 +148,7 @@ Generators and Analyzers work on inputs the PM provides — pasted text, exporte
 
 | Tier | Focus | Skills |
 |-------|-------|--------|
-| **1 — Operate** | High structure, tight feedback loop | `doc-review`, `prd-draft`, `generate-tasks` |
+| **1 — Operate** | High structure, tight feedback loop | `doc-review`, `prd-draft`, `backlog-tasks` |
 | **2 — Communicate** | Regular cadence, team-visible output | `status-update`, `sprint-plan`, `retro-synthesis`, `meeting-brief`, `decision-log`, `alignment-memo`, `one-pager` |
 | **3 — Orient** | External data, deep company context | `user-feedback`, `competitive-intel`, `data-analysis`, `launch-checklist` |
 | **4 — Strategize** | High-judgment, composable reasoning | `business-case`, `presentation-deck`, `discovery-plan`, `roadmap-prioritization` |
@@ -161,7 +161,7 @@ All 18 skills across Tiers 1-4 are built. Tier 4 skills integrate structured str
 |-------|------|--------------|
 | `doc-review` | Analyzer | Evaluate any PM document — PRD, ticket, project brief, tech spec, or any general document — against quality criteria appropriate to its type |
 | `prd-draft` | Generator | Draft a PRD from a problem statement, user context, and constraints |
-| `generate-tasks` | Generator | Generate stories/tasks with acceptance criteria from any source artifact: PRD, EDD, meeting notes, rough notes |
+| `backlog-tasks` | Generator | Generate stories/tasks with acceptance criteria from any source artifact: PRD, EDD, meeting notes, rough notes |
 | `status-update` | Generator | Assess delivery state across workstreams and/or produce status comms calibrated to a specific audience |
 | `sprint-plan` | Generator | Draft sprint goals from priorities and capacity; flag backlog issues: missing AC, unclear scope, dependency risks |
 | `retro-synthesis` | Analyzer | Synthesize retro notes into patterns; track action items across retros and flag which ones were never addressed |
@@ -208,8 +208,8 @@ Reference files live in `references/` and are consulted by multiple skills. They
 | `quality-criteria-tech-spec.md` | Evaluative criteria for technical specs / EDDs, from a PM perspective | `doc-review` |
 | `quality-criteria-ticket.md` | Evaluative criteria for user stories and tickets | `doc-review` |
 | `agent-readable-output.md` | Shared enum vocabulary and Agent Block format for machine-parseable skill output | All artifact-producing skills |
-| `story-structure.md` | Story scoping, splitting, structure, and data story separation | `doc-review`, `generate-tasks`, `sprint-plan` |
-| `acceptance-criteria.md` | AC standards optimized for agent implementation | `doc-review`, `prd-draft`, `generate-tasks`, `sprint-plan` |
+| `story-structure.md` | Story scoping, splitting, structure, and data story separation | `doc-review`, `backlog-tasks`, `sprint-plan` |
+| `acceptance-criteria.md` | AC standards optimized for agent implementation | `doc-review`, `prd-draft`, `backlog-tasks`, `sprint-plan` |
 | `sprint-planning.md` | Sprint goals, capacity, backlog health, carryover standards | `sprint-plan`, `status-update` |
 | `decision-frameworks.md` | Decision anatomy, options quality, reversibility, escalation signals | `decision-log`, `meeting-brief`, `business-case`, `roadmap-prioritization` |
 | `audience-registers.md` | Per-audience communication registers — tone, depth, and framing calibrated by stakeholder type (engineers, designers, data, leadership, cross-functional) | `status-update`, `meeting-brief`, `alignment-memo`, `one-pager` |
