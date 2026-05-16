@@ -144,7 +144,7 @@ When no degradation rule is specified, default to `proceed-with-caveat`.
 references/          PM judgment patterns. Shared across skills, not invoked directly.
 knowledge/           Accumulated PM work product. Artifacts produced by skills, organized by type.
   prds/              PRDs produced by prd-draft
-  tasks/             Story sets produced by generate-tasks
+  tasks/             Story sets produced by backlog-tasks
   decisions/         Decision records produced by decision-log
   meeting-briefs/    Pre-meeting briefs produced by meeting-brief
   one-pagers/        One-pagers produced by one-pager

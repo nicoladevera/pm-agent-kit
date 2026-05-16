@@ -1,8 +1,8 @@
-# Evaluation Rubric — generate-tasks (Healthcare SaaS: Appointment Reminder)
+# Evaluation Rubric — backlog-tasks (Healthcare SaaS: Appointment Reminder)
 
-**Target input:** `evals/generate-tasks/sample-input-02.md`
-**Skill under test:** `.claude/skills/generate-tasks/SKILL.md`
-**Purpose:** Determine whether `generate-tasks` correctly decomposes a healthcare SaaS PRD into well-scoped stories, separates HIPAA-critical opt-out handling into its own story, creates a dedicated data story, and flags the unresolved SMS failure handling as needing PM input.
+**Target input:** `evals/backlog-tasks/sample-input-02.md`
+**Skill under test:** `.claude/skills/backlog-tasks/SKILL.md`
+**Purpose:** Determine whether `backlog-tasks` correctly decomposes a healthcare SaaS PRD into well-scoped stories, separates HIPAA-critical opt-out handling into its own story, creates a dedicated data story, and flags the unresolved SMS failure handling as needing PM input.
 
 **Coverage:** Single mode — full skill coverage.
 
